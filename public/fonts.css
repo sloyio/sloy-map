@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Iset Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./IsetSans-Light.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iset Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./IsetSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iset Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./IsetSans-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iset Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./IsetSans-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iset Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./IsetSans-Regular-Italic.woff2') format('woff2');
+  font-display: swap;
+}
+
+.iset-icons {
+  font-family: 'Iset Sans';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
