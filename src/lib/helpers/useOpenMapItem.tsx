@@ -3,18 +3,20 @@ import { useMap } from "react-map-gl";
 import { usePopup } from "../state/usePopup";
 
 export function useOpenMapItem(layerId: string, mapItemType: string) {
-  const sloyMapGl = useMap();
+  const { sloyMapGl } = useMap();
   const { openPopup } = usePopup();
 
   useEffect(() => {
-    const map = sloyMapGl?.current;
+    const map = sloyMapGl?.getMap?.();
 
     if (!map) return;
 
     function open(e: any) {
-      const item = e.target.queryRenderedFeatures(e.point)[0];
+      const item = e.target.queryRenderedFeatures(e.point)[0] || {};
 
-      openPopup(item.properties?.id || item.id, mapItemType);
+      if (item) {
+        openPopup(item.properties?.id || item.id, mapItemType);
+      }
     }
 
     map.on?.("click", layerId, open);

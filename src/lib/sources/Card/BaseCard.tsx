@@ -52,7 +52,8 @@ export function BaseCard({
     const overrided = overrideCard({
       cardProps: {
         title: getStringFromStringOrArray(values, card.title),
-        cover: getStringFromStringOrArray(values, card.cover),
+        cover:
+          (card.rootSrc || "") + getStringFromStringOrArray(values, card.cover),
         description: getStringFromStringOrArray(values, card.description),
         additionalInfo: card.additionalInfo?.map((i) =>
           String(getStringFromStringOrArray(values, i)),

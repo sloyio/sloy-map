@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Layer, Marker, CircleLayer } from "react-map-gl";
+import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
@@ -43,9 +43,11 @@ export function MarkersLayer({
     return null;
   }
 
+  const fakeSourceId = `${visualisationLayer.source}-fake`;
+
   const fakeClickableMarkersLayerStyle: CircleLayer = {
     id: visualisationLayer.id,
-    source: visualisationLayer.source,
+    source: fakeSourceId,
     type: "circle",
     paint: {
       "circle-opacity": 0,
@@ -59,7 +61,18 @@ export function MarkersLayer({
 
   return (
     <>
-      <Layer {...fakeClickableMarkersLayerStyle} />
+      <Source
+        id={fakeSourceId}
+        type="geojson"
+        data={{
+          type: "FeatureCollection",
+          features: markers,
+        }}
+        generateId
+      >
+        <Layer {...fakeClickableMarkersLayerStyle} />
+      </Source>
+
       {markers.map((feature) => {
         if (!feature.properties) {
           return null;
@@ -88,7 +101,11 @@ export function MarkersLayer({
               width={40}
               height={40}
               src={
-                "https://map.ekaterinburg.design" + feature.properties.preview
+                (visualisationLayer.rootSrc || "") +
+                getProperty(
+                  feature.properties,
+                  visualisationLayer.previewPath || "preview" || "img",
+                )
               }
               alt={feature.properties.description}
             />

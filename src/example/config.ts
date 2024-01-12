@@ -90,6 +90,8 @@ export const state: IApp = {
     ekbDesignCodeCard: {
       id: "ekbDesignCodeCard",
       title: "name",
+      cover: "preview.m.src",
+      rootSrc: "https://map.ekaterinburg.design",
       description: "description",
       additionalInfo: ["street"],
       blocks: [{ type: "tag", id: "type" }, { type: "divider" }],
@@ -270,8 +272,10 @@ export const state: IApp = {
     },
     ekbDesigncodeSource: {
       id: "ekbDesigncodeSource",
-      type: "geojson",
-      path: "/ekb-design-code.json",
+      type: "json",
+      coordsProperty: "coords",
+      isCoordsReverse: true,
+      path: "https://map.ekaterinburg.design/api/map",
       copyright: ["ekbDesignCode"],
       card: "ekbDesignCodeCard",
       properties: {
@@ -875,6 +879,8 @@ export const state: IApp = {
       type: "marker-image",
       source: "ekbDesigncodeSource",
       property: "type",
+      rootSrc: "https://map.ekaterinburg.design",
+      previewPath: "preview.s.src",
       openable: true,
       paint: {},
     },

@@ -27,8 +27,8 @@ export function useLoadGeoJSON(source: ISource): {
           if (source.type === "json") {
             // @ts-expect-error
             fetchedData = GeoJSON.parse(data, {
-              Point: [
-                source?.latProperty || "lat",
+              Point: source.coordsProperty || [
+                source.latProperty || "lat",
                 source.lngProperty || "lng",
               ],
             });
@@ -46,6 +46,27 @@ export function useLoadGeoJSON(source: ISource): {
                       "EPSG:4326",
                       feature.geometry.coordinates,
                     ),
+                  },
+                };
+              }
+              return feature;
+            });
+          }
+
+          if (source.isCoordsReverse) {
+            fetchedData.features = fetchedData.features.map((feature) => {
+              if (
+                feature.geometry.coordinates &&
+                feature.geometry.type === "Point"
+              ) {
+                return {
+                  ...feature,
+                  geometry: {
+                    ...feature.geometry,
+                    coordinates: [
+                      feature.geometry.coordinates[1],
+                      feature.geometry.coordinates[0],
+                    ],
                   },
                 };
               }
@@ -71,7 +92,9 @@ export function useLoadGeoJSON(source: ISource): {
     }
   }, [
     path,
-    source?.latProperty,
+    source.coordsProperty,
+    source.isCoordsReverse,
+    source.latProperty,
     source.lngProperty,
     source.path,
     source.projection,

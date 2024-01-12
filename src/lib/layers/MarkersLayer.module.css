@@ -1,4 +1,6 @@
 .marker {
+  font-size: 0;
+  display: inline-block;
   object-fit: cover;
   box-shadow: 0 0 0 3px currentColor;
   border: 1px solid #000;

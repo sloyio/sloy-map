@@ -44,6 +44,7 @@ export interface ICard {
   additionalInfo?: string[];
   blocks: ICardBlock[];
   cover?: string;
+  rootSrc?: string;
 }
 
 export interface ISource {
@@ -54,6 +55,8 @@ export interface ISource {
   card?: ICard["id"];
   copyright: Copyright["id"][];
   type: string;
+  isCoordsReverse?: boolean;
+  coordsProperty?: string;
   latProperty?: string;
   lngProperty?: string;
   projection?: string;
@@ -65,6 +68,8 @@ export interface IVisualisationLayer {
   source: ISource["id"];
   paint: any;
   property?: string;
+  previewPath?: string;
+  rootSrc?: string;
   ids?: string[];
   openable?: boolean;
 }

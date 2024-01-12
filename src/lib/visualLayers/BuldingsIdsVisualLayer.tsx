@@ -9,10 +9,10 @@ interface Props {
 }
 
 export function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
-  const sloyMapGl = useMap();
+  const { sloyMapGl } = useMap();
 
   useEffect(() => {
-    const map = sloyMapGl?.current?.getMap?.();
+    const map = sloyMapGl?.getMap?.();
 
     if (!map) return;
 
