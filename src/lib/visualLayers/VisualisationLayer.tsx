@@ -12,6 +12,7 @@ import { BuildingRangeVisualLayer } from "@/visualLayers/BuildingRangeVisualLaye
 import { ActiveFilters, IVisualisationLayer } from "@/types";
 import { setBuildingDefaultColor } from "../helpers/setBuildingStyle";
 import { BuldingsIdsVisualLayer } from "./BuldingsIdsVisualLayer";
+import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 
 export function VisualisationLayer({
   id: vId,
@@ -27,6 +28,8 @@ export function VisualisationLayer({
   const source = sources[visualisationLayer?.source];
 
   const activeFilterParams = useSelector(activeFilterParamsSelector);
+
+  const { loading, data } = useLoadGeoJSON(source);
 
   const activeFilters: ActiveFilters = Object.values(filters)
     .filter(
@@ -68,17 +71,25 @@ export function VisualisationLayer({
         } else if (filter.type === "range") {
           filters.push([
             "all",
-            [">=", ["get", filter.property], values?.min],
-            ["<=", ["get", filter.property], values?.max],
+            [">=", ["to-string", ["get", filter.property]], values?.min],
+            ["<=", ["to-string", ["get", filter.property]], values?.max],
           ]);
         } else if (filter.type === "string[]") {
           filters.push(
             ["any"].concat(
-              values.map((v: string) => ["in", v, ["get", filter.property]]),
+              values.map((v: string) => [
+                "in",
+                v,
+                ["to-string", ["get", filter.property]],
+              ]),
             ),
           );
         } else {
-          filters.push(["in", ["get", filter.property], ["literal", values]]);
+          filters.push([
+            "in",
+            ["to-string", ["get", filter.property]],
+            ["literal", values],
+          ]);
         }
       }
     });
@@ -88,7 +99,7 @@ export function VisualisationLayer({
     }
   }, [activeFilters, sloyMapGl, vId]);
 
-  if (!visualisationLayer || !source) {
+  if (!visualisationLayer || !source || loading) {
     return null;
   }
 
@@ -110,7 +121,7 @@ export function VisualisationLayer({
   }
 
   return (
-    <Source id={source.id} type="geojson" data={source.path} generateId>
+    <Source id={source.id} type="geojson" data={data} generateId>
       <MapLayer
         visualisationLayer={visualisationLayer}
         activeFilters={activeFilters}

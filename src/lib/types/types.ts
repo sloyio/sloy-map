@@ -96,9 +96,20 @@ export interface ILayer {
   title: string;
   filters: IFilter["id"][];
   visualisationLayers: IVisualisationLayer["id"][];
+  defaultZoom?: number;
 }
 
 export interface IApp {
+  mapState: {
+    locale: string;
+    initialViewState: {
+      latitude: number;
+      longitude: number;
+      zoom: number;
+      pitch: number;
+    };
+    mapStyle: string;
+  };
   copyright: Record<string, Copyright>;
   cards: Record<string, ICard>;
   sources: Record<string, ISource>;

@@ -1,10 +1,19 @@
 import { getLayerStyle } from "@/helpers/getLayerStyle";
-import { colorLuminance } from "@/helpers/colorLuminance";
 import facades from "../../public/ekb-facades.json";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 import { IApp } from "@/types";
 
 export const state: IApp = {
+  mapState: {
+    locale: "ru-RU",
+    initialViewState: {
+      latitude: 56.838,
+      longitude: 60.6,
+      zoom: 14.5,
+      pitch: 20,
+    },
+    mapStyle: "https://map-backend.netlify.app/style.json",
+  },
   copyright: {
     osm: {
       id: "osm",
@@ -855,11 +864,7 @@ export const state: IApp = {
       source: "ekbQuarterSource",
       openable: true,
       paint: {
-        "fill-color": getLayerStyle<string>({
-          initial: "#9AADCC",
-          hover: colorLuminance("#9AADCC", 0.2),
-          active: colorLuminance("#9AADCC", 0.4),
-        }),
+        "fill-color": "#9AADCC",
         "fill-opacity": 0.6,
       },
     },

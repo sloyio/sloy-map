@@ -9,13 +9,13 @@ interface Props {
 }
 
 export function useClickableBuilding({ sourceId }: Props) {
-  const sloyMapGl = useMap();
+  const { sloyMapGl } = useMap();
   const { openPopup } = usePopup();
 
   useMapObjectState(BUILDING_LAYER_ID);
 
   useEffect(() => {
-    const map = sloyMapGl?.current?.getMap?.();
+    const map = sloyMapGl?.getMap?.();
 
     if (!map) return;
 

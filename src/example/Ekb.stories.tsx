@@ -2,13 +2,16 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
-import { CENTER_COORDS, MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { state } from "./config";
+import { MAX_ZOOM, MIN_ZOOM } from "./constants";
+import { state } from "./ekbConfig";
 
 import "sloy-ui/style.css";
 
+// @ts-expect-error
+window.SLOY_DEV_JSON = true;
+
 export default {
-  title: "App",
+  title: "Map/Ekb",
   component: SloyMap,
   parameters: {
     layout: "fullscreen",
@@ -16,20 +19,7 @@ export default {
 };
 
 function AppMap() {
-  return (
-    <SloyMap
-      locale="ru-RU"
-      initialViewState={{
-        latitude: CENTER_COORDS[1],
-        longitude: CENTER_COORDS[0],
-        zoom: 15,
-        pitch: 0,
-      }}
-      mapStyle="https://map-backend.netlify.app/style.json"
-      minZoom={MIN_ZOOM}
-      maxZoom={MAX_ZOOM}
-    />
-  );
+  return <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />;
 }
 
 const store = configureStore({
@@ -39,6 +29,7 @@ const store = configureStore({
   preloadedState: {
     sloy: {
       activeLayer: null,
+      // activeLayer: "ekbHouseLevels",
       activeFilterParams: null,
       appLoaded: false,
       config: state,

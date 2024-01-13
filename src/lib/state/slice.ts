@@ -18,6 +18,16 @@ export const initialState: State["sloy"] = {
     layers: {},
     filters: {},
     visualisationLayers: {},
+    mapState: {
+      locale: "en-En",
+      mapStyle: "",
+      initialViewState: {
+        latitude: 0,
+        longitude: 0,
+        zoom: 0,
+        pitch: 0,
+      },
+    },
   },
   appLoaded: false,
 };

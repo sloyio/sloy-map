@@ -52,8 +52,10 @@ export function BaseCard({
     const overrided = overrideCard({
       cardProps: {
         title: getStringFromStringOrArray(values, card.title),
-        cover:
-          (card.rootSrc || "") + getStringFromStringOrArray(values, card.cover),
+        cover: card.cover
+          ? (card.rootSrc || "") +
+            getStringFromStringOrArray(values, card.cover)
+          : undefined,
         description: getStringFromStringOrArray(values, card.description),
         additionalInfo: card.additionalInfo?.map((i) =>
           String(getStringFromStringOrArray(values, i)),
@@ -182,6 +184,16 @@ export function BaseCard({
         value: (
           <Sources sources={source.copyright.map((item) => copyright[item])} />
         ),
+      });
+    }
+
+    // @ts-expect-error
+    if (typeof window.SLOY_DEV_JSON === "boolean" && window.SLOY_DEV_JSON) {
+      overrided.blocks.push({ type: "divider" });
+      overrided.blocks.push({
+        type: "section",
+        title: "Raw data",
+        value: <pre>{JSON.stringify(values, null, 2)}</pre>,
       });
     }
 

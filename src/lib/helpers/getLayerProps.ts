@@ -1,4 +1,48 @@
 import { ISource, IVisualisationLayer } from "@/types";
+import { getLayerStyle } from "./getLayerStyle";
+import { colorLuminance } from "./colorLuminance";
+
+const isHex = (color: string) => /^#[0-9A-F]{6}$/i.test(color);
+
+function withHover(visualisationLayer: IVisualisationLayer, property: string) {
+  const paintColor = visualisationLayer.paint?.[property];
+
+  if (!paintColor || !property || visualisationLayer.property) return undefined;
+
+  return paintColor && visualisationLayer.openable && isHex(paintColor)
+    ? {
+        [property]: getLayerStyle<string>({
+          initial: paintColor,
+          hover: colorLuminance(paintColor, 0.2),
+          active: colorLuminance(paintColor, 0.4),
+        }),
+      }
+    : {
+        [property]: paintColor,
+      };
+}
+
+function withPropertyColors(
+  visualisationLayer: IVisualisationLayer,
+  values: [string, any][],
+) {
+  const colors = visualisationLayer.property
+    ? values.map(([value, { color }]) => [
+        ["==", ["to-string", ["get", visualisationLayer.property]], value],
+        visualisationLayer.openable
+          ? getLayerStyle<string>({
+              initial: color,
+              hover: colorLuminance(color, 0.2),
+              active: colorLuminance(color, 0.4),
+            })
+          : color,
+      ])
+    : [];
+
+  return visualisationLayer.property
+    ? ["case"].concat(...colors).concat(["rgba(0, 0, 0, 0)"])
+    : undefined;
+}
 
 export function getLayerProps(
   visualisationLayer: IVisualisationLayer,
@@ -15,47 +59,42 @@ export function getLayerProps(
 
   switch (visualisationLayer.type) {
     case "circle": {
-      const colors = values.map(([value, { color }]) => [
-        ["==", ["get", visualisationLayer.property], value],
-        color,
-      ]);
-
       return {
         ...props,
         paint: {
-          // @ts-ignore
-          "circle-color": ["case"]
-            .concat(...colors)
-            .concat(["rgba(0, 0, 0, 0)"]),
+          "circle-color": withPropertyColors(visualisationLayer, values),
           "circle-stroke-color": "#000",
           ...visualisationLayer.paint,
+          ...withHover(visualisationLayer, "circle-color"),
         },
       };
     }
     case "line": {
-      const colors = values.map(([value, { color }]) => [
-        ["==", ["get", visualisationLayer.property], value],
-        color,
-      ]);
-
       return {
         ...props,
         paint: {
-          // @ts-ignore
-          "line-color": ["case"].concat(...colors).concat(["rgba(0, 0, 0, 0)"]),
+          "line-color": withPropertyColors(visualisationLayer, values),
           ...visualisationLayer.paint,
+          ...withHover(visualisationLayer, "line-color"),
         },
       };
     }
 
-    case "heatmap":
     case "fill":
       return {
         ...props,
-        // @ts-ignore
+        paint: {
+          "fill-color": withPropertyColors(visualisationLayer, values),
+          ...visualisationLayer.paint,
+          ...withHover(visualisationLayer, "fill-color"),
+        },
+      };
+
+    default: {
+      return {
+        ...props,
         paint: visualisationLayer.paint,
       };
+    }
   }
-
-  return null;
 }
