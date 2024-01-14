@@ -15,8 +15,8 @@ export function groupByProperty(
       ),
     ).map((category) => [
       category,
-      geojson.features.filter(
-        (item) => item.properties?.[property]?.includes(category),
+      geojson.features.filter((item) =>
+        item.properties?.[property]?.includes(category),
       ),
     ]);
   } else {

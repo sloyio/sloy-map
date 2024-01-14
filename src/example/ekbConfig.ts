@@ -12,7 +12,7 @@ export const state: IApp = {
       zoom: 14.5,
       pitch: 20,
     },
-    mapStyle: "https://map-backend.netlify.app/style.json",
+    mapStyle: "/ekb-dark-map-style.json",
   },
   copyright: {
     osm: {
