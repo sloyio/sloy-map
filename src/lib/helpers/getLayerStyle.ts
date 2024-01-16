@@ -1,12 +1,4 @@
-import type {
-  DataDrivenPropertyValueSpecification,
-  ExpressionInputType,
-  ExpressionSpecification,
-} from "maplibre-gl";
-
-export function getLayerStyle<
-  T extends ExpressionInputType | ExpressionSpecification,
->({
+export function getLayerStyle<T>({
   initial,
   active,
   hover,
@@ -14,7 +6,7 @@ export function getLayerStyle<
   initial: T;
   active: T;
   hover: T;
-}): DataDrivenPropertyValueSpecification<T> {
+}) {
   return [
     "case",
     ["boolean", ["feature-state", "active"], false],

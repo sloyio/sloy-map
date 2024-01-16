@@ -19,7 +19,7 @@ export function useClickableBuilding({ sourceId }: Props) {
 
     if (!map) return;
 
-    map.on("click", BUILDING_LAYER_ID, (e) => {
+    map.on("click", BUILDING_LAYER_ID, (e: any) => {
       openPopup(`${e.lngLat.lat}_${e.lngLat.lng}`, sourceId);
     });
   }, [sloyMapGl, openPopup, sourceId]);

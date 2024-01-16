@@ -1,3 +1,5 @@
+import { ThemeProvider } from "styled-components";
+import { sloyTheme } from "sloy-ui";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
@@ -19,7 +21,11 @@ export default {
 };
 
 function AppMap() {
-  return <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />;
+  return (
+    <ThemeProvider theme={sloyTheme}>
+      <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />
+    </ThemeProvider>
+  );
 }
 
 const store = configureStore({

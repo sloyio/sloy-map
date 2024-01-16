@@ -36,8 +36,6 @@ export function Layers({ activeLayer, onToggleClick }: Props) {
             title={layer.title}
             isSelected={isActive}
             toggle={toggle}
-            horizontalGap={16}
-            verticalGap={16}
           >
             {isActive ? (
               <>

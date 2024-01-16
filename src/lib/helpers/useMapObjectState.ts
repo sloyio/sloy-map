@@ -1,9 +1,9 @@
-import { FeatureIdentifier } from "maplibre-gl";
-import { useMap } from "react-map-gl";
+import { FeatureIdentifier, MapMouseEvent, Map } from "maplibre-gl";
+import { Point, useMap } from "react-map-gl";
 import { useEffect, useRef } from "react";
 
 function setObjectState(
-  map: mapboxgl.Map,
+  map: Map,
   mapObject: FeatureIdentifier,
   settings: { [key: string]: boolean },
   cursorPointer = true,
@@ -14,8 +14,8 @@ function setObjectState(
 
 function useMapObjectState(layerId: string) {
   const { sloyMapGl } = useMap();
-  const activeObject = useRef<mapboxgl.MapboxGeoJSONFeature | null>(null);
-  const hoverObject = useRef<mapboxgl.MapboxGeoJSONFeature | null>(null);
+  const activeObject = useRef<FeatureIdentifier | null>(null);
+  const hoverObject = useRef<FeatureIdentifier | null>(null);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
@@ -24,10 +24,10 @@ function useMapObjectState(layerId: string) {
       return;
     }
 
-    const getItem = (point: mapboxgl.Point) =>
+    const getItem = (point: Point) =>
       map.queryRenderedFeatures(point, { layers: [layerId] })[0];
 
-    const handleClick = (e: mapboxgl.MapMouseEvent) => {
+    const handleClick = (e: MapMouseEvent) => {
       const item = getItem(e.point);
       if (activeObject.current && item.id !== activeObject.current.id) {
         setObjectState(map, activeObject.current, { active: false });
@@ -36,11 +36,13 @@ function useMapObjectState(layerId: string) {
 
       if (item) {
         activeObject.current = item;
-        setObjectState(map, activeObject.current, { active: true });
+        setObjectState(map, activeObject.current as FeatureIdentifier, {
+          active: true,
+        });
       }
     };
 
-    const handleMouseMove = (e: mapboxgl.MapMouseEvent) => {
+    const handleMouseMove = (e: MapMouseEvent) => {
       const item = getItem(e.point);
       if (item) {
         if (hoverObject.current && item.id !== hoverObject.current.id) {

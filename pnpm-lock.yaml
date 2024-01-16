@@ -57,8 +57,8 @@ dependencies:
     specifier: ^5.0.1
     version: 5.0.1
   sloy-ui:
-    specifier: 0.0.1-rc.2
-    version: 0.0.1-rc.2(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+    specifier: 0.0.1-rc.3
+    version: 0.0.1-rc.3(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
   styled-components:
     specifier: ^6.1.6
     version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
@@ -94,6 +94,9 @@ devDependencies:
   '@storybook/react-vite':
     specifier: ^7.6.6
     version: 7.6.7(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@4.5.1)
+  '@types/lodash':
+    specifier: ^4.14.202
+    version: 4.14.202
   '@types/node':
     specifier: ^20.10.5
     version: 20.10.8
@@ -10292,14 +10295,15 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /sloy-ui@0.0.1-rc.2(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-2vugODmkIDh3AxXw//UP3AFz9PEqiFkBAUheIkwE1mOxbKzqJ8awy5hcnhdb5AeiRlh6yFCZ5nV9NZbkvkRseQ==}
+  /sloy-ui@0.0.1-rc.3(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-9d193eiZe322UG/Zk2Re1cW0Q1lH8CLn5ttMGyM+9t1kpTwAFd2ca2LTp112U002RFdL2xdZr9cGVJyYQ6nw/A==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
       styled-components: ^6.1.6
     dependencies:
       classnames: 2.5.1
+      deepmerge: 4.3.1
       framer-motion: 10.18.0(react-dom@18.2.0)(react@18.2.0)
       polished: 4.2.2
       react: 18.2.0

@@ -1,13 +1,10 @@
 import { useCallback, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SheetModal } from "sloy-ui";
+import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { toggleData } from "@/state/slice";
 import { activeLayerSelector, layersSelector } from "@/state/selectors";
 import { useIsDesktop } from "@/helpers/isDesktop";
 import { RenderCard } from "@/sources/Card";
-import { DesktopCard } from "@/components/DesktopCard";
-import { LeftSidebar } from "@/components/LeftSidebar";
-import { RightSidebar } from "@/components/RightSidebar";
 import { MapContext } from "@/state/MapProvider";
 import { Layers } from "@/components/Layers";
 import { useMap } from "react-map-gl";
@@ -22,10 +19,10 @@ function SidebarCard() {
     />
   );
 
-  if (isDesktop) {
+  if (isDesktop && popupProps.popupHash) {
     return (
       <RightSidebar>
-        <DesktopCard closePopup={popupProps.closePopup}>{card}</DesktopCard>
+        <SidebarContent onClose={popupProps.closePopup}>{card}</SidebarContent>
       </RightSidebar>
     );
   }

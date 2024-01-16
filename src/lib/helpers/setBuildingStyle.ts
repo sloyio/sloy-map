@@ -1,8 +1,4 @@
-import {
-  ColorSpecification,
-  DataDrivenPropertyValueSpecification,
-  ExpressionSpecification,
-} from "maplibre-gl";
+import { Map } from "maplibre-gl";
 import { MinMax } from "sloy-ui";
 import { BUILDING_LAYER_ID, DEFAULT_BULDING_COLOR_NORMAL } from "@/constants";
 import { getLayerStyle } from "./getLayerStyle";
@@ -10,10 +6,8 @@ import { colorLuminance } from "./colorLuminance";
 import { SourcePropertyRange } from "@/types";
 
 interface SetBuildingStyleProps {
-  map: mapboxgl.Map;
-  color: DataDrivenPropertyValueSpecification<
-    ColorSpecification | ExpressionSpecification
-  >;
+  map: Map;
+  color: any;
   caseCondition?: (string | string[])[];
   layerProps?: Record<string, any>;
 }
@@ -48,7 +42,7 @@ export function setBuildingColor({
   });
 }
 
-export function setBuildingDefaultColor(map: mapboxgl.Map) {
+export function setBuildingDefaultColor(map: Map) {
   setBuildingColor({ map, color: DEFAULT_BULDING_COLOR_NORMAL });
 }
 
@@ -58,7 +52,7 @@ export function setBuildingStyleByPropertyValues({
   values,
   color,
 }: {
-  map: mapboxgl.Map;
+  map: Map;
   property: string;
   values: string[];
   color: string;
@@ -69,7 +63,7 @@ export function setBuildingStyleByPropertyValues({
 
   map.setStyle({
     ...map?.getStyle(),
-    layers: map?.getStyle().layers.map((layer) => {
+    layers: map?.getStyle().layers.map((layer: any) => {
       if (layer.id === BUILDING_LAYER_ID) {
         return {
           ...layer,
@@ -97,7 +91,7 @@ export function setBuildingRangeStyle({
   field,
   rangeData,
 }: {
-  map: mapboxgl.Map;
+  map: Map;
   field: string;
   range: MinMax;
   rangeData: SourcePropertyRange[];
@@ -133,7 +127,7 @@ export function setBuildingRangeStyle({
     colorLuminance(color, 0.55),
   ]);
 
-  const getColor = (style: [number, number][]): ExpressionSpecification => [
+  const getColor = (style: [number, number][]) => [
     "interpolate",
     ["linear"],
     ["to-number", ["get", field]],
@@ -142,7 +136,7 @@ export function setBuildingRangeStyle({
 
   setBuildingColor({
     map,
-    color: getLayerStyle<ExpressionSpecification>({
+    color: getLayerStyle<any>({
       initial: getColor(colorsInitial),
       hover: getColor(colorsHover),
       active: getColor(colorsActive),
