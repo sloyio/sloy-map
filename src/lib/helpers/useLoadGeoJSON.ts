@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GeoJSON, { FeatureCollection, MultiPolygon } from "geojson";
+import GeoJSON, { FeatureCollection, MultiLineString, MultiPolygon } from "geojson";
 import proj4 from "proj4";
 import { fetchAPI } from "@/helpers/fetchApi";
 import { ISource } from "@/types";
@@ -57,6 +57,26 @@ export function useLoadGeoJSON(source: ISource): {
                         source.projection,
                         "EPSG:4326",
                         feature.geometry.coordinates,
+                      ),
+                    },
+                  };
+                }
+
+                if (feature.geometry.type === "MultiLineString") {
+                  return {
+                    ...feature,
+                    geometry: {
+                      ...feature.geometry,
+                      coordinates: (
+                        feature.geometry as MultiLineString
+                      ).coordinates.map((polygon: any) =>
+                        polygon.map((coord: any) =>
+                          proj4(
+                            source.projection as string,
+                            "EPSG:4326",
+                            coord,
+                          ),
+                        ),
                       ),
                     },
                   };

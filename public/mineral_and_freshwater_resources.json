@@ -1,0 +1,1289 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "springs0.1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8374626.84404866, 4546539.74140102]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 1,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8380669.95754923, 4553120.73013526]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 2,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8382114.84232375, 4541683.88723326]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 3,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8391747.40748722, 4549990.64681472]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 4,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8398128.98190802, 4541202.33595318]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 5,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8396202.46887533, 4534099.45457193]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 6, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8403065.6715543, 4545897.460934]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 7,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8407039.10468423, 4543248.92889354]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 8,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8410771.72368508, 4539878.06993295]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 9,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8410771.72368508, 4537711.08917257]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 10, "Flow_l_sec": "", "Composit": "C, Mg-Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.11",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8426063.42088209, 4551796.46411503]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 11,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.12",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8428351.15510841, 4549268.31989459]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 12,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.13",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8431842.95998017, 4547582.89041429]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 13,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.14",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8420645.10297763, 4527478.12447078]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 14,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.15",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8396563.69006896, 4504604.43866677]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 15, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.16",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8393794.32758446, 4500029.70150597]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 16, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.17",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8459575.91215719, 4519893.69180945]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 17, "Flow_l_sec": "", "Composit": "C-S, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.18",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8448859.68341283, 4539998.45775297]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 18,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.19",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8484981.80277584, 4512429.64696814]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 19, "Flow_l_sec": "", "Composit": "C-Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.20",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8483055.28974315, 4506410.25596709]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 20, "Flow_l_sec": "", "Composit": "C, Ca-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.21",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8451629.04589733, 4501835.51880629]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 21, "Flow_l_sec": "", "Composit": "C-Cl, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.22",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8501075.81184173, 4531248.77242669]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 22,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.23",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8515484.11743737, 4526876.18537067]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 23,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.24",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8520420.80708364, 4533979.06675191]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 24, "Flow_l_sec": "", "Composit": "C, Ca-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.25",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8532461.51353798, 4527116.96101071]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 25,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.26",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8515243.30330828, 4516522.83284886]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 26,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.27",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8502961.78272485, 4499909.31368595]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 27, "Flow_l_sec": "", "Composit": "C, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.28",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8493021.6454064, 4494857.5364593]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 28, "Flow_l_sec": "", "Composit": "C-S, Na-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8477609.54114484, 4492810.94351894]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 29,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.30",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8476405.47049941, 4488476.98199818]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 30,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.31",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8473876.922144, 4487273.10379797]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 31,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.32",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8475803.43517669, 4484865.34739755]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 32, "Flow_l_sec": "", "Composit": "C-CL, Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.33",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8510962.29802336, 4471743.07501525]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 33, "Flow_l_sec": "", "Composit": "C-Cl, Na-Mn" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.34",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8502052.17524715, 4470779.97245508]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 34,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.35",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8502413.39644078, 4467168.33785445]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 35,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.36",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8503015.4317635, 4463195.53979376]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 36,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.37",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8467856.56891683, 4458861.578273]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 37,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.38",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8466893.31240048, 4468974.15515477]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 38, "Flow_l_sec": "", "Composit": "Cl-Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.39",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8462919.87927055, 4476799.36345614]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 39, "Flow_l_sec": "", "Composit": "C-Cl, Na-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.40",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8464364.76404507, 4481133.3249769]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 40, "Flow_l_sec": "", "Composit": "C-Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.41",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8469903.48901407, 4481494.48843696]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 41, "Flow_l_sec": "", "Composit": "C-Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.42",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8459789.29559242, 4478605.18075645]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 42,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.43",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8458464.81788245, 4475234.32179586]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 43,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.44",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8441394.44578141, 4487995.4307181]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 44,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.45",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8441755.66697504, 4470779.97245508]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 45,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.46",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8455241.2582039, 4476678.97563612]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 46, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.47",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8456084.1076557, 4466446.01093433]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 47, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.48",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8456445.32884933, 4463797.47889386]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 48,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.49",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8434049.61484426, 4466205.23529428]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 49,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.50",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8428510.88987527, 4471141.13591515]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 50,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.51",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8419480.36003451, 4492810.94351894]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 51,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.52",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8405901.79280523, 4475113.93397584]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 52,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.53",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8408430.34116064, 4480410.99805677]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 53,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.54",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8407105.86345067, 4488476.98199818]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 54,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.55",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8412764.99548421, 4486189.61341778]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 55,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.56",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8424324.07368037, 4448430.97468066]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 56,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.57",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8437448.4437156, 4444698.95226001]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 57, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.58",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8451174.84907354, 4432660.1702579]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 58,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.59",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8453462.58329987, 4436271.80485853]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 59,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.60",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8457475.34376185, 4433743.66063809]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 60,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.61",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8468914.01489347, 4452042.60928129]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 61,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8478907.80125057, 4444337.78879994]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 62,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.63",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8492032.1712858, 4441930.03239952]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 63,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.64",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8474813.96105609, 4412237.37760381]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 64, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.65",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8475777.21757244, 4424396.54742594]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 65, "Flow_l_sec": "", "Composit": "C, Ca-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.66",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8496487.2326739, 4419581.0346251]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 66,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8510614.18655752, 4440046.96402868]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 67,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.68",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8519042.68107556, 4444862.47682952]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 68,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.69",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8519644.71639828, 4446909.06976988]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 69,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.70",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8519644.71639828, 4449196.43835028]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 70, "Flow_l_sec": "", "Composit": "C-Cl, Na-Mg" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.71",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8514467.21262291, 4450761.48001056]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 71,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.72",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8546013.86353328, 4448353.72361013]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 72,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.73",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8551913.8096959, 4446066.35502973]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 73,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.74",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8549024.04014686, 4417895.6051448]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 74, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.75",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8546856.71298508, 4414043.19490413]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 75,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.76",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8541438.39508063, 4406699.53788284]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 76,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.77",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8532648.67936896, 4403689.84238232]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 77,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.78",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8521450.82236643, 4412478.15324386]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 78,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.79",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8524942.62723818, 4416691.72694459]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 79,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.80",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8559164.45178987, 4443417.82298927]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 80,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.81",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8562054.22133891, 4444380.92554944]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 81,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.82",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8569760.27346969, 4444621.70118948]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 82,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.83",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8561331.77895165, 4420664.52500529]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 83,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.84",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8556154.27517628, 4416571.33912457]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 84,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.85",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8555191.01865994, 4413802.41926409]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 85, "Flow_l_sec": "", "Composit": "C-Cl, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.86",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8557960.38114443, 4411274.27504365]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 86, "Flow_l_sec": "", "Composit": "C-S-Na" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.87",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8554348.16920813, 4411635.43850371]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 87, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.88",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8556635.90343446, 4408384.96736314]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 88, "Flow_l_sec": "", "Composit": "C-S, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.89",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8568797.01695334, 4406940.31352289]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 89, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.90",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8569278.64521151, 4404532.55712246]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 90,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.91",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8569519.4593406, 4395383.08280086]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 91,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.92",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8529785.12804128, 4389767.99200937]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 92, "Flow_l_sec": "", "Composit": "C-S, Na-Ca" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.93",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8589546.35938685, 4381581.62024794]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 93,
+        "Flow_l_sec": ">1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.94",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8597132.00445308, 4377729.21000726]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 94,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.95",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8600985.03051847, 4376404.94398703]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 95,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.96",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8619166.49726452, 4379414.63948756]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 96,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.97",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8601827.87997027, 4347918.42299865]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 97,
+        "Flow_l_sec": "50-100",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.98",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8601225.84464755, 4329860.24999549]
+      },
+      "geometry_name": "the_geom",
+      "properties": { "fid": 98, "Flow_l_sec": "<25", "Composit": "Freshwater" }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.99",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8601827.87997027, 4326007.83975481]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 99,
+        "Flow_l_sec": "25-50",
+        "Composit": "Freshwater"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "springs0.100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8468151.03344221, 4483343.44248677]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "fid": 100,
+        "Flow_l_sec": "100-1000",
+        "Composit": "Freshwater"
+      }
+    }
+  ],
+  "totalFeatures": 100,
+  "numberMatched": 100,
+  "numberReturned": 100,
+  "timeStamp": "2024-01-17T17:06:41.163Z",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:EPSG::28408" }
+  }
+}
