@@ -76,12 +76,12 @@ export const state = createAppState([
     mapState: {
       locale: "ru-RU",
       initialViewState: {
-        latitude: 40.18131,
-        longitude: 44.51296,
+        latitude: 40.18001,
+        longitude: 44.52656,
         zoom: 14,
-        pitch: 30,
+        pitch: 0,
       },
-      mapStyle: "https://sloy.io/armenia/style.json",
+      mapStyle: "/sloy-dark-map-style.json",
     },
     ...OSM_BUILDINGS,
   },

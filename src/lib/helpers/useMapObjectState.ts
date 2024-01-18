@@ -1,4 +1,5 @@
-import { FeatureIdentifier, MapMouseEvent, Map } from "maplibre-gl";
+import type { Map } from "maplibre-gl";
+import { FeatureIdentifier, MapMouseEvent } from "maplibre-gl";
 import { Point, useMap } from "react-map-gl";
 import { useEffect, useRef } from "react";
 
