@@ -1140,159 +1140,193 @@ export const state = createAppState([
   ),
 
   // TODO: Solved troubles with commented layers
-  // createLayer(
-  //   {
-  //     title: "Зоны подземных вод",
-  //     defaultZoom: 8,
-  //     filters: [
-  //       {
-  //         property: "Descript",
-  //         type: "string",
-  //         filterVisualisationLayers: ["armenianGroundwaterZonesLayer"],
-  //         source: "armenianGroundwaterZonesLayerSource",
-  //       },
-  //     ],
-  //     visualisationLayers: [
-  //       {
-  //         id: "armenianGroundwaterZonesLayer",
-  //         source: "armenianGroundwaterZonesLayerSource",
-  //         openable: true,
-  //         type: "fill",
-  //         property: "Descript",
-  //         paint: {
-  //           "fill-opacity": 0.6,
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   [
-  //     {
-  //       id: "armenianGroundwaterZonesLayerSource",
-  //       path: "/groundwater_zones.json",
-  //       type: "geojson",
-  //       projection: "EPSG:28408",
-  //       card: {
-  //         blocks: [
-  //           {
-  //             type: "value",
-  //             id: "Descript",
-  //           },
-  //         ],
-  //       },
-  //       properties: [
-  //         {
-  //           id: "Descript",
-  //           title: "Зоны подземных вод",
-  //           values: {
-  //             "Fault zones": {
-  //               color: "#e31a1c",
-  //             },
-  //             "Unconfined groundwater of continental salinity": {
-  //               color: "#ffab57",
-  //             },
-  //             "Deep faults zones with discharge of mineral water": {
-  //               color: "#db1e2a",
-  //             },
-  //             "Tectonic faults zones with discharge of freshwater": {
-  //               color: "#db1e2a",
-  //             },
-  //             "High capcity interlava and underlava water streams": {
-  //               color: "#0e0e0e",
-  //             },
-  //             "Boundaries with aquifers with negative pressure": {
-  //               color: "#1c8e1a",
-  //             },
-  //             "Boundaries with aquifers with positive pressure": {
-  //               color: "#0524bc",
-  //             },
-  //           },
-  //         },
-  //       ],
-  //       copyright: [],
-  //     },
-  //   ],
-  // ),
+  createLayer(
+    {
+      title: "Зоны подземных вод",
+      defaultZoom: 8,
+      filters: [
+        {
+          property: "Descript",
+          type: "string",
+          filterVisualisationLayers: ["armenianGroundwaterZonesLayer"],
+          source: "armenianGroundwaterZonesLayerSource",
+        },
+      ],
+      visualisationLayers: [
+        {
+          id: "armenianGroundwaterZonesLayer",
+          source: "armenianGroundwaterZonesLayerSource",
+          openable: true,
+          type: "fill",
+          property: "Descript",
+          paint: {
+            "fill-opacity": 0.6,
+          },
+        },
+      ],
+    },
+    [
+      {
+        id: "armenianGroundwaterZonesLayerSource",
+        path: "/groundwater_zones.json",
+        type: "geojson",
+        projection: "EPSG:28408",
+        card: {
+          blocks: [
+            {
+              type: "value",
+              id: "Descript",
+            },
+          ],
+        },
+        properties: [
+          {
+            id: "Descript",
+            title: "Зоны подземных вод",
+            values: {
+              "Fault zones": {
+                color: "#e31a1c",
+              },
+              "Unconfined groundwater of continental salinity": {
+                color: "#ffab57",
+              },
+              "Deep faults zones with discharge of mineral water": {
+                color: "#db1e2a",
+              },
+              "Tectonic faults zones with discharge of freshwater": {
+                color: "#db1e2a",
+              },
+              "High capcity interlava and underlava water streams": {
+                color: "#0e0e0e",
+              },
+              "Boundaries with aquifers with negative pressure": {
+                color: "#1c8e1a",
+              },
+              "Boundaries with aquifers with positive pressure": {
+                color: "#0524bc",
+              },
+            },
+          },
+        ],
+        copyright: [],
+      },
+    ],
+  ),
 
-  // createLayer(
-  //   {
-  //     title: "Минеральные и пресноводные источники",
-  //     defaultZoom: 10,
-  //     filters: [],
-  //     visualisationLayers: [
-  //       {
-  //         id: "armenianMineralAndFreshwaterResourcesLayer",
-  //         type: "circle",
-  //         source: "armenianMineralAndFreshwaterResourcesLayerSource",
-  //         openable: true,
-  //         paint: {
-  //           "circle-color": "#f18f00",
-  //           "circle-stroke-width": 1,
-  //           // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
-  //           "circle-radius": [
-  //             "interpolate",
-  //             ["linear"],
-  //             ["zoom"],
-  //             MIN_ZOOM,
-  //             2,
-  //             MAX_ZOOM,
-  //             8,
-  //           ],
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   [
-  //     {
-  //       id: "armenianMineralAndFreshwaterResourcesLayerSource",
-  //       path: "/mineral_and_freshwater_resources.json",
-  //       type: "geojson",
-  //       card: {
-  //         blocks: [{ type: "value", id: "Composit" }],
-  //       },
-  //       copyright: [],
-  //       properties: [
-  //         {
-  //           id: "Composit",
-  //           title: "Тип источника",
-  //         },
-  //       ],
-  //       latProperty: "lat",
-  //       lngProperty: "long",
-  //     },
-  //   ],
-  // ),
+  createLayer(
+    {
+      title: "Минеральные и пресноводные источники",
+      defaultZoom: 10,
+      filters: [
+        {
+          property: "Flow_l_sec",
+          type: "string",
+          filterVisualisationLayers: [
+            "armenianMineralAndFreshwaterResourcesLayer",
+          ],
+          source: "armenianMineralAndFreshwaterResourcesLayerSource",
+        },
+      ],
+      visualisationLayers: [
+        {
+          id: "armenianMineralAndFreshwaterResourcesLayer",
+          type: "circle",
+          source: "armenianMineralAndFreshwaterResourcesLayerSource",
+          openable: true,
+          paint: {
+            "circle-color": "#e31a1c",
+            "circle-stroke-width": 1,
+            // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              2,
+              MAX_ZOOM,
+              8,
+            ],
+          },
+        },
+      ],
+    },
+    [
+      {
+        id: "armenianMineralAndFreshwaterResourcesLayerSource",
+        path: "/mineral_and_freshwater_resources.json",
+        type: "geojson",
+        card: {
+          blocks: [
+            { type: "value", id: "Composit" },
+            { type: "value", id: "Flow_l_sec" },
+          ],
+        },
+        copyright: [],
+        properties: [
+          {
+            id: "Composit",
+            title: "Тип источника",
+          },
+          {
+            id: "Flow_l_sec",
+            title: "Скорость потока",
+            // values: {
+            //   "<25": {
+            //     color: "#d1e3f3",
+            //   },
+            //   "25-50": {
+            //     color: "#9ac8e1",
+            //   },
+            //   "50-100": {
+            //     color: "#529dcc",
+            //   },
+            //   "100-1000": {
+            //     color: "#1c6cb1",
+            //   },
+            //   ">1000": {
+            //     color: "#08306b",
+            //   },
+            //   "": {
+            //     color: "#e31a1c",
+            //   },
+            // },
+          },
+        ],
+      },
+    ],
+  ),
 
-  // createLayer(
-  //   {
-  //     title: "Реки (5 км и более)",
-  //     defaultZoom: 8,
-  //     filters: [],
-  //     visualisationLayers: [
-  //       {
-  //         id: "armenianRiversLayer",
-  //         source: "armenianRiversLayerSource",
-  //         openable: false,
-  //         type: "fill",
-  //         property: "",
-  //         paint: {
-  //           "fill-opacity": 0.6,
-  //           "fill-color": "#3a3aa3",
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   [
-  //     {
-  //       id: "armenianRiversLayerSource",
-  //       path: "/rivers.json",
-  //       type: "geojson",
-  //       projection: "EPSG:32638",
-  //       card: {
-  //         blocks: [],
-  //       },
-  //       properties: [],
-  //       copyright: [],
-  //     },
-  //   ],
-  // ),
+  createLayer(
+    {
+      title: "Реки (5 км и более)",
+      defaultZoom: 8,
+      filters: [],
+      visualisationLayers: [
+        {
+          id: "armenianRiversLayer",
+          source: "armenianRiversLayerSource",
+          openable: false,
+          type: "line",
+          property: "",
+          paint: {
+            "line-opacity": 0.6,
+            "line-color": "#3a3aa3",
+          },
+        },
+      ],
+    },
+    [
+      {
+        id: "armenianRiversLayerSource",
+        path: "/rivers.json",
+        type: "geojson",
+        projection: "EPSG:32638",
+        card: {
+          blocks: [],
+        },
+        properties: [],
+        copyright: [],
+      },
+    ],
+  ),
 ]);
