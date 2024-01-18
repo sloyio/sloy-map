@@ -521,7 +521,7 @@ export const state = createAppState([
         {
           id: "armenianLakesAndReservoirsLayer",
           source: "armenianLakesAndReservoirsSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "LKcode",
           paint: {
@@ -554,7 +554,7 @@ export const state = createAppState([
         {
           id: "armenianLandslidesLayer",
           source: "armenianLandslidesLayerSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "",
           paint: {
@@ -571,6 +571,7 @@ export const state = createAppState([
         type: "geojson",
         projection: "EPSG:32638",
         card: {
+          title: "Name_eng",
           blocks: [],
         },
         properties: [],
@@ -594,7 +595,7 @@ export const state = createAppState([
         {
           id: "armenianSolarRadiationLevelLayer",
           source: "armenianSolarRadiationLevelLayerSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "Sun_radiat",
           paint: {
@@ -678,7 +679,7 @@ export const state = createAppState([
         {
           id: "armenianPrecipitationsLevelLayer",
           source: "armenianPrecipitationsLevelLayerSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "Precipitat",
           paint: {
@@ -756,7 +757,7 @@ export const state = createAppState([
         {
           id: "armenianTemperatureLayer",
           source: "armenianTemperatureLayerSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "Temperatur",
           paint: {
@@ -1114,7 +1115,7 @@ export const state = createAppState([
         {
           id: "armenianForestAreasLayer",
           source: "armenianForestAreasLayerSource",
-          openable: false,
+          openable: true,
           type: "fill",
           property: "",
           paint: {
@@ -1138,8 +1139,6 @@ export const state = createAppState([
       },
     ],
   ),
-
-  // TODO: Solved troubles with commented layers
   createLayer(
     {
       title: "Зоны подземных вод",
@@ -1157,11 +1156,9 @@ export const state = createAppState([
           id: "armenianGroundwaterZonesLayer",
           source: "armenianGroundwaterZonesLayerSource",
           openable: true,
-          type: "fill",
+          type: "line",
           property: "Descript",
-          paint: {
-            "fill-opacity": 0.6,
-          },
+          paint: {},
         },
       ],
     },
@@ -1233,18 +1230,17 @@ export const state = createAppState([
           type: "circle",
           source: "armenianMineralAndFreshwaterResourcesLayerSource",
           openable: true,
+          property: "Flow_l_sec",
           paint: {
-            "circle-color": "#e31a1c",
             "circle-stroke-width": 1,
-            // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
             "circle-radius": [
               "interpolate",
               ["linear"],
               ["zoom"],
               MIN_ZOOM,
-              2,
+              5,
               MAX_ZOOM,
-              8,
+              10,
             ],
           },
         },
@@ -1261,6 +1257,7 @@ export const state = createAppState([
             { type: "value", id: "Flow_l_sec" },
           ],
         },
+        projection: "EPSG:28408",
         copyright: [],
         properties: [
           {
@@ -1270,26 +1267,23 @@ export const state = createAppState([
           {
             id: "Flow_l_sec",
             title: "Скорость потока",
-            // values: {
-            //   "<25": {
-            //     color: "#d1e3f3",
-            //   },
-            //   "25-50": {
-            //     color: "#9ac8e1",
-            //   },
-            //   "50-100": {
-            //     color: "#529dcc",
-            //   },
-            //   "100-1000": {
-            //     color: "#1c6cb1",
-            //   },
-            //   ">1000": {
-            //     color: "#08306b",
-            //   },
-            //   "": {
-            //     color: "#e31a1c",
-            //   },
-            // },
+            values: {
+              "<25": {
+                color: "#d1e3f3",
+              },
+              "25-50": {
+                color: "#9ac8e1",
+              },
+              "50-100": {
+                color: "#529dcc",
+              },
+              "100-1000": {
+                color: "#1c6cb1",
+              },
+              ">1000": {
+                color: "#08306b",
+              },
+            },
           },
         ],
       },
@@ -1305,12 +1299,14 @@ export const state = createAppState([
         {
           id: "armenianRiversLayer",
           source: "armenianRiversLayerSource",
-          openable: false,
+          openable: true,
           type: "line",
           property: "",
           paint: {
+            "line-width": 2,
             "line-opacity": 0.6,
-            "line-color": "#3a3aa3",
+            "line-color": "#005987",
+            // "line-color": "#3a3aa3",
           },
         },
       ],
@@ -1322,9 +1318,15 @@ export const state = createAppState([
         type: "geojson",
         projection: "EPSG:32638",
         card: {
-          blocks: [],
+          title: "Name",
+          blocks: [{ type: "value", id: "Shape_Leng" }],
         },
-        properties: [],
+        properties: [
+          {
+            id: "Shape_Leng",
+            title: "Длина, м",
+          },
+        ],
         copyright: [],
       },
     ],
