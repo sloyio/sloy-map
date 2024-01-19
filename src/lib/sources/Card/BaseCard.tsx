@@ -193,7 +193,11 @@ export function BaseCard({
       overrided.blocks.push({
         type: "section",
         title: "Raw data",
-        value: <pre>{JSON.stringify(values, null, 2)}</pre>,
+        value: (
+          <pre style={{ whiteSpace: "pre-wrap" }}>
+            {JSON.stringify(values, null, 2)}
+          </pre>
+        ),
       });
     }
 
