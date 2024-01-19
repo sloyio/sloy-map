@@ -51,11 +51,12 @@ export function MapFilter({
       return <FilterRange filter={filter} onChange={onChange} />;
     case "string[]":
     case "string": {
-      const items = groupByProperty(
-        data,
-        filter.property,
-        getProperty(source, `properties.${filter.property}.type`),
-      ).map((item) => ({
+      const items = groupByProperty({
+        geojson: data,
+        property: filter.property,
+        valueType: getProperty(source, `properties.${filter.property}.type`),
+        sortType: filter.sortType,
+      }).map((item) => ({
         type: item.type,
         subTitle: item.count,
         color: getProperty(

@@ -76,13 +76,14 @@ export interface IVisualisationLayer {
 
 export interface IFilter {
   id: string;
+  source: ISource["id"];
   type: string;
+  filterVisualisationLayers: IVisualisationLayer["id"][];
   title?: string;
   description?: string;
   color?: string;
   property: string;
-  source: ISource["id"];
-  filterVisualisationLayers: IVisualisationLayer["id"][];
+  sortType?: "default" | "count";
 }
 
 export interface Copyright {
