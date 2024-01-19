@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { Accordion, AccordionItem, Divider } from "sloy-ui";
+import { Accordion, AccordionItem, Divider, Link, LinkSize } from "sloy-ui";
 import { MapFilter } from "@/filters/MapFilter";
 import { ILayer } from "@/types";
 import { filtersSelector, layersSelector } from "@/state/selectors";
@@ -17,6 +17,16 @@ const FilterTitle = styled.div`
   line-height: 24px;
   margin: 12px 0;
   font-weight: bold;
+`;
+
+const FilterDescription = styled.div`
+  font-size: 14px;
+  line-height: 21px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px 8px 8px;
 `;
 
 export function Layers({ activeLayer, onToggleClick }: Props) {
@@ -40,6 +50,16 @@ export function Layers({ activeLayer, onToggleClick }: Props) {
             {isActive ? (
               <>
                 {overrideLayers?.(layer)}
+                {(layer.link?.href || layer.description) && (
+                  <FilterDescription>
+                    {layer.description}
+                    {layer.link?.href && (
+                      <Link size={LinkSize.SMALL} href={layer.link?.href}>
+                        {layer.link?.label || layer.link?.href}
+                      </Link>
+                    )}
+                  </FilterDescription>
+                )}
                 {layer.filters.map((filterId, i) => {
                   const filter = filters[filterId];
                   return (

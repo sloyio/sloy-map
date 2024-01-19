@@ -138,6 +138,11 @@ export const state = createAppState([
   createLayer(
     {
       title: "Почтовые отделения",
+      description: "Описание",
+      link: {
+        href: "http://localhost:6007/",
+        label: "Ссылка",
+      },
       defaultZoom: 10,
       filters: [],
       visualisationLayers: [
@@ -149,7 +154,6 @@ export const state = createAppState([
           paint: {
             "circle-color": "#f18f00",
             "circle-stroke-width": 1,
-            // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
             "circle-radius": [
               "interpolate",
               ["linear"],
@@ -514,7 +518,7 @@ export const state = createAppState([
   ),
   createLayer(
     {
-      title: "Озера и Водохранилища",
+      title: "Озера и водохранилища",
       defaultZoom: 8,
       filters: [],
       visualisationLayers: [
@@ -1105,7 +1109,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Лесные массивы",
@@ -1209,7 +1212,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Минеральные и пресноводные источники",
@@ -1289,7 +1291,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Реки (5 км и более)",

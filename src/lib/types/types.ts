@@ -97,6 +97,11 @@ export interface ILayer {
   filters: IFilter["id"][];
   visualisationLayers: IVisualisationLayer["id"][];
   defaultZoom?: number;
+  description?: string;
+  link?: {
+    label?: string;
+    href?: string;
+  };
 }
 
 export interface IApp {
