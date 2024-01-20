@@ -2,6 +2,8 @@ import { createAppState } from "@/helpers/createAppState";
 import { createLayer } from "@/helpers/createLayer";
 import { createSources } from "@/helpers/createSources";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
+import locales from "./armenia.locales.json";
+import { setTranslations } from "@/helpers/extractTranslations";
 
 const OSM_BUILDINGS = createSources([
   {
@@ -67,14 +69,20 @@ const OSM_BUILDINGS = createSources([
         title: "Возраст здания",
         deps: "start_date",
       },
+      {
+        id: "building:age",
+        title: "Возраст здания",
+      },
     ],
   },
 ]);
 
-export const state = createAppState([
+const LOCALE = "ru-RU";
+
+const defaultState = createAppState([
   {
     mapState: {
-      locale: "ru-RU",
+      locale: LOCALE,
       initialViewState: {
         latitude: 40.18001,
         longitude: 44.52656,
@@ -1333,3 +1341,5 @@ export const state = createAppState([
     ],
   ),
 ]);
+
+export const state = setTranslations(defaultState, LOCALE, locales);

@@ -19,7 +19,6 @@ export default {
     layout: "fullscreen",
   },
 };
-
 function AppMap() {
   return (
     <ThemeProvider theme={sloyTheme}>
