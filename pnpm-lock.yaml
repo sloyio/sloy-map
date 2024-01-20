@@ -32,6 +32,9 @@ dependencies:
   mapbox-gl:
     specifier: npm:empty-npm-package@1.0.0
     version: /empty-npm-package@1.0.0
+  maplibre-contour:
+    specifier: ^0.0.6
+    version: 0.0.6
   maplibre-gl:
     specifier: ^3.6.2
     version: 3.6.2
@@ -8672,6 +8675,10 @@ packages:
   /map-or-similar@1.5.0:
     resolution: {integrity: sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==}
     dev: true
+
+  /maplibre-contour@0.0.6:
+    resolution: {integrity: sha512-D45+eXYTfD8D6s1W+92P3lFLgcmXZtoIGePmYNUOeNB0oFa/77Bc1jyfdmqF8LOT7g35dIjZoM9KPK3QOzuo5Q==}
+    dev: false
 
   /maplibre-gl@3.6.2:
     resolution: {integrity: sha512-krg2KFIdOpLPngONDhP6ixCoWl5kbdMINP0moMSJFVX7wX1Clm2M9hlNKXS8vBGlVWwR5R3ZfI6IPrYz7c+aCQ==}
