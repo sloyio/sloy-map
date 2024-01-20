@@ -2,6 +2,8 @@ import { createAppState } from "@/helpers/createAppState";
 import { createLayer } from "@/helpers/createLayer";
 import { createSources } from "@/helpers/createSources";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
+import locales from "./armenia.locales.json";
+import { setTranslations } from "@/helpers/extractTranslations";
 
 const OSM_BUILDINGS = createSources([
   {
@@ -67,14 +69,20 @@ const OSM_BUILDINGS = createSources([
         title: "Возраст здания",
         deps: "start_date",
       },
+      {
+        id: "building:age",
+        title: "Возраст здания",
+      },
     ],
   },
 ]);
 
-export const state = createAppState([
+const LOCALE = "ru-RU";
+
+const defaultState = createAppState([
   {
     mapState: {
-      locale: "ru-RU",
+      locale: LOCALE,
       initialViewState: {
         latitude: 40.18001,
         longitude: 44.52656,
@@ -138,6 +146,11 @@ export const state = createAppState([
   createLayer(
     {
       title: "Почтовые отделения",
+      description: "Описание",
+      link: {
+        href: "http://localhost:6007/",
+        label: "Ссылка",
+      },
       defaultZoom: 10,
       filters: [],
       visualisationLayers: [
@@ -149,7 +162,6 @@ export const state = createAppState([
           paint: {
             "circle-color": "#f18f00",
             "circle-stroke-width": 1,
-            // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
             "circle-radius": [
               "interpolate",
               ["linear"],
@@ -514,7 +526,7 @@ export const state = createAppState([
   ),
   createLayer(
     {
-      title: "Озера и Водохранилища",
+      title: "Озера и водохранилища",
       defaultZoom: 8,
       filters: [],
       visualisationLayers: [
@@ -1105,7 +1117,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Лесные массивы",
@@ -1209,7 +1220,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Минеральные и пресноводные источники",
@@ -1289,7 +1299,6 @@ export const state = createAppState([
       },
     ],
   ),
-
   createLayer(
     {
       title: "Реки (5 км и более)",
@@ -1332,3 +1341,5 @@ export const state = createAppState([
     ],
   ),
 ]);
+
+export const state = setTranslations(defaultState, LOCALE, locales);

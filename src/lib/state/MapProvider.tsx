@@ -7,7 +7,7 @@ export interface IMapContext {
   sourceIdValue: string | null;
   openPopup: (p: string, t: string) => void;
   closePopup: VoidFunction;
-  locale: string;
+  locale: Intl.Locale;
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
 }
@@ -17,7 +17,7 @@ export const MapContext = createContext<IMapContext>({
   sourceIdValue: null,
   openPopup: () => {},
   closePopup: () => {},
-  locale: "en-EN",
+  locale: new Intl.Locale("en-EN"),
   overrideCard: (props) => props?.cardProps,
   overrideLayers: () => null,
 });
@@ -43,7 +43,7 @@ export function MapContextProvider({
       sourceIdValue,
       openPopup,
       closePopup,
-      locale,
+      locale: new Intl.Locale(locale),
       overrideCard,
       overrideLayers,
     }),
