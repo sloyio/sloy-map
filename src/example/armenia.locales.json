@@ -1,4 +1,19 @@
 {
+  "Описание": {
+    "am": "Նկարագրություն",
+    "ru": "Описание",
+    "en": "Description"
+  },
+  "Ссылка": {
+    "am": "Հղում",
+    "ru": "Ссылка",
+    "en": "Link"
+  },
+  "Источник": {
+    "am": "Աղբյուր",
+    "ru": "Источник",
+    "en": "Source"
+  },
   "Этажность домов": {
     "am": "Տների հարկայնությունը",
     "ru": "Этажность домов",
@@ -14,25 +29,37 @@
     "ru": "Почтовые отделения",
     "en": "Post offices"
   },
-  "Ссылка": {
-    "am": "Հղում",
-    "ru": "Ссылка",
-    "en": "Link"
+  "Список филиалов Армянской почты (Haypost.am).": {
+    "ru": "Список филиалов Армянской почты (Haypost.am).",
+    "en": "List of Armenian post (Haypost.am) branches."
   },
-  "Описание": {
-    "am": "Նկարագրություն",
-    "ru": "Описание",
-    "en": "Description"
+  "Радиационный баланс · ккал/см²": {
+    "am": "Ճառագայթային հաշվեկշիռ · kcal/cm²",
+    "ru": "Радиационный баланс · ккал/см²",
+    "en": "Radiation balance · kcal/cm²"
   },
-  "Радиационный баланс": {
-    "am": "Ճառագայթային հաշվեկշիռ",
-    "ru": "Радиационный баланс",
-    "en": "Radiation balance"
+  "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.": {
+    "ru": "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
+    "am": "Հայաստանի շենքերի հարկայնությունը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
+    "en": "The number of floors of buildings in Armenia, the data on which is available in Openstreetmap."
   },
-  "Сейсмические зоны": {
-    "am": "Սեյսմիկ գոտիներ",
-    "ru": "Сейсмические зоны",
-    "en": "Seismic zones"
+  "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.": {
+    "ru": "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
+    "am": "Հայաստանի շենքերի տարիքը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
+    "en": "The age of buildings in Armenia, data about which is available in OpenStreetMaps."
+  },
+  "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.": {
+    "ru": "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
+    "en": "This layer shows radiation balance in Armenia. Radiation balance of underlying terrain calculated by equation: R=(Q+q)(1-Ao)-E, where R — radiation balance value; Q and q — direct and diffused radiation; Ao — underlying terrain albedo; E — effective-terrestrial radiation."
+  },
+  "Сейсмическое зонирование": {
+    "am": "Սեյսմիկ գոտիավորում",
+    "ru": "Сейсмическое зонирование",
+    "en": "Seismic Zonation"
+  },
+  "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.": {
+    "ru": "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
+    "en": "This layer shows the seismic zones in Armenia. The Seismic Zonation Map of the Territory of the Republic of Armenia at the scale of 1:500,000 was prepared by the Consortium of AIR Worldwide Corporation (USA), GEM Foundation (Italy) and GEORISK Scientific Research CJSC (Armenia) under the Project # 7179350 “Probabilistic Seismic Hazard Assessment for the Republic of Armenia” supported by the World Bank. The area of the RA is divided into three zones in the ascending intensity order (I, II and III ) with expected PGA values expressed in fractions of g (gravity) 0.3g, 0.4g, and 0.5g, respectively."
   },
   "Типы растительности": {
     "am": "Բուսականության տեսակները",

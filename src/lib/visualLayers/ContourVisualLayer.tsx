@@ -1,6 +1,7 @@
 import maplibregl from "maplibre-gl";
 import mlcontour from "maplibre-contour";
 import { Layer, Source } from "react-map-gl";
+import { ReactNode } from "react";
 
 const demSource = new mlcontour.DemSource({
   url: "https://elevation-tiles-prod.s3.amazonaws.com/terrarium/{z}/{x}/{y}.png",
@@ -110,12 +111,13 @@ export const terrainProps = {
   exaggeration: 1,
 };
 
-export function ReactContour() {
+export function TerranMap({ children }: { children?: ReactNode }) {
   return (
     <>
       {sources.map((s) => (
         <Source key={s.id} {...s} />
       ))}
+      {children}
       {layers.map((l) => (
         <Layer key={l.id} {...l} />
       ))}

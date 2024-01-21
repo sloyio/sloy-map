@@ -96,6 +96,8 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Этажность домов",
+      description:
+        "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
       defaultZoom: 14,
       filters: [
         {
@@ -121,6 +123,8 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Возраст домов",
+      description:
+        "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
       defaultZoom: 14,
       filters: [
         {
@@ -146,10 +150,10 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Почтовые отделения",
-      description: "Описание",
+      description: "Список филиалов Армянской почты (Haypost.am).",
       link: {
-        href: "http://localhost:6007/",
-        label: "Ссылка",
+        href: "https://data.opendata.am/dataset/armenian-post-branches",
+        label: "Источник",
       },
       defaultZoom: 10,
       filters: [],
@@ -205,7 +209,13 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Радиационный баланс",
+      title: "Радиационный баланс · ккал/см²",
+      description:
+        "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-477",
+        label: "Источник",
+      },
       defaultZoom: 8,
       filters: [
         {
@@ -268,7 +278,13 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Сейсмические зоны",
+      title: "Сейсмическое зонирование",
+      description:
+        "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-991",
+        label: "Источник",
+      },
       defaultZoom: 8,
       filters: [
         {

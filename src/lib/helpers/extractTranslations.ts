@@ -48,13 +48,20 @@ export function extractTranslations(
 }
 
 export function t(
-  key: string | undefined = "",
+  key: string | undefined,
   options: {
     lang: string;
     translations: Record<string, Record<string, string>>;
   },
 ): string {
-  return getProperty(options.translations, `${key}.${options.lang}`) || key;
+  if (!key) return "";
+
+  return (
+    getProperty(
+      options.translations,
+      `${key.replaceAll(".", "\\.")}.${options.lang}`,
+    ) || key
+  );
 }
 
 export function setTranslations(
