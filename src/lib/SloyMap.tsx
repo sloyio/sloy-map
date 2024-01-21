@@ -15,6 +15,7 @@ import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { setAppLoaded } from "./state/slice";
 
 import "maplibre-gl/dist/maplibre-gl.css";
+import { ReactContour, terrainProps } from "./visualLayers/ContourVisualLayer";
 
 function MapLayers() {
   const layers = useSelector(layersSelector);
@@ -77,6 +78,7 @@ export function SloyMap({
           }}
           minZoom={minZoom}
           maxZoom={maxZoom}
+          maxPitch={85}
           // hash
           // @ts-ignore
           mapLib={maplibregl}
@@ -84,8 +86,10 @@ export function SloyMap({
           reuseMaps
           onLoad={() => dispatch(setAppLoaded())}
           style={{ width: "100vw", height: "100vh", color: "black" }}
+          terrain={terrainProps}
           {...mapProps}
         >
+          <ReactContour />
           {isAppLoaded && <MapLayers />}
           {children}
         </MapGl>

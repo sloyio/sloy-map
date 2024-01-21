@@ -86,8 +86,8 @@ const defaultState = createAppState([
       initialViewState: {
         latitude: 40.18001,
         longitude: 44.52656,
-        zoom: 14,
-        pitch: 0,
+        zoom: 15,
+        pitch: 80,
       },
       mapStyle: "/sloy-dark-map-style.json",
     },
