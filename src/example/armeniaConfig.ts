@@ -508,6 +508,7 @@ const defaultState = createAppState([
           type: "string",
           filterVisualisationLayers: ["armenianWindResourcesLayer"],
           source: "armenianWindResourcesLayerSource",
+          sortType: "default",
         },
       ],
       visualisationLayers: [
@@ -857,28 +858,28 @@ const defaultState = createAppState([
               "-1": {
                 color: "#fdccb8",
               },
-              1: {
+              "1": {
                 color: "#fcaf93",
               },
-              3: {
+              "3": {
                 color: "#fc8f6f",
               },
-              5: {
+              "5": {
                 color: "#fc7050",
               },
-              7: {
+              "7": {
                 color: "#f44d37",
               },
-              9: {
+              "9": {
                 color: "#e22d26",
               },
-              11: {
+              "11": {
                 color: "#c5161b",
               },
-              13: {
+              "13": {
                 color: "#a50f15",
               },
-              15: {
+              "15": {
                 color: "#67000d",
               },
             },
@@ -1161,6 +1162,10 @@ const defaultState = createAppState([
                     "Arid continental, with dry warm summersand moderate cold winters",
                   color: "#d7191c",
                 },
+              "Moderate, warm arid summers and moderate cold winters": {
+                title: "Moderate, warm arid summers and moderate cold winters",
+                color: "#ffffff", // TODO, check in legend (source)
+              },
               "Arid subtropical, with hot summers and calm winters": {
                 title: "Arid subtropical, with hot summers and calm winters",
                 color: "#e75437",

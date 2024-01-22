@@ -184,6 +184,11 @@
     "ru": "Умеренное, относительно влажное в течение всех сезонов",
     "en": "Moderate, relativly humid during all seasons"
   },
+  "Moderate, warm arid summers and moderate cold winters": {
+    "am": "Չափավոր, տաք չոր ամառներ և չափավոր ցուրտ ձմեռներ",
+    "ru": "Умеренное, теплое засушливое лето и умеренно холодная зима",
+    "en": "Moderate, warm arid summers and moderate cold winters"
+  },
   "Moderate, with short cool summers and cold winters": {
     "am": "Չափավոր, կարճ, զով ամառներով և ցուրտ ձմեռներով",
     "ru": "Умеренное, с коротким прохладным летом и холодной зимой",

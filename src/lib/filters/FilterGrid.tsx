@@ -48,9 +48,18 @@ export function FilterGrid({
   const sortedItems = useMemo(() => {
     switch (sortType) {
       case "alphabetical":
-        return items.sort((a, b) =>
-          String(a.title || a.type).localeCompare(String(b.title || b.type)),
-        );
+        return items.sort((a, b) => {
+          const valueA = String(a.title || a.type);
+          const valueB = String(b.title || b.type);
+
+          if (!isNaN(parseInt(valueA)) && !isNaN(parseInt(valueB))) {
+            return parseInt(valueA) - parseInt(valueB);
+          }
+
+          return String(a.title || a.type).localeCompare(
+            String(b.title || b.type),
+          );
+        });
       case "count":
         return items.sort((a, b) => (b.count || 0) - (a.count || 0));
       case "default":
@@ -65,7 +74,7 @@ export function FilterGrid({
 
   return (
     <ListGrid>
-      {items.map(({ title, type, count, description, color }) => {
+      {sortedItems.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
         }
