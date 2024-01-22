@@ -96,6 +96,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Этажность домов",
+      subTitle: "20",
       description:
         "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
       defaultZoom: 14,
@@ -123,6 +124,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Возраст домов",
+      subTitle: "21129",
       description:
         "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
       defaultZoom: 14,

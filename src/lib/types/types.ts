@@ -98,6 +98,7 @@ export interface ILayer {
   title: string;
   filters: IFilter["id"][];
   visualisationLayers: IVisualisationLayer["id"][];
+  subTitle?: string;
   defaultZoom?: number;
   description?: string;
   link?: {

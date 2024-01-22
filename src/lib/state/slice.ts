@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getFilterTypeFromHash } from "@/helpers/hash";
 import { State } from "@/state";
-import { IApp } from "@/types";
+import { IApp, ILayer } from "@/types";
+import deepmerge from "deepmerge";
 
 export interface SetFilterPayload {
   activeLayer: string | null;
@@ -56,6 +57,21 @@ const sloySlice = createSlice({
       const { activeFilterParams } = action.payload;
       state.activeFilterParams = activeFilterParams;
     },
+    updateLayer(
+      state,
+      action: PayloadAction<{
+        layerId: string;
+        layer: Partial<ILayer>;
+      }>,
+    ) {
+      const { layerId, layer } = action.payload;
+      if (state.config.layers[layerId]) {
+        state.config.layers[layerId] = deepmerge<ILayer>(
+          state.config.layers[layerId],
+          layer,
+        );
+      }
+    },
     updateFilterParams(
       state,
       action: PayloadAction<{
@@ -91,6 +107,7 @@ export const {
   setFilter,
   setFilterParams,
   updateFilterParams,
+  updateLayer,
 } = sloySlice.actions;
 
 export const sloyReducer = sloySlice.reducer;
