@@ -39,6 +39,11 @@
     "ru": "Засушливый континентальный, с жарким летом и холодной зимой",
     "en": "Arid, continental, with hot summers and cold winters"
   },
+  "Радиационный баланс, ккал/см²": {
+    "am": "Ճառագայթային հաշվեկշիռ, kcal/cm²",
+    "ru": "Радиационный баланс, ккал/см²",
+    "en": "Radiation balance, kcal/cm²"
+  },
   "Beech, oak and hornbeam forests": {
     "am": "Հաճարենու, կաղնու և բոխու անտառներ",
     "ru": "Буковые, дубовые и грабовые леса",
@@ -294,10 +299,9 @@
     "ru": "Город Ереван",
     "en": "Yerevan city"
   },
-  "Ветровые ресурсы": {
-    "am": "Քամու ռեսուրսներ",
-    "ru": "Ветровые ресурсы",
-    "en": "Wind resources"
+  "В данном слое показаны общие типы растительности в Армении.": {
+    "ru": "В данном слое показаны общие типы растительности в Армении.",
+    "en": "This layer shows the general types of vegetation in Armenia."
   },
   "Возраст домов": {
     "am": "Տների տարիքը",
@@ -324,6 +328,76 @@
     "ru": "Единицы измерения",
     "en": "Units of measurement"
   },
+  "Альпийские медоносы и плотные дерновые формации": {
+    "ru": "Альпийские медоносы и плотные дерновые формации",
+    "en": "Alpine medows and dense turf formations"
+  },
+  "Буковые, дубовые и грабовые леса": {
+    "ru": "Буковые, дубовые и грабовые леса",
+    "en": "Beech, oak and hornbeam forests"
+  },
+  "Злаково-разнотравная степь с трагакантом": {
+    "ru": "Злаково-разнотравная степь с трагакантом",
+    "en": "Cereal and motley grass steppe with tragacanth"
+  },
+  "Хвойные и лиственные редкие деревья": {
+    "ru": "Хвойные и лиственные редкие деревья",
+    "en": "Coniferous and deciduous sparse trees"
+  },
+  "Ветровые ресурсы, м/сек": {
+    "am": "Քամու ռեսուրսներ, m/sec",
+    "ru": "Ветровые ресурсы, м/сек",
+    "en": "Wind resources, m/sec"
+  },
+  "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.": {
+    "ru": "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.",
+    "en": "This layer shows the annual average wind resource potential for Armenia at a 50 meter height."
+  },
+  "Озёра и водохранилища": {
+    "am": "Լճեր և ջրամբարներ",
+    "ru": "Озёра и водохранилища",
+    "en": "Lakes and reservoirs"
+  },
+  "Слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.": {
+    "ru": "Слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
+    "en": "The layer is map of lakes and reservoirs in Armenia, coded using ERICA (European Rivers and Catchment) coding system, which was designed for European Environment Agency."
+  },
+  "Оползни": {
+    "am": "Սողանքներ",
+    "ru": "Оползни",
+    "en": "Landslides"
+  },
+  "Этот слой показывает расположение и форму оползней на территории Армении.": {
+    "ru": "Этот слой показывает расположение и форму оползней на территории Армении.",
+    "en": "This layer shows the location and shape of landslides in the territory of Armenia."
+  },
+  "Среднегодовой уровень солнечной радиации, ккал/см²": {
+    "am": "Արեգակնային ճառագայթման տարեկան միջին մակարդակը, kcal/cm²",
+    "ru": "Среднегодовой уровень солнечной радиации, ккал/см²",
+    "en": "Average annual level of solar radiation, kcal/cm²"
+  },
+  "Данный слой показывает среднегодовой уровень солнечной радиации в Армении. Эта цифровая карта была подготовлена в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие географической информационной системы Армении для проектов возобновляемой энергетики».": {
+    "ru": "Данный слой показывает среднегодовой уровень солнечной радиации в Армении. Эта цифровая карта была подготовлена в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие географической информационной системы Армении для проектов возобновляемой энергетики».",
+    "en": "This layer shows average annual solar radiation level in Armenia. This digital map was prepared in the frame of Global Environment Facility (GEF) and Armenian Renewable Resources and Energy Efficiency Fund Project “Development Of Geographic Information System of Armenia for Renewable Energy Projects”."
+  },
+  "Среднегодовой уровень осадков, мм/год": {
+    "am": "Տեղումների տարեկան միջին մակարդակը, mm/year",
+    "ru": "Среднегодовой уровень осадков, мм/год",
+    "en": "Average annual precipitation, mm/year"
+  },
+  "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.": {
+    "ru": "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.",
+    "en": "This layer shows average annual precipitation level in Armenia. This GIS data has been obtained based on the analysis of direct observations of more than 180 monitoring points. Data of meteorological stations and observation points with short series of measurement had been reduced using cartographic method (for ultra-short series) and ordinary method of ratio."
+  },
+  "Среднегодовая температура, °C": {
+    "am": "Տարեկան միջին ջերմաստիճանը, °C",
+    "ru": "Среднегодовая температура, °C",
+    "en": "Average annual temperature, °C"
+  },
+  "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».": {
+    "ru": "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».",
+    "en": "This is a map shows average annual temperature (in degree centigrade) in Armenia. It is based on observations of more than 90 meteorological stations had ever operated in Armenia since 1885. Data of meteorological stations with short series of observations had been reduced to an 80-year period using the method of difference. This GIS layer was prepared in the frame of Global Environment Facility (GEF) and Armenian Renewable Resources and Energy Efficiency Fund Project “Development of Geographic Information System of Armenia for Renewable Energy Projects”."
+  },
   "Землепользование": {
     "am": "Հողօգտագործում",
     "ru": "Землепользование",
@@ -339,6 +413,27 @@
     "ru": "Зона",
     "en": "Zone"
   },
+  "Этот слой показывает землепользование в Армении. Эта карта была подготовлена в рамках финансируемой ЕС «Программы предупреждения, готовности и реагирования на природные и техногенные катастрофы в Восточном регионе ЕПД (PPRDEast)».": {
+    "ru": "Этот слой показывает землепользование в Армении. Эта карта была подготовлена в рамках финансируемой ЕС «Программы предупреждения, готовности и реагирования на природные и техногенные катастрофы в Восточном регионе ЕПД (PPRDEast)».",
+    "en": "This layer shows the land use in Armenia. This map was prepared in the frame of EU funded “Program of Prevention, Preparedness and Responcse to natural and man-made Disasters in the ENPI East Region (PPRDEast)”."
+  },
+  "Этот слой показывает типы почв, встречающиеся в Армении. Эти данные были созданы для проекта «Поддержка устойчивого горного развития на Кавказе (Sustainable Caucasus)», финансируемого SCOPES.": {
+    "ru": "Этот слой показывает типы почв, встречающиеся в Армении. Эти данные были созданы для проекта «Поддержка устойчивого горного развития на Кавказе (Sustainable Caucasus)», финансируемого SCOPES.",
+    "en": "This layers shows the types of soil found in Armenia. This vector data was produced for SCOPES funded “Supporting Sustainable Mountain Development in the Caucasus (Sustainable Caucasus)” project."
+  },
+  "Этот слой представляет собой карту климатических зон Армении, подготовленную в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие геоинформационной системы Армении для проектов возобновляемой энергетики».": {
+    "ru": "Этот слой представляет собой карту климатических зон Армении, подготовленную в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие геоинформационной системы Армении для проектов возобновляемой энергетики».",
+    "en": "This layer is a map of climatic zones of Armenia, prepared in the frame of Global Environment Facility (GEF) and Armenian Renewable Resources and Energy Efficiency Fund Project “Development of Geographic Information System of Armenia for Renewable Energy Projects”."
+  },
+  "Лесные массивы": {
+    "am": "Անտառային տարածքներ",
+    "ru": "Лесные массивы",
+    "en": "Woodlands"
+  },
+  "Этот слой показывает распределение лесных территорий в Армении.": {
+    "ru": "Этот слой показывает распределение лесных территорий в Армении.",
+    "en": "This layer shows distribution of forested territories in Armenia."
+  },
   "Зоны подземных вод": {
     "am": "Ստորերկրյա ջրերի գոտիներ",
     "ru": "Зоны подземных вод",
@@ -349,10 +444,27 @@
     "ru": "Источник",
     "en": "Source"
   },
+  "Этот слой показывает зоны подземных вод в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.": {
+    "ru": "Этот слой показывает зоны подземных вод в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
+    "en": "This layer shows zones of groundwater in Armenia. It has been digitized from Hydrogeological map originally downloaded from Water Resources Management Agency of the Ministry of Nature Protection of the Republic of Armenia."
+  },
+  "Минеральные и пресноводные источники, л/сек": {
+    "am": "Հանքային և քաղցրահամ աղբյուրներ, l/sec",
+    "ru": "Минеральные и пресноводные источники, л/сек",
+    "en": "Mineral and freshwater springs, l/sec"
+  },
+  "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.": {
+    "ru": "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
+    "en": "This layer shows main groups of mineral and freshwater springs in Armenia. It has been digitized from Hydrogeological map originally downloaded from Water Resources Management Agency of the Ministry of Nature Protection of the Republic of Armenia."
+  },
   "Климатические зоны": {
     "am": "Կլիմայական գոտիներ",
     "ru": "Климатические зоны",
     "en": "Climatic zones"
+  },
+  "В этом слое представлены все реки Армении длиной 5 км и более. Это полностью связанная и топологически корректная система рек Армении, закодированная с помощью системы кодирования ERICA (European Rivers and Catchment), разработанной для Европейского агентства по окружающей среде.": {
+    "ru": "В этом слое представлены все реки Армении длиной 5 км и более. Это полностью связанная и топологически корректная система рек Армении, закодированная с помощью системы кодирования ERICA (European Rivers and Catchment), разработанной для Европейского агентства по окружающей среде.",
+    "en": "This layer shows all rivers of Armenia 5 km long or longer. It is fully connected and topologically correct system of Armenian rivers, coded using ERICA (European Rivers and Catchment) coding system, which was designed for European Environment Agency."
   },
   "Когда построили": {
     "am": "Երբ կառուցվեց",
@@ -363,11 +475,6 @@
     "am": "Հարկերի քանակը",
     "ru": "Количество этажей",
     "en": "Number of floors"
-  },
-  "Лесные массивы": {
-    "am": "Անտառային տարածքներ",
-    "ru": "Лесные массивы",
-    "en": "Woodlands"
   },
   "Минеральные и пресноводные источники": {
     "am": "Հանքային և քաղցրահամ աղբյուրներ",
@@ -383,11 +490,6 @@
     "am": "Լճեր և ջրամբարներ",
     "ru": "Озера и водохранилища",
     "en": "Lakes and reservoirs"
-  },
-  "Оползни": {
-    "am": "Սողանքներ",
-    "ru": "Оползни",
-    "en": "Landslides"
   },
   "Площадь, км²": {
     "am": "Տարածք, կմ2",
@@ -514,7 +616,6 @@
     "ru": "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
     "en": "This layer shows the seismic zones in Armenia. The Seismic Zonation Map of the Territory of the Republic of Armenia at the scale of 1:500,000 was prepared by the Consortium of AIR Worldwide Corporation (USA), GEM Foundation (Italy) and GEORISK Scientific Research CJSC (Armenia) under the Project # 7179350 “Probabilistic Seismic Hazard Assessment for the Republic of Armenia” supported by the World Bank. The area of the RA is divided into three zones in the ascending intensity order (I, II and III ) with expected PGA values expressed in fractions of g (gravity) 0.3g, 0.4g, and 0.5g, respectively."
   },
-  "undefined": {},
   "Описание": {
     "am": "Նկարագրություն",
     "ru": "Описание",
