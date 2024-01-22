@@ -5,93 +5,110 @@ import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 import locales from "./armenia.locales.json";
 import { setTranslations } from "@/helpers/extractTranslations";
 
-const OSM_BUILDINGS = createSources([
-  {
-    id: "buildingTile",
-    copyright: [],
-    type: "tile",
-    card: {
-      title: ["addr:street", "addr:housenumber"],
-      blocks: [
-        { type: "value", id: "building:management" },
-        { type: "value", id: "building:health" },
-        { type: "value", id: "building:series" },
-        { type: "value", id: "building:levels" },
-        { type: "divider" },
-        { type: "value", id: "start_date" },
-        { type: "age", id: "building:age", deps: "start_date" },
-      ],
-    },
-    properties: [
-      {
-        title: "Когда построили",
-        id: "start_date",
-        values: [
-          { from: 1723, to: 1860, color: "#ff7461", value: 0 },
-          { from: 1860, to: 1917, color: "#ffA34e", value: 1 },
-          { from: 1917, to: 1930, color: "#fee678", value: 1 },
-          { from: 1930, to: 1940, color: "#85e634", value: 1 },
-          { from: 1940, to: 1955, color: "#0f9467", value: 0 },
-          { from: 1955, to: 1991, color: "#71b3ff", value: 7 },
-          { from: 1991, to: 2010, color: "#c270ff", value: 4 },
-          { from: 2010, to: 2023, color: "#f97bcf", value: 6 },
-        ],
-      },
-      {
-        title: "Количество этажей",
-        id: "building:levels",
-        values: [
-          { from: 1, to: 3, color: "#006adb", value: 11656 },
-          { from: 3, to: 5, color: "#0084e2", value: 3172 },
-          { from: 5, to: 9, color: "#009ee1", value: 3380 },
-          { from: 9, to: 12, color: "#00b7d9", value: 1929 },
-          { from: 12, to: 16, color: "#00cfc5", value: 664 },
-          { from: 16, to: 21, color: "#00e7a3", value: 320 },
-          { from: 21, to: 25, color: "#72f674", value: 8 },
-          { from: 25, to: 31, color: "#c0fc49", value: 0 },
-          { from: 31, to: 52, color: "#ffea00", value: 0 },
-        ],
-      },
-      {
-        id: "osm:id",
-        title: "Osm ID",
-      },
-      {
-        id: "addr:street",
-        title: "Улица",
-      },
-      {
-        id: "addr:housenumber",
-        title: "Номер дома",
-      },
-      {
-        id: "age",
-        title: "Возраст здания",
-        deps: "start_date",
-      },
-      {
-        id: "building:age",
-        title: "Возраст здания",
-      },
-    ],
-  },
-]);
-
 const LOCALE = "ru-RU";
+
+const YEREVAN_VIEW = {
+  center: [44.52656, 40.18001],
+  zoom: 15,
+  pitch: 0,
+  bearing: 0, // TODO: set Ararat view for terrain
+};
+
+const COUNTRY_VIEW = {
+  center: [44.5106, 40.3],
+  zoom: 8,
+  pitch: 0,
+  bearing: 0,
+};
+
+const MAP_STATE = {
+  locale: LOCALE,
+  initialViewState: {
+    ...YEREVAN_VIEW,
+    longitude: YEREVAN_VIEW.center[0],
+    latitude: YEREVAN_VIEW.center[1],
+  },
+  mapStyle: "/sloy-dark-map-style.json",
+  minZoom: MIN_ZOOM,
+  maxZoom: MAX_ZOOM,
+  maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
+};
 
 const defaultState = createAppState([
   {
-    mapState: {
-      locale: LOCALE,
-      initialViewState: {
-        latitude: 40.18001,
-        longitude: 44.52656,
-        zoom: 15,
-        pitch: 80,
+    mapState: MAP_STATE,
+    // OSM:
+    ...createSources([
+      {
+        id: "buildingTile",
+        copyright: [],
+        type: "tile",
+        card: {
+          title: ["addr:street", "addr:housenumber"],
+          blocks: [
+            { type: "value", id: "building:management" },
+            { type: "value", id: "building:health" },
+            { type: "value", id: "building:series" },
+            { type: "value", id: "building:levels" },
+            { type: "divider" },
+            { type: "value", id: "start_date" },
+            { type: "age", id: "building:age", deps: "start_date" },
+          ],
+        },
+        properties: [
+          {
+            title: "Когда построили",
+            id: "start_date",
+            values: [
+              { from: 1723, to: 1860, color: "#ff7461", value: 0 },
+              { from: 1860, to: 1917, color: "#ffA34e", value: 1 },
+              { from: 1917, to: 1930, color: "#fee678", value: 1 },
+              { from: 1930, to: 1940, color: "#85e634", value: 1 },
+              { from: 1940, to: 1955, color: "#0f9467", value: 0 },
+              { from: 1955, to: 1991, color: "#71b3ff", value: 7 },
+              { from: 1991, to: 2010, color: "#c270ff", value: 4 },
+              { from: 2010, to: 2023, color: "#f97bcf", value: 6 },
+            ],
+          },
+          {
+            title: "Количество этажей",
+            id: "building:levels",
+            values: [
+              { from: 1, to: 3, color: "#006adb", value: 11656 },
+              { from: 3, to: 5, color: "#0084e2", value: 3172 },
+              { from: 5, to: 9, color: "#009ee1", value: 3380 },
+              { from: 9, to: 12, color: "#00b7d9", value: 1929 },
+              { from: 12, to: 16, color: "#00cfc5", value: 664 },
+              { from: 16, to: 21, color: "#00e7a3", value: 320 },
+              { from: 21, to: 25, color: "#72f674", value: 8 },
+              { from: 25, to: 31, color: "#c0fc49", value: 0 },
+              { from: 31, to: 52, color: "#ffea00", value: 0 },
+            ],
+          },
+          {
+            id: "osm:id",
+            title: "Osm ID",
+          },
+          {
+            id: "addr:street",
+            title: "Улица",
+          },
+          {
+            id: "addr:housenumber",
+            title: "Номер дома",
+          },
+          {
+            id: "age",
+            title: "Возраст здания",
+            deps: "start_date",
+          },
+          {
+            id: "building:age",
+            title: "Возраст здания",
+          },
+        ],
       },
-      mapStyle: "/sloy-dark-map-style.json",
-    },
-    ...OSM_BUILDINGS,
+    ]),
   },
   createLayer(
     {
@@ -99,7 +116,7 @@ const defaultState = createAppState([
       subTitle: "20",
       description:
         "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
-      defaultZoom: 14,
+      initialViewState: YEREVAN_VIEW,
       filters: [
         {
           type: "range",
@@ -127,7 +144,7 @@ const defaultState = createAppState([
       subTitle: "21129",
       description:
         "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
-      defaultZoom: 14,
+      initialViewState: YEREVAN_VIEW,
       filters: [
         {
           type: "range",
@@ -157,7 +174,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/armenian-post-branches",
         label: "Источник",
       },
-      defaultZoom: 10,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -218,7 +235,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/sustc-477",
         label: "Источник",
       },
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "VALUE",
@@ -287,7 +304,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/sustc-991",
         label: "Источник",
       },
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Zone",
@@ -360,7 +377,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Типы растительности",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Veget_zone",
@@ -484,7 +501,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Ветровые ресурсы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Wind_Speed",
@@ -561,7 +578,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Озера и водохранилища",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -594,7 +611,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Оползни",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -628,7 +645,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовой уровень солнечной радиации",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Sun_radiat",
@@ -712,7 +729,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовой уровень осадков",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Precipitat",
@@ -790,7 +807,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовая температура",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Temperatur",
@@ -874,7 +891,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Землепользование",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Landuse",
@@ -957,7 +974,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Типы почвы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descriptio",
@@ -1093,7 +1110,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Климатические зоны",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descriptio",
@@ -1187,7 +1204,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Лесные массивы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -1220,7 +1237,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Зоны подземных вод",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descript",
@@ -1297,7 +1314,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Минеральные и пресноводные источники",
-      defaultZoom: 10,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Flow_l_sec",
@@ -1376,7 +1393,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Реки (5 км и более)",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {

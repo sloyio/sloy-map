@@ -27,6 +27,7 @@ export const initialState: State["sloy"] = {
         longitude: 0,
         zoom: 0,
         pitch: 0,
+        bearing: 0,
       },
     },
   },

@@ -23,7 +23,12 @@ function AppMap() {
   return (
     <ThemeProvider theme={sloyTheme}>
       <GlobalStyles />
-      <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />
+      <SloyMap
+        {...state.mapState}
+        minZoom={MIN_ZOOM}
+        maxZoom={MAX_ZOOM}
+        maxBounds={[40.721512, 37.51153, 49.609451, 42.222066]}
+      />
     </ThemeProvider>
   );
 }

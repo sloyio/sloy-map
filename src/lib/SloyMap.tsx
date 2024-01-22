@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
@@ -13,9 +12,10 @@ import { Copyright } from "./components/Copyright/Copyright";
 import { Sidebars } from "./components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { setAppLoaded } from "./state/slice";
+import { IMapProps } from "./types";
+// import { TerranMap, terrainProps } from "./visualLayers/ContourVisualLayer";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-// import { TerranMap, terrainProps } from "./visualLayers/ContourVisualLayer";
 
 function MapLayers() {
   const layers = useSelector(layersSelector);
@@ -31,26 +31,18 @@ function MapLayers() {
     </>
   );
 }
-interface SloyMapProps {
-  mapStyle: string;
-  minZoom?: number;
-  maxZoom?: number;
-  locale?: string;
-  initialViewState: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-    pitch: number;
-  };
+
+export interface SloyMapProps extends IMapProps {
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
-  children?: ReactNode;
+  locale?: string;
 }
 
 export function SloyMap({
   locale,
   minZoom = 11,
   maxZoom = 20,
+  maxPitch = 85,
   initialViewState,
   children,
   overrideCard,
@@ -70,24 +62,25 @@ export function SloyMap({
         <MapGl
           id="sloyMapGl"
           initialViewState={{
-            // @ts-expect-error
             zoom: 15,
-            // @ts-expect-error
             pitch: 0,
             ...initialViewState,
           }}
           minZoom={minZoom}
           maxZoom={maxZoom}
-          maxPitch={85}
+          maxPitch={maxPitch}
           // hash
-          // @ts-ignore
           mapLib={maplibregl}
           antialias
           reuseMaps
           onLoad={() => dispatch(setAppLoaded())}
-          style={{ width: "100vw", height: "100vh", color: "black" }}
           // terrain={terrainProps}
           {...mapProps}
+          style={{
+            width: "100vw",
+            height: "100vh",
+            ...mapProps.style,
+          }}
         >
           {/* <TerranMap /> */}
           {isAppLoaded && <MapLayers />}

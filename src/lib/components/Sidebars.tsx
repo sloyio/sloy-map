@@ -50,12 +50,12 @@ function SidebarFilter() {
 
       if (layers[type]) {
         const layer = layers[type];
-        if (typeof layer.defaultZoom === "number") {
+        if (layer.initialViewState) {
           const map = sloyMapGl?.getMap();
           if (map) {
             map.flyTo({
               speed: 2.5,
-              zoom: layer.defaultZoom,
+              ...layer.initialViewState,
             });
           }
         }

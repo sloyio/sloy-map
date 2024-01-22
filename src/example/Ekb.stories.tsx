@@ -37,7 +37,6 @@ const store = configureStore({
   preloadedState: {
     sloy: {
       activeLayer: null,
-      // activeLayer: "ekbHouseLevels",
       activeFilterParams: null,
       appLoaded: false,
       config: state,
