@@ -55,10 +55,13 @@ export function MapFilter({
         geojson: data,
         property: filter.property,
         valueType: getProperty(source, `properties.${filter.property}.type`),
-        sortType: filter.sortType,
       }).map((item) => ({
         type: item.type,
-        subTitle: item.count,
+        title: getProperty(
+          source,
+          `properties.${filter.property}.values.${item.type}.title`,
+        ),
+        count: item.count,
         color: getProperty(
           source,
           `properties.${filter.property}.values.${item.type}.color`,
@@ -76,6 +79,7 @@ export function MapFilter({
           items={items}
           selectedByDefault={selectedByDefault}
           onChange={onChange}
+          sortType={filter.sortType}
         />
       );
     }
@@ -83,10 +87,11 @@ export function MapFilter({
     case "boolean": {
       return (
         <FilterGrid
+          sortType={filter.sortType}
           items={[
             {
               type: filter.title,
-              subTitle: data.features?.length,
+              count: data.features?.length,
               description: filter.description,
               color: filter.color,
             },

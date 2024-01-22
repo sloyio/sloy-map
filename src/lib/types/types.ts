@@ -11,6 +11,7 @@ export type SourcePropertyProperties = Record<
   string,
   {
     color: string;
+    title?: string;
     description?: string;
   }
 >;
@@ -83,7 +84,7 @@ export interface IFilter {
   description?: string;
   color?: string;
   property: string;
-  sortType?: "default" | "count";
+  sortType?: "default" | "count" | "alphabetical";
 }
 
 export interface Copyright {

@@ -1,135 +1,353 @@
 {
-  "Описание": {
-    "am": "Նկարագրություն",
-    "ru": "Описание",
-    "en": "Description"
+  "Alluvial-meadow saline lands and alkali soils": {
+    "am": "Ալյուվիալ-մարգագետնային աղած հողեր և ալկալային հողեր",
+    "ru": "Аллювиально-луговые засоленные земли и щелочные почвы",
+    "en": "Alluvial-meadow saline lands and alkali soils"
   },
-  "Ссылка": {
-    "am": "Հղում",
-    "ru": "Ссылка",
-    "en": "Link"
+  "Alluvial-meadow soils irrigated also in the past": {
+    "am": "Ալյուվիալ-մարգագետնային հողեր, որոնք նույնպես ոռոգվում են անցյալում",
+    "ru": "Аллювиально-луговые почвы, орошаемые также в прошлом",
+    "en": "Alluvial-meadow soils irrigated also in the past"
   },
-  "Источник": {
-    "am": "Աղբյուր",
-    "ru": "Источник",
-    "en": "Source"
+  "Alpine medows and dense turf formations": {
+    "am": "Ալպյան ցածրադիր վայրեր և խիտ տորֆային կազմավորումներ",
+    "ru": "Альпийские луга и плотные дерновые образования",
+    "en": "Alpine medows and dense turf formations"
   },
-  "Этажность домов": {
-    "am": "Տների հարկայնությունը",
-    "ru": "Этажность домов",
-    "en": "Number of floors of houses"
+  "Alpine mountaine-medow turf-peat soils": {
+    "am": "Ալպյան Լեռնային տորֆ-ճահճային հողեր",
+    "ru": "Альпийские горные луга-дерново-торфяные почвы",
+    "en": "Alpine mountaine-medow turf-peat soils"
   },
-  "Возраст домов": {
-    "am": "Տների տարիքը",
-    "ru": "Возраст домов",
-    "en": "Age of houses"
+  "Arable land": {
+    "am": "Վարելահողեր",
+    "ru": "Пахотные земли",
+    "en": "Arable land"
   },
-  "Почтовые отделения": {
-    "am": "Փոստային բաժանմունքներ",
-    "ru": "Почтовые отделения",
-    "en": "Post offices"
+  "Arid continental, with dry warm summersand moderate cold winters": {
+    "am": "Չոր մայրցամաքային, տաք և չափավոր ցուրտ ձմեռներով",
+    "ru": "Засушливый континентальный климат с сухим теплым летом и умеренно холодной зимой",
+    "en": "Arid continental, with dry warm summersand moderate cold winters"
   },
-  "Список филиалов Армянской почты (Haypost.am).": {
-    "ru": "Список филиалов Армянской почты (Haypost.am).",
-    "en": "List of Armenian post (Haypost.am) branches."
+  "Arid subtropical, with hot summers and calm winters": {
+    "am": "Չոր մերձարևադարձային տարածքներ, տաք ամառներով և հանգիստ ձմեռներով",
+    "ru": "Засушливый субтропический, с жарким летом и спокойной зимой",
+    "en": "Arid subtropical, with hot summers and calm winters"
   },
-  "Радиационный баланс · ккал/см²": {
-    "am": "Ճառագայթային հաշվեկշիռ · kcal/cm²",
-    "ru": "Радиационный баланс · ккал/см²",
-    "en": "Radiation balance · kcal/cm²"
+  "Arid, continental, with hot summers and cold winters": {
+    "am": "Չոր, մայրցամաքային, տաք ամառներով և ցուրտ ձմեռներով",
+    "ru": "Засушливый континентальный, с жарким летом и холодной зимой",
+    "en": "Arid, continental, with hot summers and cold winters"
   },
-  "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.": {
-    "ru": "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
-    "am": "Հայաստանի շենքերի հարկայնությունը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
-    "en": "The number of floors of buildings in Armenia, the data on which is available in Openstreetmap."
+  "Beech, oak and hornbeam forests": {
+    "am": "Հաճարենու, կաղնու և բոխու անտառներ",
+    "ru": "Буковые, дубовые и грабовые леса",
+    "en": "Beech, oak and hornbeam forests"
   },
-  "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.": {
-    "ru": "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
-    "am": "Հայաստանի շենքերի տարիքը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
-    "en": "The age of buildings in Armenia, data about which is available in OpenStreetMaps."
+  "Boundaries with aquifers with negative pressure": {
+    "am": "Բացասական ճնշման ջրատարների սահմանները",
+    "ru": "Границы с водоносными горизонтами с отрицательным давлением",
+    "en": "Boundaries with aquifers with negative pressure"
   },
-  "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.": {
-    "ru": "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
-    "en": "This layer shows radiation balance in Armenia. Radiation balance of underlying terrain calculated by equation: R=(Q+q)(1-Ao)-E, where R — radiation balance value; Q and q — direct and diffused radiation; Ao — underlying terrain albedo; E — effective-terrestrial radiation."
+  "Boundaries with aquifers with positive pressure": {
+    "am": "Սահմանները դրական ճնշման ջրատարների հետ",
+    "ru": "Границы с водоносными горизонтами с положительным давлением",
+    "en": "Boundaries with aquifers with positive pressure"
   },
-  "Сейсмическое зонирование": {
-    "am": "Սեյսմիկ գոտիավորում",
-    "ru": "Сейсмическое зонирование",
-    "en": "Seismic Zonation"
+  "Brown mountainous-forest soils of dry firests and bushes": {
+    "am": "Շագանակագույն լեռնային անտառային հողեր չոր խարույկներից և թփերից",
+    "ru": "Бурые горно-лесные почвы сухих лесов и кустарников",
+    "en": "Brown mountainous-forest soils of dry firests and bushes"
   },
-  "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.": {
-    "ru": "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
-    "en": "This layer shows the seismic zones in Armenia. The Seismic Zonation Map of the Territory of the Republic of Armenia at the scale of 1:500,000 was prepared by the Consortium of AIR Worldwide Corporation (USA), GEM Foundation (Italy) and GEORISK Scientific Research CJSC (Armenia) under the Project # 7179350 “Probabilistic Seismic Hazard Assessment for the Republic of Armenia” supported by the World Bank. The area of the RA is divided into three zones in the ascending intensity order (I, II and III ) with expected PGA values expressed in fractions of g (gravity) 0.3g, 0.4g, and 0.5g, respectively."
+  "Brown mountainous-forest soils of moderately humid forests": {
+    "am": "Չափավոր խոնավ անտառների շագանակագույն լեռնա-անտառային հողեր",
+    "ru": "Бурые горно-лесные почвы умеренно влажных лесов",
+    "en": "Brown mountainous-forest soils of moderately humid forests"
   },
-  "Типы растительности": {
-    "am": "Բուսականության տեսակները",
-    "ru": "Типы растительности",
-    "en": "Vegetation types"
+  "Cereal and motley grass steppe with  tragacanth": {
+    "am": "Հացահատիկային տափաստան տրագականտի հետ",
+    "ru": "Злаковые и разнотравные степи с трагакантом",
+    "en": "Cereal and motley grass steppe with  tragacanth"
+  },
+  "Coniferous and deciduous sparse trees": {
+    "am": "Փշատերև և թափող հազվագյուտ ծառեր",
+    "ru": "Хвойные и лиственные редкие деревья",
+    "en": "Coniferous and deciduous sparse trees"
+  },
+  "Crops": {
+    "am": "Մշակաբույսեր",
+    "ru": "Культуры",
+    "en": "Crops"
+  },
+  "Deep faults zones with discharge of mineral water": {
+    "am": "Խորը խզվածքների գոտիներ հանքային ջրի արտանետմամբ",
+    "ru": "Зоны глубоких разломов со сбросом минеральных вод",
+    "en": "Deep faults zones with discharge of mineral water"
+  },
+  "Desalinated here and there fat mountainous black soils of humid steppe": {
+    "am": "Այստեղ և այնտեղ աղազերծված խոնավ տափաստանի յուղոտ Լեռնային սևահողերը",
+    "ru": "Местами опресненные жирные горные черноземы влажной степи",
+    "en": "Desalinated here and there fat mountainous black soils of humid steppe"
+  },
+  "Fault zones": {
+    "am": "Խզվածքի գոտիներ",
+    "ru": "Зоны разломов",
+    "en": "Fault zones"
+  },
+  "Forest, shrubland": {
+    "am": "Անտառ, թուփ",
+    "ru": "Леса, кустарники",
+    "en": "Forest, shrubland"
+  },
+  "Forests  of eastern oak": {
+    "am": "Արևելյան կաղնու անտառներ",
+    "ru": "Леса восточного дуба",
+    "en": "Forests  of eastern oak"
+  },
+  "Grassland": {
+    "am": "Արոտավայրեր",
+    "ru": "Пастбище",
+    "en": "Grassland"
+  },
+  "Grassland steppe": {
+    "am": "Մարգագետնային տափաստան",
+    "ru": "Луговая степь",
+    "en": "Grassland steppe"
+  },
+  "Gray mountainous here and there gypsiferous & saline soils": {
+    "am": "Մոխրագույն լեռներ այստեղ և այնտեղ գիպսաստվարաթղթե և աղած հողեր",
+    "ru": "Местами серые горные гипсовые и засоленные почвы",
+    "en": "Gray mountainous here and there gypsiferous & saline soils"
+  },
+  "Gypsiferous and here and there saline colored soils": {
+    "am": "Գիպսաստվարաթուղթ և այստեղ, և այնտեղ աղած գունավոր հողեր",
+    "ru": "Гипсовые и кое-где засоленные цветные почвы",
+    "en": "Gypsiferous and here and there saline colored soils"
+  },
+  "Halophilous deserts (halophytic and others)": {
+    "am": "Հալոֆիլ անապատներ (հալոֆիտ և այլն)",
+    "ru": "Галофильные пустыни (галофитные и другие)",
+    "en": "Halophilous deserts (halophytic and others)"
+  },
+  "High capcity interlava and underlava water streams": {
+    "am": "Ջրի հոսքերը Միջագետքում և բարձր գլխարկով զնդանում",
+    "ru": "Высокогорные междуречные и подземные водные потоки",
+    "en": "High capcity interlava and underlava water streams"
+  },
+  "Lake Arpilich": {
+    "am": "Արփիլիճ Լիճ",
+    "ru": "Озеро Арпилич",
+    "en": "Lake Arpilich"
+  },
+  "Lake Sevan": {
+    "am": "Սևանա Լիճ",
+    "ru": "Озеро Севан",
+    "en": "Lake Sevan"
+  },
+  "Lake Sevan's outcropped bottomlands": {
+    "am": "Սևանա լճի տնկված տարածքները",
+    "ru": "Обнаженные низменности озера Севан",
+    "en": "Lake Sevan's outcropped bottomlands"
+  },
+  "Lakes, reservoirs": {
+    "am": "Լճեր, ջրամբարներ",
+    "ru": "Озера, водохранилища",
+    "en": "Lakes, reservoirs"
+  },
+  "Lower alpine medows": {
+    "am": "Ստորին Մարգագետիններ",
+    "ru": "Низкогорные луга",
+    "en": "Lower alpine medows"
+  },
+  "Meadow saline lands and alkali soils": {
+    "am": "Մարգագետնային աղած հողեր և ալկալային հողեր",
+    "ru": "Луговые засоленные земли и щелочные почвы",
+    "en": "Meadow saline lands and alkali soils"
+  },
+  "Meadow-marshy soils": {
+    "am": "Մարգագետնային ճահճային հողեր",
+    "ru": "Лугово-болотистые почвы",
+    "en": "Meadow-marshy soils"
+  },
+  "Mixed oak and hornbeam forests": {
+    "am": "Կաղնու և բոխի խառը անտառներ",
+    "ru": "Смешанные дубовые и грабовые леса",
+    "en": "Mixed oak and hornbeam forests"
+  },
+  "Moderate, relatively dry warm summers and cold winters": {
+    "am": "Չափավոր, համեմատաբար տաք ամառներ և ցուրտ ձմեռներ",
+    "ru": "Умеренное, относительно сухое теплое лето и холодная зима",
+    "en": "Moderate, relatively dry warm summers and cold winters"
+  },
+  "Moderate, relativly humid during all seasons": {
+    "am": "Չափավոր, Հարաբերական խոնավություն բոլոր եղանակներին",
+    "ru": "Умеренное, относительно влажное в течение всех сезонов",
+    "en": "Moderate, relativly humid during all seasons"
+  },
+  "Moderate, with short cool summers and cold winters": {
+    "am": "Չափավոր, կարճ, զով ամառներով և ցուրտ ձմեռներով",
+    "ru": "Умеренное, с коротким прохладным летом и холодной зимой",
+    "en": "Moderate, with short cool summers and cold winters"
+  },
+  "Moderate, with warm summers, relatively humid calm winters": {
+    "am": "Չափավոր, տաք ամառներով, համեմատաբար խոնավ հանգիստ ձմեռներով",
+    "ru": "Умеренное, с теплым летом, относительно влажной спокойной зимой",
+    "en": "Moderate, with warm summers, relatively humid calm winters"
+  },
+  "Mountain tundra climate": {
+    "am": "Լեռնային տունդրայի կլիման",
+    "ru": "Климат горной тундры",
+    "en": "Mountain tundra climate"
+  },
+  "Mountain-fulvous soils of dry steppes": {
+    "am": "Չոր տափաստանների Լեռնային որդանման հողեր",
+    "ru": "Горно-плодородные почвы сухих степей",
+    "en": "Mountain-fulvous soils of dry steppes"
+  },
+  "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes": {
+    "am": "Լեռնային գազավորված և Բնորոշ սևահողեր ՝ չափավոր խոնավ տափաստանների թերզարգացած սևահողերով",
+    "ru": "Горные карбонатные и типичные черноземы со слабо развитыми черноземами умеренно влажных степей",
+    "en": "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes"
+  },
+  "Mountainous-forest steppe soils": {
+    "am": "Լեռնա-անտառատափաստանային հողեր",
+    "ru": "Горно-лесостепные почвы",
+    "en": "Mountainous-forest steppe soils"
+  },
+  "Non-developed soils of snow-closed zone": {
+    "am": "Ձյունածածկ փակ գոտու չմշակված հողեր",
+    "ru": "Неразвитые почвы заснеженной зоны",
+    "en": "Non-developed soils of snow-closed zone"
+  },
+  "Osm ID": {
+    "am": "Օպերացիոն համակարգի նույնացուցիչ",
+    "ru": "Osm ID",
+    "en": "Osm ID"
+  },
+  "Pastures": {
+    "am": "Արոտավայրեր",
+    "ru": "Пастбища",
+    "en": "Pastures"
+  },
+  "Psammophilous deserts": {
+    "am": "Psammophilic անապատներ",
+    "ru": "Псаммофильные пустыни",
+    "en": "Psammophilous deserts"
+  },
+  "Subalpian mountain-medow black soil-like": {
+    "am": "Ենթալպյան լեռ-Մեդոու, որը նման է սև հողի",
+    "ru": "Субальпийские горно-медовские черноземы",
+    "en": "Subalpian mountain-medow black soil-like"
+  },
+  "Subalpian mountain-medow brown soils": {
+    "am": "Subalpian Mountain-Meadow շագանակագույն հողեր",
+    "ru": "Субальпийские горно-медовские бурые почвы",
+    "en": "Subalpian mountain-medow brown soils"
+  },
+  "Tectonic faults zones with discharge of freshwater": {
+    "am": "Տեկտոնական խզվածքների գոտիներ ' քաղցրահամ ջրի արտանետմամբ",
+    "ru": "Зоны тектонических разломов со стоком пресной воды",
+    "en": "Tectonic faults zones with discharge of freshwater"
+  },
+  "Unconfined groundwater of continental salinity": {
+    "am": "Մայրցամաքային աղիության անսահմանափակ ստորերկրյա ջրեր",
+    "ru": "Неограниченные подземные воды континентальной солености",
+    "en": "Unconfined groundwater of continental salinity"
+  },
+  "Vegetation of exposed soils": {
+    "am": "Բաց հողերի բուսականություն",
+    "ru": "Растительность открытых почв",
+    "en": "Vegetation of exposed soils"
+  },
+  "Warm summers and relatively calm winters": {
+    "am": "Տաք ամառներ և համեմատաբար հանգիստ ձմեռներ",
+    "ru": "Теплое лето и относительно спокойная зима",
+    "en": "Warm summers and relatively calm winters"
+  },
+  "Water-marsh vegetation": {
+    "am": "Խոնավ բուսականություն",
+    "ru": "Водно-болотная растительность",
+    "en": "Water-marsh vegetation"
+  },
+  "Watered and irrigated also in the past cultivated gray mountainous soils": {
+    "am": "Ոռոգում և ոռոգում նաև նախկինում մշակված Գորշ Լեռնային հողերի վրա",
+    "ru": "Орошаемые и оросительствуемые в прошлом также возделываемые серые горные почвы",
+    "en": "Watered and irrigated also in the past cultivated gray mountainous soils"
+  },
+  "Wormwood semi-deserts (sweet wormwood)": {
+    "am": "Wormwood կիսաանապատներ (քաղցր Wormwood)",
+    "ru": "Полынные полупустыни (сладкая полынь)",
+    "en": "Wormwood semi-deserts (sweet wormwood)"
+  },
+  "Xerophilous bushes and grasses": {
+    "am": "Քսերոֆիլային թփեր և խոտաբույսեր",
+    "ru": "Ксерофильные кустарники и травы",
+    "en": "Xerophilous bushes and grasses"
+  },
+  "Yerevan city": {
+    "am": "Քաղաք Երևան",
+    "ru": "Город Ереван",
+    "en": "Yerevan city"
   },
   "Ветровые ресурсы": {
     "am": "Քամու ռեսուրսներ",
     "ru": "Ветровые ресурсы",
     "en": "Wind resources"
   },
-  "Озера и водохранилища": {
-    "am": "Լճեր և ջրամբարներ",
-    "ru": "Озера и водохранилища",
-    "en": "Lakes and reservoirs"
+  "Возраст домов": {
+    "am": "Տների տարիքը",
+    "ru": "Возраст домов",
+    "en": "Age of houses"
   },
-  "Оползни": {
-    "am": "Սողանքներ",
-    "ru": "Оползни",
-    "en": "Landslides"
+  "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.": {
+    "am": "Հայաստանի շենքերի տարիքը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
+    "ru": "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
+    "en": "The age of buildings in Armenia, data about which is available in OpenStreetMaps."
   },
-  "Среднегодовой уровень солнечной радиации": {
-    "am": "Արեգակնային ճառագայթման տարեկան միջին մակարդակը",
-    "ru": "Среднегодовой уровень солнечной радиации",
-    "en": "Average annual level of solar radiation"
+  "Возраст здания": {
+    "am": "Շենքի տարիքը",
+    "ru": "Возраст здания",
+    "en": "Building age"
   },
-  "Среднегодовой уровень осадков": {
-    "am": "Տեղումների տարեկան միջին մակարդակը",
-    "ru": "Среднегодовой уровень осадков",
-    "en": "Average annual precipitation"
+  "Длина, м": {
+    "am": "Երկարություն, մ",
+    "ru": "Длина, м",
+    "en": "Length, m"
   },
-  "Среднегодовая температура": {
-    "am": "Տարեկան միջին ջերմաստիճանը",
-    "ru": "Среднегодовая температура",
-    "en": "Average annual temperature"
+  "Единицы измерения": {
+    "am": "Չափման միավորներ",
+    "ru": "Единицы измерения",
+    "en": "Units of measurement"
   },
   "Землепользование": {
     "am": "Հողօգտագործում",
     "ru": "Землепользование",
     "en": "Land use"
   },
-  "Типы почвы": {
-    "am": "Հողի տեսակները",
-    "ru": "Типы почвы",
-    "en": "Soil types"
+  "Значение": {
+    "am": "Արժեք",
+    "ru": "Значение",
+    "en": "Value"
   },
-  "Климатические зоны": {
-    "am": "Կլիմայական գոտիներ",
-    "ru": "Климатические зоны",
-    "en": "Climatic zones"
-  },
-  "Лесные массивы": {
-    "am": "Անտառային տարածքներ",
-    "ru": "Лесные массивы",
-    "en": "Woodlands"
+  "Зона": {
+    "am": "Գոտի",
+    "ru": "Зона",
+    "en": "Zone"
   },
   "Зоны подземных вод": {
     "am": "Ստորերկրյա ջրերի գոտիներ",
     "ru": "Зоны подземных вод",
     "en": "Groundwater zones"
   },
-  "Минеральные и пресноводные источники": {
-    "am": "Հանքային և քաղցրահամ աղբյուրներ",
-    "ru": "Минеральные и пресноводные источники",
-    "en": "Mineral and freshwater springs"
+  "Источник": {
+    "am": "Աղբյուր",
+    "ru": "Источник",
+    "en": "Source"
   },
-  "Реки (5 км и более)": {
-    "am": "Գետեր (5 կմ և ավելի)",
-    "ru": "Реки (5 км и более)",
-    "en": "Rivers (5 km or more)"
+  "Климатические зоны": {
+    "am": "Կլիմայական գոտիներ",
+    "ru": "Климатические зоны",
+    "en": "Climatic zones"
   },
   "Когда построили": {
     "am": "Երբ կառուցվեց",
@@ -141,94 +359,165 @@
     "ru": "Количество этажей",
     "en": "Number of floors"
   },
-  "Osm ID": {
-    "am": "Osm ID",
-    "ru": "Osm ID",
-    "en": "Osm ID"
+  "Лесные массивы": {
+    "am": "Անտառային տարածքներ",
+    "ru": "Лесные массивы",
+    "en": "Woodlands"
   },
-  "Улица": {
-    "am": "Փողոց",
-    "ru": "Улица",
-    "en": "Street"
+  "Минеральные и пресноводные источники": {
+    "am": "Հանքային և քաղցրահամ աղբյուրներ",
+    "ru": "Минеральные и пресноводные источники",
+    "en": "Mineral and freshwater springs"
   },
   "Номер дома": {
     "am": "Տան համարը",
     "ru": "Номер дома",
     "en": "House number"
   },
-  "Возраст здания": {
-    "am": "Շենքի տարիքը",
-    "ru": "Возраст здания",
-    "en": "Building age"
+  "Озера и водохранилища": {
+    "am": "Լճեր և ջրամբարներ",
+    "ru": "Озера и водохранилища",
+    "en": "Lakes and reservoirs"
   },
-  "Рабочее время": {
-    "am": "Աշխատանքային ժամեր",
-    "ru": "Рабочее время",
-    "en": "Working hours"
-  },
-  "Почтовый код": {
-    "am": "Փոստային կոդ",
-    "ru": "Почтовый код",
-    "en": "Postal code"
-  },
-  "Значение": {
-    "am": "Արժեք",
-    "ru": "Значение",
-    "en": "Value"
-  },
-  "Единицы измерения": {
-    "am": "Չափման միավորներ",
-    "ru": "Единицы измерения",
-    "en": "Units of measurement"
+  "Оползни": {
+    "am": "Սողանքներ",
+    "ru": "Оползни",
+    "en": "Landslides"
   },
   "Площадь, км²": {
     "am": "Տարածք, կմ2",
     "ru": "Площадь, км²",
     "en": "Area, km2"
   },
-  "Зона": {
-    "am": "Գոտի",
-    "ru": "Зона",
-    "en": "Zone"
+  "Почтовые отделения": {
+    "am": "Փոստային բաժանմունքներ",
+    "ru": "Почтовые отделения",
+    "en": "Post offices"
   },
-  "Скорость ветра": {
-    "am": "Քամու արագություն",
-    "ru": "Скорость ветра",
-    "en": "Wind speed"
+  "Почтовый код": {
+    "am": "Փոստային կոդ",
+    "ru": "Почтовый код",
+    "en": "Postal code"
+  },
+  "Рабочее время": {
+    "am": "Աշխատանքային ժամեր",
+    "ru": "Рабочее время",
+    "en": "Working hours"
+  },
+  "Радиационный баланс · ккал/см²": {
+    "am": "Ճառագայթային հաշվեկշիռ · kcal/cm²",
+    "ru": "Радиационный баланс · ккал/см²",
+    "en": "Radiation balance · kcal/cm²"
+  },
+  "Реки (5 км и более)": {
+    "am": "Գետեր (5 կմ և ավելի)",
+    "ru": "Реки (5 км и более)",
+    "en": "Rivers (5 km or more)"
+  },
+  "Сейсмическое зонирование": {
+    "am": "Սեյսմիկ գոտիավորում",
+    "ru": "Сейсмическое зонирование",
+    "en": "Seismic Zonation"
   },
   "Сила ветра": {
     "am": "Քամու ուժ",
     "ru": "Сила ветра",
     "en": "Wind strength"
   },
-  "Уровень радиации": {
-    "am": "Ճառագայթման մակարդակ",
-    "ru": "Уровень радиации",
-    "en": "Radiation level"
-  },
-  "Уровень осадков": {
-    "am": "Տեղումների մակարդակ",
-    "ru": "Уровень осадков",
-    "en": "Precipitation level"
-  },
-  "Тип почвы": {
-    "am": "Հողի տեսակը",
-    "ru": "Тип почвы",
-    "en": "Soil type"
-  },
-  "Тип источника": {
-    "am": "Աղբյուրի տեսակը",
-    "ru": "Тип источника",
-    "en": "Source type"
+  "Скорость ветра": {
+    "am": "Քամու արագություն",
+    "ru": "Скорость ветра",
+    "en": "Wind speed"
   },
   "Скорость потока": {
     "am": "Հոսքի արագություն",
     "ru": "Скорость потока",
     "en": "Flow rate"
   },
-  "Длина, м": {
-    "am": "Երկարություն, մ",
-    "ru": "Длина, м",
-    "en": "Length, m"
+  "Список филиалов Армянской почты (Haypost.am).": {
+    "am": "Список филиалов Армянской почты (Haypost.am).",
+    "ru": "Список филиалов Армянской почты (Haypost.am).",
+    "en": "List of Armenian post (Haypost.am) branches."
+  },
+  "Среднегодовая температура": {
+    "am": "Տարեկան միջին ջերմաստիճանը",
+    "ru": "Среднегодовая температура",
+    "en": "Average annual temperature"
+  },
+  "Среднегодовой уровень осадков": {
+    "am": "Տեղումների տարեկան միջին մակարդակը",
+    "ru": "Среднегодовой уровень осадков",
+    "en": "Average annual precipitation"
+  },
+  "Среднегодовой уровень солнечной радиации": {
+    "am": "Արեգակնային ճառագայթման տարեկան միջին մակարդակը",
+    "ru": "Среднегодовой уровень солнечной радиации",
+    "en": "Average annual level of solar radiation"
+  },
+  "Тип источника": {
+    "am": "Աղբյուրի տեսակը",
+    "ru": "Тип источника",
+    "en": "Source type"
+  },
+  "Тип почвы": {
+    "am": "Հողի տեսակը",
+    "ru": "Тип почвы",
+    "en": "Soil type"
+  },
+  "Типы почвы": {
+    "am": "Հողի տեսակները",
+    "ru": "Типы почвы",
+    "en": "Soil types"
+  },
+  "Типы растительности": {
+    "am": "Բուսականության տեսակները",
+    "ru": "Типы растительности",
+    "en": "Vegetation types"
+  },
+  "Улица": {
+    "am": "Փողոց",
+    "ru": "Улица",
+    "en": "Street"
+  },
+  "Уровень осадков": {
+    "am": "Տեղումների մակարդակ",
+    "ru": "Уровень осадков",
+    "en": "Precipitation level"
+  },
+  "Уровень радиации": {
+    "am": "Ճառագայթման մակարդակ",
+    "ru": "Уровень радиации",
+    "en": "Radiation level"
+  },
+  "Этажность домов": {
+    "am": "Տների հարկայնությունը",
+    "ru": "Этажность домов",
+    "en": "Number of floors of houses"
+  },
+  "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.": {
+    "am": "Հայաստանի շենքերի հարկայնությունը, որոնց մասին տվյալներ կան OpenStreetMaps-ում.",
+    "ru": "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
+    "en": "The number of floors of buildings in Armenia, the data on which is available in Openstreetmap."
+  },
+  "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.": {
+    "am": "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
+    "ru": "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
+    "en": "This layer shows radiation balance in Armenia. Radiation balance of underlying terrain calculated by equation: R=(Q+q)(1-Ao)-E, where R — radiation balance value; Q and q — direct and diffused radiation; Ao — underlying terrain albedo; E — effective-terrestrial radiation."
+  },
+  "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.": {
+    "am": "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
+    "ru": "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
+    "en": "This layer shows the seismic zones in Armenia. The Seismic Zonation Map of the Territory of the Republic of Armenia at the scale of 1:500,000 was prepared by the Consortium of AIR Worldwide Corporation (USA), GEM Foundation (Italy) and GEORISK Scientific Research CJSC (Armenia) under the Project # 7179350 “Probabilistic Seismic Hazard Assessment for the Republic of Armenia” supported by the World Bank. The area of the RA is divided into three zones in the ascending intensity order (I, II and III ) with expected PGA values expressed in fractions of g (gravity) 0.3g, 0.4g, and 0.5g, respectively."
+  },
+  "undefined": {},
+  "Описание": {
+    "am": "Նկարագրություն",
+    "ru": "Описание",
+    "en": "Description"
+  },
+  "Ссылка": {
+    "am": "Հղում",
+    "ru": "Ссылка",
+    "en": "Link"
   }
 }

@@ -1,8 +1,17 @@
-import { ComponentProps, useCallback, useEffect, useState } from "react";
+import { IFilter } from "@/types";
+import {
+  ComponentProps,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Checkbox, ListGrid, ListGridItem } from "sloy-ui";
 
 export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   type?: string;
+  title?: string;
+  count?: number;
   color?: string;
 };
 
@@ -10,9 +19,15 @@ interface Props {
   selectedByDefault?: string[];
   items?: IFilterGridItem[];
   onChange?: (state: string[]) => void;
+  sortType?: IFilter["sortType"];
 }
 
-export function FilterGrid({ items, onChange, selectedByDefault = [] }: Props) {
+export function FilterGrid({
+  items = [],
+  onChange,
+  selectedByDefault = [],
+  sortType = "alphabetical",
+}: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
   const toggle = useCallback(
@@ -30,13 +45,27 @@ export function FilterGrid({ items, onChange, selectedByDefault = [] }: Props) {
     onChange?.(selected);
   }, [onChange, selected]);
 
-  if (!items) {
+  const sortedItems = useMemo(() => {
+    switch (sortType) {
+      case "alphabetical":
+        return items.sort((a, b) =>
+          String(a.title || a.type).localeCompare(String(b.title || b.type)),
+        );
+      case "count":
+        return items.sort((a, b) => (b.count || 0) - (a.count || 0));
+      case "default":
+      default:
+        return items;
+    }
+  }, []);
+
+  if (sortedItems.length === 0) {
     return null;
   }
 
   return (
     <ListGrid>
-      {items.map(({ type, subTitle, description, color }) => {
+      {items.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
         }
@@ -44,7 +73,7 @@ export function FilterGrid({ items, onChange, selectedByDefault = [] }: Props) {
         return (
           <ListGridItem
             key={type}
-            subTitle={subTitle}
+            subTitle={count}
             description={description}
             prefix={
               <Checkbox
@@ -54,7 +83,7 @@ export function FilterGrid({ items, onChange, selectedByDefault = [] }: Props) {
               />
             }
           >
-            {type}
+            {title || type}
           </ListGridItem>
         );
       })}

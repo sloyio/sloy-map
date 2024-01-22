@@ -409,51 +409,67 @@ const defaultState = createAppState([
             title: "Зона",
             values: {
               "Alpine medows and dense turf formations": {
+                title: "Alpine medows and dense turf formations",
                 color: "#02e409",
               },
               "Beech, oak and hornbeam forests": {
+                title: "Beech, oak and hornbeam forests",
                 color: "#1fa000",
               },
               "Cereal and motley grass steppe with  tragacanth": {
+                title: "Cereal and motley grass steppe with  tragacanth",
                 color: "#ceea80",
               },
               "Coniferous and deciduous sparse trees": {
+                title: "Coniferous and deciduous sparse trees",
                 color: "#187403",
               },
               "Forests  of eastern oak": {
+                title: "Forests  of eastern oak",
                 color: "#2dc61e",
               },
               "Grassland steppe": {
+                title: "Grassland steppe",
                 color: "#b9e44b",
               },
               "Halophilous deserts (halophytic and others)": {
+                title: "Halophilous deserts (halophytic and others)",
                 color: "#ecf778",
               },
               "Lake Arpilich": {
+                title: "Lake Arpilich",
                 color: "#3196ff",
               },
               "Lake Sevan": {
+                title: "Lake Sevan",
                 color: "#3196ff",
               },
               "Lower alpine medows": {
+                title: "Lower alpine medows",
                 color: "#95eb6f",
               },
               "Mixed oak and hornbeam forests": {
+                title: "Mixed oak and hornbeam forests",
                 color: "#5bae75",
               },
               "Psammophilous deserts": {
+                title: "Psammophilous deserts",
                 color: "#e3d612",
               },
               "Vegetation of exposed soils": {
+                title: "Vegetation of exposed soils",
                 color: "#95aba8",
               },
               "Water-marsh vegetation": {
+                title: "Water-marsh vegetation",
                 color: "#87d4b4",
               },
               "Wormwood semi-deserts (sweet wormwood)": {
+                title: "Wormwood semi-deserts (sweet wormwood)",
                 color: "#e9da81",
               },
               "Xerophilous bushes and grasses": {
+                title: "Xerophilous bushes and grasses",
                 color: "#c9d05f",
               },
             },
@@ -901,28 +917,32 @@ const defaultState = createAppState([
             id: "Landuse",
             title: "Землепользование",
             values: {
-              "": {
-                color: "rgba(255,255,255,.2)",
-              },
               "Arable land": {
+                title: "Arable land",
                 color: "#fdad51",
               },
               Crops: {
+                title: "Crops",
                 color: "#a06525",
               },
               "Forest, shrubland": {
+                title: "Forest, shrubland",
                 color: "#217c16",
               },
               Grassland: {
+                title: "Grassland",
                 color: "#5dba26",
               },
               "Lakes, reservoirs": {
+                title: "Lakes, reservoirs",
                 color: "#a5bfdd",
               },
               Pastures: {
+                title: "Pastures",
                 color: "#81fb44",
               },
               "Yerevan city": {
+                title: "Yerevan city",
                 color: "#eb3a09",
               },
             },
@@ -982,64 +1002,85 @@ const defaultState = createAppState([
             values: {
               "Alluvial-meadow saline lands and alkali soils": {
                 color: "#9ddcda",
+                title: "Alluvial-meadow saline lands and alkali soils",
               },
               "Alluvial-meadow soils irrigated also in the past": {
                 color: "#2fc9dd",
+                title: "Alluvial-meadow soils irrigated also in the past",
               },
               "Alpine mountaine-medow turf-peat soils": {
                 color: "#85b70f",
+                title: "Alpine mountaine-medow turf-peat soils",
               },
               "Brown mountainous-forest soils of dry firests and bushes": {
                 color: "#b98746",
+                title:
+                  "Brown mountainous-forest soils of dry firests and bushes",
               },
               "Brown mountainous-forest soils of moderately humid forests": {
                 color: "#d6a15c",
+                title:
+                  "Brown mountainous-forest soils of moderately humid forests",
               },
               "Desalinated here and there fat mountainous black soils of humid steppe":
                 {
                   color: "#75552c",
+                  title:
+                    "Desalinated here and there fat mountainous black soils of humid steppe",
                 },
               "Gray mountainous here and there gypsiferous & saline soils": {
                 color: "#979797",
+                title:
+                  "Gray mountainous here and there gypsiferous & saline soils",
               },
               "Gypsiferous and here and there saline colored soils": {
                 color: "#d1dbdd",
+                title: "Gypsiferous and here and there saline colored soils",
               },
               "Lake Sevan's outcropped bottomlands": {
                 color: "#2863da",
+                title: "Lake Sevan's outcropped bottomlands",
               },
               "Meadow saline lands and alkali soils": {
                 color: "#bedd74",
+                title: "Meadow saline lands and alkali soils",
               },
               "Meadow-marshy soils": {
                 color: "#0fbf6a",
+                title: "Meadow-marshy soils",
               },
               "Mountain-fulvous soils of dry steppes": {
                 color: "#dbb3bc",
+                title: "Mountain-fulvous soils of dry steppes",
               },
               "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes":
                 {
                   color: "#eecec1",
+                  title:
+                    "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes",
                 },
               "Mountainous-forest steppe soils": {
                 color: "#677288",
+                title: "Mountainous-forest steppe soils",
               },
               "Non-developed soils of snow-closed zone": {
                 color: "#edec8d",
+                title: "Non-developed soils of snow-closed zone",
               },
               "Subalpian mountain-medow black soil-like": {
                 color: "#565b0c",
+                title: "Subalpian mountain-medow black soil-like",
               },
               "Subalpian mountain-medow brown soils": {
                 color: "#8f5a21",
+                title: "Subalpian mountain-medow brown soils",
               },
               "Watered and irrigated also in the past cultivated gray mountainous soils":
                 {
                   color: "#388ef0",
+                  title:
+                    "Watered and irrigated also in the past cultivated gray mountainous soils",
                 },
-              "": {
-                color: "rgba(255,255,255,.2)",
-              },
             },
           },
         ],
@@ -1097,34 +1138,42 @@ const defaultState = createAppState([
             values: {
               "Arid continental, with dry warm summersand moderate cold winters":
                 {
+                  title:
+                    "Arid continental, with dry warm summersand moderate cold winters",
                   color: "#d7191c",
                 },
               "Arid subtropical, with hot summers and calm winters": {
+                title: "Arid subtropical, with hot summers and calm winters",
                 color: "#e75437",
               },
               "Arid, continental, with hot summers and cold winters": {
+                title: "Arid, continental, with hot summers and cold winters",
                 color: "#f69053",
               },
               "Moderate, relatively dry warm summers and cold winters": {
+                title: "Moderate, relatively dry warm summers and cold winters",
                 color: "#febe4e",
               },
               "Moderate, relativly humid during all seasons": {
+                title: "Moderate, relativly humid during all seasons",
                 color: "#ffdf29",
               },
               "Moderate, with short cool summers and cold winters": {
+                title: "Moderate, with short cool summers and cold winters",
                 color: "#dcf02d",
               },
               "Moderate, with warm summers, relatively humid calm winters": {
+                title:
+                  "Moderate, with warm summers, relatively humid calm winters",
                 color: "#b8e156",
               },
               "Mountain tundra climate": {
+                title: "Mountain tundra climate",
                 color: "#8acc62",
               },
               "Warm summers and relatively calm winters": {
+                title: "Warm summers and relatively calm winters",
                 color: "#52b151",
-              },
-              "": {
-                color: "rgba(255,255,255,.2)",
               },
             },
           },
@@ -1209,24 +1258,31 @@ const defaultState = createAppState([
             title: "Зоны подземных вод",
             values: {
               "Fault zones": {
+                title: "Fault zones",
                 color: "#e31a1c",
               },
               "Unconfined groundwater of continental salinity": {
+                title: "Unconfined groundwater of continental salinity",
                 color: "#ffab57",
               },
               "Deep faults zones with discharge of mineral water": {
+                title: "Deep faults zones with discharge of mineral water",
                 color: "#db1e2a",
               },
               "Tectonic faults zones with discharge of freshwater": {
+                title: "Tectonic faults zones with discharge of freshwater",
                 color: "#db1e2a",
               },
               "High capcity interlava and underlava water streams": {
+                title: "High capcity interlava and underlava water streams",
                 color: "#0e0e0e",
               },
               "Boundaries with aquifers with negative pressure": {
+                title: "Boundaries with aquifers with negative pressure",
                 color: "#1c8e1a",
               },
               "Boundaries with aquifers with positive pressure": {
+                title: "Boundaries with aquifers with positive pressure",
                 color: "#0524bc",
               },
             },
@@ -1359,3 +1415,6 @@ const defaultState = createAppState([
 ]);
 
 export const state = setTranslations(defaultState, LOCALE, locales);
+
+// uncomment this string to get translations
+// console.log(extractTranslations(state, locales));
