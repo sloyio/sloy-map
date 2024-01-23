@@ -1,16 +1,9 @@
 import { useEffect } from "react";
 import { Source, useMap } from "react-map-gl";
-import { useSelector } from "react-redux";
-import {
-  activeFilterParamsSelector,
-  filtersSelector,
-  sourcesSelector,
-  visualisationLayersSelector,
-} from "@/state/selectors";
+import { useAppSelector } from "@/state";
 import { MapLayer } from "@/layers/ClickableLayer";
 import { BuildingRangeVisualLayer } from "@/visualLayers/BuildingRangeVisualLayer";
 import { ActiveFilters, IVisualisationLayer } from "@/types";
-import { setBuildingDefaultColor } from "../helpers/setBuildingStyle";
 import { BuldingsIdsVisualLayer } from "./BuldingsIdsVisualLayer";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 
@@ -20,14 +13,18 @@ export function VisualisationLayer({
   id: IVisualisationLayer["id"];
 }) {
   const { sloyMapGl } = useMap();
-  const filters = useSelector(filtersSelector);
-  const visualisationLayers = useSelector(visualisationLayersSelector);
-  const sources = useSelector(sourcesSelector);
+  const filters = useAppSelector((state) => state.sloy.config.filters);
+  const visualisationLayers = useAppSelector(
+    (state) => state.sloy.config.visualisationLayers,
+  );
+  const sources = useAppSelector((state) => state.sloy.config.sources);
 
   const visualisationLayer = visualisationLayers[vId];
   const source = sources[visualisationLayer?.source];
 
-  const activeFilterParams = useSelector(activeFilterParamsSelector);
+  const activeFilterParams = useAppSelector(
+    (state) => state.sloy.activeFilterParams,
+  );
 
   const { loading, data } = useLoadGeoJSON(source);
 
@@ -41,18 +38,6 @@ export function VisualisationLayer({
       filter: f,
       values: activeFilterParams?.[f.id],
     }));
-
-  useEffect(() => {
-    const map = sloyMapGl?.getMap?.();
-
-    if (
-      map &&
-      visualisationLayer?.type !== "building-range" &&
-      visualisationLayer.id !== "ekbFacadesLayer"
-    ) {
-      setBuildingDefaultColor(map);
-    }
-  });
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
@@ -125,6 +110,7 @@ export function VisualisationLayer({
       <MapLayer
         visualisationLayer={visualisationLayer}
         activeFilters={activeFilters}
+        data={data}
       />
     </Source>
   );

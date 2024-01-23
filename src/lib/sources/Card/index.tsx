@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
-import { cardsSelector, sourcesSelector } from "@/state/selectors";
 import { BuildingCard } from "@/sources/Card/BuildingCard";
 import { MapLoader } from "@/components/MapLoader";
 import { FeatureCard } from "./FeatureCard";
@@ -11,8 +10,8 @@ interface Props {
 }
 
 export function RenderCard({ popupHash, sourceIdValue }: Props) {
-  const sources = useSelector(sourcesSelector);
-  const cards = useSelector(cardsSelector);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
+  const cards = useAppSelector((state) => state.sloy.config.cards);
 
   const source = sources[String(sourceIdValue)];
   const card = cards[String(source?.card)];

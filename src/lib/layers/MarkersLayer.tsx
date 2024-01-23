@@ -1,30 +1,28 @@
 import { useMemo } from "react";
 import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import classNames from "classnames";
-import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { getLayerStyle } from "@/helpers/getLayerStyle";
-import { FilterLoader } from "@/filters/FilterLoader";
 import { ActiveFilters, IVisualisationLayer } from "@/types";
-import { sourcesSelector } from "@/state/selectors";
 import { usePopup } from "../state/usePopup";
 import styles from "./MarkersLayer.module.css";
 import { getProperty } from "dot-prop";
+import { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
 
 interface Props {
   visualisationLayer: IVisualisationLayer;
   activeFilters: ActiveFilters;
+  data: FeatureCollection<Geometry, GeoJsonProperties>;
 }
 
 export function MarkersLayer({
   visualisationLayer,
   activeFilters = [],
+  data,
 }: Props) {
   const { popupHash } = usePopup();
-  const sources = useSelector(sourcesSelector);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
   const source = sources[visualisationLayer?.source];
-
-  const { loading, data } = useLoadGeoJSON(source);
 
   const markers = useMemo(() => {
     return data?.features.filter((feature) => {
@@ -33,10 +31,6 @@ export function MarkersLayer({
       )?.values;
     });
   }, [activeFilters, data?.features]);
-
-  if (loading) {
-    return <FilterLoader />;
-  }
 
   if (!visualisationLayer?.type || !data || !source) {
     return null;

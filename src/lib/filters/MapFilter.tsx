@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { filtersSelector, sourcesSelector } from "@/state/selectors";
+import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
 import { FilterRange } from "@/filters/FilterBuildingRange";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
@@ -8,6 +7,7 @@ import { FilterGrid } from "@/filters/FilterGrid";
 import { updateFilterParams, updateLayer } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";
+import { useAppSelector } from "@/state";
 
 export function MapFilter({
   layerId,
@@ -17,8 +17,8 @@ export function MapFilter({
   filterId: string;
 }) {
   const dispatch = useDispatch();
-  const filters = useSelector(filtersSelector);
-  const sources = useSelector(sourcesSelector);
+  const filters = useAppSelector((state) => state.sloy.config.filters);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
 
   const filter = filters[filterId];
   const source = sources[filter?.source];
@@ -35,7 +35,7 @@ export function MapFilter({
         }),
       );
     }
-  }, [data.features.length]);
+  }, [data.features.length, dispatch, layerId]);
 
   const onChange = useCallback(
     (params: unknown) => {

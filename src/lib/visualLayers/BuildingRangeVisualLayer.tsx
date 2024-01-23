@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { MinMax } from "sloy-ui";
 import { useMap } from "react-map-gl";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import { setBuildingRangeStyle } from "@/helpers/setBuildingStyle";
 import { IVisualisationLayer, SourcePropertyRange } from "@/types";
 import { ClickableBuilding } from "@/helpers/useClickableBuilding";
-import { sourcesSelector } from "@/state/selectors";
 import { getProperty } from "dot-prop";
 
 interface Props {
@@ -15,7 +14,7 @@ interface Props {
 
 export function BuildingRangeVisualLayer({ visualisationLayer, range }: Props) {
   const { sloyMapGl } = useMap();
-  const sources = useSelector(sourcesSelector);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();

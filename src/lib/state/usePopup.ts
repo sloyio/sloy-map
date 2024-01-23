@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { setHash } from "@/helpers/hash";
-import { activeLayerSelector } from "@/state/selectors";
+import { useAppSelector } from ".";
 
 type PopupId = string;
 
@@ -9,7 +8,7 @@ export function usePopup() {
   const [popupHash, setOpenedPopup] = useState<PopupId | null>(null);
   const [sourceIdValue, setSourceIdValue] = useState<string | null>(null);
 
-  const activeLayer = useSelector(activeLayerSelector);
+  const activeLayer = useAppSelector((state) => state.sloy.activeLayer);
 
   const openPopup = useCallback(
     (id: PopupId, source: string) => {

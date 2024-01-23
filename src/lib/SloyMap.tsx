@@ -1,36 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
-import {
-  activeLayerSelector,
-  isAppLoadedSelector,
-  layersSelector,
-} from "@/state/selectors";
 import { MapContextProvider } from "./state/MapProvider";
-import { VisualisationLayer } from "./visualLayers/VisualisationLayer";
 import { Copyright } from "./components/Copyright/Copyright";
 import { Sidebars } from "./components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { setAppLoaded } from "./state/slice";
+import { VisualisationLayers } from "./visualLayers/VisualisationLayers";
 import { IMapProps } from "./types";
+import { useAppSelector } from "./state";
 // import { TerranMap, terrainProps } from "./visualLayers/ContourVisualLayer";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-
-function MapLayers() {
-  const layers = useSelector(layersSelector);
-  const activeLayer = useSelector(activeLayerSelector);
-
-  if (!activeLayer) return null;
-
-  return (
-    <>
-      {layers[activeLayer]?.visualisationLayers.map((vId) => (
-        <VisualisationLayer key={vId} id={vId} />
-      ))}
-    </>
-  );
-}
 
 export interface SloyMapProps extends IMapProps {
   overrideCard?: OverrideCardFn;
@@ -50,7 +31,7 @@ export function SloyMap({
   ...mapProps
 }: SloyMapProps) {
   const dispatch = useDispatch();
-  const isAppLoaded = useSelector(isAppLoadedSelector);
+  const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 
   return (
     <MapProvider>
@@ -83,7 +64,7 @@ export function SloyMap({
           }}
         >
           {/* <TerranMap /> */}
-          {isAppLoaded && <MapLayers />}
+          {isAppLoaded && <VisualisationLayers />}
           {children}
         </MapGl>
         {isAppLoaded && <Sidebars />}

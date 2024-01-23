@@ -66,7 +66,7 @@ export function FilterGrid({
       default:
         return items;
     }
-  }, []);
+  }, [items, sortType]);
 
   if (sortedItems.length === 0) {
     return null;

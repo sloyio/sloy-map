@@ -8,9 +8,9 @@ import { setTranslations } from "@/helpers/extractTranslations";
 const LOCALE = "ru-RU";
 
 const YEREVAN_VIEW = {
-  center: [44.52656, 40.18001],
-  zoom: 15,
-  pitch: 0,
+  center: [44.51, 40.18001],
+  zoom: 14.5,
+  pitch: 45,
   bearing: 0, // TODO: set Ararat view for terrain
 };
 

@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import { Divider, Link, LinkSize } from "sloy-ui";
 import { MapFilter } from "@/filters/MapFilter";
 import { ILayer } from "@/types";
-import { filtersSelector } from "@/state/selectors";
 import { MapContext } from "@/state/MapProvider";
 
 const FilterTitle = styled.div`
@@ -30,7 +29,7 @@ interface Props {
 
 export function Layer({ layer }: Props) {
   const { overrideLayers } = useContext(MapContext);
-  const filters = useSelector(filtersSelector);
+  const filters = useAppSelector((state) => state.sloy.config.filters);
 
   return (
     <>
