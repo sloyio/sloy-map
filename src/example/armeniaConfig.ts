@@ -228,7 +228,7 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Радиационный баланс · ккал/см²",
+      title: "Радиационный баланс, ккал/см²",
       description:
         "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
       link: {
@@ -378,6 +378,12 @@ const defaultState = createAppState([
     {
       title: "Типы растительности",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "В данном слое показаны общие типы растительности в Армении.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-399",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Veget_zone",
@@ -500,8 +506,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Ветровые ресурсы",
+      title: "Ветровые ресурсы, м/сек",
+      description:
+        "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.",
       initialViewState: COUNTRY_VIEW,
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-164",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Wind_Speed",
@@ -578,8 +590,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Озера и водохранилища",
+      title: "Озёра и водохранилища",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-103",
+        label: "Источник",
+      },
       filters: [],
       visualisationLayers: [
         {
@@ -613,6 +631,12 @@ const defaultState = createAppState([
     {
       title: "Оползни",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой показывает расположение и форму оползней на территории Армении.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-95",
+        label: "Источник",
+      },
       filters: [],
       visualisationLayers: [
         {
@@ -645,8 +669,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Среднегодовой уровень солнечной радиации",
       initialViewState: COUNTRY_VIEW,
+      title: "Среднегодовой уровень солнечной радиации, ккал/см²",
+      description:
+        "Данный слой показывает среднегодовой уровень солнечной радиации в Армении. Эта цифровая карта была подготовлена в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие географической информационной системы Армении для проектов возобновляемой энергетики».",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-94",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Sun_radiat",
@@ -729,8 +759,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Среднегодовой уровень осадков",
+      title: "Среднегодовой уровень осадков, мм/год",
+      description:
+        "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.",
       initialViewState: COUNTRY_VIEW,
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-92",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Precipitat",
@@ -807,8 +843,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Среднегодовая температура",
+      title: "Среднегодовая температура, °C",
+      description:
+        "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».",
       initialViewState: COUNTRY_VIEW,
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-85",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Temperatur",
@@ -893,6 +935,12 @@ const defaultState = createAppState([
     {
       title: "Землепользование",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой показывает землепользование в Армении. Эта карта была подготовлена в рамках финансируемой ЕС «Программы предупреждения, готовности и реагирования на природные и техногенные катастрофы в Восточном регионе ЕПД (PPRDEast)».",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-81",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Landuse",
@@ -976,6 +1024,12 @@ const defaultState = createAppState([
     {
       title: "Типы почвы",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой показывает типы почв, встречающиеся в Армении. Эти данные были созданы для проекта «Поддержка устойчивого горного развития на Кавказе (Sustainable Caucasus)», финансируемого SCOPES.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-78",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Descriptio",
@@ -1112,6 +1166,12 @@ const defaultState = createAppState([
     {
       title: "Климатические зоны",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой представляет собой карту климатических зон Армении, подготовленную в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие геоинформационной системы Армении для проектов возобновляемой энергетики».",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-74",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Descriptio",
@@ -1210,6 +1270,12 @@ const defaultState = createAppState([
     {
       title: "Лесные массивы",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой показывает распределение лесных территорий в Армении.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-64",
+        label: "Источник",
+      },
       filters: [],
       visualisationLayers: [
         {
@@ -1243,6 +1309,12 @@ const defaultState = createAppState([
     {
       title: "Зоны подземных вод",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "Этот слой показывает зоны подземных вод в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-1069",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Descript",
@@ -1318,8 +1390,14 @@ const defaultState = createAppState([
   ),
   createLayer(
     {
-      title: "Минеральные и пресноводные источники",
+      title: "Минеральные и пресноводные источники, л/сек",
+      description:
+        "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
       initialViewState: COUNTRY_VIEW,
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-1068",
+        label: "Источник",
+      },
       filters: [
         {
           property: "Flow_l_sec",
@@ -1399,6 +1477,12 @@ const defaultState = createAppState([
     {
       title: "Реки (5 км и более)",
       initialViewState: COUNTRY_VIEW,
+      description:
+        "В этом слое представлены все реки Армении длиной 5 км и более. Это полностью связанная и топологически корректная система рек Армении, закодированная с помощью системы кодирования ERICA (European Rivers and Catchment), разработанной для Европейского агентства по окружающей среде.",
+      link: {
+        href: "https://data.opendata.am/dataset/sustc-27",
+        label: "Источник",
+      },
       filters: [],
       visualisationLayers: [
         {
