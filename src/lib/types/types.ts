@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import MapGl from "react-map-gl";
 
 export type SourcePropertyRange = {
   from: number;
@@ -7,10 +8,19 @@ export type SourcePropertyRange = {
   color: string;
 };
 
+type InitialViewState = Partial<{
+  latitude: number;
+  longitude: number;
+  bearing: number;
+  zoom: number;
+  pitch: number;
+}>;
+
 export type SourcePropertyProperties = Record<
   string,
   {
     color: string;
+    title?: string;
     description?: string;
   }
 >;
@@ -83,7 +93,7 @@ export interface IFilter {
   description?: string;
   color?: string;
   property: string;
-  sortType?: "default" | "count";
+  sortType?: "default" | "count" | "alphabetical";
 }
 
 export interface Copyright {
@@ -97,7 +107,12 @@ export interface ILayer {
   title: string;
   filters: IFilter["id"][];
   visualisationLayers: IVisualisationLayer["id"][];
-  defaultZoom?: number;
+  subTitle?: string;
+  initialViewState?: Partial<
+    Omit<InitialViewState, "latitude" | "longitude"> & {
+      center?: number[];
+    }
+  >;
   description?: string;
   link?: {
     label?: string;
@@ -105,17 +120,17 @@ export interface ILayer {
   };
 }
 
+export type IMapProps = Omit<React.ComponentProps<typeof MapGl>, "locale">;
+
+export type IMapState = Pick<
+  IMapProps,
+  "initialViewState" | "mapStyle" | "minZoom" | "maxZoom" | "maxBounds"
+> & {
+  locale: string;
+};
+
 export interface IApp {
-  mapState: {
-    locale: string;
-    initialViewState: {
-      latitude: number;
-      longitude: number;
-      zoom: number;
-      pitch: number;
-    };
-    mapStyle: string;
-  };
+  mapState: IMapState;
   copyright: Record<string, Copyright>;
   cards: Record<string, ICard>;
   sources: Record<string, ISource>;

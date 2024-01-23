@@ -1,4 +1,3 @@
-import { IFilter } from "@/types";
 import { FeatureCollection } from "geojson";
 import groupBy from "lodash/groupBy";
 
@@ -6,12 +5,10 @@ export function groupByProperty({
   geojson,
   property = "type",
   valueType,
-  sortType = "default",
 }: {
   geojson: FeatureCollection;
   property: string;
   valueType?: string;
-  sortType?: IFilter["sortType"];
 }): { type: string; count: number }[] {
   let result;
 
@@ -32,11 +29,5 @@ export function groupByProperty({
     );
   }
 
-  let results = result.map(([type, items]) => ({ type, count: items.length }));
-
-  if (sortType === "count") {
-    return results.sort((a, b) => b.count - a.count);
-  } else {
-    return results;
-  }
+  return result.map(([type, items]) => ({ type, count: items.length }));
 }

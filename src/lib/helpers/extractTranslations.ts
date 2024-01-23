@@ -1,8 +1,11 @@
 import { IApp, SourceProperty } from "@/types";
+import deepmerge from "deepmerge";
 import { getProperty } from "dot-prop";
+import isPlainObject from "lodash/isPlainObject";
 
 export function extractTranslations(
   state: IApp,
+  curentTranslation: Record<string, Record<string, string>> | undefined = {},
 ): Record<string, Record<string, string>> {
   const fromLayers = Object.values(state.layers).reduce<string[]>(
     (all, { title, link, description }) => {
@@ -30,6 +33,15 @@ export function extractTranslations(
           if (p.title) {
             all.push(p.title);
           }
+
+          if (isPlainObject(p.values) && p.values) {
+            all = all.concat(
+              Object.values(p.values).reduce(
+                (all, item) => all.concat([item.title, item.description]),
+                [],
+              ),
+            );
+          }
         });
       }
 
@@ -38,12 +50,18 @@ export function extractTranslations(
     [],
   );
 
-  return fromLayers.concat(fromSources).reduce(
-    (all, item) => ({
-      ...all,
-      [item]: { ru: item, am: item, en: item },
-    }),
-    {},
+  return deepmerge(
+    fromLayers
+      .concat(fromSources)
+      .sort()
+      .reduce(
+        (all, item) => ({
+          ...all,
+          [item]: { am: item, ru: item, en: item },
+        }),
+        {},
+      ),
+    curentTranslation,
   );
 }
 
@@ -93,16 +111,34 @@ export function setTranslations(
       if (source.properties) {
         properties = Object.values(source.properties).reduce<
           Record<string, SourceProperty>
-        >(
-          (all, p) => ({
+        >((all, p) => {
+          let values = p.values;
+
+          if (isPlainObject(values) && values) {
+            values = Object.keys(values).reduce((all, key) => {
+              // @ts-expect-error
+              const item = values?.[key];
+
+              return {
+                ...all,
+                [key]: {
+                  ...item,
+                  title: t(item.title, { lang, translations }),
+                  description: t(item.description, { lang, translations }),
+                },
+              };
+            }, {});
+          }
+
+          return {
             ...all,
             [p.id]: {
               ...p,
               title: t(p.title, { lang, translations }),
+              values,
             },
-          }),
-          {},
-        );
+          };
+        }, {});
       }
 
       return {

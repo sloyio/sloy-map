@@ -1,6 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, sloyTheme } from "sloy-ui";
 import { Provider } from "react-redux";
+import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
@@ -23,7 +24,12 @@ function AppMap() {
   return (
     <ThemeProvider theme={sloyTheme}>
       <GlobalStyles />
-      <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />
+      <SloyMap
+        {...state.mapState}
+        minZoom={MIN_ZOOM}
+        maxZoom={MAX_ZOOM}
+        maxBounds={[40.721512, 37.51153, 49.609451, 42.222066]}
+      />
     </ThemeProvider>
   );
 }
@@ -41,6 +47,12 @@ const store = configureStore({
       config: state,
     },
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(
+      createLogger({
+        collapsed: true,
+      }),
+    ),
 });
 
 const Template = () => {

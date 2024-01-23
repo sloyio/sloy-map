@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getFilterTypeFromHash } from "@/helpers/hash";
 import { State } from "@/state";
-import { IApp } from "@/types";
+import { IApp, ILayer } from "@/types";
 
 export interface SetFilterPayload {
   activeLayer: string | null;
@@ -26,6 +26,7 @@ export const initialState: State["sloy"] = {
         longitude: 0,
         zoom: 0,
         pitch: 0,
+        bearing: 0,
       },
     },
   },
@@ -56,6 +57,24 @@ const sloySlice = createSlice({
       const { activeFilterParams } = action.payload;
       state.activeFilterParams = activeFilterParams;
     },
+    updateLayer(
+      state,
+      action: PayloadAction<{
+        layerId: string;
+        layer: Partial<ILayer>;
+      }>,
+    ) {
+      const { layerId, layer = {} } = action.payload;
+      if (state.config.layers[layerId]) {
+        Object.keys(layer).forEach((key) => {
+          // @ts-expect-error
+          if (layer && layer[key]) {
+            // @ts-expect-error
+            state.config.layers[layerId][key] = layer[key];
+          }
+        });
+      }
+    },
     updateFilterParams(
       state,
       action: PayloadAction<{
@@ -70,15 +89,8 @@ const sloySlice = createSlice({
         ...activeFilterParams,
       };
     },
-    toggleData(
-      state,
-      action: PayloadAction<{
-        type: string;
-      }>,
-    ) {
-      const { type } = action.payload;
-
-      state.activeLayer = type === state.activeLayer ? null : type;
+    toggleLayer(state, action: PayloadAction<string | null>) {
+      state.activeLayer = action.payload;
       state.activeFilterParams = null;
     },
   },
@@ -87,10 +99,11 @@ const sloySlice = createSlice({
 export const {
   setAppLoaded,
   setConfig,
-  toggleData,
+  toggleLayer,
   setFilter,
   setFilterParams,
   updateFilterParams,
+  updateLayer,
 } = sloySlice.actions;
 
 export const sloyReducer = sloySlice.reducer;

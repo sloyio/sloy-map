@@ -1,56 +1,29 @@
-import { ReactNode } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
-import {
-  activeLayerSelector,
-  isAppLoadedSelector,
-  layersSelector,
-} from "@/state/selectors";
 import { MapContextProvider } from "./state/MapProvider";
-import { VisualisationLayer } from "./visualLayers/VisualisationLayer";
 import { Copyright } from "./components/Copyright/Copyright";
 import { Sidebars } from "./components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { setAppLoaded } from "./state/slice";
-
-import "maplibre-gl/dist/maplibre-gl.css";
+import { VisualisationLayers } from "./visualLayers/VisualisationLayers";
+import { IMapProps } from "./types";
+import { useAppSelector } from "./state";
 // import { TerranMap, terrainProps } from "./visualLayers/ContourVisualLayer";
 
-function MapLayers() {
-  const layers = useSelector(layersSelector);
-  const activeLayer = useSelector(activeLayerSelector);
+import "maplibre-gl/dist/maplibre-gl.css";
 
-  if (!activeLayer) return null;
-
-  return (
-    <>
-      {layers[activeLayer]?.visualisationLayers.map((vId) => (
-        <VisualisationLayer key={vId} id={vId} />
-      ))}
-    </>
-  );
-}
-interface SloyMapProps {
-  mapStyle: string;
-  minZoom?: number;
-  maxZoom?: number;
-  locale?: string;
-  initialViewState: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-    pitch: number;
-  };
+export interface SloyMapProps extends IMapProps {
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
-  children?: ReactNode;
+  locale?: string;
 }
 
 export function SloyMap({
   locale,
   minZoom = 11,
   maxZoom = 20,
+  maxPitch = 85,
   initialViewState,
   children,
   overrideCard,
@@ -58,7 +31,7 @@ export function SloyMap({
   ...mapProps
 }: SloyMapProps) {
   const dispatch = useDispatch();
-  const isAppLoaded = useSelector(isAppLoadedSelector);
+  const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 
   return (
     <MapProvider>
@@ -70,27 +43,28 @@ export function SloyMap({
         <MapGl
           id="sloyMapGl"
           initialViewState={{
-            // @ts-expect-error
             zoom: 15,
-            // @ts-expect-error
             pitch: 0,
             ...initialViewState,
           }}
           minZoom={minZoom}
           maxZoom={maxZoom}
-          maxPitch={85}
+          maxPitch={maxPitch}
           // hash
-          // @ts-ignore
           mapLib={maplibregl}
           antialias
           reuseMaps
           onLoad={() => dispatch(setAppLoaded())}
-          style={{ width: "100vw", height: "100vh", color: "black" }}
           // terrain={terrainProps}
           {...mapProps}
+          style={{
+            width: "100vw",
+            height: "100vh",
+            ...mapProps.style,
+          }}
         >
           {/* <TerranMap /> */}
-          {isAppLoaded && <MapLayers />}
+          {isAppLoaded && <VisualisationLayers />}
           {children}
         </MapGl>
         {isAppLoaded && <Sidebars />}

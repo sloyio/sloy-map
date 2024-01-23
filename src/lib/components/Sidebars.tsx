@@ -1,13 +1,9 @@
-import { useCallback, useContext } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useContext } from "react";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
-import { toggleData } from "@/state/slice";
-import { activeLayerSelector, layersSelector } from "@/state/selectors";
 import { useIsDesktop } from "@/helpers/isDesktop";
 import { RenderCard } from "@/sources/Card";
 import { MapContext } from "@/state/MapProvider";
-import { Layers } from "@/components/Layers";
-import { useMap } from "react-map-gl";
+import { Layers } from "@/layers/Layers";
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();
@@ -40,41 +36,18 @@ function SidebarCard() {
 
 function SidebarFilter() {
   const isDesktop = useIsDesktop();
-  const dispatch = useDispatch();
-  const activeLayer = useSelector(activeLayerSelector);
-  const layers = useSelector(layersSelector);
-  const { sloyMapGl } = useMap();
-  const onToggleClick = useCallback(
-    (type: string) => {
-      dispatch(toggleData({ type }));
-
-      if (layers[type]) {
-        const layer = layers[type];
-        if (typeof layer.defaultZoom === "number") {
-          const map = sloyMapGl?.getMap();
-          if (map) {
-            map.flyTo({
-              speed: 2.5,
-              zoom: layer.defaultZoom,
-            });
-          }
-        }
-      }
-    },
-    [dispatch, layers, sloyMapGl],
-  );
-
-  const filter = (
-    <Layers activeLayer={activeLayer} onToggleClick={onToggleClick} />
-  );
 
   if (isDesktop) {
-    return <LeftSidebar>{filter}</LeftSidebar>;
+    return (
+      <LeftSidebar>
+        <Layers />
+      </LeftSidebar>
+    );
   }
 
   return (
     <SheetModal snapPoints={[0.6, 0.1]} isOpen>
-      {filter}
+      <Layers />
     </SheetModal>
   );
 }

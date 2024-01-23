@@ -1,11 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useMap } from "react-map-gl";
-import { useSelector } from "react-redux";
-import {
-  cardsSelector,
-  isAppLoadedSelector,
-  sourcesSelector,
-} from "@/state/selectors";
+import { useAppSelector } from "@/state";
 import { MapContext } from "@/state/MapProvider";
 import { usePopup } from "@/state/usePopup";
 import { getLatLngFromHash } from "@/helpers/hash";
@@ -22,9 +17,9 @@ export function BuildingCard() {
   const { popupHash, sourceIdValue } = usePopup();
   const { sloyMapGl } = useMap();
   const { overrideCard } = useContext(MapContext);
-  const isAppLoaded = useSelector(isAppLoadedSelector);
-  const sources = useSelector(sourcesSelector);
-  const cards = useSelector(cardsSelector);
+  const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
+  const cards = useAppSelector((state) => state.sloy.config.cards);
   const [lat, lng] = (popupHash || "").split("_");
   const [placemark, setPlacemark] = useState<HouseObject | null>(null);
 

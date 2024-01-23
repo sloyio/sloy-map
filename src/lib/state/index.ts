@@ -1,4 +1,5 @@
 import { IApp } from "@/types";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 export interface State {
   sloy: {
@@ -8,3 +9,5 @@ export interface State {
     appLoaded: boolean;
   };
 }
+
+export const useAppSelector: TypedUseSelectorHook<State> = useSelector;

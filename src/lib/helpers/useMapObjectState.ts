@@ -70,7 +70,7 @@ function useMapObjectState(layerId: string) {
       map.off("mousemove", layerId, handleMouseMove);
       map.off("mouseleave", layerId, handleMouseLeave);
     };
-  });
+  }, [layerId, sloyMapGl]);
 
   return hoverObject.current;
 }

@@ -1,3 +1,4 @@
+import { AnimatedLogo } from "sloy-ui";
 import styled from "styled-components";
 
 const FilterLoaderContainer = styled.div`
@@ -6,5 +7,9 @@ const FilterLoaderContainer = styled.div`
 `;
 
 export function MapLoader() {
-  return <FilterLoaderContainer />;
+  return (
+    <FilterLoaderContainer>
+      <AnimatedLogo radius="100px" />
+    </FilterLoaderContainer>
+  );
 }

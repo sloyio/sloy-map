@@ -1,9 +1,8 @@
 import { useCallback } from "react";
 import { HistogramData, MinMax } from "sloy-ui";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import { RangeBaseFilter } from "@/filters/RangeBaseFilter";
 import { IFilter, SourcePropertyRange } from "@/types";
-import { sourcesSelector } from "@/state/selectors";
 import { getProperty } from "dot-prop";
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 }
 
 export function FilterRange({ filter, onChange }: Props) {
-  const sources = useSelector(sourcesSelector);
+  const sources = useAppSelector((state) => state.sloy.config.sources);
   const rangeData = getProperty(
     sources,
     `${filter.source}.properties.${filter?.property}.values`,

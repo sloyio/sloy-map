@@ -5,100 +5,118 @@ import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 import locales from "./armenia.locales.json";
 import { setTranslations } from "@/helpers/extractTranslations";
 
-const OSM_BUILDINGS = createSources([
-  {
-    id: "buildingTile",
-    copyright: [],
-    type: "tile",
-    card: {
-      title: ["addr:street", "addr:housenumber"],
-      blocks: [
-        { type: "value", id: "building:management" },
-        { type: "value", id: "building:health" },
-        { type: "value", id: "building:series" },
-        { type: "value", id: "building:levels" },
-        { type: "divider" },
-        { type: "value", id: "start_date" },
-        { type: "age", id: "building:age", deps: "start_date" },
-      ],
-    },
-    properties: [
-      {
-        title: "Когда построили",
-        id: "start_date",
-        values: [
-          { from: 1723, to: 1860, color: "#ff7461", value: 0 },
-          { from: 1860, to: 1917, color: "#ffA34e", value: 1 },
-          { from: 1917, to: 1930, color: "#fee678", value: 1 },
-          { from: 1930, to: 1940, color: "#85e634", value: 1 },
-          { from: 1940, to: 1955, color: "#0f9467", value: 0 },
-          { from: 1955, to: 1991, color: "#71b3ff", value: 7 },
-          { from: 1991, to: 2010, color: "#c270ff", value: 4 },
-          { from: 2010, to: 2023, color: "#f97bcf", value: 6 },
-        ],
-      },
-      {
-        title: "Количество этажей",
-        id: "building:levels",
-        values: [
-          { from: 1, to: 3, color: "#006adb", value: 11656 },
-          { from: 3, to: 5, color: "#0084e2", value: 3172 },
-          { from: 5, to: 9, color: "#009ee1", value: 3380 },
-          { from: 9, to: 12, color: "#00b7d9", value: 1929 },
-          { from: 12, to: 16, color: "#00cfc5", value: 664 },
-          { from: 16, to: 21, color: "#00e7a3", value: 320 },
-          { from: 21, to: 25, color: "#72f674", value: 8 },
-          { from: 25, to: 31, color: "#c0fc49", value: 0 },
-          { from: 31, to: 52, color: "#ffea00", value: 0 },
-        ],
-      },
-      {
-        id: "osm:id",
-        title: "Osm ID",
-      },
-      {
-        id: "addr:street",
-        title: "Улица",
-      },
-      {
-        id: "addr:housenumber",
-        title: "Номер дома",
-      },
-      {
-        id: "age",
-        title: "Возраст здания",
-        deps: "start_date",
-      },
-      {
-        id: "building:age",
-        title: "Возраст здания",
-      },
-    ],
-  },
-]);
-
 const LOCALE = "ru-RU";
+
+const YEREVAN_VIEW = {
+  center: [44.51, 40.18001],
+  zoom: 14.5,
+  pitch: 45,
+  bearing: 0, // TODO: set Ararat view for terrain
+};
+
+const COUNTRY_VIEW = {
+  center: [44.5106, 40.3],
+  zoom: 8,
+  pitch: 0,
+  bearing: 0,
+};
+
+const MAP_STATE = {
+  locale: LOCALE,
+  initialViewState: {
+    ...YEREVAN_VIEW,
+    longitude: YEREVAN_VIEW.center[0],
+    latitude: YEREVAN_VIEW.center[1],
+  },
+  mapStyle: "/sloy-dark-map-style.json",
+  minZoom: MIN_ZOOM,
+  maxZoom: MAX_ZOOM,
+  maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
+};
 
 const defaultState = createAppState([
   {
-    mapState: {
-      locale: LOCALE,
-      initialViewState: {
-        latitude: 40.18001,
-        longitude: 44.52656,
-        zoom: 15,
-        pitch: 80,
+    mapState: MAP_STATE,
+    // OSM:
+    ...createSources([
+      {
+        id: "buildingTile",
+        copyright: [],
+        type: "tile",
+        card: {
+          title: ["addr:street", "addr:housenumber"],
+          blocks: [
+            { type: "value", id: "building:management" },
+            { type: "value", id: "building:health" },
+            { type: "value", id: "building:series" },
+            { type: "value", id: "building:levels" },
+            { type: "divider" },
+            { type: "value", id: "start_date" },
+            { type: "age", id: "building:age", deps: "start_date" },
+          ],
+        },
+        properties: [
+          {
+            title: "Когда построили",
+            id: "start_date",
+            values: [
+              { from: 1723, to: 1860, color: "#ff7461", value: 0 },
+              { from: 1860, to: 1917, color: "#ffA34e", value: 1 },
+              { from: 1917, to: 1930, color: "#fee678", value: 1 },
+              { from: 1930, to: 1940, color: "#85e634", value: 1 },
+              { from: 1940, to: 1955, color: "#0f9467", value: 0 },
+              { from: 1955, to: 1991, color: "#71b3ff", value: 7 },
+              { from: 1991, to: 2010, color: "#c270ff", value: 4 },
+              { from: 2010, to: 2023, color: "#f97bcf", value: 6 },
+            ],
+          },
+          {
+            title: "Количество этажей",
+            id: "building:levels",
+            values: [
+              { from: 1, to: 3, color: "#006adb", value: 11656 },
+              { from: 3, to: 5, color: "#0084e2", value: 3172 },
+              { from: 5, to: 9, color: "#009ee1", value: 3380 },
+              { from: 9, to: 12, color: "#00b7d9", value: 1929 },
+              { from: 12, to: 16, color: "#00cfc5", value: 664 },
+              { from: 16, to: 21, color: "#00e7a3", value: 320 },
+              { from: 21, to: 25, color: "#72f674", value: 8 },
+              { from: 25, to: 31, color: "#c0fc49", value: 0 },
+              { from: 31, to: 52, color: "#ffea00", value: 0 },
+            ],
+          },
+          {
+            id: "osm:id",
+            title: "Osm ID",
+          },
+          {
+            id: "addr:street",
+            title: "Улица",
+          },
+          {
+            id: "addr:housenumber",
+            title: "Номер дома",
+          },
+          {
+            id: "age",
+            title: "Возраст здания",
+            deps: "start_date",
+          },
+          {
+            id: "building:age",
+            title: "Возраст здания",
+          },
+        ],
       },
-      mapStyle: "/sloy-dark-map-style.json",
-    },
-    ...OSM_BUILDINGS,
+    ]),
   },
   createLayer(
     {
       title: "Этажность домов",
+      subTitle: "20",
       description:
         "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
-      defaultZoom: 14,
+      initialViewState: YEREVAN_VIEW,
       filters: [
         {
           type: "range",
@@ -123,9 +141,10 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Возраст домов",
+      subTitle: "21129",
       description:
         "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
-      defaultZoom: 14,
+      initialViewState: YEREVAN_VIEW,
       filters: [
         {
           type: "range",
@@ -155,7 +174,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/armenian-post-branches",
         label: "Источник",
       },
-      defaultZoom: 10,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -216,7 +235,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/sustc-477",
         label: "Источник",
       },
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "VALUE",
@@ -285,7 +304,7 @@ const defaultState = createAppState([
         href: "https://data.opendata.am/dataset/sustc-991",
         label: "Источник",
       },
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Zone",
@@ -358,7 +377,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Типы растительности",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Veget_zone",
@@ -409,51 +428,67 @@ const defaultState = createAppState([
             title: "Зона",
             values: {
               "Alpine medows and dense turf formations": {
+                title: "Alpine medows and dense turf formations",
                 color: "#02e409",
               },
               "Beech, oak and hornbeam forests": {
+                title: "Beech, oak and hornbeam forests",
                 color: "#1fa000",
               },
               "Cereal and motley grass steppe with  tragacanth": {
+                title: "Cereal and motley grass steppe with  tragacanth",
                 color: "#ceea80",
               },
               "Coniferous and deciduous sparse trees": {
+                title: "Coniferous and deciduous sparse trees",
                 color: "#187403",
               },
               "Forests  of eastern oak": {
+                title: "Forests  of eastern oak",
                 color: "#2dc61e",
               },
               "Grassland steppe": {
+                title: "Grassland steppe",
                 color: "#b9e44b",
               },
               "Halophilous deserts (halophytic and others)": {
+                title: "Halophilous deserts (halophytic and others)",
                 color: "#ecf778",
               },
               "Lake Arpilich": {
+                title: "Lake Arpilich",
                 color: "#3196ff",
               },
               "Lake Sevan": {
+                title: "Lake Sevan",
                 color: "#3196ff",
               },
               "Lower alpine medows": {
+                title: "Lower alpine medows",
                 color: "#95eb6f",
               },
               "Mixed oak and hornbeam forests": {
+                title: "Mixed oak and hornbeam forests",
                 color: "#5bae75",
               },
               "Psammophilous deserts": {
+                title: "Psammophilous deserts",
                 color: "#e3d612",
               },
               "Vegetation of exposed soils": {
+                title: "Vegetation of exposed soils",
                 color: "#95aba8",
               },
               "Water-marsh vegetation": {
+                title: "Water-marsh vegetation",
                 color: "#87d4b4",
               },
               "Wormwood semi-deserts (sweet wormwood)": {
+                title: "Wormwood semi-deserts (sweet wormwood)",
                 color: "#e9da81",
               },
               "Xerophilous bushes and grasses": {
+                title: "Xerophilous bushes and grasses",
                 color: "#c9d05f",
               },
             },
@@ -466,13 +501,14 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Ветровые ресурсы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Wind_Speed",
           type: "string",
           filterVisualisationLayers: ["armenianWindResourcesLayer"],
           source: "armenianWindResourcesLayerSource",
+          sortType: "default",
         },
       ],
       visualisationLayers: [
@@ -543,7 +579,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Озера и водохранилища",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -576,7 +612,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Оползни",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -610,7 +646,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовой уровень солнечной радиации",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Sun_radiat",
@@ -694,7 +730,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовой уровень осадков",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Precipitat",
@@ -772,7 +808,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Среднегодовая температура",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Temperatur",
@@ -822,28 +858,28 @@ const defaultState = createAppState([
               "-1": {
                 color: "#fdccb8",
               },
-              1: {
+              "1": {
                 color: "#fcaf93",
               },
-              3: {
+              "3": {
                 color: "#fc8f6f",
               },
-              5: {
+              "5": {
                 color: "#fc7050",
               },
-              7: {
+              "7": {
                 color: "#f44d37",
               },
-              9: {
+              "9": {
                 color: "#e22d26",
               },
-              11: {
+              "11": {
                 color: "#c5161b",
               },
-              13: {
+              "13": {
                 color: "#a50f15",
               },
-              15: {
+              "15": {
                 color: "#67000d",
               },
             },
@@ -856,7 +892,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Землепользование",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Landuse",
@@ -901,28 +937,32 @@ const defaultState = createAppState([
             id: "Landuse",
             title: "Землепользование",
             values: {
-              "": {
-                color: "rgba(255,255,255,.2)",
-              },
               "Arable land": {
+                title: "Arable land",
                 color: "#fdad51",
               },
               Crops: {
+                title: "Crops",
                 color: "#a06525",
               },
               "Forest, shrubland": {
+                title: "Forest, shrubland",
                 color: "#217c16",
               },
               Grassland: {
+                title: "Grassland",
                 color: "#5dba26",
               },
               "Lakes, reservoirs": {
+                title: "Lakes, reservoirs",
                 color: "#a5bfdd",
               },
               Pastures: {
+                title: "Pastures",
                 color: "#81fb44",
               },
               "Yerevan city": {
+                title: "Yerevan city",
                 color: "#eb3a09",
               },
             },
@@ -935,7 +975,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Типы почвы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descriptio",
@@ -982,64 +1022,85 @@ const defaultState = createAppState([
             values: {
               "Alluvial-meadow saline lands and alkali soils": {
                 color: "#9ddcda",
+                title: "Alluvial-meadow saline lands and alkali soils",
               },
               "Alluvial-meadow soils irrigated also in the past": {
                 color: "#2fc9dd",
+                title: "Alluvial-meadow soils irrigated also in the past",
               },
               "Alpine mountaine-medow turf-peat soils": {
                 color: "#85b70f",
+                title: "Alpine mountaine-medow turf-peat soils",
               },
               "Brown mountainous-forest soils of dry firests and bushes": {
                 color: "#b98746",
+                title:
+                  "Brown mountainous-forest soils of dry firests and bushes",
               },
               "Brown mountainous-forest soils of moderately humid forests": {
                 color: "#d6a15c",
+                title:
+                  "Brown mountainous-forest soils of moderately humid forests",
               },
               "Desalinated here and there fat mountainous black soils of humid steppe":
                 {
                   color: "#75552c",
+                  title:
+                    "Desalinated here and there fat mountainous black soils of humid steppe",
                 },
               "Gray mountainous here and there gypsiferous & saline soils": {
                 color: "#979797",
+                title:
+                  "Gray mountainous here and there gypsiferous & saline soils",
               },
               "Gypsiferous and here and there saline colored soils": {
                 color: "#d1dbdd",
+                title: "Gypsiferous and here and there saline colored soils",
               },
               "Lake Sevan's outcropped bottomlands": {
                 color: "#2863da",
+                title: "Lake Sevan's outcropped bottomlands",
               },
               "Meadow saline lands and alkali soils": {
                 color: "#bedd74",
+                title: "Meadow saline lands and alkali soils",
               },
               "Meadow-marshy soils": {
                 color: "#0fbf6a",
+                title: "Meadow-marshy soils",
               },
               "Mountain-fulvous soils of dry steppes": {
                 color: "#dbb3bc",
+                title: "Mountain-fulvous soils of dry steppes",
               },
               "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes":
                 {
                   color: "#eecec1",
+                  title:
+                    "Mountainous carbonated and typical black soils with weakly developed black soils of moderately humid steppes",
                 },
               "Mountainous-forest steppe soils": {
                 color: "#677288",
+                title: "Mountainous-forest steppe soils",
               },
               "Non-developed soils of snow-closed zone": {
                 color: "#edec8d",
+                title: "Non-developed soils of snow-closed zone",
               },
               "Subalpian mountain-medow black soil-like": {
                 color: "#565b0c",
+                title: "Subalpian mountain-medow black soil-like",
               },
               "Subalpian mountain-medow brown soils": {
                 color: "#8f5a21",
+                title: "Subalpian mountain-medow brown soils",
               },
               "Watered and irrigated also in the past cultivated gray mountainous soils":
                 {
                   color: "#388ef0",
+                  title:
+                    "Watered and irrigated also in the past cultivated gray mountainous soils",
                 },
-              "": {
-                color: "rgba(255,255,255,.2)",
-              },
             },
           },
         ],
@@ -1050,7 +1111,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Климатические зоны",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descriptio",
@@ -1097,34 +1158,46 @@ const defaultState = createAppState([
             values: {
               "Arid continental, with dry warm summersand moderate cold winters":
                 {
+                  title:
+                    "Arid continental, with dry warm summersand moderate cold winters",
                   color: "#d7191c",
                 },
+              "Moderate, warm arid summers and moderate cold winters": {
+                title: "Moderate, warm arid summers and moderate cold winters",
+                color: "#ffffff", // TODO, check in legend (source)
+              },
               "Arid subtropical, with hot summers and calm winters": {
+                title: "Arid subtropical, with hot summers and calm winters",
                 color: "#e75437",
               },
               "Arid, continental, with hot summers and cold winters": {
+                title: "Arid, continental, with hot summers and cold winters",
                 color: "#f69053",
               },
               "Moderate, relatively dry warm summers and cold winters": {
+                title: "Moderate, relatively dry warm summers and cold winters",
                 color: "#febe4e",
               },
               "Moderate, relativly humid during all seasons": {
+                title: "Moderate, relativly humid during all seasons",
                 color: "#ffdf29",
               },
               "Moderate, with short cool summers and cold winters": {
+                title: "Moderate, with short cool summers and cold winters",
                 color: "#dcf02d",
               },
               "Moderate, with warm summers, relatively humid calm winters": {
+                title:
+                  "Moderate, with warm summers, relatively humid calm winters",
                 color: "#b8e156",
               },
               "Mountain tundra climate": {
+                title: "Mountain tundra climate",
                 color: "#8acc62",
               },
               "Warm summers and relatively calm winters": {
+                title: "Warm summers and relatively calm winters",
                 color: "#52b151",
-              },
-              "": {
-                color: "rgba(255,255,255,.2)",
               },
             },
           },
@@ -1136,7 +1209,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Лесные массивы",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -1169,7 +1242,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Зоны подземных вод",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Descript",
@@ -1209,24 +1282,31 @@ const defaultState = createAppState([
             title: "Зоны подземных вод",
             values: {
               "Fault zones": {
+                title: "Fault zones",
                 color: "#e31a1c",
               },
               "Unconfined groundwater of continental salinity": {
+                title: "Unconfined groundwater of continental salinity",
                 color: "#ffab57",
               },
               "Deep faults zones with discharge of mineral water": {
+                title: "Deep faults zones with discharge of mineral water",
                 color: "#db1e2a",
               },
               "Tectonic faults zones with discharge of freshwater": {
+                title: "Tectonic faults zones with discharge of freshwater",
                 color: "#db1e2a",
               },
               "High capcity interlava and underlava water streams": {
+                title: "High capcity interlava and underlava water streams",
                 color: "#0e0e0e",
               },
               "Boundaries with aquifers with negative pressure": {
+                title: "Boundaries with aquifers with negative pressure",
                 color: "#1c8e1a",
               },
               "Boundaries with aquifers with positive pressure": {
+                title: "Boundaries with aquifers with positive pressure",
                 color: "#0524bc",
               },
             },
@@ -1239,7 +1319,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Минеральные и пресноводные источники",
-      defaultZoom: 10,
+      initialViewState: COUNTRY_VIEW,
       filters: [
         {
           property: "Flow_l_sec",
@@ -1318,7 +1398,7 @@ const defaultState = createAppState([
   createLayer(
     {
       title: "Реки (5 км и более)",
-      defaultZoom: 8,
+      initialViewState: COUNTRY_VIEW,
       filters: [],
       visualisationLayers: [
         {
@@ -1359,3 +1439,6 @@ const defaultState = createAppState([
 ]);
 
 export const state = setTranslations(defaultState, LOCALE, locales);
+
+// uncomment this string to get translations
+// console.log(extractTranslations(state, locales));

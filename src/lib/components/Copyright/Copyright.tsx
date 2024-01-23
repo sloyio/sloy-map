@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import { isAppLoadedSelector } from "@/state/selectors";
+import { useAppSelector } from "@/state";
 import styles from "./Copyright.module.css";
 
 export function Copyright() {
-  const isAppLoaded = useSelector(isAppLoadedSelector);
+  const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 
   return (
     <div className={styles.copyright} hidden={!isAppLoaded}>

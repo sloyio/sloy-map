@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { getProperty } from "dot-prop";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/state";
 import {
   Button,
   ButtonSize,
@@ -11,7 +11,6 @@ import {
   LinkSize,
   Tag,
 } from "sloy-ui";
-import { copyrightSelector } from "@/state/selectors";
 import { ISource, ICard } from "@/types";
 import { MapContext } from "@/state/MapProvider";
 import { getStringFromStringOrArray } from "@/helpers/getStringFromStringOrArray";
@@ -35,7 +34,7 @@ export function BaseCard({
   source,
   overrideCard = (props) => props.cardProps,
 }: Props) {
-  const copyright = useSelector(copyrightSelector);
+  const copyright = useAppSelector((state) => state.sloy.config.copyright);
   const { locale } = useContext(MapContext);
 
   const uiCardProps = useMemo(() => {
