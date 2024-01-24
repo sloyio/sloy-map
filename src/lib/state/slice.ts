@@ -9,7 +9,7 @@ export interface SetFilterPayload {
 }
 
 export const initialState: State["sloy"] = {
-  activeLayer: (getFilterTypeFromHash() as string) || "ekbHouseAge",
+  activeLayer: getFilterTypeFromHash() as string,
   activeFilterParams: null,
   config: {
     copyright: {},
