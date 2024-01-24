@@ -170,6 +170,7 @@ const defaultState = createAppState([
     {
       title: "Почтовые отделения",
       description: "Список филиалов Армянской почты (Haypost.am).",
+      updatedAt: "2023-09-11T07:46:00.000Z",
       link: {
         href: "https://data.opendata.am/dataset/armenian-post-branches",
         label: "Источник",
@@ -231,6 +232,7 @@ const defaultState = createAppState([
       title: "Радиационный баланс, ккал/см²",
       description:
         "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
+      updatedAt: "2023-07-14T18:58:00.000Z",
       link: {
         href: "https://data.opendata.am/dataset/sustc-477",
         label: "Источник",

@@ -107,6 +107,7 @@ export interface ILayer {
   title: string;
   filters: IFilter["id"][];
   visualisationLayers: IVisualisationLayer["id"][];
+  updatedAt?: string;
   subTitle?: string;
   initialViewState?: Partial<
     Omit<InitialViewState, "latitude" | "longitude"> & {

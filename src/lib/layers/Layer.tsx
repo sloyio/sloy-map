@@ -1,19 +1,21 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { useAppSelector } from "@/state";
-import { Divider, Link, LinkSize } from "sloy-ui";
+import { Divider } from "sloy-ui";
 import { MapFilter } from "@/filters/MapFilter";
 import { ILayer } from "@/types";
 import { MapContext } from "@/state/MapProvider";
+import { LayerSource } from "./components/LayerSource";
+import { LayerUpdatedAt } from "./components/LayerUpdatedAt";
 
-const FilterTitle = styled.div`
+const LayerFilterTitle = styled.div`
   font-size: 18px;
   line-height: 24px;
   margin: 12px 0;
   font-weight: bold;
 `;
 
-const FilterDescription = styled.div`
+const LayerFilterDescription = styled.div`
   font-size: 14px;
   line-height: 21px;
   gap: 16px;
@@ -21,6 +23,13 @@ const FilterDescription = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 4px 8px 8px;
+`;
+
+const LayerFilterDescriptionFooter = styled.div`
+  color: ${({ theme }) => theme.text.color.secondary};
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 interface Props {
@@ -35,14 +44,15 @@ export function Layer({ layer }: Props) {
     <>
       {overrideLayers?.(layer)}
       {(layer.link?.href || layer.description) && (
-        <FilterDescription>
+        <LayerFilterDescription>
           {layer.description}
-          {layer.link?.href && (
-            <Link size={LinkSize.SMALL} href={layer.link?.href}>
-              {layer.link?.label || layer.link?.href}
-            </Link>
-          )}
-        </FilterDescription>
+
+          <LayerFilterDescriptionFooter>
+            {layer.updatedAt && <LayerUpdatedAt updatedAt={layer.updatedAt} />}
+            {layer.updatedAt && layer.link?.href && "·"}
+            {layer.link?.href && <LayerSource link={layer.link} />}
+          </LayerFilterDescriptionFooter>
+        </LayerFilterDescription>
       )}
       {layer.filters.map((filterId, i) => {
         const filter = filters[filterId];
@@ -50,7 +60,7 @@ export function Layer({ layer }: Props) {
         return (
           <div key={filterId}>
             {filter.type !== "boolean" && filter.title && (
-              <FilterTitle key="title">{filter.title}</FilterTitle>
+              <LayerFilterTitle key="title">{filter.title}</LayerFilterTitle>
             )}
             <MapFilter
               key={filter.id}
