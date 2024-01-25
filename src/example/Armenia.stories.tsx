@@ -5,6 +5,7 @@ import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
+import translations from "./armenia.locales.json";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 import { state } from "./armeniaConfig";
 
@@ -26,6 +27,7 @@ function AppMap() {
       <GlobalStyles />
       <SloyMap
         {...state.mapState}
+        translations={translations}
         minZoom={MIN_ZOOM}
         maxZoom={MAX_ZOOM}
         maxBounds={[40.721512, 37.51153, 49.609451, 42.222066]}

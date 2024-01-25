@@ -75,10 +75,19 @@ export function MapFilter({
         valueType: getProperty(source, `properties.${filter.property}.type`),
       }).map((item) => ({
         type: item.type,
-        title: getProperty(values, `${item.type}.title`),
+        title: getProperty(
+          values,
+          `${item.type?.replaceAll(".", "\\.")}.title`,
+        ),
         count: item.count,
-        color: getProperty(values, `${item.type}.color`),
-        description: getProperty(values, `${item.type}.description`),
+        color: getProperty(
+          values,
+          `${item.type?.replaceAll(".", "\\.")}.color`,
+        ),
+        description: getProperty(
+          values,
+          `${item.type?.replaceAll(".", "\\.")}.description`,
+        ),
       }));
 
       const selectedByDefault = items.map((item) => item.type);

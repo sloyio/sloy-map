@@ -66,7 +66,7 @@ export function extractTranslations(
 }
 
 export function t(
-  key: string | undefined,
+  key: string | undefined = "",
   options: {
     lang: string;
     translations: Record<string, Record<string, string>>;
@@ -77,7 +77,7 @@ export function t(
   return (
     getProperty(
       options.translations,
-      `${key.replaceAll(".", "\\.")}.${options.lang}`,
+      `${String(key)?.replaceAll(".", "\\.")}.${options.lang}`,
     ) || key
   );
 }

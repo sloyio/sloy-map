@@ -17,6 +17,7 @@ export interface SloyMapProps extends IMapProps {
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
   locale?: string;
+  translations?: Record<string, Record<string, string>>;
 }
 
 export function SloyMap({
@@ -24,6 +25,7 @@ export function SloyMap({
   minZoom = 11,
   maxZoom = 20,
   maxPitch = 85,
+  translations,
   initialViewState,
   children,
   overrideCard,
@@ -37,6 +39,7 @@ export function SloyMap({
     <MapProvider>
       <MapContextProvider
         locale={locale}
+        translations={translations}
         overrideCard={overrideCard}
         overrideLayers={overrideLayers}
       >

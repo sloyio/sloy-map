@@ -2,7 +2,7 @@ import { createAppState } from "@/helpers/createAppState";
 import { createLayer } from "@/helpers/createLayer";
 import { createSources } from "@/helpers/createSources";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import locales from "./armenia.locales.json";
+import translations from "./armenia.locales.json";
 import { setTranslations } from "@/helpers/extractTranslations";
 
 const LOCALE = "ru-RU";
@@ -1259,7 +1259,7 @@ const defaultState = createAppState([
             values: {
               "0 - 6.0": {
                 title: "0 - 6.0",
-                color: "rgba(255,255,255,.2)",
+                color: "rgba(255, 255, 255, .2)",
               },
               "6.0 - 6.8": {
                 title: "6.0 - 6.8",
@@ -1549,7 +1549,7 @@ const defaultState = createAppState([
   ),
 ]);
 
-export const state = setTranslations(defaultState, LOCALE, locales);
+export const state = setTranslations(defaultState, LOCALE, translations);
 
 // uncomment this string to get translations
-// console.log(extractTranslations(state, locales));
+// console.log(extractTranslations(state, translations));
