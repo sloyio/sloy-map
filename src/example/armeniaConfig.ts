@@ -1214,7 +1214,7 @@ const defaultState = createAppState([
           type: "string",
           filterVisualisationLayers: ["armenianWindResourcesLayer"],
           source: "armenianWindResourcesLayerSource",
-          sortType: "default",
+          sortType: "config",
         },
       ],
       visualisationLayers: [
@@ -1431,7 +1431,7 @@ const defaultState = createAppState([
             "armenianMineralAndFreshwaterResourcesLayer",
           ],
           source: "armenianMineralAndFreshwaterResourcesLayerSource",
-          sortType: "default",
+          sortType: "config",
         },
       ],
       visualisationLayers: [

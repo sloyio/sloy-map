@@ -20,13 +20,15 @@ interface Props {
   items?: IFilterGridItem[];
   onChange?: (state: string[]) => void;
   sortType?: IFilter["sortType"];
+  sortByArray?: string[];
 }
 
 export function FilterGrid({
   items = [],
   onChange,
   selectedByDefault = [],
-  sortType = "alphabetical",
+  sortType,
+  sortByArray = [],
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
@@ -47,7 +49,17 @@ export function FilterGrid({
 
   const sortedItems = useMemo(() => {
     switch (sortType) {
+      case "count":
+        return items.sort((a, b) => (b.count || 0) - (a.count || 0));
+      case "config":
+        return items.sort((a, b) => {
+          const indexA = sortByArray.indexOf(String(a.type));
+          const indexB = sortByArray.indexOf(String(b.type));
+
+          return indexA - indexB;
+        });
       case "alphabetical":
+      default:
         return items.sort((a, b) => {
           const valueA = String(a.title || a.type);
           const valueB = String(b.title || b.type);
@@ -60,13 +72,8 @@ export function FilterGrid({
             String(b.title || b.type),
           );
         });
-      case "count":
-        return items.sort((a, b) => (b.count || 0) - (a.count || 0));
-      case "default":
-      default:
-        return items;
     }
-  }, [items, sortType]);
+  }, [items, sortByArray, sortType]);
 
   if (sortedItems.length === 0) {
     return null;

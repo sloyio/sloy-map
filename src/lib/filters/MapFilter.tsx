@@ -64,25 +64,21 @@ export function MapFilter({
       return <FilterRange filter={filter} onChange={onChange} />;
     case "string[]":
     case "string": {
+      const values = getProperty(
+        source,
+        `properties.${filter.property}.values`,
+      );
+
       const items = groupByProperty({
         geojson: data,
         property: filter.property,
         valueType: getProperty(source, `properties.${filter.property}.type`),
       }).map((item) => ({
         type: item.type,
-        title: getProperty(
-          source,
-          `properties.${filter.property}.values.${item.type}.title`,
-        ),
+        title: getProperty(values, `${item.type}.title`),
         count: item.count,
-        color: getProperty(
-          source,
-          `properties.${filter.property}.values.${item.type}.color`,
-        ),
-        description: getProperty(
-          source,
-          `properties.${filter.property}.values.${item.type}.description`,
-        ),
+        color: getProperty(values, `${item.type}.color`),
+        description: getProperty(values, `${item.type}.description`),
       }));
 
       const selectedByDefault = items.map((item) => item.type);
@@ -93,6 +89,7 @@ export function MapFilter({
           selectedByDefault={selectedByDefault}
           onChange={onChange}
           sortType={filter.sortType}
+          sortByArray={values ? Object.keys(values) : undefined}
         />
       );
     }
