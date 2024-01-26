@@ -35,7 +35,7 @@ export function BaseCard({
   overrideCard = (props) => props.cardProps,
 }: Props) {
   const copyright = useAppSelector((state) => state.sloy.config.copyright);
-  const { locale } = useContext(MapContext);
+  const { locale, t } = useContext(MapContext);
 
   const uiCardProps = useMemo(() => {
     if (!card || !source) return null;
@@ -44,7 +44,7 @@ export function BaseCard({
       ?.map((block) => ({
         ...block,
         title: getProperty(source, `properties.${block.id}.title`) || block.id,
-        value: getProperty(values, String(block.id)),
+        value: t(getProperty(values, String(block.id))),
       }))
       .filter((block) => block.type !== "value" || block.value);
 

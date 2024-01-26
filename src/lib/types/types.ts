@@ -93,7 +93,7 @@ export interface IFilter {
   description?: string;
   color?: string;
   property: string;
-  sortType?: "default" | "count" | "alphabetical";
+  sortType?: "config" | "count" | "alphabetical";
 }
 
 export interface Copyright {
