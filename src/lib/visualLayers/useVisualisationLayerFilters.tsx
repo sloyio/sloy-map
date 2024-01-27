@@ -52,8 +52,16 @@ export function useVisualisationLayerFilters({
         } else if (filter.type === "range") {
           filters.push([
             "all",
-            [">=", ["to-string", ["get", filter.property]], values?.min],
-            ["<=", ["to-string", ["get", filter.property]], values?.max],
+            [
+              ">=",
+              ["to-string", ["get", filter.property]],
+              String(values?.min),
+            ],
+            [
+              "<=",
+              ["to-string", ["get", filter.property]],
+              String(values?.max),
+            ],
           ]);
         } else if (filter.type === "string[]") {
           filters.push(
