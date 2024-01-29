@@ -45,6 +45,7 @@ export interface SloyMapProps {
   layout?: {
     hasBaseMap?: boolean;
     buildingLayerName?: string;
+    loaderImageSrc?: string;
   };
 }
 
@@ -63,7 +64,6 @@ export function SloyMap({
   copyrights,
   layout,
 }: SloyMapProps) {
-  console.log(mapProps);
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 

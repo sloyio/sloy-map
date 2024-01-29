@@ -1,8 +1,15 @@
+import styled from "styled-components";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/isDesktop";
 import { useCard } from "@/state/useCard";
 import { Layers } from "@/layers/Layers";
 import { Card as RenderCard } from "@/sources/cards";
+
+const Right = styled(RightSidebar)`
+  & > div {
+    display: flex;
+  }
+`;
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();
@@ -12,9 +19,9 @@ function SidebarCard() {
 
   if (isDesktop && isCardActive) {
     return (
-      <RightSidebar>
+      <Right>
         <SidebarContent onClose={closeCard}>{card}</SidebarContent>
-      </RightSidebar>
+      </Right>
     );
   }
 
@@ -40,11 +47,9 @@ function SidebarFilter() {
   );
 }
 
-export function Sidebars() {
-  return (
-    <>
-      <SidebarFilter />
-      <SidebarCard />
-    </>
-  );
-}
+export const Sidebars = () => (
+  <>
+    <SidebarFilter />
+    <SidebarCard />
+  </>
+);

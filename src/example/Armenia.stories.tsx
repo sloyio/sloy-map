@@ -14,6 +14,7 @@ import {
   defaultSources,
 } from "./armeniaConfig";
 import translations from "./armenia.locales.json";
+import sloyLoader from "./sloy-loader.svg";
 
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
@@ -37,6 +38,7 @@ function AppMap() {
       copyrights={copyrights}
       layout={{
         hasBaseMap: true,
+        loaderImageSrc: sloyLoader,
       }}
     />
   );
