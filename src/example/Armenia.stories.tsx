@@ -25,8 +25,21 @@ export default {
     layout: "fullscreen",
   },
 };
-function AppMap() {
-  return (
+
+const store = configureStore({
+  reducer: {
+    sloy: sloyReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(
+      createLogger({
+        collapsed: true,
+      }),
+    ),
+});
+
+const Example = () => (
+  <Provider store={store}>
     <SloyMap
       locale="en-EN"
       mapState={defaultMapState}
@@ -41,27 +54,7 @@ function AppMap() {
         loaderImageSrc: sloyLoader,
       }}
     />
-  );
-}
+  </Provider>
+);
 
-const store = configureStore({
-  reducer: {
-    sloy: sloyReducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
-      createLogger({
-        collapsed: true,
-      }),
-    ),
-});
-
-const Template = () => {
-  return (
-    <Provider store={store}>
-      <AppMap />
-    </Provider>
-  );
-};
-
-export const Default = Template.bind({});
+export const Default = Example.bind({});

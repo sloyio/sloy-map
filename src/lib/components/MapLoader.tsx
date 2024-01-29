@@ -15,12 +15,12 @@ const FilterLoaderContainer = styled.div`
 `;
 
 export function MapLoader() {
-  const { loaderImageSrc } = useContext(MapContext);
+  const { layout } = useContext(MapContext);
 
-  if (loaderImageSrc) {
+  if (layout.loaderImageSrc) {
     return (
       <FilterLoaderContainer>
-        <img src={loaderImageSrc} alt="loading" />
+        <img src={layout.loaderImageSrc} alt="loading" />
       </FilterLoaderContainer>
     );
   }

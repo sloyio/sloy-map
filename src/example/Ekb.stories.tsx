@@ -29,7 +29,7 @@ const store = configureStore({
   },
 });
 
-const Template = (args: Partial<ComponentProps<typeof SloyMap>>) => (
+const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
   <Provider store={store}>
     <SloyMap
       locale="ru-RU"
@@ -47,5 +47,5 @@ const Template = (args: Partial<ComponentProps<typeof SloyMap>>) => (
 
 // internal stories code, do not copy:
 type Story = StoryObj<typeof SloyMap>;
-export const Default: Story = Template.bind({});
+export const Default: Story = Example.bind({});
 Default.args = { mapProps: { reuseMaps: false } };
