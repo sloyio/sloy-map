@@ -1018,9 +1018,9 @@ export const defaultLayers: InputLayer[] = [
 ];
 
 const EKB_VIEW = {
-  center: [60.6, 56.838],
+  center: [60.6099, 56.83898],
   zoom: 14.5,
-  pitch: 20,
+  pitch: 0,
   bearing: 0,
 };
 
