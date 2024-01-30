@@ -4,10 +4,8 @@ import { GlobalStyles, defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
-import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { state } from "./ekbConfig";
+import { defaultLayers, defaultMapState, defaultSources } from "./ekbConfig";
 
-import "sloy-ui/style.css";
 import "sloy-ui/fonts.css";
 
 // @ts-expect-error
@@ -25,7 +23,12 @@ function AppMap() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
-      <SloyMap {...state.mapState} minZoom={MIN_ZOOM} maxZoom={MAX_ZOOM} />
+      <SloyMap
+        locale="ru-RU"
+        mapState={defaultMapState}
+        sources={defaultSources}
+        layers={defaultLayers}
+      />
     </ThemeProvider>
   );
 }
@@ -33,14 +36,6 @@ function AppMap() {
 const store = configureStore({
   reducer: {
     sloy: sloyReducer,
-  },
-  preloadedState: {
-    sloy: {
-      activeLayer: null,
-      activeFilterParams: null,
-      appLoaded: false,
-      config: state,
-    },
   },
 });
 

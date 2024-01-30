@@ -181,7 +181,11 @@ export function BaseCard({
         type: "section",
         title: "Источники",
         value: (
-          <Sources sources={source.copyright.map((item) => copyright[item])} />
+          <Sources
+            sources={source.copyright
+              .map((item) => copyright[item])
+              .filter(Boolean)}
+          />
         ),
       });
     }
@@ -201,7 +205,7 @@ export function BaseCard({
     }
 
     return overrided;
-  }, [card, overrideCard, values, coordinates, source, locale, copyright]);
+  }, [card, source, overrideCard, values, coordinates, t, locale, copyright]);
 
   if (!values || !card || !uiCardProps) {
     return null;

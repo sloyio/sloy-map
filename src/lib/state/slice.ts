@@ -19,7 +19,6 @@ export const initialState: State["sloy"] = {
     filters: {},
     visualisationLayers: {},
     mapState: {
-      locale: "en-En",
       mapStyle: "",
       initialViewState: {
         latitude: 0,

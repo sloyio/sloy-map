@@ -82,11 +82,15 @@ export function t(
   );
 }
 
-export function setTranslations(
-  state: IApp,
-  locale: string,
-  translations: Record<string, Record<string, string>>,
-) {
+export function setTranslations({
+  state,
+  locale,
+  translations = {},
+}: {
+  state: IApp;
+  locale: string;
+  translations?: Record<string, Record<string, string>>;
+}) {
   const lang = new Intl.Locale(locale).language;
   const layers = Object.values(state.layers).reduce<IApp["layers"]>(
     (all, { title, link, description, ...layer }) => ({

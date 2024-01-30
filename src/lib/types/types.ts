@@ -121,14 +121,17 @@ export interface ILayer {
   };
 }
 
-export type IMapProps = Omit<React.ComponentProps<typeof MapGl>, "locale">;
+export type IMapProps = Partial<React.ComponentProps<typeof MapGl>>;
 
 export type IMapState = Pick<
   IMapProps,
-  "initialViewState" | "mapStyle" | "minZoom" | "maxZoom" | "maxBounds"
-> & {
-  locale: string;
-};
+  | "initialViewState"
+  | "mapStyle"
+  | "minZoom"
+  | "maxZoom"
+  | "maxBounds"
+  | "maxPitch"
+>;
 
 export interface IApp {
   mapState: IMapState;
