@@ -73,18 +73,41 @@ export interface ISource {
   mapSourceProps?: SourceProps;
 }
 
-export interface IVisualisationLayer {
+interface IBaseVisualisationLayer {
   id: string;
-  type: string;
   source: ISource["id"];
-  paint: any;
   property?: string;
   previewPath?: string;
   rootSrc?: string;
   ids?: string[];
   openable?: boolean;
-  mapLayerProps?: LayerProps;
 }
+
+export type IMapVisualisationLayer = IBaseVisualisationLayer & {
+  type: "map";
+  mapLayerProps?: LayerProps;
+};
+
+export type IBuildingIdsVisualisationLayer = IBaseVisualisationLayer & {
+  type: "building-ids";
+  mapLayerProps?: LayerProps;
+};
+
+export type IMarkerImageVisualisationLayer = IBaseVisualisationLayer & {
+  type: "marker-image";
+  mapLayerProps?: undefined;
+};
+
+export type IBuildingRangeVisualisationLayer = IBaseVisualisationLayer & {
+  type: "building-range";
+  mapLayerProps?: undefined;
+};
+
+export type IVisualisationLayer =
+  | IMapVisualisationLayer
+  | IBuildingRangeVisualisationLayer
+  | IMarkerImageVisualisationLayer
+  | IBuildingIdsVisualisationLayer;
 
 export interface IFilter {
   id: string;

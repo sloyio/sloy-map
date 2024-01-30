@@ -5,7 +5,7 @@ import { colorLuminance } from "../helpers/colorLuminance";
 const isHex = (color: string) => /^#[0-9A-F]{6}$/i.test(color);
 
 function withHover(visualisationLayer: IVisualisationLayer, property: string) {
-  const paintColor = visualisationLayer.paint?.[property];
+  const paintColor = visualisationLayer.mapLayerProps?.paint?.[property];
 
   if (!paintColor || !property || visualisationLayer.property) return undefined;
 
@@ -53,18 +53,18 @@ export function getLayerProps(
 
   const props = {
     id: visualisationLayer.id,
-    type: visualisationLayer.type,
     source: visualisationLayer.source,
+    ...visualisationLayer.mapLayerProps,
   };
 
-  switch (visualisationLayer.type) {
+  switch (visualisationLayer.mapLayerProps?.type) {
     case "circle": {
       return {
         ...props,
         paint: {
           "circle-color": withPropertyColors(visualisationLayer, values),
           "circle-stroke-color": "#000",
-          ...visualisationLayer.paint,
+          ...visualisationLayer.mapLayerProps?.paint,
           ...withHover(visualisationLayer, "circle-color"),
         },
       };
@@ -74,7 +74,7 @@ export function getLayerProps(
         ...props,
         paint: {
           "line-color": withPropertyColors(visualisationLayer, values),
-          ...visualisationLayer.paint,
+          ...visualisationLayer.mapLayerProps?.paint,
           ...withHover(visualisationLayer, "line-color"),
         },
       };
@@ -85,16 +85,13 @@ export function getLayerProps(
         ...props,
         paint: {
           "fill-color": withPropertyColors(visualisationLayer, values),
-          ...visualisationLayer.paint,
+          ...visualisationLayer.mapLayerProps?.paint,
           ...withHover(visualisationLayer, "fill-color"),
         },
       };
 
     default: {
-      return {
-        ...props,
-        paint: visualisationLayer.paint,
-      };
+      return props;
     }
   }
 }

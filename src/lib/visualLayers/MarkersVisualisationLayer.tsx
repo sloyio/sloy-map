@@ -2,14 +2,14 @@ import { useMemo } from "react";
 import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { getLayerStyle } from "@/helpers/getLayerStyle";
-import { ActiveFilters, IVisualisationLayer } from "@/types";
+import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
 import { usePopup } from "../state/usePopup";
 import { getProperty } from "dot-prop";
 import { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
 import styled, { css } from "styled-components";
 
 interface Props {
-  visualisationLayer: IVisualisationLayer;
+  visualisationLayer: IMarkerImageVisualisationLayer;
   activeFilters: ActiveFilters;
   data: FeatureCollection<Geometry, GeoJsonProperties>;
 }

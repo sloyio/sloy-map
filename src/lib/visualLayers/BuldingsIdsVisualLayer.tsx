@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { setBuildingStyleByPropertyValues } from "@/visualLayers/setBuildingStyle";
-import { IVisualisationLayer } from "@/types";
+import { IBuildingIdsVisualisationLayer } from "@/types";
 import { ClickableBuilding } from "@/visualLayers/useClickableBuilding";
 
 interface Props {
-  visualisationLayer: IVisualisationLayer;
+  visualisationLayer: IBuildingIdsVisualisationLayer;
 }
 
 export function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
   const { sloyMapGl } = useMap();
-
+  console.log(visualisationLayer.mapLayerProps);
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
@@ -20,9 +20,9 @@ export function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
       map,
       property: "osm:id",
       values: visualisationLayer.ids || [],
-      color: visualisationLayer.paint["fill-extrusion-color"],
+      color: visualisationLayer.mapLayerProps?.paint?.["fill-extrusion-color"],
     });
-  }, [sloyMapGl, visualisationLayer.ids, visualisationLayer.paint]);
+  }, [sloyMapGl, visualisationLayer.ids, visualisationLayer.mapLayerProps]);
 
   if (visualisationLayer.openable) {
     return <ClickableBuilding sourceId={visualisationLayer.source} />;

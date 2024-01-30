@@ -1,5 +1,6 @@
 import { InputLayer } from "@/layers/createLayer";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
+import { InputSource } from "@/sources/createSources";
 
 const YEREVAN_VIEW = {
   center: [44.51, 40.18001],
@@ -27,7 +28,7 @@ export const defaultMapState = {
   maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
 };
 
-export const defaultSources = [
+export const defaultSources: InputSource[] = [
   {
     id: "buildingTile",
     copyright: [],
@@ -907,7 +908,6 @@ export const defaultLayers: InputLayer[] = [
         id: "houseLevelsLayer",
         type: "building-range",
         source: "buildingTile",
-        paint: {},
         property: "building:levels",
         openable: true,
       },
@@ -932,7 +932,6 @@ export const defaultLayers: InputLayer[] = [
         id: "houseAgeLayer",
         type: "building-range",
         source: "buildingTile",
-        paint: {},
         property: "start_date",
         openable: true,
       },
@@ -951,21 +950,24 @@ export const defaultLayers: InputLayer[] = [
     visualisationLayers: [
       {
         id: "armenianPostBranchesLayer",
-        type: "circle",
+        type: "map",
         source: "armenianPostBranchesLayerSource",
         openable: true,
-        paint: {
-          "circle-color": "#f18f00",
-          "circle-stroke-width": 1,
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            MIN_ZOOM,
-            2,
-            MAX_ZOOM,
-            8,
-          ],
+        mapLayerProps: {
+          type: "circle",
+          paint: {
+            "circle-color": "#f18f00",
+            "circle-stroke-width": 1,
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              2,
+              MAX_ZOOM,
+              8,
+            ],
+          },
         },
       },
     ],
@@ -993,10 +995,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianSeismicZonesLayer",
         source: "armenianSeismicZonesLayerSource",
         openable: true,
-        type: "fill",
+        type: "map",
         property: "Zone",
-        paint: {
-          "fill-opacity": 0.6,
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1017,11 +1022,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianLandslidesLayer",
         source: "armenianLandslidesLayerSource",
         openable: true,
-        type: "fill",
-        property: "",
-        paint: {
-          "fill-opacity": 0.6,
-          "fill-color": "#891900",
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+            "fill-color": "#891900",
+          },
         },
       },
     ],
@@ -1050,10 +1057,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianSoilTypesLayer",
         source: "armenianSoilTypesLayerSource",
         openable: true,
-        type: "fill",
         property: "Descriptio",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1082,10 +1092,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianLandUseLayer",
         source: "armenianLandUseLayerSource",
         openable: true,
-        type: "fill",
         property: "Landuse",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1113,10 +1126,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianVegetationTypesLayer",
         source: "armenianVegetationTypesLayerSource",
         openable: true,
-        type: "fill",
         property: "Veget_zone",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1137,11 +1153,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianForestAreasLayer",
         source: "armenianForestAreasLayerSource",
         openable: true,
-        type: "fill",
-        property: "",
-        paint: {
-          "fill-opacity": 1,
-          "fill-color": "#0a6400",
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 1,
+            "fill-color": "#0a6400",
+          },
         },
       },
     ],
@@ -1169,10 +1187,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianRadiationBalanceLayer",
         source: "armenianRadiationBalanceLayerSource",
         openable: true,
-        type: "fill",
         property: "VALUE",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1200,10 +1221,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianSolarRadiationLevelLayer",
         source: "armenianSolarRadiationLevelLayerSource",
         openable: true,
-        type: "fill",
         property: "Sun_radiat",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1231,10 +1255,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianClimateZonesLayer",
         source: "armenianClimateZonesLayerSource",
         openable: true,
-        type: "fill",
         property: "Descriptio",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1262,10 +1289,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianTemperatureLayer",
         source: "armenianTemperatureLayerSource",
         openable: true,
-        type: "fill",
         property: "Temperatur",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1293,10 +1323,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianPrecipitationsLevelLayer",
         source: "armenianPrecipitationsLevelLayerSource",
         openable: true,
-        type: "fill",
         property: "Precipitat",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1325,10 +1358,13 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianWindResourcesLayer",
         source: "armenianWindResourcesLayerSource",
         openable: true,
-        type: "fill",
         property: "Wind_Speed",
-        paint: {
-          "fill-opacity": 0.6,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
         },
       },
     ],
@@ -1349,11 +1385,14 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianLakesAndReservoirsLayer",
         source: "armenianLakesAndReservoirsSource",
         openable: true,
-        type: "fill",
         property: "LKcode",
-        paint: {
-          "fill-opacity": 0.6,
-          "fill-color": "#000088",
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+            "fill-color": "#000088",
+          },
         },
       },
     ],
@@ -1381,9 +1420,11 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianGroundwaterZonesLayer",
         source: "armenianGroundwaterZonesLayerSource",
         openable: true,
-        type: "line",
         property: "Descript",
-        paint: {},
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+        },
       },
     ],
   },
@@ -1411,21 +1452,24 @@ export const defaultLayers: InputLayer[] = [
     visualisationLayers: [
       {
         id: "armenianMineralAndFreshwaterResourcesLayer",
-        type: "circle",
         source: "armenianMineralAndFreshwaterResourcesLayerSource",
         openable: true,
         property: "Flow_l_sec",
-        paint: {
-          "circle-stroke-width": 1,
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            MIN_ZOOM,
-            5,
-            MAX_ZOOM,
-            10,
-          ],
+        type: "map",
+        mapLayerProps: {
+          type: "circle",
+          paint: {
+            "circle-stroke-width": 1,
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              5,
+              MAX_ZOOM,
+              10,
+            ],
+          },
         },
       },
     ],
@@ -1446,12 +1490,14 @@ export const defaultLayers: InputLayer[] = [
         id: "armenianRiversLayer",
         source: "armenianRiversLayerSource",
         openable: true,
-        type: "line",
-        property: "",
-        paint: {
-          "line-width": 2,
-          "line-opacity": 1,
-          "line-color": "#005987",
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 2,
+            "line-opacity": 1,
+            "line-color": "#005987",
+          },
         },
       },
     ],
