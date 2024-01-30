@@ -117,19 +117,24 @@ export function BaseCard({
         }
 
         if (block.type === "datetime" && value) {
-          const parsedDate = new Date(value);
-          if (parsedDate) {
-            return {
-              ...block,
-              type: "value",
-              value: parsedDate.toLocaleString(locale, {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              }),
-            };
+          try {
+            const parsedDate = new Date(value);
+            if (parsedDate) {
+              return {
+                ...block,
+                type: "value",
+                value: parsedDate.toLocaleString(locale, {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                  ...block.dateTimeFormat,
+                }),
+              };
+            }
+          } catch (e) {
+            console.log("parse date error", e);
           }
 
           return {

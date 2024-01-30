@@ -1,8 +1,10 @@
 import { getLayerStyle } from "@/helpers/getLayerStyle";
 import facades from "../../public/ekb-facades.json";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
+import { InputSource } from "@/helpers/createSources";
+import { InputLayer } from "@/helpers/createLayer";
 
-export const defaultSources = [
+export const defaultSources: InputSource[] = [
   {
     id: "buildingTile",
     copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
@@ -376,7 +378,7 @@ export const defaultSources = [
   },
 ];
 
-export const defaultLayers = [
+export const defaultLayers: InputLayer[] = [
   {
     title: "Возраст домов",
     filters: [

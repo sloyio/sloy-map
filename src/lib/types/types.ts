@@ -42,7 +42,7 @@ export interface ICardBlock {
   id?: string;
   deps?: string;
   content?: string;
-  timeFormat?: string;
+  dateTimeFormat?: Intl.DateTimeFormatOptions;
   title?: string;
   value?: ReactNode;
 }
