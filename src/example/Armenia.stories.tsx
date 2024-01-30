@@ -1,18 +1,17 @@
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles, sloyTheme } from "sloy-ui";
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
+import {
+  defaultLayers,
+  defaultMapState,
+  defaultSources,
+} from "./armeniaConfig";
 import translations from "./armenia.locales.json";
-import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { state } from "./armeniaConfig";
-
-import "sloy-ui/style.css";
 
 // @ts-expect-error
-window.SLOY_DEV_JSON = true;
+window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
   title: "Map/Armenia",
@@ -23,31 +22,19 @@ export default {
 };
 function AppMap() {
   return (
-    <ThemeProvider theme={sloyTheme}>
-      <GlobalStyles />
-      <SloyMap
-        {...state.mapState}
-        translations={translations}
-        minZoom={MIN_ZOOM}
-        maxZoom={MAX_ZOOM}
-        maxBounds={[40.721512, 37.51153, 49.609451, 42.222066]}
-      />
-    </ThemeProvider>
+    <SloyMap
+      mapState={defaultMapState}
+      sources={defaultSources}
+      layers={defaultLayers}
+      locale="ru-RU"
+      translations={translations}
+    />
   );
 }
 
 const store = configureStore({
   reducer: {
     sloy: sloyReducer,
-  },
-  preloadedState: {
-    sloy: {
-      activeLayer: null,
-      // activeLayer: "ekbHouseLevels",
-      activeFilterParams: null,
-      appLoaded: false,
-      config: state,
-    },
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

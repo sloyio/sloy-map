@@ -37,7 +37,11 @@ const StyledMarker = styled.img<{ opened?: boolean; color?: string }>`
     z-index: 9999 !important;
   }
 
-  ${({ color }) => color}
+  ${({ color }) =>
+    color &&
+    css`
+      color: ${color};
+    `}
 
   ${({ opened }) =>
     opened &&

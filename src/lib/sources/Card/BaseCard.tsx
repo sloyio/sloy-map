@@ -117,19 +117,24 @@ export function BaseCard({
         }
 
         if (block.type === "datetime" && value) {
-          const parsedDate = new Date(value);
-          if (parsedDate) {
-            return {
-              ...block,
-              type: "value",
-              value: parsedDate.toLocaleString(locale, {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              }),
-            };
+          try {
+            const parsedDate = new Date(value);
+            if (parsedDate) {
+              return {
+                ...block,
+                type: "value",
+                value: parsedDate.toLocaleString(locale, {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                  ...block.dateTimeFormat,
+                }),
+              };
+            }
+          } catch (e) {
+            console.log("parse date error", e);
           }
 
           return {
@@ -181,13 +186,21 @@ export function BaseCard({
         type: "section",
         title: "Источники",
         value: (
-          <Sources sources={source.copyright.map((item) => copyright[item])} />
+          <Sources
+            sources={source.copyright
+              .map((item) => copyright[item])
+              .filter(Boolean)}
+          />
         ),
       });
     }
 
-    // @ts-expect-error
-    if (typeof window.SLOY_DEV_JSON === "boolean" && window.SLOY_DEV_JSON) {
+    if (
+      // @ts-expect-error
+      typeof window.SLOY_SHOW_INTERNAL_DATA === "boolean" &&
+      // @ts-expect-error
+      window.SLOY_SHOW_INTERNAL_DATA
+    ) {
       overrided.blocks.push({ type: "divider" });
       overrided.blocks.push({
         type: "section",
@@ -201,7 +214,7 @@ export function BaseCard({
     }
 
     return overrided;
-  }, [card, overrideCard, values, coordinates, source, locale, copyright]);
+  }, [card, source, overrideCard, values, coordinates, t, locale, copyright]);
 
   if (!values || !card || !uiCardProps) {
     return null;
