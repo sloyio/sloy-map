@@ -1,5 +1,3 @@
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles, sloyTheme } from "sloy-ui";
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
@@ -13,7 +11,7 @@ import {
 import translations from "./armenia.locales.json";
 
 // @ts-expect-error
-window.SLOY_DEV_JSON = true;
+window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
   title: "Map/Armenia",
@@ -24,16 +22,13 @@ export default {
 };
 function AppMap() {
   return (
-    <ThemeProvider theme={sloyTheme}>
-      <GlobalStyles />
-      <SloyMap
-        mapState={defaultMapState}
-        sources={defaultSources}
-        layers={defaultLayers}
-        locale="ru-RU"
-        translations={translations}
-      />
-    </ThemeProvider>
+    <SloyMap
+      mapState={defaultMapState}
+      sources={defaultSources}
+      layers={defaultLayers}
+      locale="ru-RU"
+      translations={translations}
+    />
   );
 }
 

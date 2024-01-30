@@ -1,5 +1,7 @@
-import { ReactNode, useEffect } from "react";
+import { ComponentProps, ReactNode, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
 import { MapContextProvider } from "./state/MapProvider";
@@ -27,11 +29,13 @@ export interface SloyMapProps {
   mapProps?: IMapProps;
   sources: InputSource[];
   layers: InputLayer[];
+  theme?: ComponentProps<typeof ThemeProvider>["theme"];
   children?: ReactNode;
 }
 
 export function SloyMap({
   locale = "en-EN",
+  theme = sloyTheme,
   children,
   translations,
   overrideCard,
@@ -66,44 +70,47 @@ export function SloyMap({
   }, [dispatch, layers, locale, mapState, sources, translations]);
 
   return (
-    <MapProvider>
-      <MapContextProvider
-        locale={locale}
-        translations={translations}
-        overrideCard={overrideCard}
-        overrideLayers={overrideLayers}
-      >
-        <MapGl
-          id="sloyMapGl"
-          {...mapState}
-          initialViewState={{
-            zoom: 15,
-            pitch: 0,
-            ...mapState.initialViewState,
-          }}
-          minZoom={mapState.minZoom || 11}
-          maxZoom={mapState.maxZoom || 20}
-          maxPitch={mapState.maxPitch || 85}
-          // hash
-          mapLib={maplibregl}
-          antialias
-          reuseMaps
-          onLoad={() => dispatch(setAppLoaded())}
-          // terrain={terrainProps}
-          {...mapProps}
-          style={{
-            width: "100vw",
-            height: "100vh",
-            ...mapProps.style,
-          }}
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <MapProvider>
+        <MapContextProvider
+          locale={locale}
+          translations={translations}
+          overrideCard={overrideCard}
+          overrideLayers={overrideLayers}
         >
-          {/* <TerranMap /> */}
-          {isAppLoaded && <VisualisationLayers />}
-          {children}
-        </MapGl>
-        {isAppLoaded && <Sidebars />}
-        <Copyright />
-      </MapContextProvider>
-    </MapProvider>
+          <MapGl
+            id="sloyMapGl"
+            {...mapState}
+            initialViewState={{
+              zoom: 15,
+              pitch: 0,
+              ...mapState.initialViewState,
+            }}
+            minZoom={mapState.minZoom || 11}
+            maxZoom={mapState.maxZoom || 20}
+            maxPitch={mapState.maxPitch || 85}
+            // hash
+            mapLib={maplibregl}
+            antialias
+            reuseMaps
+            onLoad={() => dispatch(setAppLoaded())}
+            // terrain={terrainProps}
+            {...mapProps}
+            style={{
+              width: "100vw",
+              height: "100vh",
+              ...mapProps.style,
+            }}
+          >
+            {/* <TerranMap /> */}
+            {isAppLoaded && <VisualisationLayers />}
+            {children}
+          </MapGl>
+          {isAppLoaded && <Sidebars />}
+          <Copyright />
+        </MapContextProvider>
+      </MapProvider>
+    </ThemeProvider>
   );
 }

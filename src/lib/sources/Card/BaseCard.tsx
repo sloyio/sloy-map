@@ -195,8 +195,12 @@ export function BaseCard({
       });
     }
 
-    // @ts-expect-error
-    if (typeof window.SLOY_DEV_JSON === "boolean" && window.SLOY_DEV_JSON) {
+    if (
+      // @ts-expect-error
+      typeof window.SLOY_SHOW_INTERNAL_DATA === "boolean" &&
+      // @ts-expect-error
+      window.SLOY_SHOW_INTERNAL_DATA
+    ) {
       overrided.blocks.push({ type: "divider" });
       overrided.blocks.push({
         type: "section",
