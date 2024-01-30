@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { HistogramData, MinMax } from "sloy-ui";
 import { useAppSelector } from "@/state";
-import { RangeBaseFilter } from "@/filters/RangeBaseFilter";
+import { RangeBaseFilter } from "@/layers/filters/RangeBaseFilter";
 import { IFilter, SourcePropertyRange } from "@/types";
 import { getProperty } from "dot-prop";
 

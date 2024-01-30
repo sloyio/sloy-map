@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
-import { setBuildingStyleByPropertyValues } from "@/visualLayers/setBuildingStyle";
+import { setBuildingStyleByPropertyValues } from "@/layers/visualLayers/setBuildingStyle";
 import { IBuildingIdsVisualisationLayer } from "@/types";
-import { ClickableBuilding } from "@/visualLayers/useClickableBuilding";
+import { ClickableBuilding } from "@/layers/visualLayers/useClickableBuilding";
 
 interface Props {
   visualisationLayer: IBuildingIdsVisualisationLayer;

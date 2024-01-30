@@ -1,14 +1,13 @@
 import { getLayerStyle } from "@/helpers/getLayerStyle";
 import facades from "../../public/ekb-facades.json";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { InputSource } from "@/sources/createSources";
-import { InputLayer } from "@/layers/createLayer";
+import { InputSource, InputLayer } from "@/types";
 
 export const defaultSources: InputSource[] = [
   {
     id: "buildingTile",
     copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
-    type: "tile",
+    type: "map-source",
     card: {
       title: ["addr:street", "addr:housenumber"],
       blocks: [

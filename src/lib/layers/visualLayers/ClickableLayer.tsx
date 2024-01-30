@@ -1,9 +1,9 @@
 import { Layer } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { ActiveFilters, IVisualisationLayer } from "@/types";
-import { getLayerProps } from "@/visualLayers/getLayerProps";
-import useMapObjectState from "@/visualLayers/useMapObjectState";
-import { useOpenMapItem } from "@/visualLayers/useOpenMapItem";
+import { getLayerProps } from "@/layers/visualLayers/getLayerProps";
+import useMapObjectState from "@/layers/visualLayers/useMapObjectState";
+import { useOpenMapItem } from "@/layers/visualLayers/useOpenMapItem";
 import { MarkersVisualisationLayer } from "./MarkersVisualisationLayer";
 import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 

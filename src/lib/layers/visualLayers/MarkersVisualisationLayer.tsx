@@ -3,7 +3,7 @@ import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { getLayerStyle } from "@/helpers/getLayerStyle";
 import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
-import { usePopup } from "../state/usePopup";
+import { usePopup } from "../../state/usePopup";
 import { getProperty } from "dot-prop";
 import { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
 import styled, { css } from "styled-components";

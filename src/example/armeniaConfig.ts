@@ -1,6 +1,5 @@
-import { InputLayer } from "@/layers/createLayer";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { InputSource } from "@/sources/createSources";
+import { InputSource, InputLayer } from "@/types";
 
 const YEREVAN_VIEW = {
   center: [44.51, 40.18001],
@@ -32,7 +31,7 @@ export const defaultSources: InputSource[] = [
   {
     id: "buildingTile",
     copyright: [],
-    type: "tile",
+    type: "map-source",
     card: {
       title: ["addr:street", "addr:housenumber"],
       blocks: [

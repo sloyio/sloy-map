@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
-import { usePopup } from "../state/usePopup";
+import { usePopup } from "../../state/usePopup";
 
 export function useOpenMapItem(layerId: string, mapItemType: string) {
   const { sloyMapGl } = useMap();

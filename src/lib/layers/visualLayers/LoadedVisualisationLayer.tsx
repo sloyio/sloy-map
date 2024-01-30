@@ -1,6 +1,6 @@
 import { Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { MapVisualisationLayer } from "@/visualLayers/ClickableLayer";
+import { MapVisualisationLayer } from "@/layers/visualLayers/ClickableLayer";
 import { IVisualisationLayer } from "@/types";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { useActiveFilters } from "./useVisualisationLayerFilters";

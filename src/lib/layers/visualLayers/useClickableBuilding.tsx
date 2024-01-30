@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
-import useMapObjectState from "@/visualLayers/useMapObjectState";
+import useMapObjectState from "@/layers/visualLayers/useMapObjectState";
 import { usePopup } from "@/state/usePopup";
 import { BUILDING_LAYER_ID } from "@/constants";
 

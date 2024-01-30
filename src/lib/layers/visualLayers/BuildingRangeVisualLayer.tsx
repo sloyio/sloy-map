@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { MinMax } from "sloy-ui";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { setBuildingRangeStyle } from "@/visualLayers/setBuildingStyle";
+import { setBuildingRangeStyle } from "@/layers/visualLayers/setBuildingStyle";
 import { IVisualisationLayer, SourcePropertyRange } from "@/types";
-import { ClickableBuilding } from "@/visualLayers/useClickableBuilding";
+import { ClickableBuilding } from "@/layers/visualLayers/useClickableBuilding";
 import { getProperty } from "dot-prop";
 
 interface Props {

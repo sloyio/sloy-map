@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import MapGl, { SourceProps, LayerProps } from "react-map-gl";
+import { ComponentProps, ReactNode } from "react";
+import MapGl, { Source, Layer } from "react-map-gl";
 
 export type SourcePropertyRange = {
   from: number;
@@ -57,21 +57,31 @@ export interface ICard {
   rootSrc?: string;
 }
 
-export interface ISource {
+export interface IBaseSource {
   id: string;
+  copyright: Copyright["id"][];
   path?: string;
   dataByIdPath?: string;
   properties?: Record<string, SourceProperty>;
   card?: ICard["id"];
-  copyright: Copyright["id"][];
-  type: string;
   isCoordsReverse?: boolean;
   coordsProperty?: string;
   latProperty?: string;
   lngProperty?: string;
   projection?: string;
-  mapSourceProps?: SourceProps;
 }
+
+export type ICustomSource = IBaseSource & {
+  type: "map-source";
+  mapSourceProps: Partial<ComponentProps<typeof Source>>;
+};
+
+export type IGeoJsonSource = IBaseSource & {
+  type: "geojson" | "json";
+  mapSourceProps?: undefined;
+};
+
+export type ISource = ICustomSource | IGeoJsonSource;
 
 interface IBaseVisualisationLayer {
   id: string;
@@ -85,12 +95,12 @@ interface IBaseVisualisationLayer {
 
 export type IMapVisualisationLayer = IBaseVisualisationLayer & {
   type: "map";
-  mapLayerProps?: LayerProps;
+  mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
 };
 
 export type IBuildingIdsVisualisationLayer = IBaseVisualisationLayer & {
   type: "building-ids";
-  mapLayerProps?: LayerProps;
+  mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
 };
 
 export type IMarkerImageVisualisationLayer = IBaseVisualisationLayer & {

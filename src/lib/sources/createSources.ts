@@ -1,12 +1,6 @@
 import { IApp, ICard, ISource, SourceProperty } from "@/types";
+import { InputSource } from "@/types/inputTypes";
 import { nanoid } from "@reduxjs/toolkit";
-
-type InputCard = Omit<ICard, "id">;
-
-export type InputSource = Omit<ISource, "card" | "properties"> & {
-  card: InputCard;
-  properties: SourceProperty[];
-};
 
 export function createSources(sources: InputSource[]): {
   cards: IApp["cards"];
@@ -26,7 +20,7 @@ export function createSources(sources: InputSource[]): {
       return {
         finalSources: {
           ...all.finalSources,
-          [source.id]: { ...source, properties, card: id },
+          [source.id]: { ...source, properties, card: id } as ISource,
         },
         cards: {
           ...all.cards,

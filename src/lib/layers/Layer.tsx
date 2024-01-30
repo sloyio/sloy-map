@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { useAppSelector } from "@/state";
 import { Divider } from "sloy-ui";
-import { MapFilter } from "@/filters/MapFilter";
+import { MapFilter } from "@/layers/filters/MapFilter";
 import { ILayer } from "@/types";
 import { MapContext } from "@/state/MapProvider";
 import { LayerSource } from "./components/LayerSource";

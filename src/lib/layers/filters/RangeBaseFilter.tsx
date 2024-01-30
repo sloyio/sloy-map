@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { RangeHistogram, HistogramData, MinMax } from "sloy-ui";
-import { FilterLoader } from "@/filters/FilterLoader";
+import { FilterLoader } from "@/layers/filters/FilterLoader";
 
 export interface RangeBaseFilterProps {
   defaultMin: number;

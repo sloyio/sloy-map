@@ -1,17 +1,6 @@
-import { IApp, IFilter, IVisualisationLayer, ILayer } from "@/types";
+import { IApp, IFilter, IVisualisationLayer, InputLayer } from "@/types";
 import { nanoid } from "@reduxjs/toolkit";
 import deepmerge from "deepmerge";
-
-type InputFilter = Omit<IFilter, "id">;
-type InuputVisualisationLayer = IVisualisationLayer;
-
-export type InputLayer = Omit<
-  ILayer,
-  "id" | "filters" | "visualisationLayers"
-> & {
-  filters: InputFilter[];
-  visualisationLayers: InuputVisualisationLayer[];
-};
 
 interface LayerOutput {
   layers: IApp["layers"];

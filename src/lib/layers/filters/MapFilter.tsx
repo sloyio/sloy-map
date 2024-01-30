@@ -1,9 +1,9 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
-import { FilterRange } from "@/filters/FilterBuildingRange";
+import { FilterRange } from "@/layers/filters/FilterBuildingRange";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
-import { FilterGrid } from "@/filters/FilterGrid";
+import { FilterGrid } from "@/layers/filters/FilterGrid";
 import { updateFilterParams, updateLayer } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";

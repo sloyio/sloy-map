@@ -1,5 +1,5 @@
 import { useAppSelector } from "@/state";
-import { BuildingRangeVisualLayer } from "@/visualLayers/BuildingRangeVisualLayer";
+import { BuildingRangeVisualLayer } from "@/layers/visualLayers/BuildingRangeVisualLayer";
 import { IVisualisationLayer } from "@/types";
 import { BuldingsIdsVisualLayer } from "./BuldingsIdsVisualLayer";
 import {
