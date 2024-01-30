@@ -105,7 +105,7 @@ export const defaultSources = [
   },
   {
     id: "ekbLinesSource",
-    path: "/ekb-color-lines.json",
+    path: "https://map.ekaterinburg.city/ekb-color-lines.json",
     type: "geojson",
     card: { blocks: [] },
     copyright: [],
@@ -135,7 +135,7 @@ export const defaultSources = [
     id: "ekbPointsSource",
     type: "geojson",
     copyright: [],
-    path: "/ekb-color-points.json",
+    path: "https://map.ekaterinburg.city/ekb-color-points.json",
     card: {
       title: "title",
       blocks: [
@@ -212,7 +212,7 @@ export const defaultSources = [
   {
     id: "ekbOknSource",
     type: "geojson",
-    path: "/ekb-okn.json",
+    path: "https://map.ekaterinburg.city/ekb-okn.json",
     copyright: ["okn"],
     card: {
       title: "name",
@@ -252,7 +252,7 @@ export const defaultSources = [
     type: "geojson",
     card: { blocks: [] },
     properties: [],
-    path: "/ekb-okn-protect.json",
+    path: "https://map.ekaterinburg.city/ekb-okn-protect.json",
     copyright: ["okn"],
   },
   {
@@ -260,7 +260,7 @@ export const defaultSources = [
     type: "geojson",
     card: { blocks: [] },
     properties: [],
-    path: "/ekb-okn-security.json",
+    path: "https://map.ekaterinburg.city/ekb-okn-security.json",
     copyright: ["okn"],
   },
   {
@@ -268,7 +268,7 @@ export const defaultSources = [
     card: { blocks: [] },
     properties: [],
     id: "ekbOknObjectZoneSource",
-    path: "/ekb-okn-objects.json",
+    path: "https://map.ekaterinburg.city/ekb-okn-objects.json",
     copyright: ["okn"],
   },
   {
@@ -285,7 +285,7 @@ export const defaultSources = [
         { type: "string[]", id: "road_conditions" },
       ],
     },
-    path: "/ekb-dtp.json",
+    path: "https://map.ekaterinburg.city/ekb-dtp.json",
     dataByIdPath: `/api/dtp?id={DATA_BY_ID}`,
     properties: [
       {
@@ -353,7 +353,7 @@ export const defaultSources = [
   {
     id: "ekbQuarterSource",
     type: "geojson",
-    path: "/ekb-quarters.json",
+    path: "https://map.ekaterinburg.city/quarter_inspectors.json",
     copyright: ["ekbQuarter"],
     card: {
       title: "quarterTitle",
