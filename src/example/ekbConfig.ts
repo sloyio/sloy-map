@@ -98,8 +98,7 @@ export const defaultSources: InputSource[] = [
         id: "building:emergency",
       },
       {
-        id: "age",
-        title: "Возраст здания",
+        id: "building:age",
         deps: "building:year",
       },
     ],
@@ -384,7 +383,7 @@ export const defaultSources: InputSource[] = [
       title: "address",
       blocks: [
         // { type: "value", id: "ex_type" },
-        { type: "tag", id: "exident" },
+        { type: "tag", id: "exident", title: null },
         { type: "value", id: "descrip" },
         { type: "value", id: "time" },
         {
