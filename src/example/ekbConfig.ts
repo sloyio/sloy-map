@@ -98,8 +98,7 @@ export const defaultSources: InputSource[] = [
         id: "building:emergency",
       },
       {
-        id: "age",
-        title: "Возраст здания",
+        id: "building:age",
         deps: "building:year",
       },
     ],
@@ -372,6 +371,83 @@ export const defaultSources: InputSource[] = [
       {
         id: "districtTitle",
         title: "Район",
+      },
+    ],
+  },
+  {
+    id: "ekbCrimeLayerSource",
+    path: "/ekb-crime.json",
+    type: "geojson",
+    coordsProperty: "coords",
+    card: {
+      title: "address",
+      blocks: [
+        // { type: "value", id: "ex_type" },
+        { type: "tag", id: "exident", title: null },
+        { type: "value", id: "descrip" },
+        { type: "value", id: "time" },
+        {
+          type: "datetime",
+          id: "date",
+          dateTimeFormat: {
+            hour: undefined,
+            minute: undefined,
+          },
+        },
+        { type: "value", id: "link" },
+        { type: "value", id: "link2" },
+      ],
+    },
+    copyright: [],
+    properties: [
+      {
+        id: "exident",
+        title: "Тип",
+        values: {
+          пожар: { color: "#ff1962" },
+          "коммунальные проблемы": { color: "#dc8a59" },
+          "угон машины": { color: "#a094e7" },
+          кража: { color: "#506856" },
+          "наезд на пешехода": { color: "#439d90" },
+          аномалия: { color: "#02e42f" },
+          беспорядки: { color: "#5860c0" },
+          "территориальный конфликт": { color: "#6286e6" },
+          "нападение или драка": { color: "#a18b00" },
+          поджог: { color: "#ff857b" },
+          труп: { color: "#8189a5" },
+          "ограбление организации": { color: "#5d6de4" },
+          травма: { color: "#b34cae" },
+          вандализм: { color: "#648a30" },
+          убийство: { color: "#b144b2" },
+          "пропал человек": { color: "#3e57d3" },
+          "падение из окна": { color: "#c54485" },
+          самоубийство: { color: "#006789" },
+          "разбой или грабёж": { color: "#009472" },
+          живодёры: { color: "#b7653a" },
+          наркотики: { color: "#b49b38" },
+          изнасилование: { color: "#777409" },
+          "нелегалы или задержания": { color: "#008084" },
+        },
+      },
+      {
+        id: "descrip",
+        title: "Что произошло",
+      },
+      {
+        id: "time",
+        title: "Время",
+      },
+      {
+        id: "date",
+        title: "Дата",
+      },
+      {
+        id: "link",
+        title: "Источник",
+      },
+      {
+        id: "link2",
+        title: "Ещё источник",
       },
     ],
   },
@@ -850,12 +926,106 @@ export const defaultLayers: InputLayer[] = [
       },
     ],
   },
+  {
+    title: "Происшествия",
+    description: "Происшествия в Екатеринбурге в 2017–2018 годах.",
+    filters: [
+      {
+        property: "exident",
+        type: "string",
+        filterVisualisationLayers: [
+          "ekbCrimePointsLayer",
+          "ekbCrimeHeatmapLayer",
+        ],
+        source: "ekbCrimeLayerSource",
+        sortType: "count",
+      },
+    ],
+    visualisationLayers: [
+      {
+        id: "ekbCrimePointsLayer",
+        type: "map",
+        source: "ekbCrimeLayerSource",
+        openable: true,
+        property: "exident",
+        mapLayerProps: {
+          type: "circle",
+          paint: {
+            "circle-color": "#f18f00",
+            "circle-stroke-width": 1,
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              2,
+              MAX_ZOOM,
+              8,
+            ],
+          },
+        },
+      },
+      {
+        id: "ekbCrimeHeatmapLayer",
+        type: "map",
+        source: "ekbCrimeLayerSource",
+        property: "exident",
+        mapLayerProps: {
+          type: "heatmap",
+          paint: {
+            "heatmap-weight": {
+              type: "exponential",
+              property: "weight",
+              stops: [
+                [0, 0],
+                [1, 1],
+              ],
+            },
+            "heatmap-intensity": 1,
+            "heatmap-color": [
+              "interpolate",
+              ["linear"],
+              ["heatmap-density"],
+              0,
+              "rgba(0, 0, 255, 0)",
+              0.2,
+              "rgb(0, 255, 0)",
+              0.4,
+              "rgb(255, 255, 0)",
+              0.6,
+              "rgb(255, 0, 0)",
+              1,
+              "rgb(255, 0, 0)",
+            ],
+            "heatmap-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              2,
+              MAX_ZOOM,
+              50,
+            ],
+            "heatmap-opacity": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              1,
+              MAX_ZOOM,
+              0,
+            ],
+          },
+        },
+      },
+    ],
+  },
 ];
 
 const EKB_VIEW = {
-  center: [60.6, 56.838],
+  center: [60.6099, 56.83898],
   zoom: 14.5,
-  pitch: 20,
+  pitch: 0,
   bearing: 0,
 };
 
