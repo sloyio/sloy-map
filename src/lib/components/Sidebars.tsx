@@ -1,15 +1,16 @@
-import { useContext } from "react";
+import { Suspense, lazy, useContext } from "react";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/isDesktop";
-import { RenderCard } from "@/sources/Card";
 import { MapContext } from "@/state/MapProvider";
-import { Layers } from "@/layers/Layers";
+
+const LazeCard = lazy(() => import("@/sources/Card"));
+const LazeLayers = lazy(() => import("@/layers/Layers"));
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();
   const popupProps = useContext(MapContext);
   const card = (
-    <RenderCard
+    <LazeCard
       popupHash={popupProps.popupHash}
       sourceIdValue={popupProps.sourceIdValue}
     />
@@ -40,23 +41,23 @@ function SidebarFilter() {
   if (isDesktop) {
     return (
       <LeftSidebar>
-        <Layers />
+        <LazeLayers />
       </LeftSidebar>
     );
   }
 
   return (
     <SheetModal snapPoints={[0.6, 0.1]} isOpen>
-      <Layers />
+      <LazeLayers />
     </SheetModal>
   );
 }
 
 export function Sidebars() {
   return (
-    <>
+    <Suspense fallback={null}>
       <SidebarFilter />
       <SidebarCard />
-    </>
+    </Suspense>
   );
 }

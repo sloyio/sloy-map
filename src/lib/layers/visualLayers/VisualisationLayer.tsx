@@ -1,12 +1,23 @@
 import { useAppSelector } from "@/state";
-import { BuildingRangeVisualLayer } from "@/layers/visualLayers/BuildingRangeVisualLayer";
 import { IVisualisationLayer } from "@/types";
-import { BuldingsIdsVisualLayer } from "./BuldingsIdsVisualLayer";
 import {
   useActiveFilters,
   useVisualisationLayerFilters,
 } from "./useVisualisationLayerFilters";
-import { LoadedVisualisationLayer } from "./LoadedVisualisationLayer";
+import { lazy } from "react";
+
+const LazyBuldingsIdsVisualLayer = lazy(
+  () => import("@/layers/visualLayers/BuldingsIdsVisualLayer"),
+);
+const LazyBuildingRangeVisualLayer = lazy(
+  () => import("@/layers/visualLayers/BuildingRangeVisualLayer"),
+);
+const LazyLoadedVisualisationLayer = lazy(
+  () => import("@/layers/visualLayers/LoadedVisualisationLayer"),
+);
+const LazyMarkersVisualisationLayer = lazy(
+  () => import("@/layers/visualLayers/MarkersVisualisationLayer"),
+);
 
 export function VisualisationLayer({
   id: vId,
@@ -31,21 +42,32 @@ export function VisualisationLayer({
 
   switch (visualisationLayer.type) {
     case "building-ids":
-      return <BuldingsIdsVisualLayer visualisationLayer={visualisationLayer} />;
+      return (
+        <LazyBuldingsIdsVisualLayer visualisationLayer={visualisationLayer} />
+      );
     case "building-range": {
       const range = activeFilters.find(
         (f) => f.filter.property === visualisationLayer.property,
       )?.values;
 
       return (
-        <BuildingRangeVisualLayer
+        <LazyBuildingRangeVisualLayer
           visualisationLayer={visualisationLayer}
           range={range}
         />
       );
     }
-    default: {
-      return <LoadedVisualisationLayer vId={vId} />;
+    case "marker-image": {
+      return (
+        <LazyMarkersVisualisationLayer
+          visualisationLayer={visualisationLayer}
+          activeFilters={activeFilters}
+        />
+      );
     }
+    case "map":
+      return <LazyLoadedVisualisationLayer vId={vId} />;
+    default:
+      return null;
   }
 }

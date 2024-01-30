@@ -1,13 +1,16 @@
-import { useCallback, useEffect } from "react";
+import { Suspense, lazy, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
-import { FilterRange } from "@/layers/filters/FilterBuildingRange";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { FilterGrid } from "@/layers/filters/FilterGrid";
 import { updateFilterParams, updateLayer } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";
 import { useAppSelector } from "@/state";
+
+const LazyFilterRange = lazy(
+  () => import("@/layers/filters/FilterBuildingRange"),
+);
 
 export function MapFilter({
   layerId,
@@ -61,7 +64,11 @@ export function MapFilter({
 
   switch (filter.type) {
     case "range":
-      return <FilterRange filter={filter} onChange={onChange} />;
+      return (
+        <Suspense fallback={null}>
+          <LazyFilterRange filter={filter} onChange={onChange} />
+        </Suspense>
+      );
     case "string[]":
     case "string": {
       const values = getProperty(

@@ -12,7 +12,10 @@ interface Props {
   range?: MinMax;
 }
 
-export function BuildingRangeVisualLayer({ visualisationLayer, range }: Props) {
+export default function BuildingRangeVisualLayer({
+  visualisationLayer,
+  range,
+}: Props) {
   const { sloyMapGl } = useMap();
   const sources = useAppSelector((state) => state.sloy.config.sources);
 

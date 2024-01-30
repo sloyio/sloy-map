@@ -8,7 +8,7 @@ interface Props {
   visualisationLayer: IBuildingIdsVisualisationLayer;
 }
 
-export function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
+export default function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
   const { sloyMapGl } = useMap();
   console.log(visualisationLayer.mapLayerProps);
   useEffect(() => {

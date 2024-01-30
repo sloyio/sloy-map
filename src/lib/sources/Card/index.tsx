@@ -9,7 +9,7 @@ interface Props {
   sourceIdValue: string | null;
 }
 
-export function RenderCard({ popupHash, sourceIdValue }: Props) {
+export default function RenderCard({ popupHash, sourceIdValue }: Props) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const cards = useAppSelector((state) => state.sloy.config.cards);
 

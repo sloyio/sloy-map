@@ -10,7 +10,7 @@ interface Props {
   onChange: (range: MinMax) => void;
 }
 
-export function FilterRange({ filter, onChange }: Props) {
+export default function FilterRange({ filter, onChange }: Props) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const rangeData = getProperty(
     sources,

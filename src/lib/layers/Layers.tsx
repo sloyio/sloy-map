@@ -7,7 +7,7 @@ import { useCallback } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 
-export function Layers() {
+export default function Layers() {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
   const layers = useAppSelector((state) => state.sloy.config.layers);

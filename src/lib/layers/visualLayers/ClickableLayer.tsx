@@ -1,34 +1,14 @@
 import { Layer } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { ActiveFilters, IVisualisationLayer } from "@/types";
+import { IVisualisationLayer } from "@/types";
 import { getLayerProps } from "@/layers/visualLayers/getLayerProps";
-import useMapObjectState from "@/layers/visualLayers/useMapObjectState";
-import { useOpenMapItem } from "@/layers/visualLayers/useOpenMapItem";
-import { MarkersVisualisationLayer } from "./MarkersVisualisationLayer";
-import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
-
-function ClickableVisualisationLayer({
-  visualisationLayer,
-}: {
-  visualisationLayer: IVisualisationLayer;
-}) {
-  useMapObjectState(visualisationLayer.id);
-  useOpenMapItem(visualisationLayer.id, visualisationLayer.source);
-
-  return null;
-}
+import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
 
 interface Props {
   visualisationLayer: IVisualisationLayer;
-  activeFilters: ActiveFilters;
-  data: FeatureCollection<Geometry, GeoJsonProperties>;
 }
 
-export function MapVisualisationLayer({
-  visualisationLayer,
-  activeFilters,
-  data,
-}: Props) {
+export function MapVisualisationLayer({ visualisationLayer }: Props) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const source = sources[visualisationLayer.source];
 
@@ -37,15 +17,7 @@ export function MapVisualisationLayer({
       {visualisationLayer.openable && (
         <ClickableVisualisationLayer visualisationLayer={visualisationLayer} />
       )}
-      {visualisationLayer.type === "marker-image" ? (
-        <MarkersVisualisationLayer
-          visualisationLayer={visualisationLayer}
-          activeFilters={activeFilters}
-          data={data}
-        />
-      ) : (
-        <Layer {...getLayerProps(visualisationLayer, source)} />
-      )}
+      <Layer {...getLayerProps(visualisationLayer, source)} />
     </>
   );
 }

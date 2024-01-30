@@ -12,7 +12,7 @@
   opacity: 1;
   transform: scale(-1);
   writing-mode: vertical-lr;
-  a {
+  & > a {
     text-decoration: none;
     color: hsla(0, 0%, 100%, 0.5);
   }

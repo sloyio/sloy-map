@@ -5,13 +5,13 @@ import { getLayerStyle } from "@/helpers/getLayerStyle";
 import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
 import { usePopup } from "../../state/usePopup";
 import { getProperty } from "dot-prop";
-import { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
 import styled, { css } from "styled-components";
+import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
+import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
 
 interface Props {
   visualisationLayer: IMarkerImageVisualisationLayer;
   activeFilters: ActiveFilters;
-  data: FeatureCollection<Geometry, GeoJsonProperties>;
 }
 
 const StyledMarker = styled.img<{ opened?: boolean; color?: string }>`
@@ -52,14 +52,14 @@ const StyledMarker = styled.img<{ opened?: boolean; color?: string }>`
     `}
 `;
 
-export function MarkersVisualisationLayer({
+export default function MarkersVisualisationLayer({
   visualisationLayer,
   activeFilters = [],
-  data,
 }: Props) {
   const { popupHash } = usePopup();
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const source = sources[visualisationLayer?.source];
+  const { loading, data } = useLoadGeoJSON(source);
 
   const markers = useMemo(() => {
     return data?.features.filter((feature) => {
@@ -89,6 +89,8 @@ export function MarkersVisualisationLayer({
     },
   };
 
+  if (loading) return null;
+
   return (
     <>
       <Source
@@ -100,6 +102,9 @@ export function MarkersVisualisationLayer({
           features: markers,
         }}
       />
+      {visualisationLayer.openable && (
+        <ClickableVisualisationLayer visualisationLayer={visualisationLayer} />
+      )}
       <Layer {...fakeClickableMarkersLayerStyle} />
 
       {markers.map((feature) => {
