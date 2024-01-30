@@ -1,8 +1,8 @@
 import { getLayerStyle } from "@/helpers/getLayerStyle";
 import facades from "../../public/ekb-facades.json";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { InputSource } from "@/helpers/createSources";
-import { InputLayer } from "@/helpers/createLayer";
+import { InputSource } from "@/sources/createSources";
+import { InputLayer } from "@/layers/createLayer";
 
 export const defaultSources: InputSource[] = [
   {

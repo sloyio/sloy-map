@@ -1,8 +1,8 @@
 import type { Map } from "maplibre-gl";
 import { MinMax } from "sloy-ui";
 import { BUILDING_LAYER_ID, DEFAULT_BULDING_COLOR_NORMAL } from "@/constants";
-import { getLayerStyle } from "./getLayerStyle";
-import { colorLuminance } from "./colorLuminance";
+import { getLayerStyle } from "../helpers/getLayerStyle";
+import { colorLuminance } from "../helpers/colorLuminance";
 import { SourcePropertyRange } from "@/types";
 
 interface SetBuildingStyleProps {

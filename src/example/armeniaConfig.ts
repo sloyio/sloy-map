@@ -1,4 +1,4 @@
-import { InputLayer } from "@/helpers/createLayer";
+import { InputLayer } from "@/layers/createLayer";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 
 const YEREVAN_VIEW = {

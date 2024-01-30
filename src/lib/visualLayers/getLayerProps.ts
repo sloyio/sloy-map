@@ -1,6 +1,6 @@
 import { ISource, IVisualisationLayer } from "@/types";
-import { getLayerStyle } from "./getLayerStyle";
-import { colorLuminance } from "./colorLuminance";
+import { getLayerStyle } from "../helpers/getLayerStyle";
+import { colorLuminance } from "../helpers/colorLuminance";
 
 const isHex = (color: string) => /^#[0-9A-F]{6}$/i.test(color);
 

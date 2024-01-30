@@ -1,4 +1,4 @@
-import { useDefaultBuildingsColors } from "@/helpers/useDefaultBuildingsColors";
+import { useDefaultBuildingsColors } from "@/visualLayers/useDefaultBuildingsColors";
 import { VisualisationLayer } from "./VisualisationLayer";
 import { useAppSelector } from "@/state";
 

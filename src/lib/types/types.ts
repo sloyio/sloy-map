@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import MapGl from "react-map-gl";
+import MapGl, { SourceProps, LayerProps } from "react-map-gl";
 
 export type SourcePropertyRange = {
   from: number;
@@ -70,6 +70,7 @@ export interface ISource {
   latProperty?: string;
   lngProperty?: string;
   projection?: string;
+  mapSourceProps?: SourceProps;
 }
 
 export interface IVisualisationLayer {
@@ -82,6 +83,7 @@ export interface IVisualisationLayer {
   rootSrc?: string;
   ids?: string[];
   openable?: boolean;
+  mapLayerProps?: LayerProps;
 }
 
 export interface IFilter {
