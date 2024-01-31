@@ -1561,7 +1561,7 @@ export const defaultLayers: InputLayer[] = [
     title: "Озёра и водохранилища",
     initialViewState: COUNTRY_VIEW,
     description:
-      "Слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
+      "Этот слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
     updatedAt: "2017-02-22T19:00:00.000Z",
     link: {
       href: "https://data.opendata.am/dataset/sustc-103",
