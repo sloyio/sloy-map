@@ -104,19 +104,59 @@ export const defaultSources: InputSource[] = [
     card: {
       title: "address",
       blocks: [
-        { type: "value", id: "work_days" },
         { type: "value", id: "postal_code" },
+        { type: "value", id: "work_days" },
+        { type: "value", id: "work_days_break_time" },
+        { type: "value", id: "work_days_outside" },
+        { type: "value", id: "saturday" },
+        { type: "value", id: "saturday_break_time" },
+        { type: "value", id: "saturday_outside" },
+        { type: "value", id: "sunday" },
+        { type: "value", id: "sunday_break_time" },
+        { type: "value", id: "sunday_outside" },
       ],
     },
     copyright: [],
     properties: [
       {
-        id: "work_days",
-        title: "Рабочее время",
+        id: "postal_code",
+        title: "Почтовый индекс",
       },
       {
-        id: "postal_code",
-        title: "Почтовый код",
+        id: "work_days",
+        title: "Время работы в пн–пт",
+      },
+      {
+        id: "work_days_break_time",
+        title: "Перерыв в пн–пт",
+      },
+      {
+        id: "work_days_outside",
+        title: "Почтальон разносит письма в пн–пт",
+      },
+      {
+        id: "saturday",
+        title: "Время работы в сб",
+      },
+      {
+        id: "saturday_break_time",
+        title: "Перерыв в сб",
+      },
+      {
+        id: "saturday_outside",
+        title: "Почтальон разносит письма в сб",
+      },
+      {
+        id: "sunday",
+        title: "Время работы в вс",
+      },
+      {
+        id: "sunday_break_time",
+        title: "Перерыв в вс",
+      },
+      {
+        id: "sunday_outside",
+        title: "Почтальон разносит письма в вс",
       },
     ],
     latProperty: "lat",
@@ -137,39 +177,42 @@ export const defaultSources: InputSource[] = [
           type: "value",
           id: "Area_km2",
         },
-        { type: "value", id: "Zone_g" },
+        {
+          type: "value",
+          id: "Zone_g",
+        },
       ],
     },
     properties: [
+      {
+        id: "Zone",
+        title: "Сейсмическая зона",
+        values: {
+          I: {
+            color: "#ffdd33",
+          },
+          II: {
+            color: "#ff9933",
+          },
+          III: {
+            color: "#ff3311",
+          },
+        },
+      },
       {
         id: "Area_km2",
         title: "Площадь, км²",
       },
       {
-        id: "Zone",
-        title: "Площадь, км²",
-        values: {
-          I: {
-            color: "#f4dc70",
-          },
-          II: {
-            color: "#fdbb60",
-          },
-          III: {
-            color: "#d8010a",
-          },
-        },
-      },
-      {
         id: "Zone_g",
-        title: "Площадь, км²",
+        title: "Сила тяжести, g",
       },
     ],
     copyright: [],
   },
   {
     id: "armenianLandslidesLayerSource",
-    path: "/lakes_and_reservoirs.json",
+    path: "/landslides.json",
     type: "geojson",
     projection: "EPSG:32638",
     card: {
@@ -187,6 +230,10 @@ export const defaultSources: InputSource[] = [
     card: {
       blocks: [
         {
+          type: "tag",
+          id: "Tip",
+        },
+        {
           type: "value",
           id: "Descriptio",
         },
@@ -198,8 +245,29 @@ export const defaultSources: InputSource[] = [
     },
     properties: [
       {
+        id: "Tip",
+        title: "Тип",
+        values: {
+          "Alpine Soils": {
+            color: "#986039",
+          },
+          "Mountain-steppe soils": {
+            color: "#b47e00",
+          },
+          "Mountanious-forest soils": {
+            color: "#99a300",
+          },
+          "Desert soils": {
+            color: "#bc9b85",
+          },
+          "Mountanious stony semidesert soils": {
+            color: "#c3bebd",
+          },
+        },
+      },
+      {
         id: "Descriptio",
-        title: "Тип почвы",
+        title: "Описание",
         values: {
           "Alluvial-meadow saline lands and alkali soils": {
             color: "#9ddcda",
@@ -281,6 +349,10 @@ export const defaultSources: InputSource[] = [
             },
         },
       },
+      {
+        id: "Shape_Area",
+        title: "Площадь, м²",
+      },
     ],
     copyright: [],
   },
@@ -304,7 +376,7 @@ export const defaultSources: InputSource[] = [
     properties: [
       {
         id: "Landuse",
-        title: "Землепользование",
+        title: "Тип землепользования",
         values: {
           "Arable land": {
             title: "Arable land",
@@ -336,6 +408,10 @@ export const defaultSources: InputSource[] = [
           },
         },
       },
+      {
+        id: "Shape_Area",
+        title: "Площадь, м²",
+      },
     ],
     copyright: [],
   },
@@ -348,19 +424,18 @@ export const defaultSources: InputSource[] = [
       blocks: [
         {
           type: "value",
-          id: "Area",
+          id: "Veget_zone",
         },
         {
           type: "value",
-          id: "Veget_zone",
+          id: "Area",
         },
-        { type: "value", id: "ZoneID" },
       ],
     },
     properties: [
       {
         id: "Area",
-        title: "Площадь, км²",
+        title: "Площадь, м²",
       },
       {
         id: "Veget_zone",
@@ -441,9 +516,27 @@ export const defaultSources: InputSource[] = [
     type: "geojson",
     projection: "EPSG:32638",
     card: {
-      blocks: [],
+      blocks: [
+        {
+          type: "value",
+          id: "OBJECTID",
+        },
+        {
+          type: "value",
+          id: "Shape_Area",
+        },
+      ],
     },
-    properties: [],
+    properties: [
+      {
+        id: "OBJECTID",
+        title: "ID",
+      },
+      {
+        id: "Shape_Area",
+        title: "Площадь, м²",
+      },
+    ],
     copyright: [],
   },
   {
@@ -463,7 +556,7 @@ export const defaultSources: InputSource[] = [
     properties: [
       {
         id: "VALUE",
-        title: "Значение",
+        title: "ккал/см²",
         values: {
           40: { color: "#fddede" },
           45: { color: "#feb7b9" },
@@ -497,7 +590,7 @@ export const defaultSources: InputSource[] = [
     properties: [
       {
         id: "Sun_radiat",
-        title: "Уровень радиации",
+        title: "ккал/см²",
         values: {
           115: {
             color: "#ffffb2",
@@ -557,7 +650,7 @@ export const defaultSources: InputSource[] = [
     properties: [
       {
         id: "Descriptio",
-        title: "Климатические зоны",
+        title: "Описание зоны",
         values: {
           "Arid continental, with dry warm summersand moderate cold winters": {
             title:
@@ -602,6 +695,10 @@ export const defaultSources: InputSource[] = [
           },
         },
       },
+      {
+        id: "Shape_Area",
+        title: "Площадь, м²",
+      },
     ],
     copyright: [],
   },
@@ -616,12 +713,16 @@ export const defaultSources: InputSource[] = [
           type: "value",
           id: "Temperatur",
         },
+        {
+          type: "value",
+          id: "Area",
+        },
       ],
     },
     properties: [
       {
         id: "Temperatur",
-        title: "Среднегодовая температура",
+        title: "Среднегодовая температура, °C",
         values: {
           "-5": {
             color: "#fff5f0",
@@ -658,6 +759,10 @@ export const defaultSources: InputSource[] = [
           },
         },
       },
+      {
+        id: "Area",
+        title: "Площадь, м²",
+      },
     ],
     copyright: [],
   },
@@ -672,12 +777,16 @@ export const defaultSources: InputSource[] = [
           type: "value",
           id: "Precipitat",
         },
+        {
+          type: "value",
+          id: "Area",
+        },
       ],
     },
     properties: [
       {
         id: "Precipitat",
-        title: "Уровень осадков",
+        title: "Среднегодовой уровень осадков, мм/год",
         values: {
           200: {
             color: "#8bc5ff",
@@ -708,6 +817,10 @@ export const defaultSources: InputSource[] = [
           },
         },
       },
+      {
+        id: "Area",
+        title: "Площадь, м²",
+      },
     ],
     copyright: [],
   },
@@ -719,23 +832,41 @@ export const defaultSources: InputSource[] = [
     card: {
       blocks: [
         {
-          type: "value",
+          type: "tag",
           id: "Utility",
         },
         {
           type: "value",
           id: "Wind_Speed",
         },
+        {
+          type: "value",
+          id: "Wind_Power",
+        },
       ],
     },
     properties: [
       {
         id: "Utility",
-        title: "Скорость ветра",
+        title: "Ресурсы",
+        values: {
+          Poor: {
+            color: "#77a1ae",
+          },
+          Marginal: {
+            color: "#ee6b75",
+          },
+          Good: {
+            color: "#d89600",
+          },
+          Excellent: {
+            color: "#00bb83",
+          },
+        },
       },
       {
         id: "Wind_Speed",
-        title: "Сила ветра",
+        title: "Скорость ветра, м/сек",
         values: {
           "0 - 6.0": {
             title: "0 - 6.0",
@@ -763,6 +894,10 @@ export const defaultSources: InputSource[] = [
           },
         },
       },
+      {
+        id: "Wind_Power",
+        title: "Сила ветра, км/ч",
+      },
     ],
     copyright: [],
   },
@@ -772,9 +907,52 @@ export const defaultSources: InputSource[] = [
     type: "geojson",
     projection: "EPSG:32638",
     card: {
-      blocks: [],
+      title: "Name_eng",
+      blocks: [
+        {
+          type: "value",
+          id: "BMO",
+        },
+        {
+          type: "value",
+          id: "CAcode",
+        },
+        {
+          type: "value",
+          id: "RScode",
+        },
+        {
+          type: "value",
+          id: "LKcode",
+        },
+        {
+          type: "value",
+          id: "Shape_Area",
+        },
+      ],
     },
-    properties: [],
+    properties: [
+      {
+        id: "BMO",
+        title: "Организация по управлению бассейном",
+      },
+      {
+        id: "CAcode",
+        title: "CAcode",
+      },
+      {
+        id: "RScode",
+        title: "RScode",
+      },
+      {
+        id: "LKcode",
+        title: "LKcode",
+      },
+      {
+        id: "Shape_Area",
+        title: "Площадь, м²",
+      },
+    ],
     copyright: [],
   },
   {
@@ -783,12 +961,8 @@ export const defaultSources: InputSource[] = [
     type: "geojson",
     projection: "EPSG:28408",
     card: {
-      blocks: [
-        {
-          type: "value",
-          id: "Descript",
-        },
-      ],
+      title: "Descript",
+      blocks: [],
     },
     properties: [
       {
@@ -834,8 +1008,10 @@ export const defaultSources: InputSource[] = [
     type: "geojson",
     card: {
       blocks: [
-        { type: "value", id: "Composit" },
-        { type: "value", id: "Flow_l_sec" },
+        {
+          type: "value",
+          id: "Flow_l_sec",
+        },
       ],
     },
     projection: "EPSG:28408",
@@ -847,7 +1023,7 @@ export const defaultSources: InputSource[] = [
       },
       {
         id: "Flow_l_sec",
-        title: "Скорость потока",
+        title: "Скорость потока, л/сек",
         values: {
           "<25": {
             color: "#d1e3f3",
@@ -875,9 +1051,22 @@ export const defaultSources: InputSource[] = [
     projection: "EPSG:32638",
     card: {
       title: "Name",
-      blocks: [{ type: "value", id: "Shape_Leng" }],
+      blocks: [
+        {
+          type: "value",
+          id: "OBJECTID",
+        },
+        {
+          type: "value",
+          id: "Shape_Leng",
+        },
+      ],
     },
     properties: [
+      {
+        id: "OBJECTID",
+        title: "ID",
+      },
       {
         id: "Shape_Leng",
         title: "Длина, м",
@@ -955,7 +1144,7 @@ export const defaultLayers: InputLayer[] = [
         mapLayerProps: {
           type: "circle",
           paint: {
-            "circle-color": "#f18f00",
+            "circle-color": "#fa4616",
             "circle-stroke-width": 1,
             "circle-radius": [
               "interpolate",
@@ -1020,13 +1209,13 @@ export const defaultLayers: InputLayer[] = [
       {
         id: "armenianLandslidesLayer",
         source: "armenianLandslidesLayerSource",
-        openable: true,
+        openable: false,
         type: "map",
         mapLayerProps: {
           type: "fill",
           paint: {
             "fill-opacity": 0.6,
-            "fill-color": "#891900",
+            "fill-color": "#dd3300",
           },
         },
       },
@@ -1390,7 +1579,7 @@ export const defaultLayers: InputLayer[] = [
           type: "fill",
           paint: {
             "fill-opacity": 0.6,
-            "fill-color": "#000088",
+            "fill-color": "#00ccff",
           },
         },
       },
@@ -1495,7 +1684,7 @@ export const defaultLayers: InputLayer[] = [
           paint: {
             "line-width": 2,
             "line-opacity": 1,
-            "line-color": "#005987",
+            "line-color": "#00ccff",
           },
         },
       },
