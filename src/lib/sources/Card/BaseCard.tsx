@@ -43,10 +43,7 @@ export function BaseCard({
     const defaultBlocks = (card?.blocks || [])
       ?.map((block) => ({
         ...block,
-        title:
-          block.title == null
-            ? undefined
-            : getProperty(source, `properties.${block.id}.title`) || block.id,
+        title: getProperty(source, `properties.${block.id}.title`) || block.id,
         value: t(getProperty(values, String(block.id))),
       }))
       .filter((block) => block.type !== "value" || block.value);
