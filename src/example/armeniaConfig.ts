@@ -35,16 +35,37 @@ export const defaultSources: InputSource[] = [
     card: {
       title: ["addr:street", "addr:housenumber"],
       blocks: [
+        { type: "value", id: "name" },
+        { type: "value", id: "name:en" },
+        { type: "value", id: "name:ru" },
+        { type: "divider" },
         { type: "value", id: "building:management" },
         { type: "value", id: "building:health" },
         { type: "value", id: "building:series" },
         { type: "value", id: "building:levels" },
-        { type: "divider" },
+        { type: "value", id: "building:height" },
         { type: "value", id: "start_date" },
         { type: "age", id: "building:age", deps: "start_date" },
+        { type: "divider" },
+        { type: "value", id: "addr:postcode" },
+        { type: "value", id: "amenity" },
+        { type: "value", id: "phone" },
+        { type: "value", id: "website" },
       ],
     },
     properties: [
+      {
+        title: "Название на армянском",
+        id: "name",
+      },
+      {
+        title: "Название на английском",
+        id: "name:en",
+      },
+      {
+        title: "Название на русском",
+        id: "name:ru",
+      },
       {
         title: "Когда построили",
         id: "start_date",
@@ -73,6 +94,26 @@ export const defaultSources: InputSource[] = [
           { from: 25, to: 31, color: "#c0fc49", value: 0 },
           { from: 31, to: 52, color: "#ffea00", value: 0 },
         ],
+      },
+      {
+        title: "Высота, м",
+        id: "building:height",
+      },
+      {
+        title: "Почтовый код",
+        id: "addr:postcode",
+      },
+      {
+        title: "Удобства",
+        id: "amenity",
+      },
+      {
+        title: "Телефон",
+        id: "phone",
+      },
+      {
+        title: "Сайт",
+        id: "website",
       },
       {
         id: "osm:id",
@@ -205,7 +246,7 @@ export const defaultSources: InputSource[] = [
       },
       {
         id: "Zone_g",
-        title: "Сила тяжести, g",
+        title: "Гравитация, g",
       },
     ],
     copyright: [],
@@ -249,18 +290,23 @@ export const defaultSources: InputSource[] = [
         title: "Тип",
         values: {
           "Alpine Soils": {
+            title: "Alpine Soils",
             color: "#986039",
           },
           "Mountain-steppe soils": {
+            title: "Mountain-steppe soils",
             color: "#b47e00",
           },
           "Mountanious-forest soils": {
+            title: "Mountanious-forest soils",
             color: "#99a300",
           },
           "Desert soils": {
+            title: "Desert soils",
             color: "#bc9b85",
           },
           "Mountanious stony semidesert soils": {
+            title: "Mountanious stony semidesert soils",
             color: "#c3bebd",
           },
         },
@@ -550,7 +596,6 @@ export const defaultSources: InputSource[] = [
           type: "value",
           id: "VALUE",
         },
-        { type: "value", id: "UNIT" },
       ],
     },
     properties: [
@@ -848,7 +893,7 @@ export const defaultSources: InputSource[] = [
     properties: [
       {
         id: "Utility",
-        title: "Ресурсы",
+        title: "Полезность",
         values: {
           Poor: {
             color: "#77a1ae",
@@ -1026,18 +1071,23 @@ export const defaultSources: InputSource[] = [
         title: "Скорость потока, л/сек",
         values: {
           "<25": {
+            title: "<25",
             color: "#d1e3f3",
           },
           "25-50": {
+            title: "25...50",
             color: "#9ac8e1",
           },
           "50-100": {
+            title: "50...100",
             color: "#529dcc",
           },
           "100-1000": {
+            title: "100...1000",
             color: "#1c6cb1",
           },
           ">1000": {
+            title: ">1000",
             color: "#08306b",
           },
         },
@@ -1214,8 +1264,8 @@ export const defaultLayers: InputLayer[] = [
         mapLayerProps: {
           type: "fill",
           paint: {
-            "fill-opacity": 0.6,
-            "fill-color": "#dd3300",
+            "fill-opacity": 0.8,
+            "fill-color": "#ff3300",
           },
         },
       },
@@ -1578,7 +1628,7 @@ export const defaultLayers: InputLayer[] = [
         mapLayerProps: {
           type: "fill",
           paint: {
-            "fill-opacity": 0.6,
+            "fill-opacity": 0.9,
             "fill-color": "#00ccff",
           },
         },
@@ -1612,6 +1662,9 @@ export const defaultLayers: InputLayer[] = [
         type: "map",
         mapLayerProps: {
           type: "line",
+          paint: {
+            "line-width": 2,
+          },
         },
       },
     ],
