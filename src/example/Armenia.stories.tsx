@@ -3,11 +3,8 @@ import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
-import {
-  defaultLayers,
-  defaultMapState,
-  defaultSources,
-} from "./armeniaConfig";
+import { defaultLayers, defaultMapState } from "./armeniaConfig";
+import { defaultSources } from "./defaultSources";
 import translations from "./armenia.locales.json";
 
 // @ts-expect-error

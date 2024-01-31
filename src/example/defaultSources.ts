@@ -1,32 +1,3 @@
-import { InputLayer } from "@/helpers/createLayer";
-import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-
-const YEREVAN_VIEW = {
-  center: [44.51, 40.18001],
-  zoom: 14.5,
-  pitch: 0,
-  bearing: 0, // TODO: set Ararat view for terrain
-};
-
-const COUNTRY_VIEW = {
-  center: [44.5106, 40.3],
-  zoom: 8,
-  pitch: 0,
-  bearing: 0,
-};
-
-export const defaultMapState = {
-  initialViewState: {
-    ...YEREVAN_VIEW,
-    longitude: YEREVAN_VIEW.center[0],
-    latitude: YEREVAN_VIEW.center[1],
-  },
-  mapStyle: "/sloy-dark-map-style.json",
-  minZoom: MIN_ZOOM,
-  maxZoom: MAX_ZOOM,
-  maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
-};
-
 export const defaultSources = [
   {
     id: "buildingTile",
@@ -116,6 +87,7 @@ export const defaultSources = [
         { type: "value", id: "sunday_outside" },
       ],
     },
+    copyright: [],
     properties: [
       {
         id: "postal_code",
@@ -131,7 +103,7 @@ export const defaultSources = [
       },
       {
         id: "work_days_outside",
-        title: "Почтальон разносит письма в пн–пт",
+        title: "«На районе» в пн–пт",
       },
       {
         id: "saturday",
@@ -143,7 +115,7 @@ export const defaultSources = [
       },
       {
         id: "saturday_outside",
-        title: "Почтальон разносит письма в сб",
+        title: "«На районе» в сб",
       },
       {
         id: "sunday",
@@ -155,10 +127,9 @@ export const defaultSources = [
       },
       {
         id: "sunday_outside",
-        title: "Почтальон разносит письма в вс",
+        title: "«На районе» в вс",
       },
     ],
-    copyright: [""],
     latProperty: "lat",
     lngProperty: "long",
   },
@@ -1002,9 +973,13 @@ export const defaultSources = [
     path: "/mineral_and_freshwater_resources.json",
     type: "geojson",
     card: {
-      blocks: [{ type: "value", id: "Flow_l_sec" }],
+      blocks: [
+        { type: "value", id: "Composit" },
+        { type: "value", id: "Flow_l_sec" },
+      ],
     },
     projection: "EPSG:28408",
+    copyright: [],
     properties: [
       {
         id: "Flow_l_sec",
@@ -1027,8 +1002,11 @@ export const defaultSources = [
           },
         },
       },
+      {
+        id: "Composit",
+        title: "Тип источника",
+      },
     ],
-    copyright: [],
   },
   {
     id: "armenianRiversLayerSource",
@@ -1037,22 +1015,9 @@ export const defaultSources = [
     projection: "EPSG:32638",
     card: {
       title: "Name",
-      blocks: [
-        {
-          type: "value",
-          id: "OBJECTID",
-        },
-        {
-          type: "value",
-          id: "Shape_Leng",
-        },
-      ],
+      blocks: [{ type: "value", id: "Shape_Leng" }],
     },
     properties: [
-      {
-        id: "OBJECTID",
-        title: "ID",
-      },
       {
         id: "Shape_Leng",
         title: "Длина, м",
@@ -1061,576 +1026,3 @@ export const defaultSources = [
     copyright: [],
   },
 ];
-
-export const defaultLayers: InputLayer[] = [
-  {
-    title: "Этажность домов",
-    subTitle: "20",
-    description:
-      "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
-    initialViewState: YEREVAN_VIEW,
-    filters: [
-      {
-        type: "range",
-        filterVisualisationLayers: ["houseLevelsLayer"],
-        source: "buildingTile",
-        property: "building:levels",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "houseLevelsLayer",
-        type: "building-range",
-        source: "buildingTile",
-        paint: {},
-        property: "building:levels",
-        openable: true,
-      },
-    ],
-  },
-  {
-    title: "Возраст домов",
-    subTitle: "21129",
-    description:
-      "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
-    initialViewState: YEREVAN_VIEW,
-    filters: [
-      {
-        type: "range",
-        filterVisualisationLayers: ["houseAgeLayer"],
-        source: "buildingTile",
-        property: "start_date",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "houseAgeLayer",
-        type: "building-range",
-        source: "buildingTile",
-        paint: {},
-        property: "start_date",
-        openable: true,
-      },
-    ],
-  },
-  {
-    title: "Почтовые отделения",
-    description: "Список филиалов Армянской почты (Haypost.am).",
-    updatedAt: "2023-09-11T07:46:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/armenian-post-branches",
-      label: "Источник",
-    },
-    initialViewState: COUNTRY_VIEW,
-    filters: [],
-    visualisationLayers: [
-      {
-        id: "armenianPostBranchesLayer",
-        type: "circle",
-        source: "armenianPostBranchesLayerSource",
-        openable: true,
-        paint: {
-          "circle-color": "#fa4616",
-          "circle-stroke-width": 1,
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            MIN_ZOOM,
-            2,
-            MAX_ZOOM,
-            8,
-          ],
-        },
-      },
-    ],
-  },
-  {
-    title: "Сейсмическое зонирование",
-    description:
-      "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
-    updatedAt: "2019-05-05T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-991",
-      label: "Источник",
-    },
-    initialViewState: COUNTRY_VIEW,
-    filters: [
-      {
-        property: "Zone",
-        type: "string",
-        filterVisualisationLayers: ["armenianSeismicZonesLayer"],
-        source: "armenianSeismicZonesLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianSeismicZonesLayer",
-        source: "armenianSeismicZonesLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Zone",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Оползни",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой показывает расположение и форму оползней на территории Армении.",
-    updatedAt: "2017-02-16T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-95",
-      label: "Источник",
-    },
-    filters: [],
-    visualisationLayers: [
-      {
-        id: "armenianLandslidesLayer",
-        source: "armenianLandslidesLayerSource",
-        openable: false,
-        type: "fill",
-        property: "",
-        paint: {
-          "fill-opacity": 0.6,
-          "fill-color": "#dd3300",
-        },
-      },
-    ],
-  },
-  {
-    title: "Типы почвы",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой показывает типы почв, встречающиеся в Армении. Эти данные были созданы для проекта «Поддержка устойчивого горного развития на Кавказе (Sustainable Caucasus)», финансируемого SCOPES.",
-    updatedAt: "2017-02-14T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-78",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Descriptio",
-        type: "string",
-        filterVisualisationLayers: ["armenianSoilTypesLayer"],
-        source: "armenianSoilTypesLayerSource",
-        sortType: "count",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianSoilTypesLayer",
-        source: "armenianSoilTypesLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Descriptio",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Землепользование",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой показывает землепользование в Армении. Эта карта была подготовлена в рамках финансируемой ЕС «Программы предупреждения, готовности и реагирования на природные и техногенные катастрофы в Восточном регионе ЕПД (PPRDEast)».",
-    updatedAt: "2017-02-14T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-81",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Landuse",
-        type: "string",
-        filterVisualisationLayers: ["armenianLandUseLayer"],
-        source: "armenianLandUseLayerSource",
-        sortType: "count",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianLandUseLayer",
-        source: "armenianLandUseLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Landuse",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Типы растительности",
-    initialViewState: COUNTRY_VIEW,
-    description: "В данном слое показаны общие типы растительности в Армении.",
-    updatedAt: "2017-05-31T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-399",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Veget_zone",
-        type: "string",
-        filterVisualisationLayers: ["armenianVegetationTypesLayer"],
-        source: "armenianVegetationTypesLayerSource",
-        sortType: "count",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianVegetationTypesLayer",
-        source: "armenianVegetationTypesLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Veget_zone",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Лесные массивы",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой показывает распределение лесных территорий в Армении.",
-    updatedAt: "2016-12-08T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-64",
-      label: "Источник",
-    },
-    filters: [],
-    visualisationLayers: [
-      {
-        id: "armenianForestAreasLayer",
-        source: "armenianForestAreasLayerSource",
-        openable: true,
-        type: "fill",
-        property: "",
-        paint: {
-          "fill-opacity": 1,
-          "fill-color": "#0a6400",
-        },
-      },
-    ],
-  },
-  {
-    title: "Радиационный баланс, ккал/см²",
-    description:
-      "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
-    updatedAt: "2017-08-16T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-477",
-      label: "Источник",
-    },
-    initialViewState: COUNTRY_VIEW,
-    filters: [
-      {
-        property: "VALUE",
-        type: "string",
-        filterVisualisationLayers: ["armenianRadiationBalanceLayer"],
-        source: "armenianRadiationBalanceLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianRadiationBalanceLayer",
-        source: "armenianRadiationBalanceLayerSource",
-        openable: true,
-        type: "fill",
-        property: "VALUE",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    initialViewState: COUNTRY_VIEW,
-    title: "Среднегодовой уровень солнечной радиации, ккал/см²",
-    description:
-      "Данный слой показывает среднегодовой уровень солнечной радиации в Армении. Эта цифровая карта была подготовлена в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие географической информационной системы Армении для проектов возобновляемой энергетики».",
-    updatedAt: "2017-02-16T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-94",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Sun_radiat",
-        type: "string",
-        filterVisualisationLayers: ["armenianSolarRadiationLevelLayer"],
-        source: "armenianSolarRadiationLevelLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianSolarRadiationLevelLayer",
-        source: "armenianSolarRadiationLevelLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Sun_radiat",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Климатические зоны",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой представляет собой карту климатических зон Армении, подготовленную в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие геоинформационной системы Армении для проектов возобновляемой энергетики».",
-    updatedAt: "2017-02-13T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-74",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Descriptio",
-        type: "string",
-        filterVisualisationLayers: ["armenianClimateZonesLayer"],
-        source: "armenianClimateZonesLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianClimateZonesLayer",
-        source: "armenianClimateZonesLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Descriptio",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Среднегодовая температура, °C",
-    description:
-      "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».",
-    updatedAt: "2017-02-14T19:00:00.000Z",
-    initialViewState: COUNTRY_VIEW,
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-85",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Temperatur",
-        type: "string",
-        filterVisualisationLayers: ["armenianTemperatureLayer"],
-        source: "armenianTemperatureLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianTemperatureLayer",
-        source: "armenianTemperatureLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Temperatur",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Среднегодовой уровень осадков, мм/год",
-    description:
-      "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.",
-    updatedAt: "2017-02-16T19:00:00.000Z",
-    initialViewState: COUNTRY_VIEW,
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-92",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Precipitat",
-        type: "string",
-        filterVisualisationLayers: ["armenianPrecipitationsLevelLayer"],
-        source: "armenianPrecipitationsLevelLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianPrecipitationsLevelLayer",
-        source: "armenianPrecipitationsLevelLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Precipitat",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Ветровые ресурсы, м/сек",
-    description:
-      "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.",
-    updatedAt: "2017-04-01T19:00:00.000Z",
-    initialViewState: COUNTRY_VIEW,
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-164",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Wind_Speed",
-        type: "string",
-        filterVisualisationLayers: ["armenianWindResourcesLayer"],
-        source: "armenianWindResourcesLayerSource",
-        sortType: "config",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianWindResourcesLayer",
-        source: "armenianWindResourcesLayerSource",
-        openable: true,
-        type: "fill",
-        property: "Wind_Speed",
-        paint: {
-          "fill-opacity": 0.6,
-        },
-      },
-    ],
-  },
-  {
-    title: "Озёра и водохранилища",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
-    updatedAt: "2017-02-22T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-103",
-      label: "Источник",
-    },
-    filters: [],
-    visualisationLayers: [
-      {
-        id: "armenianLakesAndReservoirsLayer",
-        source: "armenianLakesAndReservoirsSource",
-        openable: true,
-        type: "fill",
-        property: "LKcode",
-        paint: {
-          "fill-opacity": 0.6,
-          "fill-color": "#00ccff",
-        },
-      },
-    ],
-  },
-  {
-    title: "Зоны подземных вод",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "Этот слой показывает зоны подземных вод в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
-    updatedAt: "2020-07-08T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-1069",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Descript",
-        type: "string",
-        filterVisualisationLayers: ["armenianGroundwaterZonesLayer"],
-        source: "armenianGroundwaterZonesLayerSource",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianGroundwaterZonesLayer",
-        source: "armenianGroundwaterZonesLayerSource",
-        openable: true,
-        type: "line",
-        property: "Descript",
-        paint: {},
-      },
-    ],
-  },
-  {
-    title: "Минеральные и пресноводные источники, л/сек",
-    description:
-      "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
-    updatedAt: "2020-07-06T19:00:00.000Z",
-    initialViewState: COUNTRY_VIEW,
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-1068",
-      label: "Источник",
-    },
-    filters: [
-      {
-        property: "Flow_l_sec",
-        type: "string",
-        filterVisualisationLayers: [
-          "armenianMineralAndFreshwaterResourcesLayer",
-        ],
-        source: "armenianMineralAndFreshwaterResourcesLayerSource",
-        sortType: "config",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "armenianMineralAndFreshwaterResourcesLayer",
-        type: "circle",
-        source: "armenianMineralAndFreshwaterResourcesLayerSource",
-        openable: true,
-        property: "Flow_l_sec",
-        paint: {
-          "circle-stroke-width": 1,
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            MIN_ZOOM,
-            5,
-            MAX_ZOOM,
-            10,
-          ],
-        },
-      },
-    ],
-  },
-  {
-    title: "Реки (5 км и более)",
-    initialViewState: COUNTRY_VIEW,
-    description:
-      "В этом слое представлены все реки Армении длиной 5 км и более. Это полностью связанная и топологически корректная система рек Армении, закодированная с помощью системы кодирования ERICA (European Rivers and Catchment), разработанной для Европейского агентства по окружающей среде.",
-    updatedAt: "2016-11-21T19:00:00.000Z",
-    link: {
-      href: "https://data.opendata.am/dataset/sustc-27",
-      label: "Источник",
-    },
-    filters: [],
-    visualisationLayers: [
-      {
-        id: "armenianRiversLayer",
-        source: "armenianRiversLayerSource",
-        openable: true,
-        type: "line",
-        property: "",
-        paint: {
-          "line-width": 2,
-          "line-opacity": 1,
-          "line-color": "#00ccff",
-        },
-      },
-    ],
-  },
-];
-
-// console.log(extractTranslations(state, translations));
