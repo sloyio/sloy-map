@@ -4,16 +4,19 @@ import { useAppSelector } from "@/state";
 import { Suspense } from "react";
 
 export function VisualisationLayers() {
-  const activeLayer = useAppSelector((state) => state.sloy.activeLayer);
+  const activeLayers = useAppSelector((state) => state.sloy.activeLayer);
   const layers = useAppSelector((state) => state.sloy.config.layers);
+  const activeVisualisationLayers = (activeLayers || [])
+    .map((id) => layers[id].visualisationLayers)
+    .flat();
 
   useDefaultBuildingsColors();
 
-  if (!activeLayer) return null;
+  if (!activeLayers) return null;
 
   return (
     <Suspense fallback={null}>
-      {layers[activeLayer]?.visualisationLayers.map((vId) => (
+      {activeVisualisationLayers.map((vId) => (
         <VisualisationLayer key={vId} id={vId} />
       ))}
     </Suspense>

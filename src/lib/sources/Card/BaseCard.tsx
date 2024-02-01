@@ -20,7 +20,7 @@ import { CardActions } from "./components/CardActions";
 import { Sources } from "./components/Sources/Sources";
 
 interface Props {
-  coordinates: [number, number] | number[];
+  lngLat: string[] | null;
   values?: { [name: string]: any };
   card?: ICard;
   source?: ISource;
@@ -29,7 +29,7 @@ interface Props {
 
 export function BaseCard({
   values = {},
-  coordinates = [],
+  lngLat,
   card,
   source,
   overrideCard = (props) => props.cardProps,
@@ -43,10 +43,7 @@ export function BaseCard({
     const defaultBlocks = (card?.blocks || [])
       ?.map((block) => ({
         ...block,
-        title:
-          block.title == null
-            ? undefined
-            : getProperty(source, `properties.${block.id}.title`) || block.id,
+        title: getProperty(source, `properties.${block.id}.title`) || block.id,
         value: t(getProperty(values, String(block.id))),
       }))
       .filter((block) => block.type !== "value" || block.value);
@@ -62,9 +59,7 @@ export function BaseCard({
         additionalInfo: card.additionalInfo?.map((i) =>
           String(getStringFromStringOrArray(values, i)),
         ),
-        actions: coordinates ? (
-          <CardActions coordinates={coordinates} />
-        ) : undefined,
+        actions: lngLat ? <CardActions coordinates={lngLat} /> : undefined,
         blocks: defaultBlocks,
       },
       source,
@@ -217,7 +212,7 @@ export function BaseCard({
     }
 
     return overrided;
-  }, [card, source, overrideCard, values, coordinates, t, locale, copyright]);
+  }, [card, source, overrideCard, values, lngLat, t, locale, copyright]);
 
   if (!values || !card || !uiCardProps) {
     return null;

@@ -1,26 +1,27 @@
-import React from "react";
+import { useMemo } from "react";
 import { FeatureCollection } from "geojson";
 import { ICard, ISource } from "@/types";
 import { BaseCard } from "./BaseCard";
 
-export function FeatureCard({
-  data,
-  featureId,
-  card,
-  source,
-}: {
+interface Props {
   data: FeatureCollection<any>;
   featureId: string;
   card?: ICard;
   source: ISource;
-}) {
-  const feature = data?.features?.find((f, i) => {
-    const byPid = String(f.properties?.id) === featureId;
-    const byFid = String(f.id) === featureId;
-    const byI = String(i) === featureId;
+}
 
-    return byPid || byFid || byI;
-  });
+export function FeatureCard({ data, featureId, card, source }: Props) {
+  const feature = useMemo(
+    () =>
+      data?.features?.find((f, i) => {
+        const byPid = String(f.properties?.id) === String(featureId);
+        const byFid = String(f.id) === String(featureId);
+        const byI = String(i) === String(featureId);
+
+        return byPid || byFid || byI;
+      }),
+    [data?.features, featureId],
+  );
 
   const properties = feature?.properties;
 
@@ -29,7 +30,7 @@ export function FeatureCard({
       source={source}
       values={properties as Record<string, unknown>}
       card={card}
-      coordinates={feature?.geometry?.coordinates}
+      lngLat={feature?.geometry?.coordinates}
     />
   );
 }

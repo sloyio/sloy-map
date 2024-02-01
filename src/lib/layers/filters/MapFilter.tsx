@@ -42,16 +42,9 @@ export function MapFilter({
 
   const onChange = useCallback(
     (params: unknown) => {
-      dispatch(
-        updateFilterParams({
-          activeLayer: layerId,
-          activeFilterParams: {
-            [filterId]: params,
-          },
-        }),
-      );
+      dispatch(updateFilterParams({ [filterId]: params }));
     },
-    [dispatch, filterId, layerId],
+    [dispatch, filterId],
   );
 
   if (!filter || !source) {

@@ -1,16 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getFilterTypeFromHash } from "@/helpers/hash";
 import { State } from "@/state";
 import { IApp, ILayer } from "@/types";
 
-export interface SetFilterPayload {
-  activeLayer: string | null;
-  activeFilterParams: any;
-}
-
 export const initialState: State["sloy"] = {
-  activeLayer: getFilterTypeFromHash() as string,
+  activeLayer: [],
   activeFilterParams: null,
+  activeCard: null,
   config: {
     copyright: {},
     cards: {},
@@ -39,22 +34,11 @@ const sloySlice = createSlice({
     setAppLoaded(state) {
       state.appLoaded = true;
     },
+    setCard(state, action: PayloadAction<State["sloy"]["activeCard"]>) {
+      state.activeCard = action.payload;
+    },
     setConfig(state, action: PayloadAction<IApp>) {
       state.config = action.payload;
-    },
-    setFilter(state, action: PayloadAction<SetFilterPayload>) {
-      const { activeLayer, activeFilterParams } = action.payload;
-      state.activeLayer = activeLayer;
-      state.activeFilterParams = activeFilterParams;
-    },
-    setFilterParams(
-      state,
-      action: PayloadAction<{
-        activeFilterParams: any;
-      }>,
-    ) {
-      const { activeFilterParams } = action.payload;
-      state.activeFilterParams = activeFilterParams;
     },
     updateLayer(
       state,
@@ -76,21 +60,15 @@ const sloySlice = createSlice({
     },
     updateFilterParams(
       state,
-      action: PayloadAction<{
-        activeLayer: string;
-        activeFilterParams: any;
-      }>,
+      action: PayloadAction<State["sloy"]["activeFilterParams"]>,
     ) {
-      const { activeFilterParams, activeLayer } = action.payload;
-      state.activeLayer = activeLayer;
       state.activeFilterParams = {
         ...state.activeFilterParams,
-        ...activeFilterParams,
+        ...action.payload,
       };
     },
-    toggleLayer(state, action: PayloadAction<string | null>) {
+    toggleLayers(state, action: PayloadAction<State["sloy"]["activeLayer"]>) {
       state.activeLayer = action.payload;
-      state.activeFilterParams = null;
     },
   },
 });
@@ -98,9 +76,8 @@ const sloySlice = createSlice({
 export const {
   setAppLoaded,
   setConfig,
-  toggleLayer,
-  setFilter,
-  setFilterParams,
+  toggleLayers,
+  setCard,
   updateFilterParams,
   updateLayer,
 } = sloySlice.actions;

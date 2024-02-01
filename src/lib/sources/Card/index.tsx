@@ -1,25 +1,16 @@
-import { useAppSelector } from "@/state";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { BuildingCard } from "@/sources/Card/BuildingCard";
 import { MapLoader } from "@/components/MapLoader";
 import { FeatureCard } from "./FeatureCard";
+import { useCard } from "@/state/useCard";
+import { ISource } from "@/types";
 
-interface Props {
-  popupHash?: string | null;
-  sourceIdValue: string | null;
-}
-
-export default function RenderCard({ popupHash, sourceIdValue }: Props) {
-  const sources = useAppSelector((state) => state.sloy.config.sources);
-  const cards = useAppSelector((state) => state.sloy.config.cards);
-
-  const source = sources[String(sourceIdValue)];
-  const card = cards[String(source?.card)];
-
+function RenderJsonCard({ source }: { source: ISource }) {
+  const { card, cardId } = useCard();
   const { loading, data } = useLoadGeoJSON({
     ...source,
     path:
-      source?.dataByIdPath?.replace("{DATA_BY_ID}", String(popupHash)) ||
+      source?.dataByIdPath?.replace("{DATA_BY_ID}", String(cardId)) ||
       source?.path,
   });
 
@@ -27,20 +18,25 @@ export default function RenderCard({ popupHash, sourceIdValue }: Props) {
     return <MapLoader />;
   }
 
-  if (!data || !popupHash || !source) {
+  if (!cardId || !card) {
     return null;
   }
 
-  if (source.id === "buildingTile") {
+  return (
+    <FeatureCard data={data} featureId={cardId} card={card} source={source} />
+  );
+}
+
+export default function RenderCard() {
+  const { cardSource } = useCard();
+
+  if (cardSource?.id === "buildingTile") {
     return <BuildingCard />;
   }
 
-  return (
-    <FeatureCard
-      data={data}
-      featureId={popupHash}
-      card={card}
-      source={source}
-    />
-  );
+  if (cardSource) {
+    return <RenderJsonCard source={cardSource} />;
+  }
+
+  return null;
 }

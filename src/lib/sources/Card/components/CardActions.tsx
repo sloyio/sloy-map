@@ -5,7 +5,7 @@ import { MapContext } from "@/state/MapProvider";
 import { t } from "@/helpers/extractTranslations";
 
 type Props = {
-  coordinates?: [number, number] | number[];
+  coordinates?: string[];
 };
 
 const COPY_RESET_TIMEOUT = 2000;
@@ -41,7 +41,7 @@ export function CardActions({ coordinates }: Props) {
       ? coordinates[0].flat(2)
       : coordinates;
 
-    return `${coords[0]?.toFixed(6)}, ${coords[1]?.toFixed(6)}`;
+    return `${parseFloat(coords[0])?.toFixed(6)}, ${parseFloat(coords[1])?.toFixed(6)}`;
   }, [coordinates]);
 
   const { isCopied: isCoordsCopied, onCopy: onCopyCoords } = useCopyHref(

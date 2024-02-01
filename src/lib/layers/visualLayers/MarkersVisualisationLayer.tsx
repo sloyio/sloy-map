@@ -3,11 +3,11 @@ import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { getLayerStyle } from "@/helpers/getLayerStyle";
 import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
-import { usePopup } from "../../state/usePopup";
 import { getProperty } from "dot-prop";
 import styled, { css } from "styled-components";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
+import { useCard } from "@/state/useCard";
 
 interface Props {
   visualisationLayer: IMarkerImageVisualisationLayer;
@@ -56,10 +56,10 @@ export default function MarkersVisualisationLayer({
   visualisationLayer,
   activeFilters = [],
 }: Props) {
-  const { popupHash } = usePopup();
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const source = sources[visualisationLayer?.source];
   const { loading, data } = useLoadGeoJSON(source);
+  const { cardId } = useCard();
 
   const markers = useMemo(() => {
     return data?.features.filter((feature) => {
@@ -135,7 +135,7 @@ export default function MarkersVisualisationLayer({
             <StyledMarker
               src={src}
               alt={feature.properties.description}
-              opened={popupHash === feature.properties?.id}
+              opened={cardId === feature.properties?.id}
               color={color}
             />
           </Marker>

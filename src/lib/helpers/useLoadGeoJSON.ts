@@ -20,7 +20,7 @@ proj4.defs(
   "+proj=utm +zone=38 +datum=WGS84 +units=m +no_defs +type=crs",
 );
 
-export function useLoadGeoJSON(source: ISource): {
+export function useLoadGeoJSON(source: ISource | null): {
   loading: boolean;
   data: FeatureCollection;
 } {
@@ -151,16 +151,8 @@ export function useLoadGeoJSON(source: ISource): {
         setData(fetchedData);
       });
     }
-  }, [
-    path,
-    source.coordsProperty,
-    source.isCoordsReverse,
-    source.latProperty,
-    source.lngProperty,
-    source.path,
-    source.projection,
-    source.type,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [path]);
 
   if (!path) {
     return {

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { setBuildingStyleByPropertyValues } from "@/layers/visualLayers/setBuildingStyle";
 import { IBuildingIdsVisualisationLayer } from "@/types";
-import { ClickableBuilding } from "@/layers/visualLayers/useClickableBuilding";
+import { ClickableBuilding } from "@/layers/visualLayers/ClickableBuilding";
 
 interface Props {
   visualisationLayer: IBuildingIdsVisualisationLayer;
@@ -10,7 +10,7 @@ interface Props {
 
 export default function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
   const { sloyMapGl } = useMap();
-  console.log(visualisationLayer.mapLayerProps);
+
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
@@ -25,7 +25,7 @@ export default function BuldingsIdsVisualLayer({ visualisationLayer }: Props) {
   }, [sloyMapGl, visualisationLayer.ids, visualisationLayer.mapLayerProps]);
 
   if (visualisationLayer.openable) {
-    return <ClickableBuilding sourceId={visualisationLayer.source} />;
+    return <ClickableBuilding visualisationLayerId={visualisationLayer.id} />;
   }
 
   return null;
