@@ -11,13 +11,35 @@ export const defaultSources: InputSource[] = [
     card: {
       title: ["addr:street", "addr:housenumber"],
       blocks: [
+        { type: "value", id: "addr:street2" },
+        { type: "value", id: "addr:housenumber2" },
+        { type: "divider" },
+        { type: "value", id: "name" },
+        { type: "value", id: "official_name:ru" },
         { type: "value", id: "building:management" },
-        { type: "value", id: "building:health" },
-        { type: "value", id: "building:series" },
+        { type: "value", id: "operator" },
+        { type: "value", id: "addr:postcode" },
+        { type: "divider" },
         { type: "value", id: "building:levels" },
+        { type: "value", id: "building:height" },
         { type: "divider" },
         { type: "value", id: "building:year" },
         { type: "age", id: "building:age", deps: "building:year" },
+        { type: "value", id: "building:series" },
+        { type: "value", id: "architect" },
+        { type: "value", id: "building:architecture" },
+        { type: "value", id: "building:material" },
+        { type: "value", id: "building:colour" },
+        { type: "value", id: "roof:shape" },
+        { type: "divider" },
+        { type: "value", id: "building:health" },
+        { type: "value", id: "building:condition" },
+        { type: "value", id: "building:emergency" },
+        { type: "divider" },
+        { type: "value", id: "email" },
+        { type: "value", id: "phone" },
+        { type: "value", id: "website" },
+        { type: "value", id: "contact:website" },
       ],
     },
     properties: [
@@ -82,6 +104,14 @@ export const defaultSources: InputSource[] = [
         id: "addr:housenumber",
       },
       {
+        title: "Вторая улица",
+        id: "addr:street2",
+      },
+      {
+        title: "Второй номер дома",
+        id: "addr:housenumber2",
+      },
+      {
         title: "Управляющая компания",
         id: "building:management",
       },
@@ -98,8 +128,77 @@ export const defaultSources: InputSource[] = [
         id: "building:emergency",
       },
       {
+        title: "Возраст здания",
         id: "building:age",
         deps: "building:year",
+      },
+      {
+        title: "Название",
+        id: "name",
+      },
+      {
+        title: "Официальное название",
+        id: "official_name:ru",
+      },
+      {
+        title: "Почтовый индекс",
+        id: "addr:postcode",
+      },
+      {
+        title: "Управляющая компания",
+        id: "building:management",
+      },
+      {
+        title: "Оператор",
+        id: "operator",
+      },
+      {
+        title: "Время работы",
+        id: "opening_hours",
+      },
+      {
+        title: "Тип здания",
+        id: "building",
+      },
+      {
+        title: "Высота, м",
+        id: "building:height",
+      },
+      {
+        title: "Архитектор",
+        id: "architect",
+      },
+      {
+        title: "Архитектурный стиль",
+        id: "building:architecture",
+      },
+      {
+        title: "Материал",
+        id: "building:material",
+      },
+      {
+        title: "Цвет фасада",
+        id: "building:colour",
+      },
+      {
+        title: "Форма крыши",
+        id: "roof:shape",
+      },
+      {
+        title: "Электронная почта",
+        id: "email",
+      },
+      {
+        title: "Телефон",
+        id: "phone",
+      },
+      {
+        title: "Сайт",
+        id: "website",
+      },
+      {
+        title: "Сайт",
+        id: "contact:website",
       },
     ],
   },
