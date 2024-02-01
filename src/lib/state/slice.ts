@@ -3,7 +3,7 @@ import { State } from "@/state";
 import { IApp, ILayer } from "@/types";
 
 export const initialState: State["sloy"] = {
-  activeLayer: [],
+  activeLayers: [],
   activeFilterParams: null,
   activeCard: null,
   config: {
@@ -67,8 +67,8 @@ const sloySlice = createSlice({
         ...action.payload,
       };
     },
-    toggleLayers(state, action: PayloadAction<State["sloy"]["activeLayer"]>) {
-      state.activeLayer = action.payload;
+    toggleLayers(state, action: PayloadAction<State["sloy"]["activeLayers"]>) {
+      state.activeLayers = action.payload;
     },
   },
 });

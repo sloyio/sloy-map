@@ -3,11 +3,12 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 export interface State {
   sloy: {
-    activeLayer: string[];
+    activeLayers: string[];
     activeCard: {
       visualisationLayerId: string;
       id?: string;
-      lngLat?: string[] | null;
+      lng?: string;
+      lat?: string;
     } | null;
     activeFilterParams: any;
     config: IApp;

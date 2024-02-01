@@ -7,7 +7,7 @@ import { useAppSelector } from "@/state";
 export function useDefaultBuildingsColors() {
   const { sloyMapGl } = useMap();
   const layers = useAppSelector((state) => state.sloy.config.layers);
-  const activeLayer = useAppSelector((state) => state.sloy.activeLayer);
+  const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
   const visualisationLayers = useAppSelector(
     (state) => state.sloy.config.visualisationLayers,
   );
@@ -21,14 +21,15 @@ export function useDefaultBuildingsColors() {
     [layers, visualisationLayers],
   );
 
-  const prevActiveLayer = usePrevious(activeLayer);
+  const prevActiveLayer = usePrevious(activeLayers);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
     if (!map) return;
 
-    const hasActiveBuildingLayerNow = getActiveVisualisationLayers(activeLayer);
+    const hasActiveBuildingLayerNow =
+      getActiveVisualisationLayers(activeLayers);
 
     const hasActiveBuildingLayerBefore =
       getActiveVisualisationLayers(prevActiveLayer);
@@ -38,7 +39,7 @@ export function useDefaultBuildingsColors() {
       setBuildingDefaultColor(map);
     }
   }, [
-    activeLayer,
+    activeLayers,
     getActiveVisualisationLayers,
     layers,
     prevActiveLayer,

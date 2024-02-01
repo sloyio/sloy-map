@@ -4,11 +4,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
 import { SloyMap } from "@/SloyMap";
 import { defaultLayers, defaultMapState, defaultSources } from "./ekbConfig";
-
 import "sloy-ui/fonts.css";
 
-// @ts-expect-error
-window.SLOY_SHOW_INTERNAL_DATA = true;
+// window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
   title: "Map/Ekb",

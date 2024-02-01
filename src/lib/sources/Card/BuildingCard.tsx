@@ -7,7 +7,7 @@ import { BaseCard } from "./BaseCard";
 import { useCard } from "@/state/useCard";
 
 export function BuildingCard() {
-  const { card, cardLngLat, cardSource } = useCard();
+  const { card, cardLng, cardLat, cardSource } = useCard();
   const { sloyMapGl } = useMap();
   const { overrideCard } = useContext(MapContext);
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
@@ -19,27 +19,30 @@ export function BuildingCard() {
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
-    if (map && cardLngLat) {
-      const house = map.queryRenderedFeatures(map.project(cardLngLat), {
-        layers: [BUILDING_LAYER_ID],
-      })?.[0]?.properties;
+    if (map && cardLat && cardLng) {
+      const house = map.queryRenderedFeatures(
+        map.project({ lat: cardLat, lng: cardLng }),
+        {
+          layers: [BUILDING_LAYER_ID],
+        },
+      )?.[0]?.properties;
 
       setBuildingValues(house);
     }
-  }, [cardLngLat, sloyMapGl]);
+  }, [sloyMapGl, cardLat, cardLng]);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
     // center map only on loading step
-    if (map && cardLngLat && !isAppLoaded) {
+    if (map && cardLat && cardLng && !isAppLoaded) {
       try {
-        map.flyTo({ center: cardLngLat });
+        map.flyTo({ center: { lat: cardLat, lng: cardLng } });
       } catch (error) {
         console.error(error);
       }
     }
-  }, [sloyMapGl, isAppLoaded, cardLngLat]);
+  }, [sloyMapGl, isAppLoaded, cardLat, cardLng]);
 
   if (!cardSource || !card || !buildingValues) return null;
 
@@ -48,7 +51,8 @@ export function BuildingCard() {
       source={cardSource}
       card={card}
       values={buildingValues}
-      lngLat={cardLngLat}
+      lat={cardLat}
+      lng={cardLng}
       overrideCard={overrideCard}
     />
   );

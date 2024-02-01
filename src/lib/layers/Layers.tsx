@@ -11,7 +11,7 @@ export default function Layers() {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
   const layers = useAppSelector((state) => state.sloy.config.layers);
-  const activeLayers = useAppSelector((state) => state.sloy.activeLayer);
+  const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
 
   const toggleSingle = useCallback(
     (activeLayerId: string | null, isActive: boolean) => {

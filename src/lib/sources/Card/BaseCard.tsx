@@ -20,7 +20,8 @@ import { CardActions } from "./components/CardActions";
 import { Sources } from "./components/Sources/Sources";
 
 interface Props {
-  lngLat: string[] | null;
+  lat?: string;
+  lng?: string;
   values?: { [name: string]: any };
   card?: ICard;
   source?: ISource;
@@ -29,7 +30,8 @@ interface Props {
 
 export function BaseCard({
   values = {},
-  lngLat,
+  lat,
+  lng,
   card,
   source,
   overrideCard = (props) => props.cardProps,
@@ -59,7 +61,8 @@ export function BaseCard({
         additionalInfo: card.additionalInfo?.map((i) =>
           String(getStringFromStringOrArray(values, i)),
         ),
-        actions: lngLat ? <CardActions coordinates={lngLat} /> : undefined,
+        actions:
+          lat && lng ? <CardActions coordinates={[lng, lat]} /> : undefined,
         blocks: defaultBlocks,
       },
       source,
@@ -212,7 +215,7 @@ export function BaseCard({
     }
 
     return overrided;
-  }, [card, source, overrideCard, values, lngLat, t, locale, copyright]);
+  }, [card, source, overrideCard, values, lng, lat, t, locale, copyright]);
 
   if (!values || !card || !uiCardProps) {
     return null;

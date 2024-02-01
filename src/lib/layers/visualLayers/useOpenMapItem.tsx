@@ -20,7 +20,8 @@ export function useOpenMapItem(visualisationLayerId: string) {
           setCard({
             visualisationLayerId,
             id: item.properties?.id || item.id,
-            lngLat: [String(e.lngLat.lng), String(e.lngLat.lat)],
+            lat: String(e.lngLat.lat),
+            lng: String(e.lngLat.lng),
           }),
         );
       }

@@ -30,7 +30,8 @@ export function FeatureCard({ data, featureId, card, source }: Props) {
       source={source}
       values={properties as Record<string, unknown>}
       card={card}
-      lngLat={feature?.geometry?.coordinates}
+      lng={feature?.geometry?.coordinates[0]}
+      lat={feature?.geometry?.coordinates[1]}
     />
   );
 }
