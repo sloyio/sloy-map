@@ -8,7 +8,7 @@ export function ClickableVisualisationLayer({
   visualisationLayer: IVisualisationLayer;
 }) {
   useMapObjectState(visualisationLayer.id);
-  useOpenMapItem(visualisationLayer.id, visualisationLayer.source);
+  useOpenMapItem(visualisationLayer.id);
 
   return null;
 }

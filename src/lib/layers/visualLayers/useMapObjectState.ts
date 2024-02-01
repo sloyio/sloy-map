@@ -13,7 +13,10 @@ function setObjectState(
   map.setFeatureState(mapObject, settings);
 }
 
-function useMapObjectState(layerId: string) {
+function useMapObjectState(
+  layerId: string,
+  onClick?: (e: MapMouseEvent) => void,
+) {
   const { sloyMapGl } = useMap();
   const activeObject = useRef<FeatureIdentifier | null>(null);
   const hoverObject = useRef<FeatureIdentifier | null>(null);
@@ -30,6 +33,7 @@ function useMapObjectState(layerId: string) {
 
     const handleClick = (e: MapMouseEvent) => {
       const item = getItem(e.point);
+
       if (activeObject.current && item.id !== activeObject.current.id) {
         setObjectState(map, activeObject.current, { active: false });
         activeObject.current = null;
@@ -41,6 +45,8 @@ function useMapObjectState(layerId: string) {
           active: true,
         });
       }
+
+      onClick?.(e);
     };
 
     const handleMouseMove = (e: MapMouseEvent) => {
@@ -70,7 +76,7 @@ function useMapObjectState(layerId: string) {
       map.off("mousemove", layerId, handleMouseMove);
       map.off("mouseleave", layerId, handleMouseLeave);
     };
-  }, [layerId, sloyMapGl]);
+  }, [layerId, onClick, sloyMapGl]);
 
   return hoverObject.current;
 }

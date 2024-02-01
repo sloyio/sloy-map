@@ -2,84 +2,53 @@ import { useContext, useEffect, useState } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { MapContext } from "@/state/MapProvider";
-import { usePopup } from "@/state/usePopup";
-import { getLatLngFromHash } from "@/helpers/hash";
 import { BUILDING_LAYER_ID } from "@/constants";
 import { BaseCard } from "./BaseCard";
-
-interface HouseObject {
-  id: string;
-  coordinates: [number, number][];
-  attributes: Record<string, string>;
-}
+import { useCard } from "@/state/useCard";
 
 export function BuildingCard() {
-  const { popupHash, sourceIdValue } = usePopup();
+  const { card, cardLngLat, cardSource } = useCard();
   const { sloyMapGl } = useMap();
   const { overrideCard } = useContext(MapContext);
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
-  const sources = useAppSelector((state) => state.sloy.config.sources);
-  const cards = useAppSelector((state) => state.sloy.config.cards);
-  const [lat, lng] = (popupHash || "").split("_");
-  const [placemark, setPlacemark] = useState<HouseObject | null>(null);
+  const [buildingValues, setBuildingValues] = useState<Record<
+    string,
+    unknown
+  > | null>(null);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
 
-    if (!map || !popupHash || !isAppLoaded) {
-      return;
+    if (map && cardLngLat) {
+      const house = map.queryRenderedFeatures(map.project(cardLngLat), {
+        layers: [BUILDING_LAYER_ID],
+      })?.[0]?.properties;
+
+      setBuildingValues(house);
     }
-
-    try {
-      const [lat, lng] = getLatLngFromHash();
-
-      const house = map.queryRenderedFeatures(
-        map.project({ lat: +lat, lng: +lng }),
-        {
-          layers: [BUILDING_LAYER_ID],
-        },
-      )?.[0]?.properties;
-
-      if (!house) return;
-
-      setPlacemark({
-        id: popupHash,
-        coordinates: [[+lat, +lng]],
-        attributes: house,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  }, [sloyMapGl, popupHash, isAppLoaded]);
+  }, [cardLngLat, sloyMapGl]);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
-
-    if (!map || !popupHash) {
-      return;
-    }
 
     // center map only on loading step
-    if (!isAppLoaded) {
+    if (map && cardLngLat && !isAppLoaded) {
       try {
-        map.flyTo({ center: { lat: +lat, lng: +lng } });
+        map.flyTo({ center: cardLngLat });
       } catch (error) {
         console.error(error);
       }
     }
-  }, [sloyMapGl, popupHash, lat, lng, isAppLoaded]);
+  }, [sloyMapGl, isAppLoaded, cardLngLat]);
 
-  const source = sources[String(sourceIdValue)];
-  const card = cards[String(source?.card)];
-
-  if (!source) return null;
+  if (!cardSource || !card || !buildingValues) return null;
 
   return (
     <BaseCard
-      source={source}
+      source={cardSource}
       card={card}
-      values={placemark?.attributes}
-      coordinates={[+lat, +lng]}
+      values={buildingValues}
+      lngLat={cardLngLat}
       overrideCard={overrideCard}
     />
   );

@@ -1,16 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getFilterTypeFromHash } from "@/helpers/hash";
 import { State } from "@/state";
 import { IApp, ILayer } from "@/types";
 
-export interface SetFilterPayload {
-  activeLayer: string | null;
-  activeFilterParams: any;
-}
-
 export const initialState: State["sloy"] = {
-  activeLayer: getFilterTypeFromHash() as string,
+  activeLayer: null,
   activeFilterParams: null,
+  activeCard: null,
   config: {
     copyright: {},
     cards: {},
@@ -39,10 +34,20 @@ const sloySlice = createSlice({
     setAppLoaded(state) {
       state.appLoaded = true;
     },
+    setCard(state, action: PayloadAction<State["sloy"]["activeCard"]>) {
+      state.activeCard = action.payload;
+    },
     setConfig(state, action: PayloadAction<IApp>) {
       state.config = action.payload;
     },
-    setFilter(state, action: PayloadAction<SetFilterPayload>) {
+    setFilter(
+      state,
+      action: PayloadAction<{
+        activeLayer: string | null;
+        activeVisualizationLayer: string | null;
+        activeFilterParams: any;
+      }>,
+    ) {
       const { activeLayer, activeFilterParams } = action.payload;
       state.activeLayer = activeLayer;
       state.activeFilterParams = activeFilterParams;
@@ -100,6 +105,7 @@ export const {
   setConfig,
   toggleLayer,
   setFilter,
+  setCard,
   setFilterParams,
   updateFilterParams,
   updateLayer,

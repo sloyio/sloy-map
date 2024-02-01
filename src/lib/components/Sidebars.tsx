@@ -1,35 +1,27 @@
-import { Suspense, lazy, useContext } from "react";
+import { Suspense, lazy } from "react";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/isDesktop";
-import { MapContext } from "@/state/MapProvider";
+import { useCard } from "@/state/useCard";
 
 const LazeCard = lazy(() => import("@/sources/Card"));
 const LazeLayers = lazy(() => import("@/layers/Layers"));
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();
-  const popupProps = useContext(MapContext);
-  const card = (
-    <LazeCard
-      popupHash={popupProps.popupHash}
-      sourceIdValue={popupProps.sourceIdValue}
-    />
-  );
+  const { closeCard, isCardActive } = useCard();
 
-  if (isDesktop && popupProps.popupHash) {
+  const card = <LazeCard />;
+
+  if (isDesktop && isCardActive) {
     return (
       <RightSidebar>
-        <SidebarContent onClose={popupProps.closePopup}>{card}</SidebarContent>
+        <SidebarContent onClose={closeCard}>{card}</SidebarContent>
       </RightSidebar>
     );
   }
 
   return (
-    <SheetModal
-      isOpen={Boolean(popupProps.popupHash)}
-      onClose={popupProps.closePopup}
-      snapPoints={[0.7]}
-    >
+    <SheetModal isOpen={isCardActive} onClose={closeCard} snapPoints={[0.7]}>
       {card}
     </SheetModal>
   );

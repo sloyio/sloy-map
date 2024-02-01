@@ -1,10 +1,11 @@
+import { setCard } from "@/state/slice";
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
-import { usePopup } from "../../state/usePopup";
+import { useDispatch } from "react-redux";
 
-export function useOpenMapItem(layerId: string, mapItemType: string) {
+export function useOpenMapItem(visualisationLayerId: string) {
   const { sloyMapGl } = useMap();
-  const { openPopup } = usePopup();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
@@ -15,14 +16,20 @@ export function useOpenMapItem(layerId: string, mapItemType: string) {
       const item = e.target.queryRenderedFeatures(e.point)[0] || {};
 
       if (item) {
-        openPopup(item.properties?.id || item.id, mapItemType);
+        dispatch(
+          setCard({
+            visualisationLayerId,
+            id: item.properties?.id || item.id,
+            lngLat: [String(e.lngLat.lng), String(e.lngLat.lat)],
+          }),
+        );
       }
     }
 
-    map.on?.("click", layerId, open);
+    map.on?.("click", visualisationLayerId, open);
 
     return () => {
-      map.off?.("click", layerId, open);
+      map.off?.("click", visualisationLayerId, open);
     };
-  }, [sloyMapGl, layerId, mapItemType, openPopup]);
+  }, [sloyMapGl, visualisationLayerId, dispatch]);
 }

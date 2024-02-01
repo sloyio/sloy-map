@@ -4,7 +4,7 @@ import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { setBuildingRangeStyle } from "@/layers/visualLayers/setBuildingStyle";
 import { IVisualisationLayer, SourcePropertyRange } from "@/types";
-import { ClickableBuilding } from "@/layers/visualLayers/useClickableBuilding";
+import { ClickableBuilding } from "@/layers/visualLayers/ClickableBuilding";
 import { getProperty } from "dot-prop";
 
 interface Props {
@@ -47,7 +47,7 @@ export default function BuildingRangeVisualLayer({
   ]);
 
   if (visualisationLayer.openable) {
-    return <ClickableBuilding sourceId={visualisationLayer.source} />;
+    return <ClickableBuilding visualisationLayerId={visualisationLayer.id} />;
   }
 
   return null;
