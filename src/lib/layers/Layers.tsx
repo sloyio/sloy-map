@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Accordion, AccordionItem } from "sloy-ui";
 import { ILayer } from "@/types";
 import { Layer } from "./Layer";
-import { toggleLayer } from "@/state/slice";
+import { toggleLayers } from "@/state/slice";
 import { useCallback } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
@@ -11,14 +11,47 @@ export default function Layers() {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
   const layers = useAppSelector((state) => state.sloy.config.layers);
-  const activeLayer = useAppSelector((state) => state.sloy.activeLayer);
+  const activeLayers = useAppSelector((state) => state.sloy.activeLayer);
+
+  const toggleSingle = useCallback(
+    (activeLayerId: string | null, isActive: boolean) => {
+      if (activeLayerId) {
+        if (isActive) {
+          dispatch(toggleLayers([]));
+        } else {
+          dispatch(toggleLayers([activeLayerId]));
+        }
+      }
+    },
+    [dispatch],
+  );
+
+  const toggleMultiple = useCallback(
+    (activeLayerId: string | null, isActive: boolean) => {
+      if (activeLayerId) {
+        if (isActive) {
+          dispatch(
+            toggleLayers(activeLayers.filter((id) => id !== activeLayerId)),
+          );
+        } else {
+          dispatch(toggleLayers(activeLayers.concat(activeLayerId)));
+        }
+      }
+    },
+    [activeLayers, dispatch],
+  );
 
   const onToggleClick = useCallback(
-    (type: string | null) => {
-      dispatch(toggleLayer(type));
+    (activeLayerId: string | null, isActive: boolean) => {
+      const isMultiple = true;
+      if (isMultiple) {
+        toggleMultiple(activeLayerId, isActive);
+      } else {
+        toggleSingle(activeLayerId, isActive);
+      }
 
-      if (type && layers[type]) {
-        const layer = layers[type];
+      if (activeLayerId && layers[activeLayerId]) {
+        const layer = layers[activeLayerId];
         if (layer.initialViewState) {
           const map = sloyMapGl?.getMap();
           if (map) {
@@ -31,19 +64,15 @@ export default function Layers() {
         }
       }
     },
-    [dispatch, layers, sloyMapGl],
+    [layers, sloyMapGl, toggleMultiple, toggleSingle],
   );
 
   return (
     <Accordion>
       {Object.values(layers).map((layer: ILayer) => {
-        const isActive = layer.id === activeLayer;
+        const isActive = activeLayers.includes(layer.id);
         const toggle = () => {
-          if (isActive) {
-            onToggleClick(null);
-          } else {
-            onToggleClick(layer.id);
-          }
+          onToggleClick(layer.id, isActive);
         };
 
         return (

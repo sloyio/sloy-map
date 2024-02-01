@@ -3,7 +3,7 @@ import { State } from "@/state";
 import { IApp, ILayer } from "@/types";
 
 export const initialState: State["sloy"] = {
-  activeLayer: null,
+  activeLayer: [],
   activeFilterParams: null,
   activeCard: null,
   config: {
@@ -40,27 +40,6 @@ const sloySlice = createSlice({
     setConfig(state, action: PayloadAction<IApp>) {
       state.config = action.payload;
     },
-    setFilter(
-      state,
-      action: PayloadAction<{
-        activeLayer: string | null;
-        activeVisualizationLayer: string | null;
-        activeFilterParams: any;
-      }>,
-    ) {
-      const { activeLayer, activeFilterParams } = action.payload;
-      state.activeLayer = activeLayer;
-      state.activeFilterParams = activeFilterParams;
-    },
-    setFilterParams(
-      state,
-      action: PayloadAction<{
-        activeFilterParams: any;
-      }>,
-    ) {
-      const { activeFilterParams } = action.payload;
-      state.activeFilterParams = activeFilterParams;
-    },
     updateLayer(
       state,
       action: PayloadAction<{
@@ -81,21 +60,15 @@ const sloySlice = createSlice({
     },
     updateFilterParams(
       state,
-      action: PayloadAction<{
-        activeLayer: string;
-        activeFilterParams: any;
-      }>,
+      action: PayloadAction<State["sloy"]["activeFilterParams"]>,
     ) {
-      const { activeFilterParams, activeLayer } = action.payload;
-      state.activeLayer = activeLayer;
       state.activeFilterParams = {
         ...state.activeFilterParams,
-        ...activeFilterParams,
+        ...action.payload,
       };
     },
-    toggleLayer(state, action: PayloadAction<string | null>) {
+    toggleLayers(state, action: PayloadAction<State["sloy"]["activeLayer"]>) {
       state.activeLayer = action.payload;
-      state.activeFilterParams = null;
     },
   },
 });
@@ -103,10 +76,8 @@ const sloySlice = createSlice({
 export const {
   setAppLoaded,
   setConfig,
-  toggleLayer,
-  setFilter,
+  toggleLayers,
   setCard,
-  setFilterParams,
   updateFilterParams,
   updateLayer,
 } = sloySlice.actions;

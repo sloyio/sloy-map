@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { usePrevious } from "@uidotdev/usehooks";
 import { setBuildingDefaultColor } from "./setBuildingStyle";
@@ -11,6 +11,16 @@ export function useDefaultBuildingsColors() {
   const visualisationLayers = useAppSelector(
     (state) => state.sloy.config.visualisationLayers,
   );
+  const getActiveVisualisationLayers = useCallback(
+    (activeLayersIds: string[]) =>
+      (activeLayersIds || [])
+        .map((id) => layers[id].visualisationLayers)
+        .flat()
+        .map((id) => visualisationLayers[id].type)
+        .some((type) => ["building-range", "building-ids"].includes(type)),
+    [layers, visualisationLayers],
+  );
+
   const prevActiveLayer = usePrevious(activeLayer);
 
   useEffect(() => {
@@ -18,23 +28,23 @@ export function useDefaultBuildingsColors() {
 
     if (!map) return;
 
-    const hasActiveBuildingLayerNow =
-      activeLayer &&
-      layers[activeLayer]?.visualisationLayers
-        .map((id) => visualisationLayers[id].type)
-        .some((type) => ["building-range", "building-ids"].includes(type));
+    const hasActiveBuildingLayerNow = getActiveVisualisationLayers(activeLayer);
 
     const hasActiveBuildingLayerBefore =
-      prevActiveLayer &&
-      layers[prevActiveLayer]?.visualisationLayers
-        .map((id) => visualisationLayers[id].type)
-        .some((type) => ["building-range", "building-ids"].includes(type));
+      getActiveVisualisationLayers(prevActiveLayer);
 
     // if we had buildings before but not now
     if (hasActiveBuildingLayerBefore && !hasActiveBuildingLayerNow) {
       setBuildingDefaultColor(map);
     }
-  }, [activeLayer, layers, prevActiveLayer, sloyMapGl, visualisationLayers]);
+  }, [
+    activeLayer,
+    getActiveVisualisationLayers,
+    layers,
+    prevActiveLayer,
+    sloyMapGl,
+    visualisationLayers,
+  ]);
 
   return null;
 }
