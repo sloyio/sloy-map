@@ -12,8 +12,8 @@ export function ClickableBuilding({
   useMapObjectState(BUILDING_LAYER_ID, (e) => {
     openCard({
       visualisationLayerId,
-      lat: String(e.lngLat.lng),
-      lng: String(e.lngLat.lat),
+      lat: String(e.lngLat.lat),
+      lng: String(e.lngLat.lng),
     });
   });
 

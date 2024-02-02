@@ -1,5 +1,9 @@
-import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { InputSource, InputLayer } from "@/types";
+import { BASEMAP_SOURCES } from "@/publicLayers/BasemapLayer";
+import { InputSloySource, InputSloyLayer } from "@/types";
+
+const MIN_ZOOM = 7;
+
+const MAX_ZOOM = 20;
 
 const YEREVAN_VIEW = {
   center: [44.51, 40.18001],
@@ -27,7 +31,8 @@ export const defaultMapState = {
   maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
 };
 
-export const defaultSources: InputSource[] = [
+export const defaultSources: InputSloySource[] = [
+  ...BASEMAP_SOURCES,
   {
     id: "buildingTile",
     copyright: [],
@@ -1126,7 +1131,7 @@ export const defaultSources: InputSource[] = [
   },
 ];
 
-export const defaultLayers: InputLayer[] = [
+export const defaultLayers: InputSloyLayer[] = [
   {
     title: "Этажность домов",
     subTitle: "20",

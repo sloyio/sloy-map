@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import { sloyReducer } from "@/state/slice";
-import { SloyMap } from "@/SloyMap";
+import { SloyMap } from "@/index";
 import { defaultLayers, defaultMapState, defaultSources } from "./ekbConfig";
 import "sloy-ui/fonts.css";
 
@@ -19,8 +19,8 @@ export default {
 function AppMap() {
   return (
     <SloyMap
-      theme={defaultTheme}
       locale="ru-RU"
+      theme={defaultTheme}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}

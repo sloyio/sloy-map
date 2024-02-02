@@ -1,4 +1,4 @@
-import { IApp, IFilter, IVisualisationLayer, InputLayer } from "@/types";
+import { IApp, IFilter, IVisualisationLayer, InputSloyLayer } from "@/types";
 import { nanoid } from "@reduxjs/toolkit";
 import deepmerge from "deepmerge";
 
@@ -8,7 +8,7 @@ interface LayerOutput {
   visualisationLayers: IApp["visualisationLayers"];
 }
 
-export function createLayer(layer: InputLayer): LayerOutput {
+export function createLayer(layer: InputSloyLayer): LayerOutput {
   const layerId = nanoid(5);
 
   const filters = layer.filters.reduce<Record<string, IFilter>>((all, item) => {
@@ -42,6 +42,6 @@ export function createLayer(layer: InputLayer): LayerOutput {
   };
 }
 
-export function createLayers(layers: InputLayer[]): LayerOutput {
+export function createLayers(layers: InputSloyLayer[]): LayerOutput {
   return deepmerge.all<LayerOutput>(layers.map(createLayer));
 }

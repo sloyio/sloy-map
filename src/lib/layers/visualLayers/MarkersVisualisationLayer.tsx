@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { getLayerStyle } from "@/helpers/getLayerStyle";
+import { getLayerStateStyle } from "@/helpers/getLayerStyle";
 import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
 import { getProperty } from "dot-prop";
 import styled, { css } from "styled-components";
@@ -81,7 +81,7 @@ export default function MarkersVisualisationLayer({
     type: "circle",
     paint: {
       "circle-opacity": 0,
-      "circle-radius": getLayerStyle<number>({
+      "circle-radius": getLayerStateStyle<number>({
         initial: 22,
         hover: 22 * 1.2,
         active: 22 * 1.3,

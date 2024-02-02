@@ -1,8 +1,8 @@
 import { IApp, ICard, ISource, SourceProperty } from "@/types";
-import { InputSource } from "@/types/inputTypes";
+import { InputSloySource } from "@/types/inputTypes";
 import { nanoid } from "@reduxjs/toolkit";
 
-export function createSources(sources: InputSource[]): {
+export function createSources(sources: InputSloySource[]): {
   cards: IApp["cards"];
   sources: IApp["sources"];
 } {

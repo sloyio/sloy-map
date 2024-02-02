@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { State } from "@/state";
-import { IApp, ILayer } from "@/types";
+import { ILayer } from "@/types";
 
 export const initialState: State["sloy"] = {
   activeLayers: [],
@@ -37,8 +37,11 @@ const sloySlice = createSlice({
     setCard(state, action: PayloadAction<State["sloy"]["activeCard"]>) {
       state.activeCard = action.payload;
     },
-    setConfig(state, action: PayloadAction<IApp>) {
-      state.config = action.payload;
+    init(state, action: PayloadAction<Partial<State["sloy"]>>) {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
     updateLayer(
       state,
@@ -75,7 +78,7 @@ const sloySlice = createSlice({
 
 export const {
   setAppLoaded,
-  setConfig,
+  init,
   toggleLayers,
   setCard,
   updateFilterParams,

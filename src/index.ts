@@ -1,10 +1,8 @@
+export { SloyMap } from "@/index";
+
 export * from "@/state/slice";
-export * from "@/state/slice";
-export { SloyMap } from "@/SloyMap";
-export { getYearNameByValue } from "@/helpers/getYearNameByValue";
-export { getLayerStyle } from "@/helpers/getLayerStyle";
-export { colorLuminance } from "@/helpers/colorLuminance";
-export { createLayer } from "@/layers/createLayer";
-export { createAppState } from "@/helpers/createAppState";
-export { createSources } from "@/sources/createSources";
 export * from "@/types";
+export * from "@/helpers/useSloy";
+
+export { getYearNameByValue } from "@/helpers/getYearNameByValue";
+export * from "@/helpers/getLayerStyle";

@@ -122,13 +122,13 @@ export type IVisualisationLayer =
 export interface IFilter {
   id: string;
   source: ISource["id"];
-  type: string;
+  type: "boolean" | "range" | "string" | "string[]";
   filterVisualisationLayers: IVisualisationLayer["id"][];
+  sortType?: "config" | "count" | "alphabetical";
   title?: string;
   description?: string;
   color?: string;
   property: string;
-  sortType?: "config" | "count" | "alphabetical";
 }
 
 export interface Copyright {

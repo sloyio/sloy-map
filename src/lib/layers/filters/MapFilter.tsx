@@ -107,6 +107,7 @@ export function MapFilter({
       return (
         <FilterGrid
           sortType={filter.sortType}
+          onChange={onChange}
           items={[
             {
               type: filter.title,
@@ -115,7 +116,6 @@ export function MapFilter({
               color: filter.color,
             },
           ]}
-          onChange={onChange}
         />
       );
     }

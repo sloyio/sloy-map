@@ -1,8 +1,9 @@
-import { Source } from "react-map-gl";
+import { Layer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { MapVisualisationLayer } from "@/layers/visualLayers/ClickableLayer";
 import { IVisualisationLayer } from "@/types";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
+import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
+import { getLayerProps } from "./getLayerProps";
 
 export default function LoadedVisualisationLayer({
   vId,
@@ -18,12 +19,21 @@ export default function LoadedVisualisationLayer({
 
   const { loading, data } = useLoadGeoJSON(source);
 
-  if (loading) return null;
+  if (loading || !source) return null;
 
   return (
     <>
-      <Source id={source.id} type="geojson" data={data} generateId />
-      <MapVisualisationLayer visualisationLayer={visualisationLayer} />
+      <Source
+        id={source.id}
+        type="geojson"
+        data={data}
+        generateId
+        {...source.mapSourceProps}
+      />
+      {visualisationLayer.openable && (
+        <ClickableVisualisationLayer visualisationLayer={visualisationLayer} />
+      )}
+      <Layer {...getLayerProps(visualisationLayer, source)} />
     </>
   );
 }

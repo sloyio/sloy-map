@@ -1,16 +1,14 @@
-import { Suspense, lazy } from "react";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/isDesktop";
 import { useCard } from "@/state/useCard";
-
-const LazeCard = lazy(() => import("@/sources/Card"));
-const LazeLayers = lazy(() => import("@/layers/Layers"));
+import { Layers } from "@/layers/Layers";
+import { RenderCard } from "@/sources/Card";
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();
   const { closeCard, isCardActive } = useCard();
 
-  const card = <LazeCard />;
+  const card = <RenderCard />;
 
   if (isDesktop && isCardActive) {
     return (
@@ -29,27 +27,24 @@ function SidebarCard() {
 
 function SidebarFilter() {
   const isDesktop = useIsDesktop();
+  const layers = <Layers />;
 
   if (isDesktop) {
-    return (
-      <LeftSidebar>
-        <LazeLayers />
-      </LeftSidebar>
-    );
+    return <LeftSidebar>{layers}</LeftSidebar>;
   }
 
   return (
     <SheetModal snapPoints={[0.6, 0.1]} isOpen>
-      <LazeLayers />
+      {layers}
     </SheetModal>
   );
 }
 
 export function Sidebars() {
   return (
-    <Suspense fallback={null}>
+    <>
       <SidebarFilter />
       <SidebarCard />
-    </Suspense>
+    </>
   );
 }

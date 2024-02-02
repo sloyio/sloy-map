@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, useEffect } from "react";
+import { ComponentProps, ReactNode, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, sloyTheme } from "sloy-ui";
@@ -8,17 +8,19 @@ import { MapContextProvider } from "@/state/MapProvider";
 import { Copyright } from "@/components/Copyright/Copyright";
 import { Sidebars } from "@/components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
-import { setConfig, setAppLoaded } from "@/state/slice";
+import { init, setAppLoaded } from "@/state/slice";
 import { VisualisationLayers } from "@/layers/visualLayers/VisualisationLayers";
 import { createLayers } from "@/layers/createLayer";
 import { createSources } from "@/sources/createSources";
-import { IMapProps, IMapState, InputSource, InputLayer } from "@/types";
+import { IMapProps, IMapState, InputSloySource, InputSloyLayer } from "@/types";
 import { setTranslations } from "@/helpers/extractTranslations";
 import { useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
-// import { TerranMap, terrainProps } from "./visualLayers/ContourVisualLayer";
+
 import "sloy-ui/style.css";
+
 import "maplibre-gl/dist/maplibre-gl.css";
+import { Init } from "./Init";
 
 export interface SloyMapProps {
   overrideCard?: OverrideCardFn;
@@ -27,8 +29,9 @@ export interface SloyMapProps {
   translations?: Record<string, Record<string, string>>;
   mapState: IMapState;
   mapProps?: IMapProps;
-  sources: InputSource[];
-  layers: InputLayer[];
+  sources: InputSloySource[];
+  layers: InputSloyLayer[];
+  terrainSource?: string;
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   children?: ReactNode;
 }
@@ -43,6 +46,7 @@ export function SloyMap({
   mapState,
   sources,
   layers,
+  terrainSource,
   mapProps = {},
 }: SloyMapProps) {
   const dispatch = useDispatch();
@@ -58,16 +62,27 @@ export function SloyMap({
       createLayers(layers),
     ]);
 
+    const firstLayer = Object.keys(appState.layers)?.[0];
+
     dispatch(
-      setConfig(
-        setTranslations({
+      init({
+        activeLayers: firstLayer ? [firstLayer] : [],
+        config: setTranslations({
           state: appState,
           locale,
           translations,
         }),
-      ),
+      }),
     );
   }, [dispatch, layers, locale, mapState, sources, translations]);
+
+  const onLoad = useCallback(() => dispatch(setAppLoaded()), [dispatch]);
+
+  const initialViewState = {
+    zoom: 15,
+    pitch: 0,
+    ...mapState.initialViewState,
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -78,24 +93,20 @@ export function SloyMap({
           translations={translations}
           overrideCard={overrideCard}
           overrideLayers={overrideLayers}
+          terrainSource={terrainSource}
         >
           <MapGl
             id="sloyMapGl"
             {...mapState}
-            initialViewState={{
-              zoom: 15,
-              pitch: 0,
-              ...mapState.initialViewState,
-            }}
+            attributionControl={false}
+            initialViewState={initialViewState}
             minZoom={mapState.minZoom || 11}
             maxZoom={mapState.maxZoom || 20}
             maxPitch={mapState.maxPitch || 85}
-            // hash
             mapLib={maplibregl}
             antialias
             reuseMaps
-            onLoad={() => dispatch(setAppLoaded())}
-            // terrain={terrainProps}
+            onLoad={onLoad}
             {...mapProps}
             style={{
               width: "100vw",
@@ -103,11 +114,11 @@ export function SloyMap({
               ...mapProps.style,
             }}
           >
-            {/* <TerranMap /> */}
             {isAppLoaded && <VisualisationLayers />}
             {children}
           </MapGl>
           {isAppLoaded && <Sidebars />}
+          {isAppLoaded && <Init />}
           <Copyright />
         </MapContextProvider>
       </MapProvider>

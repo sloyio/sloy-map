@@ -7,6 +7,7 @@ export interface IMapContext {
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
   t: (key?: string) => string;
+  terrainSource?: string;
 }
 
 export const MapContext = createContext<IMapContext>({
@@ -14,6 +15,7 @@ export const MapContext = createContext<IMapContext>({
   overrideCard: (props) => props?.cardProps,
   overrideLayers: () => null,
   t: () => "",
+  terrainSource: undefined,
 });
 
 interface Props {
@@ -22,6 +24,7 @@ interface Props {
   translations?: Record<string, Record<string, string>>;
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
+  terrainSource?: string;
 }
 
 export function MapContextProvider({
@@ -30,6 +33,7 @@ export function MapContextProvider({
   overrideLayers,
   locale: propsLocale = "en-EN",
   translations = {},
+  terrainSource,
 }: Props) {
   const locale = useMemo(() => new Intl.Locale(propsLocale), [propsLocale]);
 
@@ -38,23 +42,16 @@ export function MapContextProvider({
     [locale.language, translations],
   );
 
-  // useEffect(() => {
-  //   window.addEventListener("popstate", onInitialPageLoad, false);
-
-  //   return () => {
-  //     window.removeEventListener("popstate", onInitialPageLoad, false);
-  //   };
-  // }, [onInitialPageLoad]);
-
   const value = useMemo(
     () => ({
       locale: new Intl.Locale(locale),
       overrideCard,
       overrideLayers,
       translations,
+      terrainSource,
       t,
     }),
-    [locale, overrideCard, overrideLayers, translations, t],
+    [locale, overrideCard, overrideLayers, translations, terrainSource, t],
   );
 
   return <MapContext.Provider value={value}>{children}</MapContext.Provider>;

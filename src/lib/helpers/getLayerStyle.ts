@@ -1,4 +1,4 @@
-export function getLayerStyle<T>({
+export function getLayerStateStyle<T>({
   initial,
   active,
   hover,

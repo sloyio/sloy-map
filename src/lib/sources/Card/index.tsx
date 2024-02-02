@@ -27,7 +27,7 @@ function RenderJsonCard({ source }: { source: ISource }) {
   );
 }
 
-export default function RenderCard() {
+export function RenderCard() {
   const { cardSource } = useCard();
 
   if (cardSource?.id === "buildingTile") {

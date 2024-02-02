@@ -1,8 +1,7 @@
-import React from "react";
 import { Link, LinkSize } from "sloy-ui";
-import styles from "./Sources.module.css";
+import styles from "./Copyrights.module.css";
 
-export function Sources({
+export function Copyrights({
   sources,
 }: {
   sources: { name: string; link: string }[];

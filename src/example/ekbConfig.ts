@@ -1,9 +1,31 @@
-import { getLayerStyle } from "@/helpers/getLayerStyle";
+import { InputSloySource, InputSloyLayer } from "@/types";
+import { getLayerStateStyle } from "@/helpers/getLayerStyle";
 import facades from "../../public/ekb-facades.json";
-import { MAX_ZOOM, MIN_ZOOM } from "./constants";
-import { InputSource, InputLayer } from "@/types";
 
-export const defaultSources: InputSource[] = [
+const MIN_ZOOM = 7;
+
+const MAX_ZOOM = 20;
+
+const EKB_VIEW = {
+  center: [60.6099, 56.83898],
+  zoom: 14.5,
+  pitch: 0,
+  bearing: 0,
+};
+
+export const defaultMapState = {
+  initialViewState: {
+    ...EKB_VIEW,
+    longitude: EKB_VIEW.center[0],
+    latitude: EKB_VIEW.center[1],
+  },
+  mapStyle: "/ekb-dark-map-style.json",
+  minZoom: MIN_ZOOM,
+  maxZoom: MAX_ZOOM,
+  // maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
+};
+
+export const defaultSources: InputSloySource[] = [
   {
     id: "buildingTile",
     copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
@@ -552,7 +574,7 @@ export const defaultSources: InputSource[] = [
   },
 ];
 
-export const defaultLayers: InputLayer[] = [
+export const defaultLayers: InputSloyLayer[] = [
   {
     title: "Возраст домов",
     filters: [
@@ -675,7 +697,6 @@ export const defaultLayers: InputLayer[] = [
           type: "circle",
           paint: {
             "circle-stroke-width": 1,
-            // 'circle-radius': getLayerStyle<number>({ initial: 8, hover: 10, active: 12 }),
             "circle-radius": [
               "interpolate",
               ["linear"],
@@ -1015,7 +1036,7 @@ export const defaultLayers: InputLayer[] = [
         mapLayerProps: {
           type: "fill-extrusion",
           paint: {
-            "fill-extrusion-color": getLayerStyle<string>({
+            "fill-extrusion-color": getLayerStateStyle<string>({
               initial: "rgba(129, 255, 0, 0.75)",
               hover: "rgba(129, 255, 0, 0.90)",
               active: "rgba(129, 255, 0, 1)",
@@ -1120,25 +1141,6 @@ export const defaultLayers: InputLayer[] = [
     ],
   },
 ];
-
-const EKB_VIEW = {
-  center: [60.6099, 56.83898],
-  zoom: 14.5,
-  pitch: 0,
-  bearing: 0,
-};
-
-export const defaultMapState = {
-  initialViewState: {
-    ...EKB_VIEW,
-    longitude: EKB_VIEW.center[0],
-    latitude: EKB_VIEW.center[1],
-  },
-  mapStyle: "/ekb-dark-map-style.json",
-  minZoom: MIN_ZOOM,
-  maxZoom: MAX_ZOOM,
-  // maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
-};
 
 export const state = {
   copyright: {

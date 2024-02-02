@@ -7,21 +7,21 @@ import {
   SourceProperty,
 } from "./types";
 
-export type InputCard = Omit<ICard, "id">;
+export type InputSloyCard = Omit<ICard, "id">;
 
-export type InputSource = Omit<ISource, "card" | "properties"> & {
-  card: InputCard;
+export type InputSloySource = Omit<ISource, "card" | "properties"> & {
+  card: InputSloyCard;
   properties: SourceProperty[];
 };
 
-export type InputFilter = Omit<IFilter, "id">;
+export type InputSloyFilter = Omit<IFilter, "id">;
 
-export type InputVisualisationLayer = IVisualisationLayer;
+export type InputSloyVisualisationLayer = IVisualisationLayer;
 
-export type InputLayer = Omit<
+export type InputSloyLayer = Omit<
   ILayer,
   "id" | "filters" | "visualisationLayers"
 > & {
-  filters: InputFilter[];
-  visualisationLayers: InputVisualisationLayer[];
+  filters: InputSloyFilter[];
+  visualisationLayers: InputSloyVisualisationLayer[];
 };

@@ -17,7 +17,7 @@ import { getStringFromStringOrArray } from "@/helpers/getStringFromStringOrArray
 import { getYearStringByValue } from "@/helpers/getYearNameByValue";
 import { OverrideCardFn } from "@/types/uiTypes";
 import { CardActions } from "./components/CardActions";
-import { Sources } from "./components/Sources/Sources";
+import { Copyrights } from "./components/Sources/Copyrights";
 
 interface Props {
   lat?: string;
@@ -187,7 +187,7 @@ export function BaseCard({
         type: "section",
         title: "Источники",
         value: (
-          <Sources
+          <Copyrights
             sources={source.copyright
               .map((item) => copyright[item])
               .filter(Boolean)}
