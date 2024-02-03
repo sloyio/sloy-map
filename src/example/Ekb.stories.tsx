@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
-import { SloyMap, sloyReducer } from "@/index";
+import { SloyMap, internalTranslations, sloyReducer } from "@/index";
 import { defaultLayers, defaultMapState, defaultSources } from "./ekbConfig";
 import "sloy-ui/fonts.css";
 
@@ -20,6 +20,7 @@ function AppMap() {
     <SloyMap
       locale="ru-RU"
       theme={defaultTheme}
+      translations={internalTranslations}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}

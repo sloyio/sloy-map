@@ -14,7 +14,7 @@ export function useDefaultBuildingsColors() {
   const getActiveVisualisationLayers = useCallback(
     (activeLayersIds: string[]) =>
       (activeLayersIds || [])
-        .map((id) => layers[id].visualisationLayers)
+        .map((id) => layers[id]?.visualisationLayers || [])
         .flat()
         .map((id) => visualisationLayers[id].type)
         .some((type) => ["building-range", "building-ids"].includes(type)),

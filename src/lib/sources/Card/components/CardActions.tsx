@@ -1,8 +1,7 @@
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import { Button, ButtonSize, ButtonType, Icon, IconType } from "sloy-ui";
 import { useCopyHref } from "@/helpers/useCopyHref";
-import { MapContext } from "@/state/MapProvider";
-import { t } from "@/helpers/extractTranslations";
+import { useMapContext } from "@/helpers/useSloy";
 
 type Props = {
   coordinates?: string[];
@@ -10,27 +9,12 @@ type Props = {
 
 const COPY_RESET_TIMEOUT = 2000;
 
-const translations = {
-  Скопировано: {
-    ru: "Скопировано",
-    en: "Copied",
-    am: "Պատճենված",
-  },
-  "Ссылка на объект": {
-    ru: "Ссылка на объект",
-    en: "Object reference",
-    am: "Օբյեկտի հղում",
-  },
-};
-
 export function CardActions({ coordinates }: Props) {
-  const { locale } = useContext(MapContext);
+  const { t } = useMapContext();
   const { isCopied: isLinkCopied, onCopy: onCopyLink } = useCopyHref(
     window.location.href,
     COPY_RESET_TIMEOUT,
   );
-
-  const tr = (key: string) => t(key, { translations, lang: locale.language });
 
   const coordsString = useMemo(() => {
     if (!coordinates) {
@@ -58,7 +42,7 @@ export function CardActions({ coordinates }: Props) {
           onClick={onCopyCoords}
           postfix={<Icon type={IconType.Copy} />}
         >
-          {isCoordsCopied ? tr("Скопировано") : coordsString}
+          {isCoordsCopied ? t("Copied") : coordsString}
         </Button>
       )}
       <Button
@@ -67,7 +51,7 @@ export function CardActions({ coordinates }: Props) {
         onClick={onCopyLink}
         postfix={<Icon type={IconType.Link} />}
       >
-        {isLinkCopied ? tr("Скопировано") : tr("Ссылка на объект")}
+        {isLinkCopied ? t("Copied") : t("Share")}
       </Button>
     </>
   );

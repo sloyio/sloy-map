@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import qs from "qs";
 import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
@@ -14,7 +15,7 @@ import { createLayers } from "@/layers/createLayer";
 import { createSources } from "@/sources/createSources";
 import { IMapProps, IMapState, InputSloySource, InputSloyLayer } from "@/types";
 import { setTranslations } from "@/helpers/extractTranslations";
-import { useAppSelector } from "@/state";
+import { ISloyState, useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
 
 import "sloy-ui/style.css";
@@ -57,6 +58,15 @@ export function SloyMap({
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 
   useEffect(() => {
+    const queryParams = qs.parse(
+      window.location.search.slice(1),
+    ) as Partial<ISloyState>;
+
+    const activeCard = queryParams?.activeCard;
+    const activeLayers = queryParams?.activeLayers?.map((l) =>
+      encodeURIComponent(l),
+    );
+
     const appState = createAppState([
       {
         copyright: {},
@@ -70,7 +80,8 @@ export function SloyMap({
 
     dispatch(
       init({
-        activeLayers: firstLayer ? [firstLayer] : [],
+        activeCard,
+        activeLayers: activeLayers || (firstLayer ? [firstLayer] : []),
         config: setTranslations({
           state: appState,
           locale,

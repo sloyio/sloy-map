@@ -25,13 +25,32 @@ export function FeatureCard({ data, featureId, card, source }: Props) {
 
   const properties = feature?.properties;
 
+  const { lng, lat } = useMemo(() => {
+    const firstLng = feature?.geometry?.coordinates[0];
+    const firstLat = feature?.geometry?.coordinates[1];
+
+    return {
+      lng:
+        firstLng?.[0]?.[0]?.[0] ||
+        firstLng?.[0]?.[0] ||
+        firstLng?.[0] ||
+        firstLng,
+
+      lat:
+        firstLng?.[0]?.[0]?.[1] ||
+        firstLng?.[0]?.[1] ||
+        firstLng?.[1] ||
+        firstLat,
+    };
+  }, [feature?.geometry?.coordinates]);
+
   return (
     <BaseCard
       source={source}
       values={properties as Record<string, unknown>}
       card={card}
-      lng={feature?.geometry?.coordinates[0]}
-      lat={feature?.geometry?.coordinates[1]}
+      lng={lng}
+      lat={lat}
     />
   );
 }

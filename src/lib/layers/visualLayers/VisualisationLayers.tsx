@@ -7,7 +7,7 @@ export function VisualisationLayers() {
   const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
   const layers = useAppSelector((state) => state.sloy.config.layers);
   const activeVisualisationLayers = (activeLayers || [])
-    .map((id) => layers[id].visualisationLayers)
+    .map((id) => layers[id]?.visualisationLayers || [])
     .flat();
 
   useDefaultBuildingsColors();

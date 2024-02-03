@@ -82,7 +82,7 @@ const sloySlice = createSlice({
       };
     },
     toggleLayers(state, action: PayloadAction<ISloyState["activeLayers"]>) {
-      state.activeLayers = action.payload;
+      state.activeLayers = Array.from(new Set(action.payload));
     },
   },
 });
