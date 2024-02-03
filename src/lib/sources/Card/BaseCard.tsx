@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import { getProperty } from "dot-prop";
 import { useAppSelector } from "@/state";
 import {
@@ -12,12 +12,12 @@ import {
   Tag,
 } from "sloy-ui";
 import { ISource, ICard } from "@/types";
-import { MapContext } from "@/state/MapProvider";
 import { getStringFromStringOrArray } from "@/helpers/getStringFromStringOrArray";
 import { getYearStringByValue } from "@/helpers/getYearNameByValue";
 import { OverrideCardFn } from "@/types/uiTypes";
 import { CardActions } from "./components/CardActions";
 import { Copyrights } from "./components/Sources/Copyrights";
+import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
   lat?: string;
@@ -37,7 +37,7 @@ export function BaseCard({
   overrideCard = (props) => props.cardProps,
 }: Props) {
   const copyright = useAppSelector((state) => state.sloy.config.copyright);
-  const { locale, t } = useContext(MapContext);
+  const { locale, t } = useMapContext();
 
   const uiCardProps = useMemo(() => {
     if (!card || !source) return null;
@@ -45,21 +45,22 @@ export function BaseCard({
     const defaultBlocks = (card?.blocks || [])
       ?.map((block) => ({
         ...block,
-        title: getProperty(source, `properties.${block.id}.title`) || block.id,
+        title:
+          t(getProperty(source, `properties.${block.id}.title`)) || block.id,
         value: t(getProperty(values, String(block.id))),
       }))
       .filter((block) => block.type !== "value" || block.value);
 
     const overrided = overrideCard({
       cardProps: {
-        title: getStringFromStringOrArray(values, card.title),
+        title: t(getStringFromStringOrArray(values, card.title)),
         cover: card.cover
           ? (card.rootSrc || "") +
             getStringFromStringOrArray(values, card.cover)
           : undefined,
-        description: getStringFromStringOrArray(values, card.description),
+        description: t(getStringFromStringOrArray(values, card.description)),
         additionalInfo: card.additionalInfo?.map((i) =>
-          String(getStringFromStringOrArray(values, i)),
+          t(String(getStringFromStringOrArray(values, i))),
         ),
         actions:
           lat && lng ? <CardActions coordinates={[lng, lat]} /> : undefined,
@@ -95,7 +96,7 @@ export function BaseCard({
                   `properties.${block.id}.values.${value}.color`,
                 )}
               >
-                {value}
+                {t(value)}
               </Tag>
             ) : undefined,
           };
@@ -185,7 +186,7 @@ export function BaseCard({
       overrided.blocks.push({ type: "divider" });
       overrided.blocks.push({
         type: "section",
-        title: "Источники",
+        title: t("Sources"),
         value: (
           <Copyrights
             sources={source.copyright

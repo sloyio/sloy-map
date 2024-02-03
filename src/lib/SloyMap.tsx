@@ -115,10 +115,10 @@ export function SloyMap({
             }}
           >
             {isAppLoaded && <VisualisationLayers />}
+            {isAppLoaded && <Init />}
             {children}
           </MapGl>
           {isAppLoaded && <Sidebars />}
-          {isAppLoaded && <Init />}
           <Copyright />
         </MapContextProvider>
       </MapProvider>

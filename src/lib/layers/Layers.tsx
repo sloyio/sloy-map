@@ -3,14 +3,16 @@ import { Accordion, AccordionItem } from "sloy-ui";
 import { ILayer } from "@/types";
 import { Layer } from "./Layer";
 import { toggleLayers } from "@/state/slice";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { BaseMapLayer } from "./BaseMapLayer";
+import { useMapContext } from "..";
 
 export function Layers() {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
+  const { t } = useMapContext();
   const layers = useAppSelector((state) => state.sloy.config.layers);
   const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
 
@@ -70,16 +72,21 @@ export function Layers() {
 
   const [isActive, setActive] = useState(false);
 
-  return (
-    <Accordion>
+  const baseMapItem = useMemo(
+    () => (
       <AccordionItem
-        title="Базовая карта"
+        title={t("Basemap")}
         isSelected={isActive}
         toggle={() => setActive(!isActive)}
       >
         <BaseMapLayer />
       </AccordionItem>
+    ),
+    [isActive, t],
+  );
 
+  return (
+    <Accordion>
       {Object.values(layers).map((layer: ILayer) => {
         const isActive = activeLayers.includes(layer.id);
         const toggle = () => {
@@ -98,6 +105,7 @@ export function Layers() {
           </AccordionItem>
         );
       })}
+      {baseMapItem}
     </Accordion>
   );
 }

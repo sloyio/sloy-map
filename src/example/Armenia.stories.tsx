@@ -1,20 +1,13 @@
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
-import { sloyReducer } from "@/state/slice";
-import { SloyMap } from "@/index";
+import { SloyMap, sloyReducer, BESEMAP_TERRAIN_SOURCE } from "@/index";
 import {
   defaultLayers,
   defaultMapState,
   defaultSources,
 } from "./armeniaConfig";
 import translations from "./armenia.locales.json";
-import {
-  BASEMAP_SOURCES,
-  BESEMAP_TERRAIN_SOURCE,
-  BASEMAP_LAYERS,
-  BESEMAP_TERRAIN_LAYER,
-} from "@/publicLayers/BasemapLayer";
 
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
@@ -26,22 +19,15 @@ export default {
   },
 };
 function AppMap() {
-  const sources = defaultSources
-    .concat(BESEMAP_TERRAIN_SOURCE)
-    .concat(BASEMAP_SOURCES);
-
-  const layers = defaultLayers
-    .concat(BASEMAP_LAYERS)
-    .concat(BESEMAP_TERRAIN_LAYER);
-
   return (
     <SloyMap
-      locale="ru-RU"
+      locale="en-EN"
       mapState={defaultMapState}
-      sources={sources}
-      layers={layers}
+      sources={defaultSources}
+      layers={defaultLayers}
       translations={translations}
       terrainSource={BESEMAP_TERRAIN_SOURCE.id}
+      mapProps={{ hash: true }}
     />
   );
 }

@@ -1,11 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { State } from "@/state";
+import { IBasemapMapLayer, ISloyState } from "@/state";
 import { ILayer } from "@/types";
 
-export const initialState: State["sloy"] = {
+export const initialState: ISloyState = {
+  appLoaded: false,
   activeLayers: [],
   activeFilterParams: null,
   activeCard: null,
+  basemap: {
+    mapLayers: [],
+  },
   config: {
     copyright: {},
     cards: {},
@@ -24,7 +28,6 @@ export const initialState: State["sloy"] = {
       },
     },
   },
-  appLoaded: false,
 };
 
 const sloySlice = createSlice({
@@ -34,10 +37,18 @@ const sloySlice = createSlice({
     setAppLoaded(state) {
       state.appLoaded = true;
     },
-    setCard(state, action: PayloadAction<State["sloy"]["activeCard"]>) {
+    updateBasemapLayer(
+      state,
+      {
+        payload: { at, value },
+      }: PayloadAction<{ at: number; value: IBasemapMapLayer }>,
+    ) {
+      state.basemap.mapLayers[at] = value;
+    },
+    setCard(state, action: PayloadAction<ISloyState["activeCard"]>) {
       state.activeCard = action.payload;
     },
-    init(state, action: PayloadAction<Partial<State["sloy"]>>) {
+    init(state, action: PayloadAction<Partial<ISloyState>>) {
       return {
         ...state,
         ...action.payload,
@@ -63,14 +74,14 @@ const sloySlice = createSlice({
     },
     updateFilterParams(
       state,
-      action: PayloadAction<State["sloy"]["activeFilterParams"]>,
+      action: PayloadAction<ISloyState["activeFilterParams"]>,
     ) {
       state.activeFilterParams = {
         ...state.activeFilterParams,
         ...action.payload,
       };
     },
-    toggleLayers(state, action: PayloadAction<State["sloy"]["activeLayers"]>) {
+    toggleLayers(state, action: PayloadAction<ISloyState["activeLayers"]>) {
       state.activeLayers = action.payload;
     },
   },
@@ -83,6 +94,7 @@ export const {
   setCard,
   updateFilterParams,
   updateLayer,
+  updateBasemapLayer,
 } = sloySlice.actions;
 
 export const sloyReducer = sloySlice.reducer;

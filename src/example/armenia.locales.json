@@ -839,5 +839,95 @@
     "am": "100...1000",
     "ru": "100...1000",
     "en": "100...1000"
+  },
+  "Contours": {
+    "am": "Ուրվագծեր",
+    "ru": "Контуры",
+    "en": "Contours"
+  },
+  "Basemap": {
+    "am": "Բազային քարտ",
+    "ru": "Базовая карта",
+    "en": "Basemap"
+  },
+  "background": {
+    "am": "Նախապատմություն",
+    "ru": "Фон",
+    "en": "Background"
+  },
+  "natural": {
+    "am": "Բնական",
+    "ru": "Естественный",
+    "en": "Natural"
+  },
+  "natural_overlay": {
+    "am": "Բնական ծածկույթ",
+    "ru": "Натуральное покрытие",
+    "en": "Natural_overlay"
+  },
+  "leisure": {
+    "am": "Ժամանց",
+    "ru": "Досуг",
+    "en": "Leisure"
+  },
+  "landuse_overlay": {
+    "am": "Հողօգտագործման պարտադրում",
+    "ru": "Наложение землепользования",
+    "en": "Landuse overlay"
+  },
+  "waterway": {
+    "am": "Ջրային ուղի",
+    "ru": "Водный путь",
+    "en": "Waterway"
+  },
+  "amenity_fill_2": {
+    "am": "Ենթակառուցվածքի օբյեկտների լցնում",
+    "ru": "Заливка объектов инфраструктуры",
+    "en": "Amenity fill"
+  },
+  "highway_line": {
+    "am": "Մայրուղու գիծ",
+    "ru": "Линия шоссе",
+    "en": "Highway line"
+  },
+  "railway_line": {
+    "am": "Երկաթուղային գիծ",
+    "ru": "Железнодорожная линия",
+    "en": "Railway line"
+  },
+  "highway_dash": {
+    "am": "Մայրուղու գիծ",
+    "ru": "Черта шоссе",
+    "en": "Highway dash"
+  },
+  "bridge_outline": {
+    "am": "Կամրջի ուրվագիծ",
+    "ru": "Контур моста",
+    "en": "Bridge outline"
+  },
+  "bridge_line": {
+    "am": "Կամրջի գիծ",
+    "ru": "Линия моста",
+    "en": "Bridge line"
+  },
+  "highway_label": {
+    "am": "Մայրուղու արձանագրությունը",
+    "ru": "Надпись шоссе",
+    "en": "Highway label"
+  },
+  "waterway_label": {
+    "am": "Ջրատարի արձանագրությունը",
+    "ru": "Надпись водного пути",
+    "en": "Waterway label"
+  },
+  "building": {
+    "am": "Շենք",
+    "ru": "Здание",
+    "en": "Building"
+  },
+  "building_number": {
+    "am": "Շենքի համարը",
+    "ru": "Номер здания",
+    "en": "Building number"
   }
 }

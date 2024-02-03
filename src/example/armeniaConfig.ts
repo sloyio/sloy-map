@@ -1,4 +1,9 @@
-import { BASEMAP_SOURCES } from "@/publicLayers/BasemapLayer";
+import {
+  BASEMAP_LAYERS,
+  BASEMAP_SOURCES,
+  BESEMAP_TERRAIN_LAYER,
+  BESEMAP_TERRAIN_SOURCE,
+} from "@/publicLayers/basemap";
 import { InputSloySource, InputSloyLayer } from "@/types";
 
 const MIN_ZOOM = 7;
@@ -9,7 +14,14 @@ const YEREVAN_VIEW = {
   center: [44.51, 40.18001],
   zoom: 14.5,
   pitch: 0,
-  bearing: 0, // TODO: set Ararat view for terrain
+  bearing: 0,
+};
+
+const ARARAT_VIEW = {
+  center: [44.516, 40.17043],
+  zoom: 13.81,
+  pitch: 81,
+  bearing: -166.7,
 };
 
 const COUNTRY_VIEW = {
@@ -32,6 +44,7 @@ export const defaultMapState = {
 };
 
 export const defaultSources: InputSloySource[] = [
+  BESEMAP_TERRAIN_SOURCE,
   ...BASEMAP_SOURCES,
   {
     id: "buildingTile",
@@ -74,16 +87,6 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Когда построили",
         id: "start_date",
-        values: [
-          { from: 1723, to: 1860, color: "#ff7461", value: 0 },
-          { from: 1860, to: 1917, color: "#ffA34e", value: 1 },
-          { from: 1917, to: 1930, color: "#fee678", value: 1 },
-          { from: 1930, to: 1940, color: "#85e634", value: 1 },
-          { from: 1940, to: 1955, color: "#0f9467", value: 0 },
-          { from: 1955, to: 1991, color: "#71b3ff", value: 7 },
-          { from: 1991, to: 2010, color: "#c270ff", value: 4 },
-          { from: 2010, to: 2023, color: "#f97bcf", value: 6 },
-        ],
       },
       {
         title: "Количество этажей",
@@ -1157,30 +1160,6 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
-    title: "Возраст домов",
-    subTitle: "21129",
-    description:
-      "Возраст зданий Армении, данные о которых есть в OpenStreetMaps.",
-    initialViewState: YEREVAN_VIEW,
-    filters: [
-      {
-        type: "range",
-        filterVisualisationLayers: ["houseAgeLayer"],
-        source: "buildingTile",
-        property: "start_date",
-      },
-    ],
-    visualisationLayers: [
-      {
-        id: "houseAgeLayer",
-        type: "building-range",
-        source: "buildingTile",
-        property: "start_date",
-        openable: true,
-      },
-    ],
-  },
-  {
     title: "Почтовые отделения",
     description: "Список филиалов Армянской почты (Haypost.am).",
     updatedAt: "2023-09-11T07:46:00.000Z",
@@ -1748,6 +1727,8 @@ export const defaultLayers: InputSloyLayer[] = [
       },
     ],
   },
+  { ...BESEMAP_TERRAIN_LAYER, initialViewState: ARARAT_VIEW },
+  ...BASEMAP_LAYERS,
 ];
 
 // console.log(extractTranslations(state, translations));

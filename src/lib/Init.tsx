@@ -1,15 +1,18 @@
 import { useContext, useEffect, useMemo } from "react";
-import { activeVisualisationLayerSelector } from "./layers/visualLayers/selectors";
-import { useAppSelector } from "./state";
+import { useDispatch } from "react-redux";
+import { IBasemapMapLayer, useAppSelector } from "./state";
 import { MapContext } from "./state/MapProvider";
-import { useSloyMap } from "./helpers/useSloy";
-import { IVisualisationLayer } from "./types";
+import { useMapContext, useSloyMap } from "./helpers/useSloy";
+import { init } from "./state/slice";
 
-export function Init() {
+function useInitTerrain() {
   const map = useSloyMap();
   const { terrainSource } = useContext(MapContext);
-  const activeVisualisationLayers: IVisualisationLayer[] = useAppSelector(
-    activeVisualisationLayerSelector,
+  const activeVisualisationLayers = useAppSelector((state) =>
+    (state.sloy.activeLayers || [])
+      .map((id) => state.sloy.config.layers[id].visualisationLayers)
+      .flat()
+      .map((vId) => state.sloy.config.visualisationLayers[vId]),
   );
 
   const shouldShowTerrain = useMemo(
@@ -18,7 +21,7 @@ export function Init() {
   );
 
   useEffect(() => {
-    if (map && terrainSource) {
+    if (map && terrainSource && map.getSource(terrainSource)) {
       if (shouldShowTerrain) {
         map.setTerrain({
           source: terrainSource,
@@ -29,6 +32,40 @@ export function Init() {
       }
     }
   }, [map, shouldShowTerrain, terrainSource]);
+
+  return null;
+}
+
+function useInitBasemap() {
+  const dispatch = useDispatch();
+  const map = useSloyMap();
+  const mapLayers = useMemo(
+    () =>
+      (map?.getStyle()?.layers as IBasemapMapLayer[])?.map(({ id }) => ({
+        id,
+        active: Boolean(map?.getStyle(id)),
+      })) || [],
+    [map],
+  );
+
+  useEffect(() => {
+    if (mapLayers) {
+      dispatch(
+        init({
+          basemap: {
+            mapLayers: mapLayers,
+          },
+        }),
+      );
+    }
+  }, [dispatch, mapLayers]);
+
+  return null;
+}
+
+export function Init() {
+  useInitTerrain();
+  useInitBasemap();
 
   return null;
 }

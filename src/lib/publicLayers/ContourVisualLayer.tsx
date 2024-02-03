@@ -99,7 +99,7 @@ export const CONTOUR_SOURCE: InputSloySource = {
     type: "vector",
     tiles: [
       demSource.contourProtocolUrl({
-        multiplier: 3.28084,
+        multiplier: 1, //3.28084,
         thresholds: {
           11: [200, 1000],
           12: [100, 500],
