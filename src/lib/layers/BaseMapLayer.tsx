@@ -1,16 +1,27 @@
 import { useMemo } from "react";
+import { useList } from "@uidotdev/usehooks";
 import { ListGrid, ListGridItem, Checkbox } from "sloy-ui";
 import { useMapContext, useSloyMap } from "@/helpers/useSloy";
 import { useAppSelector } from "@/state";
-import { useDispatch } from "react-redux";
-import { updateBasemapLayer } from "..";
+
+type BaseMapLayer = { id: string; isSelected: boolean };
 
 export function BaseMapLayer() {
   const map = useSloyMap();
-  const dispatch = useDispatch();
   const { t } = useMapContext();
-  const visualizationsIds = useAppSelector((state) =>
-    Object.keys(state.sloy.config.visualizations),
+  const visualisationLayersIds = useAppSelector((state) =>
+    Object.keys(state.sloy.config.visualisationLayers),
+  );
+  const mapLayers = useMemo(() => map?.getStyle()?.layers || [], [map]);
+  const layers = useMemo(
+    () =>
+      mapLayers
+        .filter(({ id }: BaseMapLayer) => !visualisationLayersIds.includes(id))
+        .map(({ id }: BaseMapLayer) => ({
+          id,
+          isSelected: Boolean(map?.getStyle(id)),
+        })),
+    [map, mapLayers, visualisationLayersIds],
   );
 
   const mapLayers = useAppSelector((state) => state.sloy.basemap.mapLayers);
@@ -21,7 +32,7 @@ export function BaseMapLayer() {
 
   const items = useMemo(
     () =>
-      layers.map(({ id, active }, i) => {
+      list.map(({ id, isSelected }, i) => {
         const toggle = () => {
           const newActiveValue = !active;
 
@@ -48,7 +59,7 @@ export function BaseMapLayer() {
           </ListGridItem>
         );
       }),
-    [layers, t, dispatch, map],
+    [list, map, t, updateAt],
   );
 
   return <ListGrid>{items}</ListGrid>;

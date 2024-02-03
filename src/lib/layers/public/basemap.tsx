@@ -1,15 +1,15 @@
 import { InputSloyLayer, InputSloySource } from "@/types";
 import {
   CONTOUR_SOURCE,
-  CONTOUR_VISUALISATIONS,
+  CONTOUR_VISUALISATION_LAYERS,
   TERRAIN_SOURCE,
-  TERRAIN_VISUALISATIONS,
-} from "./ContourVisualization";
+  TERRAIN_VISUALISATION_LAYERS,
+} from "./ContourVisualLayer";
 
 export const BESEMAP_TERRAIN_SOURCE: InputSloySource = TERRAIN_SOURCE;
 export const BESEMAP_TERRAIN_LAYER: InputSloyLayer = {
   title: "3D",
-  visualizations: TERRAIN_VISUALISATIONS,
+  visualisationLayers: TERRAIN_VISUALISATION_LAYERS,
   filters: [],
 };
 
@@ -17,7 +17,7 @@ export const BASEMAP_SOURCES: InputSloySource[] = [CONTOUR_SOURCE];
 export const BASEMAP_LAYERS: InputSloyLayer[] = [
   {
     title: "Contours",
-    visualizations: CONTOUR_VISUALISATIONS,
+    visualisationLayers: CONTOUR_VISUALISATION_LAYERS,
     filters: [],
   },
 ];

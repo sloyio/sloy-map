@@ -130,7 +130,7 @@ export function SloyMap({
               ...mapProps.style,
             }}
           >
-            {isAppLoaded && <Visualizations />}
+            {isAppLoaded && <VisualisationLayers />}
             {isAppLoaded && <Init />}
             {children}
           </MapGl>

@@ -1,12 +1,7 @@
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
 import { configureStore } from "@reduxjs/toolkit";
-import {
-  SloyMap,
-  sloyReducer,
-  BESEMAP_TERRAIN_SOURCE,
-  internalTranslations,
-} from "@/index";
+import { SloyMap, sloyReducer, BESEMAP_TERRAIN_SOURCE } from "@/index";
 import {
   defaultLayers,
   defaultMapState,
@@ -30,12 +25,9 @@ function AppMap() {
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
-      translations={Object.assign({}, translations, internalTranslations)}
+      translations={translations}
       terrainSource={BESEMAP_TERRAIN_SOURCE.id}
       mapProps={{ hash: true }}
-      layout={{
-        hasBaseMap: true,
-      }}
     />
   );
 }

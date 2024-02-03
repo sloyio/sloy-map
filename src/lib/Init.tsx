@@ -1,19 +1,16 @@
 import { useContext, useEffect, useMemo } from "react";
-import { useDispatch } from "react-redux";
-import qs from "qs";
-import { IBasemapMapLayer, ISloyState, useAppSelector } from "./state";
+import { useAppSelector } from "./state";
 import { MapContext } from "./state/MapProvider";
 import { useSloyMap } from "./helpers/useSloy";
-import { init } from "./state/slice";
 
 function useInitTerrain() {
   const map = useSloyMap();
   const { terrainSource } = useContext(MapContext);
-  const activeVisualizations = useAppSelector((state) =>
+  const activeVisualisationLayers = useAppSelector((state) =>
     (state.sloy.activeLayers || [])
-      .map((id) => state.sloy.config.layers[id]?.visualizations)
+      .map((id) => state.sloy.config.layers[id].visualisationLayers)
       .flat()
-      .map((vId) => state.sloy.config.visualizations[vId]),
+      .map((vId) => state.sloy.config.visualisationLayers[vId]),
   );
 
   const shouldShowTerrain = useMemo(

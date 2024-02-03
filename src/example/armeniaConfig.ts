@@ -3,7 +3,7 @@ import {
   BASEMAP_SOURCES,
   BESEMAP_TERRAIN_LAYER,
   BESEMAP_TERRAIN_SOURCE,
-} from "@/layers/public/basemap";
+} from "@/publicLayers/basemap";
 import { InputSloySource, InputSloyLayer } from "@/types";
 
 const MIN_ZOOM = 7;
