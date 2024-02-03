@@ -28,6 +28,9 @@ function AppMap() {
       translations={translations}
       terrainSource={BESEMAP_TERRAIN_SOURCE.id}
       mapProps={{ hash: true }}
+      layout={{
+        hasBaseMap: true,
+      }}
     />
   );
 }

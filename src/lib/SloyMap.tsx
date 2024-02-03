@@ -34,6 +34,9 @@ export interface SloyMapProps {
   terrainSource?: string;
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   children?: ReactNode;
+  layout?: {
+    hasBaseMap: boolean;
+  };
 }
 
 export function SloyMap({
@@ -48,6 +51,7 @@ export function SloyMap({
   layers,
   terrainSource,
   mapProps = {},
+  layout,
 }: SloyMapProps) {
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
@@ -94,6 +98,7 @@ export function SloyMap({
           overrideCard={overrideCard}
           overrideLayers={overrideLayers}
           terrainSource={terrainSource}
+          layout={layout}
         >
           <MapGl
             id="sloyMapGl"

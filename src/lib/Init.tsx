@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { IBasemapMapLayer, useAppSelector } from "./state";
 import { MapContext } from "./state/MapProvider";
-import { useMapContext, useSloyMap } from "./helpers/useSloy";
+import { useSloyMap } from "./helpers/useSloy";
 import { init } from "./state/slice";
 
 function useInitTerrain() {

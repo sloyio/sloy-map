@@ -12,7 +12,7 @@ import { useMapContext } from "..";
 export function Layers() {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
-  const { t } = useMapContext();
+  const { t, layout } = useMapContext();
   const layers = useAppSelector((state) => state.sloy.config.layers);
   const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
 
@@ -105,7 +105,7 @@ export function Layers() {
           </AccordionItem>
         );
       })}
-      {baseMapItem}
+      {layout.hasBaseMap ? baseMapItem : null}
     </Accordion>
   );
 }
