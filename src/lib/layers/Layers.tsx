@@ -57,7 +57,7 @@ export function Layers() {
         const layer = layers[activeLayerId];
         if (layer.initialViewState) {
           const map = sloyMapGl?.getMap();
-          if (map) {
+          if (map && !isActive) {
             map.flyTo({
               speed: 2,
               curve: 1,
