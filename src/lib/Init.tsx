@@ -1,6 +1,8 @@
 import { useContext, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import qs from "qs";
+import maplibregl from "maplibre-gl";
+import { Protocol } from "pmtiles";
 import { IBasemapMapLayer, ISloyState, useAppSelector } from "./state";
 import { MapContext } from "./state/context";
 import { useSloyMap } from "./helpers/useSloy";
@@ -104,6 +106,24 @@ function useInitUrl() {
       window.removeEventListener("popstate", onPopState);
     };
   }, [dispatch]);
+
+  return null;
+}
+
+function usePmtiles({ hasPmtiles }: { hasPmtiles?: boolean }) {
+  useEffect(() => {
+    if (!hasPmtiles) return;
+
+    const protocol = new Protocol();
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+    return () => {
+      maplibregl.removeProtocol("pmtiles");
+    };
+  }, [hasPmtiles]);
+}
+
+export function BeforeInit({ hasPmtiles }: { hasPmtiles?: boolean }) {
+  usePmtiles({ hasPmtiles });
 
   return null;
 }
