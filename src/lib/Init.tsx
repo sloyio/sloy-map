@@ -9,16 +9,16 @@ import { init } from "./state/slice";
 function useInitTerrain() {
   const map = useSloyMap();
   const { terrainSource } = useContext(MapContext);
-  const activeVisualisationLayers = useAppSelector((state) =>
+  const activeVisualizations = useAppSelector((state) =>
     (state.sloy.activeLayers || [])
-      .map((id) => state.sloy.config.layers[id]?.visualisationLayers)
+      .map((id) => state.sloy.config.layers[id]?.visualizations)
       .flat()
-      .map((vId) => state.sloy.config.visualisationLayers[vId]),
+      .map((vId) => state.sloy.config.visualizations[vId]),
   );
 
   const shouldShowTerrain = useMemo(
-    () => activeVisualisationLayers.some((v) => v.source === terrainSource),
-    [activeVisualisationLayers, terrainSource],
+    () => activeVisualizations.some((v) => v.source === terrainSource),
+    [activeVisualizations, terrainSource],
   );
 
   useEffect(() => {

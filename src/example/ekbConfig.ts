@@ -580,12 +580,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "range",
-        filterVisualisationLayers: ["ekbHouseAgeLayer"],
+        filterVisualizations: ["ekbHouseAgeLayer"],
         source: "buildingTile",
         property: "building:year",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbHouseAgeLayer",
         type: "building-range",
@@ -600,12 +600,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "range",
-        filterVisualisationLayers: ["ekbHouseLevelsLayer"],
+        filterVisualizations: ["ekbHouseLevelsLayer"],
         source: "buildingTile",
         property: "building:levels",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbHouseLevelsLayer",
         type: "building-range",
@@ -620,12 +620,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "range",
-        filterVisualisationLayers: ["ekbHouseHealthLayer"],
+        filterVisualizations: ["ekbHouseHealthLayer"],
         source: "buildingTile",
         property: "building:health",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbHouseHealthLayer",
         type: "building-range",
@@ -640,7 +640,7 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "string",
-        filterVisualisationLayers: ["ekbOknObjectsLayer"],
+        filterVisualizations: ["ekbOknObjectsLayer"],
         source: "ekbOknSource",
         property: "category",
       },
@@ -651,7 +651,7 @@ export const defaultLayers: InputSloyLayer[] = [
           "Временная зона в\u00A0100\u2013250 метров вокруг объекта, у\u00A0которого пока не\u00A0указана зона охраны",
 
         type: "boolean",
-        filterVisualisationLayers: [
+        filterVisualizations: [
           "ekbOknProtectZoneLayer",
           "ekbOknProtectZoneLayerStroke",
         ],
@@ -665,7 +665,7 @@ export const defaultLayers: InputSloyLayer[] = [
           "Территории, в\u00A0пределах которых запрещены любые работы, так как они могут причинить вред объекту",
 
         type: "boolean",
-        filterVisualisationLayers: [
+        filterVisualizations: [
           "ekbOknSecurityZoneLayer",
           "ekbOknSecurityZoneLayerStroke",
         ],
@@ -678,7 +678,7 @@ export const defaultLayers: InputSloyLayer[] = [
         description:
           "Объект культурного наследия и\u00A0неотделимая от\u00A0него территория",
         type: "boolean",
-        filterVisualisationLayers: [
+        filterVisualizations: [
           "ekbOknObjectZoneLayer",
           "ekbOknObjectZoneLayerStroke",
         ],
@@ -686,7 +686,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "?",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbOknObjectsLayer",
         source: "ekbOknSource",
@@ -815,12 +815,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "string",
-        filterVisualisationLayers: ["ekbDesignCodeLayer"],
+        filterVisualizations: ["ekbDesignCodeLayer"],
         source: "ekbDesigncodeSource",
         property: "type",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbDesignCodeLayer",
         type: "marker-image",
@@ -837,26 +837,26 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "range",
-        filterVisualisationLayers: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
+        filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "year",
       },
       {
         title: "Вред здоровью",
         type: "string",
-        filterVisualisationLayers: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
+        filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "severity",
       },
       {
         title: "Участник ДТП",
         type: "string[]",
-        filterVisualisationLayers: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
+        filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "participant_categories",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbDtpPointsLayer",
         source: "ekbDtpSource",
@@ -939,12 +939,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "string",
-        filterVisualisationLayers: ["ekbPointsLayer", "ekbLinesLayer"],
+        filterVisualizations: ["ekbPointsLayer", "ekbLinesLayer"],
         source: "ekbPointsSource",
         property: "type",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbLinesLayer",
         source: "ekbLinesSource",
@@ -993,7 +993,7 @@ export const defaultLayers: InputSloyLayer[] = [
   {
     title: "Квартальные",
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbQuarterLayer",
         source: "ekbQuarterSource",
@@ -1026,7 +1026,7 @@ export const defaultLayers: InputSloyLayer[] = [
   {
     title: "Дизайн-код фасадов",
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbFacadesLayer",
         type: "building-ids",
@@ -1053,15 +1053,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "exident",
         type: "string",
-        filterVisualisationLayers: [
-          "ekbCrimePointsLayer",
-          "ekbCrimeHeatmapLayer",
-        ],
+        filterVisualizations: ["ekbCrimePointsLayer", "ekbCrimeHeatmapLayer"],
         source: "ekbCrimeLayerSource",
         sortType: "count",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "ekbCrimePointsLayer",
         type: "map",

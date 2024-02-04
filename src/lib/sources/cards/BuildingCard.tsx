@@ -2,14 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { MapContext } from "@/state/MapProvider";
-import { BUILDING_LAYER_ID } from "@/constants";
 import { BaseCard } from "./BaseCard";
 import { useCard } from "@/state/useCard";
 
 export function BuildingCard() {
   const { card, cardLng, cardLat, cardSource } = useCard();
   const { sloyMapGl } = useMap();
-  const { overrideCard } = useContext(MapContext);
+  const { overrideCard, layout } = useContext(MapContext);
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
   const [buildingValues, setBuildingValues] = useState<Record<
     string,
@@ -23,13 +22,13 @@ export function BuildingCard() {
       const house = map.queryRenderedFeatures(
         map.project({ lat: cardLat, lng: cardLng }),
         {
-          layers: [BUILDING_LAYER_ID],
+          layers: [layout.buildingLayerName],
         },
       )?.[0]?.properties;
 
       setBuildingValues(house);
     }
-  }, [sloyMapGl, cardLat, cardLng]);
+  }, [sloyMapGl, cardLat, cardLng, layout.buildingLayerName]);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();

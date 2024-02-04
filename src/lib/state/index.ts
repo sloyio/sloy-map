@@ -6,7 +6,7 @@ export type IBasemapMapLayer = { id: string; active: boolean };
 export interface ISloyState {
   activeLayers: string[];
   activeCard: {
-    visualisationLayerId: string;
+    visualizationId: string;
     id?: string;
     lng?: string;
     lat?: string;

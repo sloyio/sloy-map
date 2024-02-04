@@ -3,7 +3,7 @@ import {
   BASEMAP_SOURCES,
   BESEMAP_TERRAIN_LAYER,
   BESEMAP_TERRAIN_SOURCE,
-} from "@/publicLayers/basemap";
+} from "@/layers/public/basemap";
 import { InputSloySource, InputSloyLayer } from "@/types";
 
 const MIN_ZOOM = 7;
@@ -1144,12 +1144,12 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [
       {
         type: "range",
-        filterVisualisationLayers: ["houseLevelsLayer"],
+        filterVisualizations: ["houseLevelsLayer"],
         source: "buildingTile",
         property: "building:levels",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "houseLevelsLayer",
         type: "building-range",
@@ -1169,7 +1169,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     initialViewState: COUNTRY_VIEW,
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianPostBranchesLayer",
         type: "map",
@@ -1208,11 +1208,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Zone",
         type: "string",
-        filterVisualisationLayers: ["armenianSeismicZonesLayer"],
+        filterVisualizations: ["armenianSeismicZonesLayer"],
         source: "armenianSeismicZonesLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianSeismicZonesLayer",
         source: "armenianSeismicZonesLayerSource",
@@ -1239,7 +1239,7 @@ export const defaultLayers: InputSloyLayer[] = [
       label: "Источник",
     },
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianLandslidesLayer",
         source: "armenianLandslidesLayerSource",
@@ -1269,12 +1269,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Descriptio",
         type: "string",
-        filterVisualisationLayers: ["armenianSoilTypesLayer"],
+        filterVisualizations: ["armenianSoilTypesLayer"],
         source: "armenianSoilTypesLayerSource",
         sortType: "count",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianSoilTypesLayer",
         source: "armenianSoilTypesLayerSource",
@@ -1304,12 +1304,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Landuse",
         type: "string",
-        filterVisualisationLayers: ["armenianLandUseLayer"],
+        filterVisualizations: ["armenianLandUseLayer"],
         source: "armenianLandUseLayerSource",
         sortType: "count",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianLandUseLayer",
         source: "armenianLandUseLayerSource",
@@ -1338,12 +1338,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Veget_zone",
         type: "string",
-        filterVisualisationLayers: ["armenianVegetationTypesLayer"],
+        filterVisualizations: ["armenianVegetationTypesLayer"],
         source: "armenianVegetationTypesLayerSource",
         sortType: "count",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianVegetationTypesLayer",
         source: "armenianVegetationTypesLayerSource",
@@ -1370,7 +1370,7 @@ export const defaultLayers: InputSloyLayer[] = [
       label: "Источник",
     },
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianForestAreasLayer",
         source: "armenianForestAreasLayerSource",
@@ -1400,11 +1400,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "VALUE",
         type: "string",
-        filterVisualisationLayers: ["armenianRadiationBalanceLayer"],
+        filterVisualizations: ["armenianRadiationBalanceLayer"],
         source: "armenianRadiationBalanceLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianRadiationBalanceLayer",
         source: "armenianRadiationBalanceLayerSource",
@@ -1434,11 +1434,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Sun_radiat",
         type: "string",
-        filterVisualisationLayers: ["armenianSolarRadiationLevelLayer"],
+        filterVisualizations: ["armenianSolarRadiationLevelLayer"],
         source: "armenianSolarRadiationLevelLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianSolarRadiationLevelLayer",
         source: "armenianSolarRadiationLevelLayerSource",
@@ -1468,11 +1468,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Descriptio",
         type: "string",
-        filterVisualisationLayers: ["armenianClimateZonesLayer"],
+        filterVisualizations: ["armenianClimateZonesLayer"],
         source: "armenianClimateZonesLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianClimateZonesLayer",
         source: "armenianClimateZonesLayerSource",
@@ -1502,11 +1502,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Temperatur",
         type: "string",
-        filterVisualisationLayers: ["armenianTemperatureLayer"],
+        filterVisualizations: ["armenianTemperatureLayer"],
         source: "armenianTemperatureLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianTemperatureLayer",
         source: "armenianTemperatureLayerSource",
@@ -1536,11 +1536,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Precipitat",
         type: "string",
-        filterVisualisationLayers: ["armenianPrecipitationsLevelLayer"],
+        filterVisualizations: ["armenianPrecipitationsLevelLayer"],
         source: "armenianPrecipitationsLevelLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianPrecipitationsLevelLayer",
         source: "armenianPrecipitationsLevelLayerSource",
@@ -1570,12 +1570,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Wind_Speed",
         type: "string",
-        filterVisualisationLayers: ["armenianWindResourcesLayer"],
+        filterVisualizations: ["armenianWindResourcesLayer"],
         source: "armenianWindResourcesLayerSource",
         sortType: "config",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianWindResourcesLayer",
         source: "armenianWindResourcesLayerSource",
@@ -1602,7 +1602,7 @@ export const defaultLayers: InputSloyLayer[] = [
       label: "Источник",
     },
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianLakesAndReservoirsLayer",
         source: "armenianLakesAndReservoirsSource",
@@ -1633,11 +1633,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Descript",
         type: "string",
-        filterVisualisationLayers: ["armenianGroundwaterZonesLayer"],
+        filterVisualizations: ["armenianGroundwaterZonesLayer"],
         source: "armenianGroundwaterZonesLayerSource",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianGroundwaterZonesLayer",
         source: "armenianGroundwaterZonesLayerSource",
@@ -1667,14 +1667,12 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "Flow_l_sec",
         type: "string",
-        filterVisualisationLayers: [
-          "armenianMineralAndFreshwaterResourcesLayer",
-        ],
+        filterVisualizations: ["armenianMineralAndFreshwaterResourcesLayer"],
         source: "armenianMineralAndFreshwaterResourcesLayerSource",
         sortType: "config",
       },
     ],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianMineralAndFreshwaterResourcesLayer",
         source: "armenianMineralAndFreshwaterResourcesLayerSource",
@@ -1710,7 +1708,7 @@ export const defaultLayers: InputSloyLayer[] = [
       label: "Источник",
     },
     filters: [],
-    visualisationLayers: [
+    visualizations: [
       {
         id: "armenianRiversLayer",
         source: "armenianRiversLayerSource",

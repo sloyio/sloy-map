@@ -8,8 +8,8 @@ export function useCard() {
   const cards = useAppSelector((state) => state.sloy.config.cards);
   const activeCard = useAppSelector((state) => state.sloy.activeCard);
   const sources = useAppSelector((state) => state.sloy.config.sources);
-  const visualisationLayers = useAppSelector(
-    (state) => state.sloy.config.visualisationLayers,
+  const visualizations = useAppSelector(
+    (state) => state.sloy.config.visualizations,
   );
 
   const openCard = useCallback(
@@ -23,8 +23,8 @@ export function useCard() {
     dispatch(setCard(null));
   }, [dispatch]);
 
-  const cardSourceId = activeCard?.visualisationLayerId
-    ? visualisationLayers[activeCard?.visualisationLayerId].source
+  const cardSourceId = activeCard?.visualizationId
+    ? visualizations[activeCard?.visualizationId].source
     : null;
 
   const cardSource = cardSourceId ? sources[cardSourceId] : null;
@@ -32,12 +32,12 @@ export function useCard() {
   const card = cardSource?.card ? cards[cardSource?.card] : null;
 
   return {
-    isCardActive: Boolean(activeCard?.visualisationLayerId),
+    isCardActive: Boolean(activeCard?.visualizationId),
     card,
     cardId: activeCard?.id,
     cardLng: activeCard?.lng,
     cardLat: activeCard?.lat,
-    cardVisualisationLayerId: activeCard?.visualisationLayerId,
+    cardVisualisationLayerId: activeCard?.visualizationId,
     cardSourceId,
     cardSource,
     openCard,

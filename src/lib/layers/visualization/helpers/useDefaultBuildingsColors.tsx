@@ -3,22 +3,24 @@ import { useMap } from "react-map-gl";
 import { usePrevious } from "@uidotdev/usehooks";
 import { setBuildingDefaultColor } from "./setBuildingStyle";
 import { useAppSelector } from "@/state";
+import { useMapContext } from "@/helpers/useSloy";
 
 export function useDefaultBuildingsColors() {
   const { sloyMapGl } = useMap();
   const layers = useAppSelector((state) => state.sloy.config.layers);
   const activeLayers = useAppSelector((state) => state.sloy.activeLayers);
-  const visualisationLayers = useAppSelector(
-    (state) => state.sloy.config.visualisationLayers,
+  const { layout } = useMapContext();
+  const visualizations = useAppSelector(
+    (state) => state.sloy.config.visualizations,
   );
-  const getActiveVisualisationLayers = useCallback(
+  const getActiveVisualizations = useCallback(
     (activeLayersIds: string[]) =>
       (activeLayersIds || [])
-        .map((id) => layers[id]?.visualisationLayers || [])
+        .map((id) => layers[id]?.visualizations || [])
         .flat()
-        .map((id) => visualisationLayers[id].type)
+        .map((id) => visualizations[id].type)
         .some((type) => ["building-range", "building-ids"].includes(type)),
-    [layers, visualisationLayers],
+    [layers, visualizations],
   );
 
   const prevActiveLayer = usePrevious(activeLayers);
@@ -28,23 +30,23 @@ export function useDefaultBuildingsColors() {
 
     if (!map) return;
 
-    const hasActiveBuildingLayerNow =
-      getActiveVisualisationLayers(activeLayers);
+    const hasActiveBuildingLayerNow = getActiveVisualizations(activeLayers);
 
     const hasActiveBuildingLayerBefore =
-      getActiveVisualisationLayers(prevActiveLayer);
+      getActiveVisualizations(prevActiveLayer);
 
     // if we had buildings before but not now
     if (hasActiveBuildingLayerBefore && !hasActiveBuildingLayerNow) {
-      setBuildingDefaultColor(map);
+      setBuildingDefaultColor({ map, buildingLayer: layout.buildingLayerName });
     }
   }, [
     activeLayers,
-    getActiveVisualisationLayers,
+    getActiveVisualizations,
     layers,
+    layout.buildingLayerName,
     prevActiveLayer,
     sloyMapGl,
-    visualisationLayers,
+    visualizations,
   ]);
 
   return null;

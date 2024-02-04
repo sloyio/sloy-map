@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { useDispatch } from "react-redux";
 
-export function useOpenMapItem(visualisationLayerId: string) {
+export function useOpenMapItem(visualizationId: string) {
   const { sloyMapGl } = useMap();
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ export function useOpenMapItem(visualisationLayerId: string) {
       if (item) {
         dispatch(
           setCard({
-            visualisationLayerId,
+            visualizationId,
             id: item.properties?.id || item.id,
             lat: String(e.lngLat.lat),
             lng: String(e.lngLat.lng),
@@ -27,10 +27,10 @@ export function useOpenMapItem(visualisationLayerId: string) {
       }
     }
 
-    map.on?.("click", visualisationLayerId, open);
+    map.on?.("click", visualizationId, open);
 
     return () => {
-      map.off?.("click", visualisationLayerId, open);
+      map.off?.("click", visualizationId, open);
     };
-  }, [sloyMapGl, visualisationLayerId, dispatch]);
+  }, [sloyMapGl, visualizationId, dispatch]);
 }

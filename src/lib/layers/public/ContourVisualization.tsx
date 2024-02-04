@@ -13,62 +13,60 @@ const demSource = new mlcontour.DemSource({
 
 demSource.setupMaplibre(maplibregl);
 
-export const TERRAIN_VISUALISATION_LAYERS: InputSloyLayer["visualisationLayers"] =
-  [
-    {
-      id: "hills",
-      type: "map",
-      source: "dem",
-      mapLayerProps: {
-        type: "hillshade",
-        paint: {
-          "hillshade-exaggeration": 0.25,
-        },
+export const TERRAIN_VISUALISATIONS: InputSloyLayer["visualizations"] = [
+  {
+    id: "hills",
+    type: "map",
+    source: "dem",
+    mapLayerProps: {
+      type: "hillshade",
+      paint: {
+        "hillshade-exaggeration": 0.25,
       },
     },
-  ];
+  },
+];
 
-export const CONTOUR_VISUALISATION_LAYERS: InputSloyLayer["visualisationLayers"] =
-  [
-    {
-      id: "contours",
-      type: "map",
-      source: "contours",
-      mapLayerProps: {
-        type: "line",
-        "source-layer": "contours",
-        paint: {
-          "line-color": "rgba(255, 255, 255, 50%)",
-          "line-width": ["match", ["get", "level"], 1, 1, 0.2],
-        },
-        layout: {
-          "line-join": "round",
-        },
+export const CONTOUR_VISUALISATIONS: InputSloyLayer["visualizations"] = [
+  {
+    id: "contours",
+    type: "map",
+    source: "contours",
+    mapLayerProps: {
+      type: "line",
+      "source-layer": "contours",
+      paint: {
+        "line-color": "rgba(255, 255, 255, 50%)",
+        "line-width": ["match", ["get", "level"], 1, 1, 0.2],
+      },
+      layout: {
+        "line-join": "round",
       },
     },
-    {
-      id: "contour-text",
-      type: "map",
-      source: "contours",
-      mapLayerProps: {
-        type: "symbol",
-        "source-layer": "contours",
-        filter: [">", ["get", "level"], 0],
-        paint: {
-          //   "text-halo-color": "rgba(255, 255, 255, 50%)",
-          "text-color": "rgba(255, 255, 255, 50%)",
-          //   "text-halo-width": 0.5,
-        },
-        layout: {
-          "symbol-placement": "line",
-          "text-anchor": "center",
-          "text-size": 12,
-          "text-field": ["concat", ["number-format", ["get", "ele"], {}], "'"],
-          "text-font": ["Iset Sans Regular"],
-        },
+  },
+  {
+    id: "contour-text",
+    type: "map",
+    source: "contours",
+    mapLayerProps: {
+      type: "symbol",
+      "source-layer": "contours",
+      filter: [">", ["get", "level"], 0],
+      paint: {
+        //   "text-halo-color": "rgba(255, 255, 255, 50%)",
+        "text-color": "rgba(255, 255, 255, 50%)",
+        //   "text-halo-width": 0.5,
+      },
+      layout: {
+        "symbol-placement": "line",
+        "text-anchor": "center",
+        "text-size": 12,
+        "text-field": ["concat", ["number-format", ["get", "ele"], {}], "'"],
+        "text-font": ["Iset Sans Regular"],
       },
     },
-  ];
+  },
+];
 
 export const TERRAIN_SOURCE: InputSloySource = {
   id: "dem",

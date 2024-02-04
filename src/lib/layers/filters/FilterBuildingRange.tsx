@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { HistogramData, MinMax } from "sloy-ui";
 import { useAppSelector } from "@/state";
-import { RangeBaseFilter } from "@/layers/filters/RangeBaseFilter";
+import { FilterRangeBase } from "@/layers/filters/FilterRangeBase";
 import { IFilter, SourcePropertyRange } from "@/types";
 import { getProperty } from "dot-prop";
 
@@ -40,7 +40,7 @@ export default function FilterRange({ filter, onChange }: Props) {
   }
 
   return (
-    <RangeBaseFilter
+    <FilterRangeBase
       defaultMin={defaultMin}
       defaultMax={defaultMax}
       onChangeCallback={onChange}

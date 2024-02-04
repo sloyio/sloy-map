@@ -2,32 +2,34 @@ import { useEffect } from "react";
 import { MinMax } from "sloy-ui";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { setBuildingRangeStyle } from "@/layers/visualLayers/setBuildingStyle";
+import { setBuildingRangeStyle } from "@/layers/visualization/helpers/setBuildingStyle";
 import { IVisualisationLayer, SourcePropertyRange } from "@/types";
-import { ClickableBuilding } from "@/layers/visualLayers/ClickableBuilding";
+import { ClickableBuilding } from "@/layers/visualization/helpers/ClickableBuilding";
 import { getProperty } from "dot-prop";
+import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
-  visualisationLayer: IVisualisationLayer;
+  visualization: IVisualisationLayer;
   range?: MinMax;
 }
 
-export default function BuildingRangeVisualLayer({
-  visualisationLayer,
+export default function BuildingRangeVisualization({
+  visualization,
   range,
 }: Props) {
   const { sloyMapGl } = useMap();
+  const { layout } = useMapContext();
   const sources = useAppSelector((state) => state.sloy.config.sources);
 
   useEffect(() => {
     const map = sloyMapGl?.getMap?.();
-    const property = visualisationLayer.property;
+    const property = visualization.property;
 
     if (!property) return;
 
     const rangeData = getProperty(
       sources,
-      `${visualisationLayer.source}.properties.${property}.values`,
+      `${visualization.source}.properties.${property}.values`,
     );
 
     if (!rangeData || !range) return;
@@ -37,17 +39,19 @@ export default function BuildingRangeVisualLayer({
       field: property,
       rangeData: rangeData as SourcePropertyRange[],
       range,
+      buildingLayer: layout.buildingLayerName,
     });
   }, [
     sloyMapGl,
     range,
     sources,
-    visualisationLayer.property,
-    visualisationLayer.source,
+    visualization.property,
+    visualization.source,
+    layout.buildingLayerName,
   ]);
 
-  if (visualisationLayer.openable) {
-    return <ClickableBuilding visualisationLayerId={visualisationLayer.id} />;
+  if (visualization.openable) {
+    return <ClickableBuilding visualizationId={visualization.id} />;
   }
 
   return null;

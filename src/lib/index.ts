@@ -8,4 +8,4 @@ export * from "@/state/internalTranslations";
 export { getYearNameByValue } from "@/helpers/getYearNameByValue";
 export * from "@/helpers/getLayerStyle";
 
-export * from "@/publicLayers/basemap";
+export * from "@/layers/public/basemap";

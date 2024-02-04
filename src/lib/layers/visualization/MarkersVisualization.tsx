@@ -6,11 +6,11 @@ import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
 import { getProperty } from "dot-prop";
 import styled, { css } from "styled-components";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
-import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
+import { ClickableVisualization } from "./helpers/ClickableVisualization";
 import { useCard } from "@/state/useCard";
 
 interface Props {
-  visualisationLayer: IMarkerImageVisualisationLayer;
+  visualization: IMarkerImageVisualisationLayer;
   activeFilters: ActiveFilters;
 }
 
@@ -52,12 +52,12 @@ const StyledMarker = styled.img<{ opened?: boolean; color?: string }>`
     `}
 `;
 
-export default function MarkersVisualisationLayer({
-  visualisationLayer,
+export default function MarkersVisualization({
+  visualization,
   activeFilters = [],
 }: Props) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
-  const source = sources[visualisationLayer?.source];
+  const source = sources[visualization?.source];
   const { loading, data } = useLoadGeoJSON(source);
   const { cardId } = useCard();
 
@@ -69,14 +69,14 @@ export default function MarkersVisualisationLayer({
     });
   }, [activeFilters, data?.features]);
 
-  if (!visualisationLayer?.type || !data || !source) {
+  if (!visualization?.type || !data || !source) {
     return null;
   }
 
-  const fakeSourceId = `${visualisationLayer.source}-fake`;
+  const fakeSourceId = `${visualization.source}-fake`;
 
   const fakeClickableMarkersLayerStyle: CircleLayer = {
-    id: visualisationLayer.id,
+    id: visualization.id,
     source: fakeSourceId,
     type: "circle",
     paint: {
@@ -102,8 +102,8 @@ export default function MarkersVisualisationLayer({
           features: markers,
         }}
       />
-      {visualisationLayer.openable && (
-        <ClickableVisualisationLayer visualisationLayer={visualisationLayer} />
+      {visualization.openable && (
+        <ClickableVisualization visualization={visualization} />
       )}
       <Layer {...fakeClickableMarkersLayerStyle} />
 
@@ -112,14 +112,14 @@ export default function MarkersVisualisationLayer({
           return null;
         }
 
-        const src = `${visualisationLayer.rootSrc || ""}${getProperty(
+        const src = `${visualization.rootSrc || ""}${getProperty(
           feature.properties,
-          visualisationLayer.previewPath || "preview" || "img",
+          visualization.previewPath || "preview" || "img",
         )}`;
 
         const color = getProperty(
           source,
-          `properties.${visualisationLayer.property}.values.${[
+          `properties.${visualization.property}.values.${[
             feature.properties.type,
           ]}.color`,
         );

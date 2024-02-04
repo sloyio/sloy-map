@@ -10,6 +10,7 @@ export interface IMapContext {
   terrainSource?: string;
   layout: {
     hasBaseMap: boolean;
+    buildingLayerName: string;
   };
 }
 
@@ -21,6 +22,7 @@ export const MapContext = createContext<IMapContext>({
   terrainSource: undefined,
   layout: {
     hasBaseMap: false,
+    buildingLayerName: "building",
   },
 });
 
@@ -32,7 +34,8 @@ interface Props {
   overrideLayers?: OverrideLayersFn;
   terrainSource?: string;
   layout?: {
-    hasBaseMap: boolean;
+    hasBaseMap?: boolean;
+    buildingLayerName?: string;
   };
 }
 
@@ -43,9 +46,7 @@ export function MapContextProvider({
   locale: propsLocale = "en-EN",
   translations = {},
   terrainSource,
-  layout = {
-    hasBaseMap: false,
-  },
+  layout,
 }: Props) {
   const locale = useMemo(() => new Intl.Locale(propsLocale), [propsLocale]);
 
@@ -61,7 +62,11 @@ export function MapContextProvider({
       overrideLayers,
       translations,
       terrainSource,
-      layout,
+      layout: {
+        hasBaseMap: false,
+        buildingLayerName: "building",
+        ...layout,
+      },
       t,
     }),
     [

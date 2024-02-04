@@ -2,20 +2,20 @@ import { Layer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { IVisualisationLayer } from "@/types";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
-import { ClickableVisualisationLayer } from "./ClickableVisualisationLayer";
-import { getLayerProps } from "./getLayerProps";
+import { ClickableVisualization } from "./helpers/ClickableVisualization";
+import { getLayerProps } from "./helpers/getLayerProps";
 
-export default function LoadedVisualisationLayer({
+export default function LoadedVisualization({
   vId,
 }: {
   vId: IVisualisationLayer["id"];
 }) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
-  const visualisationLayers = useAppSelector(
-    (state) => state.sloy.config.visualisationLayers,
+  const visualizations = useAppSelector(
+    (state) => state.sloy.config.visualizations,
   );
-  const visualisationLayer = visualisationLayers[vId];
-  const source = sources[visualisationLayer?.source];
+  const visualization = visualizations[vId];
+  const source = sources[visualization?.source];
 
   const { loading, data } = useLoadGeoJSON(source);
 
@@ -30,10 +30,10 @@ export default function LoadedVisualisationLayer({
         generateId
         {...source.mapSourceProps}
       />
-      {visualisationLayer.openable && (
-        <ClickableVisualisationLayer visualisationLayer={visualisationLayer} />
+      {visualization.openable && (
+        <ClickableVisualization visualization={visualization} />
       )}
-      <Layer {...getLayerProps(visualisationLayer, source)} />
+      <Layer {...getLayerProps(visualization, source)} />
     </>
   );
 }

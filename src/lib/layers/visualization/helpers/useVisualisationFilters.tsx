@@ -17,7 +17,7 @@ export function useActiveFilters({
   return Object.values(filters)
     .filter(
       (f) =>
-        f.filterVisualisationLayers.includes(vId) &&
+        f.filterVisualizations.includes(vId) &&
         activeFilterParams?.[f.id] !== undefined,
     )
     .map((f) => ({
@@ -26,7 +26,7 @@ export function useActiveFilters({
     }));
 }
 
-export function useVisualisationLayerFilters({
+export function useVisualisationFilters({
   vId,
   activeFilters,
 }: {

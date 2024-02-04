@@ -5,7 +5,7 @@ import deepmerge from "deepmerge";
 interface LayerOutput {
   layers: IApp["layers"];
   filters: IApp["filters"];
-  visualisationLayers: IApp["visualisationLayers"];
+  visualizations: IApp["visualizations"];
 }
 
 export function createLayer(layer: InputSloyLayer): LayerOutput {
@@ -19,7 +19,7 @@ export function createLayer(layer: InputSloyLayer): LayerOutput {
     };
   }, {});
 
-  const visualisationLayers = layer.visualisationLayers.reduce<
+  const visualizations = layer.visualizations.reduce<
     Record<string, IVisualisationLayer>
   >((all, item) => {
     return {
@@ -34,11 +34,11 @@ export function createLayer(layer: InputSloyLayer): LayerOutput {
         ...layer,
         id: layerId,
         filters: Object.keys(filters),
-        visualisationLayers: Object.keys(visualisationLayers),
+        visualizations: Object.keys(visualizations),
       },
     },
     filters,
-    visualisationLayers,
+    visualizations,
   };
 }
 

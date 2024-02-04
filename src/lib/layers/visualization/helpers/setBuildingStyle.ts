@@ -1,6 +1,6 @@
 import type { Map } from "maplibre-gl";
 import { MinMax } from "sloy-ui";
-import { BUILDING_LAYER_ID, DEFAULT_BULDING_COLOR_NORMAL } from "@/constants";
+import { DEFAULT_BULDING_COLOR_NORMAL } from "@/constants";
 import { getLayerStateStyle } from "@/helpers/getLayerStyle";
 import { colorLuminance } from "@/helpers/colorLuminance";
 import { SourcePropertyRange } from "@/types";
@@ -10,6 +10,7 @@ interface SetBuildingStyleProps {
   color: any;
   caseCondition?: (string | string[])[];
   layerProps?: Record<string, any>;
+  buildingLayer: string;
 }
 
 export function setBuildingColor({
@@ -17,11 +18,12 @@ export function setBuildingColor({
   color,
   caseCondition = ["has", "_unknown_"],
   layerProps,
+  buildingLayer,
 }: SetBuildingStyleProps) {
   map?.setStyle({
     ...map?.getStyle(),
     layers: map?.getStyle().layers.map((layer: any) => {
-      if (layer.id === BUILDING_LAYER_ID) {
+      if (layer.id === buildingLayer) {
         return {
           ...layer,
           ...layerProps,
@@ -42,8 +44,14 @@ export function setBuildingColor({
   });
 }
 
-export function setBuildingDefaultColor(map: Map) {
-  setBuildingColor({ map, color: DEFAULT_BULDING_COLOR_NORMAL });
+export function setBuildingDefaultColor({
+  map,
+  buildingLayer,
+}: {
+  map: Map;
+  buildingLayer: string;
+}) {
+  setBuildingColor({ map, color: DEFAULT_BULDING_COLOR_NORMAL, buildingLayer });
 }
 
 export function setBuildingStyleByPropertyValues({
@@ -51,11 +59,13 @@ export function setBuildingStyleByPropertyValues({
   property,
   values,
   color,
+  buildingLayer,
 }: {
   map: Map;
   property: string;
   values: string[];
   color: string;
+  buildingLayer: string;
 }) {
   if (!values.length || !property || !map) {
     return;
@@ -64,7 +74,7 @@ export function setBuildingStyleByPropertyValues({
   map.setStyle({
     ...map?.getStyle(),
     layers: map?.getStyle().layers.map((layer: any) => {
-      if (layer.id === BUILDING_LAYER_ID) {
+      if (layer.id === buildingLayer) {
         return {
           ...layer,
           paint: {
@@ -90,11 +100,13 @@ export function setBuildingRangeStyle({
   range,
   field,
   rangeData,
+  buildingLayer,
 }: {
   map: Map;
   field: string;
   range: MinMax;
   rangeData: SourcePropertyRange[];
+  buildingLayer: string;
 }) {
   if (
     !(
@@ -105,7 +117,7 @@ export function setBuildingRangeStyle({
       map
     )
   ) {
-    setBuildingDefaultColor(map);
+    setBuildingDefaultColor({ map, buildingLayer });
     return;
   }
 
@@ -142,5 +154,6 @@ export function setBuildingRangeStyle({
       active: getColor(colorsActive),
     }),
     caseCondition: ["has", field],
+    buildingLayer,
   });
 }

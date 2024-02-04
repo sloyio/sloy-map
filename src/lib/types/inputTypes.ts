@@ -20,8 +20,8 @@ export type InputSloyVisualisationLayer = IVisualisationLayer;
 
 export type InputSloyLayer = Omit<
   ILayer,
-  "id" | "filters" | "visualisationLayers"
+  "id" | "filters" | "visualizations"
 > & {
   filters: InputSloyFilter[];
-  visualisationLayers: InputSloyVisualisationLayer[];
+  visualizations: InputSloyVisualisationLayer[];
 };

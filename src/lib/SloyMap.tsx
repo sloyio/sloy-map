@@ -10,18 +10,17 @@ import { Copyright } from "@/components/Copyright/Copyright";
 import { Sidebars } from "@/components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { init, setAppLoaded } from "@/state/slice";
-import { VisualisationLayers } from "@/layers/visualLayers/VisualisationLayers";
-import { createLayers } from "@/layers/createLayer";
-import { createSources } from "@/sources/createSources";
+import { createLayers } from "@/helpers/createLayer";
+import { createSources } from "@/helpers/createSources";
 import { IMapProps, IMapState, InputSloySource, InputSloyLayer } from "@/types";
 import { setTranslations } from "@/helpers/extractTranslations";
 import { ISloyState, useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
+import { Init } from "./Init";
+import { Visualizations } from "./layers/visualization/Visualizations";
 
 import "sloy-ui/style.css";
-
 import "maplibre-gl/dist/maplibre-gl.css";
-import { Init } from "./Init";
 
 export interface SloyMapProps {
   overrideCard?: OverrideCardFn;
@@ -36,7 +35,8 @@ export interface SloyMapProps {
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   children?: ReactNode;
   layout?: {
-    hasBaseMap: boolean;
+    hasBaseMap?: boolean;
+    buildingLayerName?: string;
   };
 }
 
@@ -130,7 +130,7 @@ export function SloyMap({
               ...mapProps.style,
             }}
           >
-            {isAppLoaded && <VisualisationLayers />}
+            {isAppLoaded && <Visualizations />}
             {isAppLoaded && <Init />}
             {children}
           </MapGl>

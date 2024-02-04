@@ -123,7 +123,7 @@ export interface IFilter {
   id: string;
   source: ISource["id"];
   type: "boolean" | "range" | "string" | "string[]";
-  filterVisualisationLayers: IVisualisationLayer["id"][];
+  filterVisualizations: IVisualisationLayer["id"][];
   sortType?: "config" | "count" | "alphabetical";
   title?: string;
   description?: string;
@@ -141,7 +141,7 @@ export interface ILayer {
   id: string;
   title: string;
   filters: IFilter["id"][];
-  visualisationLayers: IVisualisationLayer["id"][];
+  visualizations: IVisualisationLayer["id"][];
   updatedAt?: string;
   subTitle?: string;
   initialViewState?: Partial<
@@ -175,7 +175,7 @@ export interface IApp {
   sources: Record<string, ISource>;
   layers: Record<string, ILayer>;
   filters: Record<string, IFilter>;
-  visualisationLayers: Record<string, IVisualisationLayer>;
+  visualizations: Record<string, IVisualisationLayer>;
 }
 
 export type ActiveFilters = {

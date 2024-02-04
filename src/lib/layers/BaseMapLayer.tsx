@@ -9,14 +9,14 @@ export function BaseMapLayer() {
   const map = useSloyMap();
   const dispatch = useDispatch();
   const { t } = useMapContext();
-  const visualisationLayersIds = useAppSelector((state) =>
-    Object.keys(state.sloy.config.visualisationLayers),
+  const visualizationsIds = useAppSelector((state) =>
+    Object.keys(state.sloy.config.visualizations),
   );
 
   const mapLayers = useAppSelector((state) => state.sloy.basemap.mapLayers);
   const layers = useMemo(
-    () => mapLayers.filter(({ id }) => !visualisationLayersIds.includes(id)),
-    [mapLayers, visualisationLayersIds],
+    () => mapLayers.filter(({ id }) => !visualizationsIds.includes(id)),
+    [mapLayers, visualizationsIds],
   );
 
   const items = useMemo(

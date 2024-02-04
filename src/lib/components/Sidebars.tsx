@@ -2,7 +2,7 @@ import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/isDesktop";
 import { useCard } from "@/state/useCard";
 import { Layers } from "@/layers/Layers";
-import { RenderCard } from "@/sources/Card";
+import { Card as RenderCard } from "@/sources/cards";
 
 function SidebarCard() {
   const isDesktop = useIsDesktop();

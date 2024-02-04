@@ -11,7 +11,7 @@ export interface RangeBaseFilterProps {
   noLoader?: boolean;
 }
 
-export function RangeBaseFilter({
+export function FilterRangeBase({
   defaultMin,
   defaultMax,
   units,

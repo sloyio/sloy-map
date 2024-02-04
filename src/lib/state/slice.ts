@@ -16,7 +16,7 @@ export const initialState: ISloyState = {
     sources: {},
     layers: {},
     filters: {},
-    visualisationLayers: {},
+    visualizations: {},
     mapState: {
       mapStyle: "",
       initialViewState: {

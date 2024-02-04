@@ -4,14 +4,16 @@ Features
 
 1. Compatible with mapbox \ maplibre specifications
 2. Multiple pages & layers
-3. Vector tiles visualisation
+3. Vector tiles visualization
 4. Filters
 5. Themes
-6. Localisation
+6. Localisation \ i18n
 
 # Installation
 
 npm i sloy-map
+
+Check
 
 # API
 
@@ -21,7 +23,7 @@ npm i sloy-map
 
 ## Filter
 
-## VisualLayer
+## Visualization
 
 ## Tiles
 
