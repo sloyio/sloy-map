@@ -12,10 +12,10 @@ interface Props {
 
 export default function FilterRange({ filter, onChange }: Props) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
-  const rangeData = getProperty(
+  const rangeData: SourcePropertyRange[] = getProperty(
     sources,
-    `${filter.source}.properties.${filter?.property}.values`,
-  ) as SourcePropertyRange[];
+    `${filter.source}.properties.${filter?.property}.range`,
+  );
 
   const getHistogramData = useCallback(
     () => Promise.resolve(rangeData) as Promise<HistogramData>,
@@ -24,11 +24,11 @@ export default function FilterRange({ filter, onChange }: Props) {
 
   const defaultMin = Math.min.apply(
     null,
-    rangeData?.map((item: SourcePropertyRange) => item.from),
+    rangeData?.map((item) => item.from),
   );
   const defaultMax = Math.max.apply(
     null,
-    rangeData?.map((item: SourcePropertyRange) => item.to),
+    rangeData?.map((item) => item.to),
   );
 
   if (

@@ -13,7 +13,7 @@ Features
 
 npm i sloy-map
 
-Check
+Check the examples/ folder
 
 # API
 
@@ -21,9 +21,9 @@ Check
 
 ## Layer
 
-## Filter
+### Filter
 
-## Visualization
+### Visualization
 
 ## Tiles
 

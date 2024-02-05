@@ -91,7 +91,7 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Количество этажей",
         id: "building:levels",
-        values: [
+        range: [
           { from: 1, to: 3, color: "#006adb", value: 11656 },
           { from: 3, to: 5, color: "#0084e2", value: 3172 },
           { from: 5, to: 9, color: "#009ee1", value: 3380 },

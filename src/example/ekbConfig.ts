@@ -68,7 +68,7 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Когда построили",
         id: "building:year",
-        values: [
+        range: [
           { from: 1723, to: 1860, color: "#ff7461", value: 145 },
           { from: 1860, to: 1917, color: "#ffA34e", value: 263 },
           { from: 1917, to: 1930, color: "#fee678", value: 504 },
@@ -82,7 +82,7 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Количество этажей",
         id: "building:levels",
-        values: [
+        range: [
           { from: 1, to: 3, color: "#006adb", value: 10683 },
           { from: 3, to: 5, color: "#0084e2", value: 2256 },
           { from: 5, to: 9, color: "#009ee1", value: 3399 },
@@ -97,7 +97,7 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Износ",
         id: "building:health",
-        values: [
+        range: [
           { from: 0, to: 10, color: "#006b29", value: 742 },
           { from: 10, to: 20, color: "#24782a", value: 1129 },
           { from: 20, to: 30, color: "#73a426", value: 1246 },
@@ -458,7 +458,7 @@ export const defaultSources: InputSloySource[] = [
       {
         title: "Год",
         id: "year",
-        values: [
+        range: [
           { from: 2015, to: 2016, value: 1014, color: "#7793db" },
           { from: 2016, to: 2017, value: 805, color: "#7793db" },
           { from: 2017, to: 2018, value: 730, color: "#7793db" },

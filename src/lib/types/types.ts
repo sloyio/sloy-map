@@ -25,15 +25,12 @@ export type SourcePropertyProperties = Record<
   }
 >;
 
-export type SourcePropertyValues =
-  | SourcePropertyProperties
-  | SourcePropertyRange[];
-
 export interface SourceProperty {
   id: string;
   type?: string;
   title?: string;
-  values?: SourcePropertyValues;
+  values?: SourcePropertyProperties;
+  range?: SourcePropertyRange[];
   deps?: string;
 }
 

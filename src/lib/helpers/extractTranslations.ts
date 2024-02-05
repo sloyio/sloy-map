@@ -37,6 +37,7 @@ export function extractTranslations(
           if (isPlainObject(p.values) && p.values) {
             all = all.concat(
               Object.values(p.values).reduce(
+                // @ts-expect-error
                 (all, item) => all.concat([item.title, item.description]),
                 [],
               ),
@@ -120,15 +121,14 @@ export function setTranslations({
 
           if (isPlainObject(values) && values) {
             values = Object.keys(values).reduce((all, key) => {
-              // @ts-expect-error
               const item = values?.[key];
 
               return {
                 ...all,
                 [key]: {
                   ...item,
-                  title: t(item.title, { lang, translations }),
-                  description: t(item.description, { lang, translations }),
+                  title: t(item?.title, { lang, translations }),
+                  description: t(item?.description, { lang, translations }),
                 },
               };
             }, {});

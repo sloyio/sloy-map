@@ -27,9 +27,9 @@ export default function BuildingRangeVisualization({
 
     if (!property) return;
 
-    const rangeData = getProperty(
+    const rangeData: SourcePropertyRange[] = getProperty(
       sources,
-      `${visualization.source}.properties.${property}.values`,
+      `${visualization.source}.properties.${property}.range`,
     );
 
     if (!rangeData || !range) return;
@@ -37,7 +37,7 @@ export default function BuildingRangeVisualization({
     setBuildingRangeStyle({
       map,
       field: property,
-      rangeData: rangeData as SourcePropertyRange[],
+      rangeData,
       range,
       buildingLayer: layout.buildingLayerName,
     });
