@@ -77,13 +77,12 @@ export function Layer({ layer }: Props) {
 
         return (
           <div key={filterId}>
-            {filter.type !== "boolean" && filter.title && (
-              <LayerFilterTitle key="title">{filter.title}</LayerFilterTitle>
-            )}
             <MapFilter
               key={filter.id}
+              title={filter.title}
               filterId={filter.id}
               layerId={layer.id}
+              additionalHeaderParams={filter.additionalHeaderParams}
             />
             {layer.filters.length - 1 !== i && <Divider />}
           </div>

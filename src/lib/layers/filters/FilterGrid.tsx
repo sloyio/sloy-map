@@ -6,7 +6,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { Checkbox, ListGrid, ListGridItem } from "sloy-ui";
+import { Checkbox, ListGrid, ListGridItem, ListGridHeader } from "sloy-ui";
 
 export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   type?: string;
@@ -21,6 +21,9 @@ interface Props {
   onChange?: (state: string[]) => void;
   sortType?: IFilter["sortType"];
   sortByArray?: string[];
+  title: IFilter["title"];
+  totalCount: number;
+  additionalHeaderParams: IFilter["additionalHeaderParams"];
 }
 
 export function FilterGrid({
@@ -29,6 +32,9 @@ export function FilterGrid({
   selectedByDefault = [],
   sortType,
   sortByArray = [],
+  title,
+  totalCount,
+  additionalHeaderParams = {},
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
@@ -42,6 +48,22 @@ export function FilterGrid({
     },
     [selected],
   );
+
+  const allToggle = useCallback(() => {
+    if (selected.length === sortedItems.length) {
+      setSelected([]);
+    } else {
+      setSelected(
+        sortedItems.reduce<string[]>((acc, { type }) => {
+          if (type) {
+            return acc.concat(type);
+          } else {
+            return acc;
+          }
+        }, [])
+      );
+    }
+  }, [selected]);
 
   useEffect(() => {
     onChange?.(selected);
@@ -81,15 +103,42 @@ export function FilterGrid({
 
   return (
     <ListGrid>
+      {title && (
+        <ListGridHeader
+          prefix={
+            <Checkbox
+              isSelected={selected.length === sortedItems.length}
+              isIndeterminate={
+                selected.length !== sortedItems.length && selected.length > 0
+              }
+              toggle={allToggle}
+            />
+          }
+          description={totalCount}
+          subTitle={additionalHeaderParams.subTitle}
+          postfix={additionalHeaderParams.postfix}
+        >
+          {title}
+        </ListGridHeader>
+      )}
       {sortedItems.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
         }
 
+        let percentage = undefined;
+
+        if (additionalHeaderParams.subTitle && count) {
+          const percentageAsNumber = Math.round(count / (totalCount / 100));
+
+          percentage =
+            percentageAsNumber < 1 ? "< 1" : String(percentageAsNumber);
+        }
+
         return (
           <ListGridItem
             key={type}
-            subTitle={count}
+            subTitle={percentage}
             description={description}
             prefix={
               <Checkbox
@@ -98,6 +147,7 @@ export function FilterGrid({
                 toggle={() => toggle(type)}
               />
             }
+            postfix={String(count)}
           >
             {title || type}
           </ListGridItem>

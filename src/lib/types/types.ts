@@ -126,6 +126,10 @@ export interface IFilter {
   description?: string;
   color?: string;
   property: string;
+  additionalHeaderParams?: {
+    subTitle?: string;
+    postfix?: string;
+  };
 }
 
 export interface ICopyright {
