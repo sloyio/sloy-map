@@ -147,6 +147,30 @@ export const defaultSources: InputSloySource[] = [
     ],
   },
   {
+    id: "Adm1BoundariesLayerSource",
+    path: "/adm1-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "Adm2BoundariesLayerSource",
+    path: "/adm2-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
     id: "armenianPostBranchesLayerSource",
     path: "/postalindex_ru.json",
     type: "json",
@@ -1156,6 +1180,58 @@ export const defaultLayers: InputSloyLayer[] = [
         source: "buildingTile",
         property: "building:levels",
         openable: true,
+      },
+    ],
+  },
+  {
+    title: "Административные границы регионов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm1BoundariesLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 2,
+            "line-opacity": 1,
+            "line-color": "#00ccff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Административные границы муниципалитетов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm2BoundariesLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 2,
+            "line-opacity": 1,
+            "line-color": "#00ff5e",
+          },
+        },
       },
     ],
   },
