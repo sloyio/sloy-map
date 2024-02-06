@@ -7,18 +7,23 @@ import { updateFilterParams, updateLayer } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";
 import { useAppSelector } from "@/state";
+import { IFilter } from "@/types";
 
 const LazyFilterRange = lazy(
   () => import("@/layers/filters/FilterBuildingRange"),
 );
 
+interface Props extends Pick<IFilter, "title" | "additionalHeaderParams"> {
+  layerId: string;
+  filterId: IFilter["id"];
+}
+
 export function MapFilter({
   layerId,
   filterId,
-}: {
-  layerId: string;
-  filterId: string;
-}) {
+  title,
+  additionalHeaderParams,
+}: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
   const sources = useAppSelector((state) => state.sloy.config.sources);
@@ -94,11 +99,14 @@ export function MapFilter({
 
       return (
         <FilterGrid
+          title={title}
           items={items}
           selectedByDefault={selectedByDefault}
           onChange={onChange}
           sortType={filter.sortType}
           sortByArray={values ? Object.keys(values) : undefined}
+          totalCount={data.features.length}
+          additionalHeaderParams={additionalHeaderParams}
         />
       );
     }
@@ -106,6 +114,7 @@ export function MapFilter({
     case "boolean": {
       return (
         <FilterGrid
+          title={title}
           sortType={filter.sortType}
           onChange={onChange}
           items={[
@@ -116,6 +125,8 @@ export function MapFilter({
               color: filter.color,
             },
           ]}
+          totalCount={data.features.length}
+          additionalHeaderParams={additionalHeaderParams}
         />
       );
     }
