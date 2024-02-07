@@ -1,19 +1,11 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { useAppSelector } from "@/state";
-import { Divider } from "sloy-ui";
 import { MapFilter } from "@/layers/filters/MapFilter";
 import { ILayer } from "@/types";
 import { MapContext } from "@/state/MapProvider";
 import { LayerSource } from "./components/LayerSource";
 import { LayerUpdatedAt } from "./components/LayerUpdatedAt";
-
-const LayerFilterTitle = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  margin: 12px 0;
-  font-weight: bold;
-`;
 
 const LayerFilterDescription = styled.div`
   font-size: 14px;
@@ -30,6 +22,10 @@ const LayerFilterDescriptionFooter = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+`;
+
+const MapFilterWrapper = styled.div<{ withMargin: boolean }>`
+  ${({ withMargin }) => withMargin && "margin-bottom: 8px"};
 `;
 
 interface Props {
@@ -58,16 +54,19 @@ export function Layer({ layer }: Props) {
         const filter = filters[filterId];
 
         return (
-          <div key={filterId}>
+          <MapFilterWrapper
+            withMargin={layer.filters.length - 1 !== i}
+            key={filterId}
+          >
             <MapFilter
               key={filter.id}
               title={filter.title}
               filterId={filter.id}
               layerId={layer.id}
-              additionalHeaderParams={filter.additionalHeaderParams}
+              subTitle={filter.subTitle}
+              postfix={filter.postfix}
             />
-            {layer.filters.length - 1 !== i && <Divider />}
-          </div>
+          </MapFilterWrapper>
         );
       })}
     </>

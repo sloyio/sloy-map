@@ -847,10 +847,8 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "severity",
-        additionalHeaderParams: {
-          subTitle: "%",
-          postfix: "шт.",
-        },
+        subTitle: "%",
+        postfix: "шт.",
       },
       {
         title: "Участник ДТП",
