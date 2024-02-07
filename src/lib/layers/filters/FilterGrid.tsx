@@ -1,3 +1,5 @@
+import { getPercentageValue } from "@/helpers/getPercentageValue";
+import { useMapContext } from "@/helpers/useSloy";
 import { IFilter } from "@/types";
 import {
   ComponentProps,
@@ -23,7 +25,8 @@ interface Props {
   sortByArray?: string[];
   title: IFilter["title"];
   totalCount: number;
-  additionalHeaderParams: IFilter["additionalHeaderParams"];
+  subTitle?: IFilter["subTitle"];
+  postfix?: IFilter["postfix"];
 }
 
 export function FilterGrid({
@@ -34,8 +37,11 @@ export function FilterGrid({
   sortByArray = [],
   title,
   totalCount,
-  additionalHeaderParams = {},
+  subTitle,
+  postfix,
 }: Props) {
+  const { t } = useMapContext();
+
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
   const toggle = useCallback(
@@ -103,37 +109,28 @@ export function FilterGrid({
 
   return (
     <ListGrid>
-      {title && (
-        <ListGridHeader
-          prefix={
-            <Checkbox
-              isSelected={selected.length === sortedItems.length}
-              isIndeterminate={
-                selected.length !== sortedItems.length && selected.length > 0
-              }
-              toggle={allToggle}
-            />
-          }
-          description={totalCount}
-          subTitle={additionalHeaderParams.subTitle}
-          postfix={additionalHeaderParams.postfix}
-        >
-          {title}
-        </ListGridHeader>
-      )}
+      <ListGridHeader
+        prefix={
+          <Checkbox
+            isSelected={selected.length === sortedItems.length}
+            isIndeterminate={
+              selected.length !== sortedItems.length && selected.length > 0
+            }
+            toggle={allToggle}
+          />
+        }
+        description={totalCount}
+        subTitle={t(subTitle)}
+        postfix={t(postfix)}
+      >
+        {t(title)}
+      </ListGridHeader>
       {sortedItems.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
         }
 
-        let percentage = undefined;
-
-        if (additionalHeaderParams.subTitle && count) {
-          const percentageAsNumber = Math.round(count / (totalCount / 100));
-
-          percentage =
-            percentageAsNumber < 1 ? "< 1" : String(percentageAsNumber);
-        }
+        const percentage = getPercentageValue(count, totalCount);
 
         return (
           <ListGridItem

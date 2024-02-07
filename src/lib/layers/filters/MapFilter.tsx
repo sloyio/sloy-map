@@ -13,7 +13,7 @@ const LazyFilterRange = lazy(
   () => import("@/layers/filters/FilterBuildingRange"),
 );
 
-interface Props extends Pick<IFilter, "title" | "additionalHeaderParams"> {
+interface Props extends Pick<IFilter, "title" | "subTitle" | "postfix"> {
   layerId: string;
   filterId: IFilter["id"];
 }
@@ -22,7 +22,8 @@ export function MapFilter({
   layerId,
   filterId,
   title,
-  additionalHeaderParams,
+  subTitle,
+  postfix,
 }: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
@@ -106,7 +107,8 @@ export function MapFilter({
           sortType={filter.sortType}
           sortByArray={values ? Object.keys(values) : undefined}
           totalCount={data.features.length}
-          additionalHeaderParams={additionalHeaderParams}
+          subTitle={subTitle}
+          postfix={postfix}
         />
       );
     }
@@ -126,7 +128,8 @@ export function MapFilter({
             },
           ]}
           totalCount={data.features.length}
-          additionalHeaderParams={additionalHeaderParams}
+          subTitle={subTitle}
+          postfix={postfix}
         />
       );
     }
