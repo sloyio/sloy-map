@@ -5,7 +5,7 @@ import { RenderJsonCard } from "./RenderJsonCard";
 export function Card() {
   const { cardSource } = useCard();
 
-  if (cardSource?.id === "buildingTile") {
+  if (cardSource?.id === "osmBuilding") {
     return <BuildingCard />;
   }
 

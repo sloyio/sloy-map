@@ -27,7 +27,7 @@ export const defaultMapState = {
 
 export const defaultSources: InputSloySource[] = [
   {
-    id: "buildingTile",
+    id: "osmBuilding",
     copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
     type: "map-source",
     card: {
@@ -581,7 +581,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         type: "range",
         filterVisualizations: ["ekbHouseAgeLayer"],
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:year",
       },
     ],
@@ -589,7 +589,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         id: "ekbHouseAgeLayer",
         type: "building-range",
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:year",
         openable: true,
       },
@@ -601,7 +601,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         type: "range",
         filterVisualizations: ["ekbHouseLevelsLayer"],
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:levels",
       },
     ],
@@ -609,7 +609,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         id: "ekbHouseLevelsLayer",
         type: "building-range",
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:levels",
         openable: true,
       },
@@ -621,7 +621,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         type: "range",
         filterVisualizations: ["ekbHouseHealthLayer"],
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:health",
       },
     ],
@@ -629,7 +629,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         id: "ekbHouseHealthLayer",
         type: "building-range",
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:health",
         openable: true,
       },
@@ -1030,7 +1030,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         id: "ekbFacadesLayer",
         type: "building-ids",
-        source: "buildingTile",
+        source: "osmBuilding",
         ids: Object.keys(facades),
         openable: true,
         mapLayerProps: {

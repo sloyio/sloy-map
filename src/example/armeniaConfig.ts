@@ -47,7 +47,7 @@ export const defaultSources: InputSloySource[] = [
   BESEMAP_TERRAIN_SOURCE,
   ...BASEMAP_SOURCES,
   {
-    id: "buildingTile",
+    id: "osmBuilding",
     copyright: [],
     type: "map-source",
     card: {
@@ -1145,7 +1145,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         type: "range",
         filterVisualizations: ["houseLevelsLayer"],
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:levels",
       },
     ],
@@ -1153,7 +1153,7 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         id: "houseLevelsLayer",
         type: "building-range",
-        source: "buildingTile",
+        source: "osmBuilding",
         property: "building:levels",
         openable: true,
       },

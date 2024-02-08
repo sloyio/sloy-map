@@ -17,7 +17,7 @@ import translations from "./armenia.locales.json";
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
-  title: "Map/Armenia",
+  title: "Map/Advanced/Armenia",
   component: SloyMap,
   parameters: {
     layout: "fullscreen",

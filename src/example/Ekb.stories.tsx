@@ -8,7 +8,7 @@ import "sloy-ui/fonts.css";
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
-  title: "Map/Ekb",
+  title: "Map/Advanced/Ekb",
   component: SloyMap,
   parameters: {
     layout: "fullscreen",

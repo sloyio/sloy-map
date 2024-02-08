@@ -42,7 +42,7 @@ export function useVisualisationFilters({
 
     const filters: any = ["all"];
     activeFilters.forEach(({ filter, values }) => {
-      if (filter.source !== "buildingTile") {
+      if (filter.source !== "osmBuilding") {
         if (filter.type === "boolean" && map.getLayer(vId)) {
           map.setLayoutProperty(
             vId,

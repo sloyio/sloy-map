@@ -13,7 +13,8 @@ function useInitTerrain() {
     (state.sloy.activeLayers || [])
       .map((id) => state.sloy.config.layers[id]?.visualizations)
       .flat()
-      .map((vId) => state.sloy.config.visualizations[vId]),
+      .map((vId) => state.sloy.config.visualizations[vId])
+      .filter(Boolean),
   );
 
   const shouldShowTerrain = useMemo(
