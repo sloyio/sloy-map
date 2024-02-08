@@ -30,8 +30,8 @@ const LayerFilterDescriptionItem = styled.span`
   }
 `;
 
-const MapFilterWrapper = styled.div<{ withMargin: boolean }>`
-  ${({ withMargin }) => withMargin && "margin-bottom: 8px"};
+const MapFilterWrapper = styled.div<{ $withMargin: boolean }>`
+  ${({ $withMargin }) => $withMargin && "margin-bottom: 8px"};
 `;
 
 interface Props {
@@ -73,7 +73,7 @@ export function Layer({ layer }: Props) {
 
         return (
           <MapFilterWrapper
-            withMargin={layer.filters.length - 1 !== i}
+            $withMargin={layer.filters.length - 1 !== i}
             key={filterId}
           >
             <MapFilter
