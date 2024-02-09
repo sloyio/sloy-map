@@ -1,10 +1,10 @@
-import { ISource, IVisualisationLayer } from "@/types";
+import { ISource, IVisualization } from "@/types";
 import { getLayerStateStyle } from "../../../helpers/getLayerStyle";
 import { colorLuminance } from "../../../helpers/colorLuminance";
 
 const isHex = (color: string) => /^#[0-9A-F]{6}$/i.test(color);
 
-function withHover(visualization: IVisualisationLayer, property: string) {
+function withHover(visualization: IVisualization, property: string) {
   const paintColor = visualization.mapLayerProps?.paint?.[property];
 
   if (!paintColor || !property || visualization.property) return undefined;
@@ -23,7 +23,7 @@ function withHover(visualization: IVisualisationLayer, property: string) {
 }
 
 function withPropertyColors(
-  visualization: IVisualisationLayer,
+  visualization: IVisualization,
   values: [string, any][],
 ) {
   const colors = visualization.property
@@ -45,7 +45,7 @@ function withPropertyColors(
 }
 
 export function getLayerProps(
-  visualization: IVisualisationLayer,
+  visualization: IVisualization,
   source: ISource,
 ): any {
   const property = source?.properties?.[String(visualization.property)];

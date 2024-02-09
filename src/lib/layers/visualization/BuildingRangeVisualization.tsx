@@ -3,13 +3,13 @@ import { MinMax } from "sloy-ui";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { setBuildingRangeStyle } from "@/layers/visualization/helpers/setBuildingStyle";
-import { IVisualisationLayer, SourcePropertyRange } from "@/types";
+import { IVisualization, SourcePropertyRange } from "@/types";
 import { ClickableBuilding } from "@/layers/visualization/helpers/ClickableBuilding";
 import { getProperty } from "dot-prop";
 import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
-  visualization: IVisualisationLayer;
+  visualization: IVisualization;
   range?: MinMax;
 }
 

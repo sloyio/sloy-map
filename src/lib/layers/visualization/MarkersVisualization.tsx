@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Layer, Marker, CircleLayer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { getLayerStateStyle } from "@/helpers/getLayerStyle";
-import { ActiveFilters, IMarkerImageVisualisationLayer } from "@/types";
+import { ActiveFilters, IMarkerImageVisualization } from "@/types";
 import { getProperty } from "dot-prop";
 import styled, { css } from "styled-components";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
@@ -10,7 +10,7 @@ import { ClickableVisualization } from "./helpers/ClickableVisualization";
 import { useCard } from "@/state/useCard";
 
 interface Props {
-  visualization: IMarkerImageVisualisationLayer;
+  visualization: IMarkerImageVisualization;
   activeFilters: ActiveFilters;
 }
 

@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { ActiveFilters, IVisualisationLayer } from "@/types";
+import { ActiveFilters, IVisualization } from "@/types";
 
 export function useActiveFilters({
   vId,
 }: {
-  vId: IVisualisationLayer["id"];
+  vId: IVisualization["id"];
 }): ActiveFilters {
   const filters = useAppSelector((state) => state.sloy.config.filters);
 
@@ -30,7 +30,7 @@ export function useVisualisationFilters({
   vId,
   activeFilters,
 }: {
-  vId: IVisualisationLayer["id"];
+  vId: IVisualization["id"];
   activeFilters: ActiveFilters;
 }) {
   const { sloyMapGl } = useMap();

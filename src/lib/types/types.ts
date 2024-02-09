@@ -80,7 +80,7 @@ export type IGeoJsonSource = IBaseSource & {
 
 export type ISource = ICustomSource | IGeoJsonSource;
 
-interface IBaseVisualisationLayer {
+interface IBaseVisualization {
   id: string;
   source: ISource["id"];
   property?: string;
@@ -90,37 +90,37 @@ interface IBaseVisualisationLayer {
   openable?: boolean;
 }
 
-export type IMapVisualisationLayer = IBaseVisualisationLayer & {
+export type IMapVisualization = IBaseVisualization & {
   type: "map";
   mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
 };
 
-export type IBuildingIdsVisualisationLayer = IBaseVisualisationLayer & {
+export type IBuildingIdsVisualization = IBaseVisualization & {
   type: "building-ids";
   mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
 };
 
-export type IMarkerImageVisualisationLayer = IBaseVisualisationLayer & {
+export type IMarkerImageVisualization = IBaseVisualization & {
   type: "marker-image";
   mapLayerProps?: undefined;
 };
 
-export type IBuildingRangeVisualisationLayer = IBaseVisualisationLayer & {
+export type IBuildingRangeVisualization = IBaseVisualization & {
   type: "building-range";
   mapLayerProps?: undefined;
 };
 
-export type IVisualisationLayer =
-  | IMapVisualisationLayer
-  | IBuildingRangeVisualisationLayer
-  | IMarkerImageVisualisationLayer
-  | IBuildingIdsVisualisationLayer;
+export type IVisualization =
+  | IMapVisualization
+  | IBuildingRangeVisualization
+  | IMarkerImageVisualization
+  | IBuildingIdsVisualization;
 
 export interface IFilter {
   id: string;
   source: ISource["id"];
   type: "boolean" | "range" | "string" | "string[]";
-  filterVisualizations: IVisualisationLayer["id"][];
+  filterVisualizations: IVisualization["id"][];
   sortType?: "config" | "count" | "alphabetical";
   title?: string;
   description?: string;
@@ -138,7 +138,7 @@ export interface ILayer {
   id: string;
   title: string;
   filters: IFilter["id"][];
-  visualizations: IVisualisationLayer["id"][];
+  visualizations: IVisualization["id"][];
   updatedAt?: string;
   subTitle?: string;
   initialViewState?: Partial<
@@ -172,7 +172,7 @@ export interface IApp {
   sources: Record<string, ISource>;
   layers: Record<string, ILayer>;
   filters: Record<string, IFilter>;
-  visualizations: Record<string, IVisualisationLayer>;
+  visualizations: Record<string, IVisualization>;
 }
 
 export type ActiveFilters = {

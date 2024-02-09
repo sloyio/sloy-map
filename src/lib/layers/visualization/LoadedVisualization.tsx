@@ -1,6 +1,6 @@
 import { Layer, Source } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { IVisualisationLayer } from "@/types";
+import { IVisualization } from "@/types";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { ClickableVisualization } from "./helpers/ClickableVisualization";
 import { getLayerProps } from "./helpers/getLayerProps";
@@ -8,7 +8,7 @@ import { getLayerProps } from "./helpers/getLayerProps";
 export default function LoadedVisualization({
   vId,
 }: {
-  vId: IVisualisationLayer["id"];
+  vId: IVisualization["id"];
 }) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const visualizations = useAppSelector(

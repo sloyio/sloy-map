@@ -38,6 +38,12 @@ const App = () => (
         minZoom: 7,
         maxZoom: 20,
       }}
+      mapProps={
+        {
+          // uncomment if you use mapbox:
+          // mapboxAccessToken: 'xxxxx'
+        }
+      }
       sources={[
         {
           id: "osmBuilding",

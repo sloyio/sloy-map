@@ -3,7 +3,7 @@ import {
   IFilter,
   ILayer,
   ISource,
-  IVisualisationLayer,
+  IVisualization,
   SourceProperty,
 } from "./types";
 
@@ -16,7 +16,7 @@ export type InputSloySource = Omit<ISource, "card" | "properties"> & {
 
 export type InputSloyFilter = Omit<IFilter, "id">;
 
-export type InputSloyVisualisationLayer = IVisualisationLayer;
+export type InputSloyVisualisationLayer = IVisualization;
 
 export type InputSloyLayer = Omit<
   ILayer,

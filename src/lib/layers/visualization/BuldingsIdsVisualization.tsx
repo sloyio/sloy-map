@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { setBuildingStyleByPropertyValues } from "@/layers/visualization/helpers/setBuildingStyle";
-import { IBuildingIdsVisualisationLayer } from "@/types";
+import { IBuildingIdsVisualization } from "@/types";
 import { ClickableBuilding } from "@/layers/visualization/helpers/ClickableBuilding";
 import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
-  visualization: IBuildingIdsVisualisationLayer;
+  visualization: IBuildingIdsVisualization;
 }
 
 export default function BuldingsIdsVisualization({ visualization }: Props) {

@@ -1,5 +1,5 @@
 import { useAppSelector } from "@/state";
-import { IVisualisationLayer } from "@/types";
+import { IVisualization } from "@/types";
 import {
   useActiveFilters,
   useVisualisationFilters,
@@ -19,7 +19,7 @@ const LazyMarkersVisualisationLayer = lazy(
   () => import("@/layers/visualization/MarkersVisualization"),
 );
 
-export function Visualization({ id: vId }: { id: IVisualisationLayer["id"] }) {
+export function Visualization({ id: vId }: { id: IVisualization["id"] }) {
   const sources = useAppSelector((state) => state.sloy.config.sources);
   const visualizations = useAppSelector(
     (state) => state.sloy.config.visualizations,
