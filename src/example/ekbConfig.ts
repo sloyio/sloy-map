@@ -643,10 +643,14 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Объекты культурного наследния",
     filters: [
       {
+        title: "Объекты ОКН",
         type: "string",
         filterVisualizations: ["ekbOknObjectsLayer"],
         source: "ekbOknSource",
         property: "category",
+        subTitle: "%",
+        postfix: "шт.",
+        withTotalCount: true,
       },
       {
         title: "Защитные зоны",
@@ -661,6 +665,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknProtectZoneSource",
         property: "?",
+        subTitle: "%",
+        postfix: "шт.",
+        withTotalCount: true,
       },
       {
         title: "Зоны охраны ОКН",
@@ -675,6 +682,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknSecurityZoneSource",
         property: "?",
+        subTitle: "%",
+        postfix: "шт.",
+        withTotalCount: true,
       },
       {
         title: "Границы территорий ОКН",
@@ -688,6 +698,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknObjectZoneSource",
         property: "?",
+        subTitle: "%",
+        postfix: "шт.",
+        withTotalCount: true,
       },
     ],
     visualizations: [
@@ -819,10 +832,14 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "«Дизайн-код Екатеринбурга»",
     filters: [
       {
+        title: "Объекты",
         type: "string",
         filterVisualizations: ["ekbDesignCodeLayer"],
         source: "ekbDesigncodeSource",
         property: "type",
+        subTitle: "%",
+        postfix: "шт.",
+        withTotalCount: true,
       },
     ],
     visualizations: [
@@ -862,6 +879,8 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "participant_categories",
+        subTitle: "%",
+        postfix: "шт.",
       },
     ],
     visualizations: [

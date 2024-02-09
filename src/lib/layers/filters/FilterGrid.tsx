@@ -27,6 +27,7 @@ interface Props {
   totalCount: number;
   subTitle?: IFilter["subTitle"];
   postfix?: IFilter["postfix"];
+  withTotalCount?: IFilter["withTotalCount"];
 }
 
 export function FilterGrid({
@@ -39,6 +40,7 @@ export function FilterGrid({
   totalCount,
   subTitle,
   postfix,
+  withTotalCount,
 }: Props) {
   const { t } = useMapContext();
 
@@ -52,7 +54,7 @@ export function FilterGrid({
         setSelected(selected.concat(type));
       }
     },
-    [selected],
+    [selected]
   );
 
   const allToggle = useCallback(() => {
@@ -97,7 +99,7 @@ export function FilterGrid({
           }
 
           return String(a.title || a.type).localeCompare(
-            String(b.title || b.type),
+            String(b.title || b.type)
           );
         });
     }
@@ -109,28 +111,30 @@ export function FilterGrid({
 
   return (
     <ListGrid>
-      <ListGridHeader
-        prefix={
-          <Checkbox
-            isSelected={selected.length === sortedItems.length}
-            isIndeterminate={
-              selected.length !== sortedItems.length && selected.length > 0
-            }
-            toggle={allToggle}
-          />
-        }
-        description={totalCount}
-        subTitle={t(subTitle)}
-        postfix={t(postfix)}
-      >
-        {t(title)}
-      </ListGridHeader>
+      {title && (
+        <ListGridHeader
+          prefix={
+            <Checkbox
+              isSelected={selected.length === sortedItems.length}
+              isIndeterminate={
+                selected.length !== sortedItems.length && selected.length > 0
+              }
+              toggle={allToggle}
+            />
+          }
+          description={withTotalCount && totalCount}
+          subTitle={t(subTitle)}
+          postfix={t(postfix)}
+        >
+          {t(title)}
+        </ListGridHeader>
+      )}
       {sortedItems.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
         }
 
-        const percentage = getPercentageValue(count, totalCount);
+        const percentage = subTitle && getPercentageValue(count, totalCount);
 
         return (
           <ListGridItem
@@ -144,7 +148,7 @@ export function FilterGrid({
                 toggle={() => toggle(type)}
               />
             }
-            postfix={String(count)}
+            postfix={postfix && String(count)}
           >
             {title || type}
           </ListGridItem>

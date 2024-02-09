@@ -1619,10 +1619,13 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     filters: [
       {
+        title: "Зоны",
         property: "Zone",
         type: "string",
         filterVisualizations: ["armenianSeismicZonesLayer"],
         source: "armenianSeismicZonesLayerSource",
+        subTitle: "%",
+        postfix: "шт.",
       },
     ],
     visualizations: [
@@ -1852,6 +1855,7 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     filters: [
       {
+        title: "ккал/см²",
         property: "VALUE",
         type: "string",
         filterVisualizations: ["armenianRadiationBalanceLayer"],

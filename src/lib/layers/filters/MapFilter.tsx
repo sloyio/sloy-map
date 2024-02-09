@@ -10,10 +10,11 @@ import { useAppSelector } from "@/state";
 import { IFilter } from "@/types";
 
 const LazyFilterRange = lazy(
-  () => import("@/layers/filters/FilterBuildingRange"),
+  () => import("@/layers/filters/FilterBuildingRange")
 );
 
-interface Props extends Pick<IFilter, "title" | "subTitle" | "postfix"> {
+interface Props
+  extends Pick<IFilter, "title" | "subTitle" | "postfix" | "withTotalCount"> {
   layerId: string;
   filterId: IFilter["id"];
 }
@@ -24,6 +25,7 @@ export function MapFilter({
   title,
   subTitle,
   postfix,
+  withTotalCount,
 }: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
@@ -34,14 +36,14 @@ export function MapFilter({
   const { data, loading } = useLoadGeoJSON(source);
 
   useEffect(() => {
-    if (data.features.length) {
+    if (data.features.length && filter.type === "range") {
       dispatch(
         updateLayer({
           layerId,
           layer: {
             subTitle: String(data.features.length),
           },
-        }),
+        })
       );
     }
   }, [data.features.length, dispatch, layerId]);
@@ -50,7 +52,7 @@ export function MapFilter({
     (params: unknown) => {
       dispatch(updateFilterParams({ [filterId]: params }));
     },
-    [dispatch, filterId],
+    [dispatch, filterId]
   );
 
   if (!filter || !source) {
@@ -72,7 +74,7 @@ export function MapFilter({
     case "string": {
       const values = getProperty(
         source,
-        `properties.${filter.property}.values`,
+        `properties.${filter.property}.values`
       );
 
       const items = groupByProperty({
@@ -83,16 +85,16 @@ export function MapFilter({
         type: item.type,
         title: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.title`,
+          `${item.type?.replaceAll(".", "\\.")}.title`
         ),
         count: item.count,
         color: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.color`,
+          `${item.type?.replaceAll(".", "\\.")}.color`
         ),
         description: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.description`,
+          `${item.type?.replaceAll(".", "\\.")}.description`
         ),
       }));
 
@@ -109,6 +111,7 @@ export function MapFilter({
           totalCount={data.features.length}
           subTitle={subTitle}
           postfix={postfix}
+          withTotalCount={withTotalCount}
         />
       );
     }
@@ -130,6 +133,7 @@ export function MapFilter({
           totalCount={data.features.length}
           subTitle={subTitle}
           postfix={postfix}
+          withTotalCount={withTotalCount}
         />
       );
     }

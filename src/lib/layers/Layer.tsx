@@ -31,7 +31,7 @@ const LayerFilterDescriptionItem = styled.span`
 `;
 
 const MapFilterWrapper = styled.div<{ $withMargin: boolean }>`
-  ${({ $withMargin }) => $withMargin && "margin-bottom: 8px"};
+  ${({ $withMargin }) => $withMargin && "margin-bottom: 16px"};
 `;
 
 interface Props {
@@ -83,6 +83,7 @@ export function Layer({ layer }: Props) {
               layerId={layer.id}
               subTitle={filter.subTitle}
               postfix={filter.postfix}
+              withTotalCount={filter.withTotalCount}
             />
           </MapFilterWrapper>
         );
