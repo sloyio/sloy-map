@@ -147,6 +147,42 @@ export const defaultSources: InputSloySource[] = [
     ],
   },
   {
+    id: "Adm1BoundariesLayerSource",
+    path: "/adm1-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "Adm2BoundariesLayerSource",
+    path: "/adm2-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "HealthsitesLayerSource",
+    path: "/healthsites.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "name",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
     id: "armenianPostBranchesLayerSource",
     path: "/postalindex_ru.json",
     type: "json",
@@ -1156,6 +1192,162 @@ export const defaultLayers: InputSloyLayer[] = [
         source: "osmBuilding",
         property: "building:levels",
         openable: true,
+      },
+    ],
+  },
+  {
+    title: "Административные границы регионов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm1BoundariesLineLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 1,
+            "line-opacity": 1,
+            "line-color": "#88ddff",
+          },
+        },
+      },
+      {
+        id: "Adm1BoundariesFillLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.1,
+            "fill-color": "#88ddff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Административные границы муниципалитетов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm2BoundariesLineLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 1,
+            "line-opacity": 1,
+            "line-color": "#0088ff",
+          },
+        },
+      },
+      {
+        id: "Adm2BoundariesFillLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.1,
+            "fill-color": "#0088ff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Медицинские учреждения",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2024-02-07T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/armenia-healthsites",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "HealthsitesLayer",
+        source: "HealthsitesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 1,
+            "fill-color": "#ff00dd",
+          },
+        },
+      },
+      {
+        id: "HealthsitesHeatmapLayer",
+        source: "HealthsitesLayerSource",
+        type: "map",
+        property: "amenity",
+        mapLayerProps: {
+          type: "heatmap",
+          paint: {
+            "heatmap-weight": {
+              type: "exponential",
+              property: "weight",
+              stops: [
+                [0, 0],
+                [1, 1],
+              ],
+            },
+            "heatmap-intensity": 1,
+            "heatmap-color": [
+              "interpolate",
+              ["linear"],
+              ["heatmap-density"],
+              0,
+              "rgba(0, 0, 255, 0)",
+              0.2,
+              "rgba(0, 26, 255, 0)",
+              0.4,
+              "rgba(85, 0, 255, 0.5)",
+              0.6,
+              "rgba(255, 0, 221, 0.7)",
+              1,
+              "rgb(255, 0, 221)",
+            ],
+            "heatmap-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              2,
+              MAX_ZOOM,
+              50,
+            ],
+            "heatmap-opacity": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              1,
+              MAX_ZOOM,
+              0,
+            ],
+          },
+        },
       },
     ],
   },
