@@ -72,7 +72,12 @@
   "Cereal and motley grass steppe with  tragacanth": {
     "am": "Հացահատիկային տափաստան տրագականտի հետ",
     "ru": "Злаковые и разнотравные степи с трагакантом",
-    "en": "Cereal and motley grass steppe with  tragacanth"
+    "en": "Cereal and motley grass steppe with tragacanth"
+  },
+  "clinic": {
+    "am": "Կլինիկա",
+    "ru": "Клиника",
+    "en": "Clinic"
   },
   "Coniferous and deciduous sparse trees": {
     "am": "Փշատերև և թափող հազվագյուտ ծառեր",
@@ -89,6 +94,11 @@
     "ru": "Зоны глубоких разломов со сбросом минеральных вод",
     "en": "Deep faults zones with discharge of mineral water"
   },
+  "dentist": {
+    "am": "Ատամնաբույժ",
+    "ru": "Стоматолог",
+    "en": "Dentist"
+  },
   "Desalinated here and there fat mountainous black soils of humid steppe": {
     "am": "Այստեղ և այնտեղ աղազերծված խոնավ տափաստանի յուղոտ Լեռնային սևահողերը",
     "ru": "Местами опресненные жирные горные черноземы влажной степи",
@@ -98,6 +108,11 @@
     "am": "Անապատային հողեր",
     "ru": "Пустынные почвы",
     "en": "Desert soils"
+  },
+  "doctors": {
+    "am": "Բժիշկներ",
+    "ru": "Врачи",
+    "en": "Doctors"
   },
   "Fault zones": {
     "am": "Խզվածքի գոտիներ",
@@ -143,6 +158,11 @@
     "am": "Ջրի հոսքերը Միջագետքում և բարձր գլխարկով զնդանում",
     "ru": "Высокогорные междуречные и подземные водные потоки",
     "en": "High capcity interlava and underlava water streams"
+  },
+  "hospital": {
+    "am": "Հիվանդանոց",
+    "ru": "Больница",
+    "en": "Hospital"
   },
   "Lake Arpilich": {
     "am": "Արփիլիճ Լիճ",
@@ -259,6 +279,11 @@
     "ru": "Пастбища",
     "en": "Pastures"
   },
+  "pharmacy": {
+    "am": "Դեղատուն",
+    "ru": "Аптека",
+    "en": "Pharmacy"
+  },
   "Psammophilous deserts": {
     "am": "Psammophilic անապատներ",
     "ru": "Псаммофильные пустыни",
@@ -358,6 +383,11 @@
     "am": "Շենքի տարիքը",
     "ru": "Возраст здания",
     "en": "Building age"
+  },
+  "Время работы": {
+    "am": "Աշխատանքային ժամեր",
+    "ru": "Время работы",
+    "en": "Working hours"
   },
   "Время работы в пн–пт": {
     "am": "Աշխատանքային ժամերը երկ-ուրբ",
@@ -503,6 +533,11 @@
     "ru": "Номер дома",
     "en": "House number"
   },
+  "Оператор мед. учреждения": {
+    "am": "Բժշկական հաստատության օպերատոր",
+    "ru": "Оператор мед. учреждения",
+    "en": "Medical facility operator"
+  },
   "Озёра и водохранилища": {
     "am": "Լճեր և ջրամբարներ",
     "ru": "Озёра и водохранилища",
@@ -577,11 +612,6 @@
     "am": "Փոստային բաժանմունքներ",
     "ru": "Почтовые отделения",
     "en": "Post offices"
-  },
-  "Почтовый код": {
-    "am": "Փոստային դասիչ",
-    "ru": "Почтовый индекс",
-    "en": "Postcode"
   },
   "Почтовый индекс": {
     "am": "Փոստային դասիչ",
