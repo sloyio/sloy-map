@@ -1194,16 +1194,29 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [],
     visualizations: [
       {
-        id: "Adm1BoundariesLayer",
+        id: "Adm1BoundariesLineLayer",
         source: "Adm1BoundariesLayerSource",
         openable: true,
         type: "map",
         mapLayerProps: {
           type: "line",
           paint: {
-            "line-width": 2,
+            "line-width": 1,
             "line-opacity": 1,
-            "line-color": "#00ccff",
+            "line-color": "#88ddff",
+          },
+        },
+      },
+      {
+        id: "Adm1BoundariesFillLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.1,
+            "fill-color": "#88ddff",
           },
         },
       },
@@ -1220,16 +1233,29 @@ export const defaultLayers: InputSloyLayer[] = [
     filters: [],
     visualizations: [
       {
-        id: "Adm2BoundariesLayer",
+        id: "Adm2BoundariesLineLayer",
         source: "Adm2BoundariesLayerSource",
         openable: true,
         type: "map",
         mapLayerProps: {
           type: "line",
           paint: {
-            "line-width": 2,
+            "line-width": 1,
             "line-opacity": 1,
-            "line-color": "#00ff5e",
+            "line-color": "#0088ff",
+          },
+        },
+      },
+      {
+        id: "Adm2BoundariesFillLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.1,
+            "fill-color": "#0088ff",
           },
         },
       },
