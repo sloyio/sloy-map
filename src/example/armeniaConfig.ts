@@ -177,9 +177,43 @@ export const defaultSources: InputSloySource[] = [
     projection: "EPSG:32638",
     card: {
       title: "name",
-      blocks: [],
+      blocks: [
+        { type: "tag", id: "amenity" },
+        { type: "value", id: "operator" },
+        { type: "value", id: "addr_street" },
+        { type: "value", id: "addr_housenumber" },
+        { type: "value", id: "addr_postcode" },
+        { type: "value", id: "opening_hours" },
+      ],
     },
-    properties: [],
+    properties: [
+      {
+        id: "amenity",
+        title: "Тип",
+        values: {
+          pharmacy: {
+            title: "pharmacy",
+            color: "#08d226",
+          },
+          hospital: {
+            title: "hospital",
+            color: "#0d72ff",
+          },
+          dentist: {
+            title: "dentist",
+            color: "#00ffff",
+          },
+          clinic: {
+            title: "clinic",
+            color: "#a73ff0",
+          },
+          doctors: {
+            title: "doctors",
+            color: "#e0e404",
+          },
+        },
+      },
+    ],
     copyright: [],
   },
   {
@@ -1227,7 +1261,7 @@ export const defaultLayers: InputSloyLayer[] = [
         mapLayerProps: {
           type: "fill",
           paint: {
-            "fill-opacity": 0.1,
+            "fill-opacity": 0.3,
             "fill-color": "#88ddff",
           },
         },
@@ -1266,7 +1300,7 @@ export const defaultLayers: InputSloyLayer[] = [
         mapLayerProps: {
           type: "fill",
           paint: {
-            "fill-opacity": 0.1,
+            "fill-opacity": 0.3,
             "fill-color": "#0088ff",
           },
         },
@@ -1281,32 +1315,40 @@ export const defaultLayers: InputSloyLayer[] = [
       href: "https://data.humdata.org/dataset/armenia-healthsites",
       label: "Источник",
     },
-    filters: [],
+    filters: [
+      {
+        property: "amenity",
+        type: "string",
+        filterVisualizations: ["HealthsitesLayer"],
+        source: "HealthsitesLayerSource",
+        sortType: "count",
+      },
+    ],
     visualizations: [
       {
         id: "HealthsitesLineLayer",
         source: "HealthsitesLayerSource",
         openable: true,
         type: "map",
+        property: "amenity",
         mapLayerProps: {
           type: "line",
           paint: {
-            "line-width": 1,
+            "line-width": 2,
             "line-opacity": 1,
-            "line-color": "#00f2ff",
           },
         },
       },
       {
-        id: "HealthsitesLayer",
+        id: "HealthsitesFillLayer",
         source: "HealthsitesLayerSource",
         openable: true,
         type: "map",
+        property: "amenity",
         mapLayerProps: {
           type: "fill",
           paint: {
-            "fill-opacity": 1,
-            "fill-color": "rgba(0, 242, 255, 0.5)",
+            "fill-opacity": 0.5,
           },
         },
       },
@@ -1347,9 +1389,9 @@ export const defaultLayers: InputSloyLayer[] = [
               ["linear"],
               ["zoom"],
               MIN_ZOOM,
-              10,
+              15,
               MAX_ZOOM,
-              20,
+              10,
             ],
             "heatmap-opacity": [
               "interpolate",
