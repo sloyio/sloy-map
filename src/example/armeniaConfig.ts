@@ -49,7 +49,7 @@ export const defaultSources: InputSloySource[] = [
   {
     id: "osmBuilding",
     copyright: [],
-    type: "map-source",
+    type: "vector-tiles",
     card: {
       title: ["addr:street", "addr:housenumber"],
       blocks: [

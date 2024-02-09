@@ -70,7 +70,7 @@ export const CONTOUR_VISUALISATIONS: InputSloyLayer["visualizations"] = [
 
 export const TERRAIN_SOURCE: InputSloySource = {
   id: "dem",
-  type: "map-source",
+  type: "vector-tiles",
   card: {
     blocks: [],
   },
@@ -87,7 +87,7 @@ export const TERRAIN_SOURCE: InputSloySource = {
 
 export const CONTOUR_SOURCE: InputSloySource = {
   id: "contours",
-  type: "map-source",
+  type: "vector-tiles",
   card: {
     blocks: [],
   },

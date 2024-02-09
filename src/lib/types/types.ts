@@ -69,7 +69,7 @@ export interface IBaseSource {
 }
 
 export type ICustomSource = IBaseSource & {
-  type: "map-source";
+  type: "vector-tiles";
   mapSourceProps: Partial<ComponentProps<typeof Source>>;
 };
 
