@@ -108,7 +108,7 @@ export const defaultSources: InputSloySource[] = [
         id: "building:height",
       },
       {
-        title: "Почтовый код",
+        title: "Почтовый индекс",
         id: "addr:postcode",
       },
       {
@@ -212,6 +212,26 @@ export const defaultSources: InputSloySource[] = [
             color: "#e0e404",
           },
         },
+      },
+      {
+        id: "operator",
+        title: "Оператор мед. учреждения",
+      },
+      {
+        id: "addr_street",
+        title: "Улица",
+      },
+      {
+        id: "addr_housenumber",
+        title: "Номер дома",
+      },
+      {
+        id: "addr_postcode",
+        title: "Почтовый индекс",
+      },
+      {
+        id: "opening_hours",
+        title: "Время работы",
       },
     ],
     copyright: [],
@@ -1319,7 +1339,11 @@ export const defaultLayers: InputSloyLayer[] = [
       {
         property: "amenity",
         type: "string",
-        filterVisualizations: ["HealthsitesLayer"],
+        filterVisualizations: [
+          "HealthsitesLineLayer",
+          "HealthsitesFillLayer",
+          "HealthsitesHeatmapLayer",
+        ],
         source: "HealthsitesLayerSource",
         sortType: "count",
       },
@@ -1376,11 +1400,11 @@ export const defaultLayers: InputSloyLayer[] = [
               0,
               "rgba(0, 4, 255, 0)",
               0.2,
-              "rgba(0, 60, 255, 0.2)",
+              "rgba(0, 60, 255, 0.1)",
               0.4,
-              "rgba(0, 110, 255, 0.4)",
+              "rgba(0, 110, 255, 0.3)",
               0.6,
-              "rgba(0, 166, 255, 0.7)",
+              "rgba(0, 166, 255, 0.5)",
               1,
               "rgb(0, 242, 255)",
             ],
