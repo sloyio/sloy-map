@@ -134,9 +134,10 @@ You can find more examples in the examples/ folder
 ```typescript
 interface ISource {
   id: string;
-  copyright: Copyright["id"][];
+  mapSourceProps?: typeof maplibre.Source;
+  // path to file
   path?: string;
-  dataByIdPath?: string;
+  type: "vector-tiles" | "geojson" | "json"
   properties?: Record<string, SourceProperty>;
   card?: ICard["id"];
   isCoordsReverse?: boolean;
@@ -144,7 +145,8 @@ interface ISource {
   latProperty?: string;
   lngProperty?: string;
   projection?: string;
-  mapSourceProps?: undefined;
+  dataByIdPath?: string;
+  copyright: Copyright["id"][];
 }
 ```
 
@@ -168,6 +170,22 @@ interface ILayer {
 }
 ```
 
+### Visualization
+```typescript
+interface IVisualization {
+  id: string;
+  type: "map" | "building-ids" | "marker-image" | "building-range";
+  source: ISource["id"];
+  property?: string;
+  previewPath?: string;
+  rootSrc?: string;
+  ids?: string[];
+  openable?: boolean;
+  mapLayerProps?: typeof maplibre.Layer;
+}
+```
+
+
 ### Filter
 ```typescript
 interface IFilter {
@@ -182,19 +200,6 @@ interface IFilter {
   property: string;
 }
 
-```
-
-### Visualization
-```typescript
-interface IVisualization {
-  id: string;
-  source: ISource["id"];
-  property?: string;
-  previewPath?: string;
-  rootSrc?: string;
-  ids?: string[];
-  openable?: boolean;
-}
 ```
 
 ### Card
