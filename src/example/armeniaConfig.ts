@@ -171,6 +171,18 @@ export const defaultSources: InputSloySource[] = [
     copyright: [],
   },
   {
+    id: "UnescoLayerSource",
+    path: "/unesco.json",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "name_en",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
     id: "HealthsitesLayerSource",
     path: "/healthsites.geojson",
     type: "geojson",
@@ -345,6 +357,89 @@ export const defaultSources: InputSloySource[] = [
       {
         id: "Zone_g",
         title: "Гравитация, g",
+      },
+    ],
+    copyright: [],
+  },
+  {
+    id: "AvalancheHazardLevelLayerSource",
+    path: "/avalanche_hazard_level.json",
+    type: "geojson",
+    projection: "EPSG:28408",
+    card: {
+      blocks: [
+        {
+          type: "tag",
+          id: "DangerLvl",
+        },
+        {
+          type: "value",
+          id: "Zone",
+        },
+        {
+          type: "value",
+          id: "Area",
+        },
+        {
+          type: "value",
+          id: "Perimeter",
+        },
+        {
+          type: "value",
+          id: "Densty",
+        },
+        {
+          type: "value",
+          id: "Reccurence",
+        },
+        {
+          type: "value",
+          id: "Volume",
+        },
+      ],
+    },
+    properties: [
+      {
+        id: "DangerLvl",
+        title: "Уровень опасности",
+        values: {
+          Strong: {
+            title: "Сильный",
+            color: "#ff00f7",
+          },
+          Temperate: {
+            title: "Умеренный",
+            color: "#0022ff",
+          },
+          Weak: {
+            title: "Слабый",
+            color: "#009fae",
+          },
+        },
+      },
+      {
+        id: "Zone",
+        title: "Зона",
+      },
+      {
+        id: "Area",
+        title: "Площадь, м²",
+      },
+      {
+        id: "Perimeter",
+        title: "Периметр, км",
+      },
+      {
+        id: "Densty",
+        title: "Плотность",
+      },
+      {
+        id: "Reccurence",
+        title: "Рецидив",
+      },
+      {
+        id: "Volume",
+        title: "Объём",
       },
     ],
     copyright: [],
@@ -1328,7 +1423,45 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    title: "Объекты культурного наследия ЮНЕСКО",
+    description:
+      "Этот слой показывает расположение объектов ЮНЕСКО на Кавказе.",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2020-01-22T19:00:00.000Z",
+    link: {
+      href: "https://data.opendata.am/dataset/sustc-1060",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "UnescoPointsLayerSource",
+        source: "UnescoLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "circle",
+          paint: {
+            "circle-color": "#fa16aa",
+            "circle-stroke-width": 1,
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              10,
+              MAX_ZOOM,
+              15,
+            ],
+          },
+        },
+      },
+    ],
+  },
+  {
     title: "Медицинские учреждения",
+    description:
+      "В этом слое представлен список действующих медицинских учреждений.",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2024-02-07T19:00:00.000Z",
     link: {
@@ -1491,6 +1624,40 @@ export const defaultLayers: InputSloyLayer[] = [
         openable: true,
         type: "map",
         property: "Zone",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Уровень лавинной опасности",
+    description: "Этот слой показывает уровень опасности лавин в Армении.",
+    updatedAt: "2023-03-28T19:00:00.000Z",
+    link: {
+      href: "https://data.opendata.am/dataset/sustc-93",
+      label: "Источник",
+    },
+    initialViewState: COUNTRY_VIEW,
+    filters: [
+      {
+        property: "DangerLvl",
+        type: "string",
+        filterVisualizations: ["AvalancheHazardLevelLayer"],
+        source: "AvalancheHazardLevelLayerSource",
+        sortType: "config",
+      },
+    ],
+    visualizations: [
+      {
+        id: "AvalancheHazardLevelLayer",
+        source: "AvalancheHazardLevelLayerSource",
+        openable: true,
+        type: "map",
+        property: "DangerLvl",
         mapLayerProps: {
           type: "fill",
           paint: {
