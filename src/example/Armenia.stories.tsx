@@ -52,6 +52,7 @@ const Example = () => (
       layout={{
         hasBaseMap: true,
         loaderImageSrc: sloyLoader,
+        canSelectMultipleLayers: false,
       }}
     />
   </Provider>

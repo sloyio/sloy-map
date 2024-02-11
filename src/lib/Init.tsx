@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import qs from "qs";
 import { IBasemapMapLayer, ISloyState, useAppSelector } from "./state";
-import { MapContext } from "./state/MapProvider";
+import { MapContext } from "./state/context";
 import { useSloyMap } from "./helpers/useSloy";
 import { init } from "./state/slice";
 

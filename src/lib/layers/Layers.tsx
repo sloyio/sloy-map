@@ -46,7 +46,7 @@ export function Layers() {
 
   const onToggleClick = useCallback(
     (activeLayerId: string | null, isActive: boolean) => {
-      const isMultiple = true;
+      const isMultiple = layout.canSelectMultipleLayers;
       if (isMultiple) {
         toggleMultiple(activeLayerId, isActive);
       } else {
@@ -67,7 +67,13 @@ export function Layers() {
         }
       }
     },
-    [layers, sloyMapGl, toggleMultiple, toggleSingle],
+    [
+      layers,
+      layout.canSelectMultipleLayers,
+      sloyMapGl,
+      toggleMultiple,
+      toggleSingle,
+    ],
   );
 
   const [isActive, setActive] = useState(false);

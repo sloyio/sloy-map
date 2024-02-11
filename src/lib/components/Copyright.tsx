@@ -72,14 +72,6 @@ export function Copyright() {
 
   return (
     <Wrapper>
-      <a
-        key="first-attribution"
-        href="https://sloy.io/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        sloy.io
-      </a>
       {attributions.map((c) => (
         <a key={c.url} href={c.url} target="_blank" rel="noreferrer">
           {c.shortName}

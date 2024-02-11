@@ -1732,9 +1732,14 @@ export const defaultLayers: InputSloyLayer[] = [
 
 export const copyrights: ICopyright[] = [
   {
+    id: "sloy",
+    shortName: "sloy.io",
+    url: "https://sloy.io/",
+    requiredAttribution: true,
+  },
+  {
     id: "osm",
     shortName: "OpenStreetMap",
-    fullName: "OpenStreetMap",
     url: "https://www.openstreetmap.org/",
     requiredAttribution: true,
   },

@@ -9,7 +9,7 @@ Set up a beautiful geoportal using config. No code.
 5. License, copyright and metadata management
 6. Low level api via redux actions
 7. Custom files loader
-8. Custom projections 
+8. Custom projections
 9. Built-in responsive version
 10. Pmtiles support
 11. Basemap setup
@@ -20,7 +20,9 @@ Set up a beautiful geoportal using config. No code.
 16. Typescript-safe
 
 # Tldr;
+
 Main details:
+
 1. Library is a maplibre map wrapper.
 2. You can use any features from mapbox \ maplibre \ deck.gl
 3. Library has 5 main entities: sources, layers, visualization, filter, card
@@ -131,14 +133,40 @@ You can find more examples in the examples/ folder
 
 # API
 
+## Map props
+
+```typescript
+export interface SloyMapProps extends MapContextProps {
+  mapState: IMapState;
+  mapProps?: IMapProps;
+  sources: InputSloySource[];
+  layers: InputSloyLayer[];
+  theme?: typeof styled-components ThemeProvider;
+  copyrights?: ICopyright[];
+  children?: ReactNode;
+  locale?: string;
+  translations?: Record<string, Record<string, string>>;
+  overrideCard?: OverrideCardFn;
+  overrideLayers?: OverrideLayersFn;
+  terrainSource?: string;
+  layout?: {
+    hasBaseMap?: boolean;
+    buildingLayerName?: string;
+    loaderImageSrc?: string;
+    canSelectMultipleLayers?: boolean;
+  };
+}
+```
+
 ## Source
+
 ```typescript
 interface ISource {
   id: string;
   mapSourceProps?: typeof maplibre.Source;
   // path to file
   path?: string;
-  type: "vector-tiles" | "geojson" | "json"
+  type: "vector-tiles" | "geojson" | "json";
   properties?: Record<string, SourceProperty>;
   card?: ICard["id"];
   isCoordsReverse?: boolean;
@@ -152,6 +180,7 @@ interface ISource {
 ```
 
 ## Layer
+
 ```typescript
 interface ILayer {
   id: string;
@@ -161,9 +190,10 @@ interface ILayer {
   updatedAt?: string;
   subTitle?: string;
   initialViewState?: {
-    center?: number[]
+    center?: number[];
   };
   description?: string;
+  license?: string;
   link?: {
     label?: string;
     href?: string;
@@ -172,6 +202,7 @@ interface ILayer {
 ```
 
 ### Visualization
+
 ```typescript
 interface IVisualization {
   id: string;
@@ -186,8 +217,8 @@ interface IVisualization {
 }
 ```
 
-
 ### Filter
+
 ```typescript
 interface IFilter {
   id: string;
@@ -200,10 +231,10 @@ interface IFilter {
   color?: string;
   property: string;
 }
-
 ```
 
 ### Card
+
 ```typescript
 interface ICard {
   id: string;
@@ -214,10 +245,34 @@ interface ICard {
   cover?: string;
   rootSrc?: string;
 }
+
+interface ICardBlock {
+  type: string;
+  id?: string;
+  deps?: string;
+  content?: string;
+  dateTimeFormat?: Intl.DateTimeFormatOptions;
+  title?: string | null;
+  value?: ReactNode;
+}
+```
+
+### Copyright
+
+```typescript
+interface ICopyright {
+  id: string;
+  shortName: string;
+  fullName?: string;
+  url: string;
+  requiredAttribution?: boolean;
+}
 ```
 
 ### Geotiff
+
 You can use pmtiles
 
 ### Own basemap
+
 You can use https://baremaps.com/
