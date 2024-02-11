@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, Reducer } from "@reduxjs/toolkit";
 import { IBasemapMapLayer, ISloyState } from "@/state";
 import { ILayer } from "@/types";
 
@@ -97,4 +97,4 @@ export const {
   updateBasemapLayer,
 } = sloySlice.actions;
 
-export const sloyReducer = sloySlice.reducer;
+export const sloyReducer: Reducer<ISloyState> = sloySlice.reducer;
