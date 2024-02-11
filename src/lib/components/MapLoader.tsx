@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AnimatedLogo } from "sloy-ui";
 import styled from "styled-components";
-import { MapContext } from "@/state/MapProvider";
+import { MapContext } from "@/state/context";
 
 const FilterLoaderContainer = styled.div`
   position: relative;

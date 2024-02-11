@@ -1,20 +1,13 @@
-import {
-  ComponentProps,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-} from "react";
+import { ComponentProps, useCallback, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import qs from "qs";
 import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
-import { MapContextProvider } from "@/state/MapProvider";
+import { MapContextProps, MapContextProvider } from "@/state/context";
 import { Copyright } from "@/components/Copyright";
 import { Sidebars } from "@/components/Sidebars";
-import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { init, setAppLoaded } from "@/state/slice";
 import { createLayers } from "@/helpers/createLayer";
 import { createSources } from "@/helpers/createSources";
@@ -36,24 +29,13 @@ import { PageLoader } from "./components/PageLoader";
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-export interface SloyMapProps {
-  overrideCard?: OverrideCardFn;
-  overrideLayers?: OverrideLayersFn;
-  locale?: string;
-  translations?: Record<string, Record<string, string>>;
+export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
   mapProps?: IMapProps;
   sources: InputSloySource[];
   layers: InputSloyLayer[];
-  terrainSource?: string;
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
-  children?: ReactNode;
   copyrights?: ICopyright[];
-  layout?: {
-    hasBaseMap?: boolean;
-    buildingLayerName?: string;
-    loaderImageSrc?: string;
-  };
 }
 
 export function SloyMap({

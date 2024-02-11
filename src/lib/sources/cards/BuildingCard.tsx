@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
-import { MapContext } from "@/state/MapProvider";
+import { MapContext } from "@/state/context";
 import { BaseCard } from "./BaseCard";
 import { useCard } from "@/state/useCard";
 

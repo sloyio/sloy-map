@@ -1,4 +1,4 @@
-import { MapContext } from "@/state/MapProvider";
+import { MapContext } from "@/state/context";
 import { ILayer } from "@/types";
 import { useContext } from "react";
 

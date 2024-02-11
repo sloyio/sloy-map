@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MapboxMap, useMap } from "react-map-gl";
-import { MapContext } from "@/state/MapProvider";
+import { MapContext } from "@/state/context";
 import { MapRef } from "react-map-gl/dist/esm/mapbox/create-ref";
 
 export const useSloyGl = (): MapRef<MapboxMap> | undefined =>

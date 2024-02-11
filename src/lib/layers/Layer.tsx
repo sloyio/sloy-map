@@ -4,7 +4,7 @@ import { useAppSelector } from "@/state";
 import { Divider } from "sloy-ui";
 import { MapFilter } from "@/layers/filters/MapFilter";
 import { ILayer } from "@/types";
-import { MapContext } from "@/state/MapProvider";
+import { MapContext } from "@/state/context";
 import { LayerSource } from "./components/LayerSource";
 import { LayerUpdatedAt } from "./components/LayerUpdatedAt";
 
