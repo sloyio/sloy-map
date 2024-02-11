@@ -14,6 +14,7 @@ import {
   defaultSources,
 } from "./armeniaConfig";
 import translations from "./armenia.locales.json";
+import sloyLoader from "./sloy-loader.svg";
 
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
@@ -24,23 +25,6 @@ export default {
     layout: "fullscreen",
   },
 };
-function AppMap() {
-  return (
-    <SloyMap
-      locale="en-EN"
-      mapState={defaultMapState}
-      sources={defaultSources}
-      layers={defaultLayers}
-      translations={Object.assign({}, translations, internalTranslations)}
-      terrainSource={BESEMAP_TERRAIN_SOURCE.id}
-      mapProps={{ hash: true }}
-      copyrights={copyrights}
-      layout={{
-        hasBaseMap: true,
-      }}
-    />
-  );
-}
 
 const store = configureStore({
   reducer: {
@@ -54,12 +38,23 @@ const store = configureStore({
     ),
 });
 
-const Template = () => {
-  return (
-    <Provider store={store}>
-      <AppMap />
-    </Provider>
-  );
-};
+const Example = () => (
+  <Provider store={store}>
+    <SloyMap
+      locale="en-EN"
+      mapState={defaultMapState}
+      sources={defaultSources}
+      layers={defaultLayers}
+      translations={Object.assign({}, translations, internalTranslations)}
+      terrainSource={BESEMAP_TERRAIN_SOURCE.id}
+      mapProps={{ hash: true }}
+      copyrights={copyrights}
+      layout={{
+        hasBaseMap: true,
+        loaderImageSrc: sloyLoader,
+      }}
+    />
+  </Provider>
+);
 
-export const Default = Template.bind({});
+export const Default = Example.bind({});

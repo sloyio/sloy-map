@@ -11,6 +11,7 @@ export interface IMapContext {
   layout: {
     hasBaseMap: boolean;
     buildingLayerName: string;
+    loaderImageSrc?: string;
   };
 }
 
@@ -23,6 +24,7 @@ export const MapContext = createContext<IMapContext>({
   layout: {
     hasBaseMap: false,
     buildingLayerName: "building",
+    loaderImageSrc: undefined,
   },
 });
 
@@ -36,6 +38,7 @@ interface Props {
   layout?: {
     hasBaseMap?: boolean;
     buildingLayerName?: string;
+    loaderImageSrc?: string;
   };
 }
 

@@ -1,4 +1,10 @@
-import { ComponentProps, ReactNode, useCallback, useEffect } from "react";
+import {
+  ComponentProps,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+} from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import qs from "qs";
@@ -25,6 +31,7 @@ import { createAppState } from "@/helpers/createAppState";
 import { Init } from "./Init";
 import { Visualizations } from "./layers/visualization/Visualizations";
 import { createCopyrights } from "./helpers/createCopyrights";
+import { PageLoader } from "./components/PageLoader";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -45,6 +52,7 @@ export interface SloyMapProps {
   layout?: {
     hasBaseMap?: boolean;
     buildingLayerName?: string;
+    loaderImageSrc?: string;
   };
 }
 
@@ -63,7 +71,6 @@ export function SloyMap({
   copyrights,
   layout,
 }: SloyMapProps) {
-  console.log(mapProps);
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 
@@ -107,6 +114,19 @@ export function SloyMap({
     ...mapState.initialViewState,
   };
 
+  const content = useMemo(() => {
+    if (!isAppLoaded) {
+      return <PageLoader />;
+    }
+
+    return (
+      <>
+        <Visualizations />
+        {children}
+      </>
+    );
+  }, [children, isAppLoaded]);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -138,9 +158,9 @@ export function SloyMap({
               ...mapProps.style,
             }}
           >
-            {isAppLoaded && <Visualizations />}
             {isAppLoaded && <Init />}
             {children}
+            {content}
           </MapGl>
           {isAppLoaded && <Sidebars />}
           <Copyright />

@@ -10,6 +10,7 @@ import {
   defaultMapState,
   defaultSources,
 } from "./ekbConfig";
+import ekbLoader from "./ekb-loader.svg";
 import "sloy-ui/fonts.css";
 
 // window.SLOY_SHOW_INTERNAL_DATA = true;
@@ -28,24 +29,23 @@ const store = configureStore({
   },
 });
 
-const Template = (args: Partial<ComponentProps<typeof SloyMap>>) => {
-  return (
-    <Provider store={store}>
-      <SloyMap
-        locale="ru-RU"
-        theme={defaultTheme}
-        translations={internalTranslations}
-        mapState={defaultMapState}
-        sources={defaultSources}
-        layers={defaultLayers}
-        copyrights={copyrights}
-        {...args}
-      />
-    </Provider>
-  );
-};
+const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
+  <Provider store={store}>
+    <SloyMap
+      locale="ru-RU"
+      theme={defaultTheme}
+      translations={internalTranslations}
+      mapState={defaultMapState}
+      sources={defaultSources}
+      layers={defaultLayers}
+      copyrights={copyrights}
+      {...args}
+      layout={{ loaderImageSrc: ekbLoader, ...args.layout }}
+    />
+  </Provider>
+);
 
 // internal stories code, do not copy:
 type Story = StoryObj<typeof SloyMap>;
-export const Default: Story = Template.bind({});
+export const Default: Story = Example.bind({});
 Default.args = { mapProps: { reuseMaps: false } };
