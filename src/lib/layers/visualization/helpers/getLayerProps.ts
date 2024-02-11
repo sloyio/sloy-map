@@ -13,8 +13,8 @@ function withHover(visualization: IVisualization, property: string) {
     ? {
         [property]: getLayerStateStyle<string>({
           initial: paintColor,
-          hover: colorLuminance(paintColor, 0.2),
-          active: colorLuminance(paintColor, 0.4),
+          hover: colorLuminance(paintColor, 0.25),
+          active: colorLuminance(paintColor, 0.5),
         }),
       }
     : {
@@ -32,8 +32,8 @@ function withPropertyColors(
         visualization.openable
           ? getLayerStateStyle<string>({
               initial: color,
-              hover: colorLuminance(color, 0.2),
-              active: colorLuminance(color, 0.4),
+              hover: colorLuminance(color, 0.25),
+              active: colorLuminance(color, 0.5),
             })
           : color,
       ])

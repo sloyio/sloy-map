@@ -108,7 +108,7 @@ export const defaultSources: InputSloySource[] = [
         id: "building:height",
       },
       {
-        title: "Почтовый код",
+        title: "Почтовый индекс",
         id: "addr:postcode",
       },
       {
@@ -145,6 +145,108 @@ export const defaultSources: InputSloySource[] = [
         title: "Возраст здания",
       },
     ],
+  },
+  {
+    id: "Adm1BoundariesLayerSource",
+    path: "/adm1-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "Adm2BoundariesLayerSource",
+    path: "/adm2-boundaries.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "shapeName",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "UnescoLayerSource",
+    path: "/unesco.json",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "name_en",
+      blocks: [],
+    },
+    properties: [],
+    copyright: [],
+  },
+  {
+    id: "HealthsitesLayerSource",
+    path: "/healthsites.geojson",
+    type: "geojson",
+    projection: "EPSG:32638",
+    card: {
+      title: "name",
+      blocks: [
+        { type: "tag", id: "amenity" },
+        { type: "value", id: "operator" },
+        { type: "value", id: "addr_street" },
+        { type: "value", id: "addr_housenumber" },
+        { type: "value", id: "addr_postcode" },
+        { type: "value", id: "opening_hours" },
+      ],
+    },
+    properties: [
+      {
+        id: "amenity",
+        title: "Тип",
+        values: {
+          pharmacy: {
+            title: "pharmacy",
+            color: "#08d226",
+          },
+          hospital: {
+            title: "hospital",
+            color: "#0d72ff",
+          },
+          dentist: {
+            title: "dentist",
+            color: "#00ffff",
+          },
+          clinic: {
+            title: "clinic",
+            color: "#a73ff0",
+          },
+          doctors: {
+            title: "doctors",
+            color: "#e0e404",
+          },
+        },
+      },
+      {
+        id: "operator",
+        title: "Оператор мед. учреждения",
+      },
+      {
+        id: "addr_street",
+        title: "Улица",
+      },
+      {
+        id: "addr_housenumber",
+        title: "Номер дома",
+      },
+      {
+        id: "addr_postcode",
+        title: "Почтовый индекс",
+      },
+      {
+        id: "opening_hours",
+        title: "Время работы",
+      },
+    ],
+    copyright: [],
   },
   {
     id: "armenianPostBranchesLayerSource",
@@ -255,6 +357,89 @@ export const defaultSources: InputSloySource[] = [
       {
         id: "Zone_g",
         title: "Гравитация, g",
+      },
+    ],
+    copyright: [],
+  },
+  {
+    id: "AvalancheHazardLevelLayerSource",
+    path: "/avalanche_hazard_level.json",
+    type: "geojson",
+    projection: "EPSG:28408",
+    card: {
+      blocks: [
+        {
+          type: "tag",
+          id: "DangerLvl",
+        },
+        {
+          type: "value",
+          id: "Zone",
+        },
+        {
+          type: "value",
+          id: "Area",
+        },
+        {
+          type: "value",
+          id: "Perimeter",
+        },
+        {
+          type: "value",
+          id: "Densty",
+        },
+        {
+          type: "value",
+          id: "Reccurence",
+        },
+        {
+          type: "value",
+          id: "Volume",
+        },
+      ],
+    },
+    properties: [
+      {
+        id: "DangerLvl",
+        title: "Уровень опасности",
+        values: {
+          Strong: {
+            title: "Сильный",
+            color: "#ff00f7",
+          },
+          Temperate: {
+            title: "Умеренный",
+            color: "#0022ff",
+          },
+          Weak: {
+            title: "Слабый",
+            color: "#009fae",
+          },
+        },
+      },
+      {
+        id: "Zone",
+        title: "Зона",
+      },
+      {
+        id: "Area",
+        title: "Площадь, м²",
+      },
+      {
+        id: "Perimeter",
+        title: "Периметр, км",
+      },
+      {
+        id: "Densty",
+        title: "Плотность",
+      },
+      {
+        id: "Reccurence",
+        title: "Рецидив",
+      },
+      {
+        id: "Volume",
+        title: "Объём",
       },
     ],
     copyright: [],
@@ -1160,6 +1345,226 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    title: "Административные границы регионов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm1BoundariesLineLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 1,
+            "line-opacity": 1,
+            "line-color": "#88ddff",
+          },
+        },
+      },
+      {
+        id: "Adm1BoundariesFillLayer",
+        source: "Adm1BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.3,
+            "fill-color": "#88ddff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Административные границы муниципалитетов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm2BoundariesLineLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 1,
+            "line-opacity": 1,
+            "line-color": "#0088ff",
+          },
+        },
+      },
+      {
+        id: "Adm2BoundariesFillLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.3,
+            "fill-color": "#0088ff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Объекты культурного наследия ЮНЕСКО",
+    description:
+      "Этот слой показывает расположение объектов ЮНЕСКО на Кавказе.",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2020-01-22T19:00:00.000Z",
+    link: {
+      href: "https://data.opendata.am/dataset/sustc-1060",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "UnescoPointsLayerSource",
+        source: "UnescoLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "circle",
+          paint: {
+            "circle-color": "#fa16aa",
+            "circle-stroke-width": 1,
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              10,
+              MAX_ZOOM,
+              15,
+            ],
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Медицинские учреждения",
+    description:
+      "В этом слое представлен список действующих медицинских учреждений.",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2024-02-07T19:00:00.000Z",
+    link: {
+      href: "https://data.humdata.org/dataset/armenia-healthsites",
+      label: "Источник",
+    },
+    filters: [
+      {
+        property: "amenity",
+        type: "string",
+        filterVisualizations: [
+          "HealthsitesLineLayer",
+          "HealthsitesFillLayer",
+          "HealthsitesHeatmapLayer",
+        ],
+        source: "HealthsitesLayerSource",
+        sortType: "count",
+      },
+    ],
+    visualizations: [
+      {
+        id: "HealthsitesLineLayer",
+        source: "HealthsitesLayerSource",
+        openable: true,
+        type: "map",
+        property: "amenity",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 2,
+            "line-opacity": 1,
+          },
+        },
+      },
+      {
+        id: "HealthsitesFillLayer",
+        source: "HealthsitesLayerSource",
+        openable: true,
+        type: "map",
+        property: "amenity",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.5,
+          },
+        },
+      },
+      {
+        id: "HealthsitesHeatmapLayer",
+        source: "HealthsitesLayerSource",
+        type: "map",
+        property: "amenity",
+        mapLayerProps: {
+          type: "heatmap",
+          paint: {
+            "heatmap-weight": {
+              type: "exponential",
+              property: "weight",
+              stops: [
+                [0, 0],
+                [1, 1],
+              ],
+            },
+            "heatmap-intensity": 1,
+            "heatmap-color": [
+              "interpolate",
+              ["linear"],
+              ["heatmap-density"],
+              0,
+              "rgba(0, 4, 255, 0)",
+              0.2,
+              "rgba(0, 60, 255, 0.1)",
+              0.4,
+              "rgba(0, 110, 255, 0.3)",
+              0.6,
+              "rgba(0, 166, 255, 0.5)",
+              1,
+              "rgb(0, 242, 255)",
+            ],
+            "heatmap-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              15,
+              MAX_ZOOM,
+              10,
+            ],
+            "heatmap-opacity": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              MIN_ZOOM,
+              1,
+              MAX_ZOOM,
+              0,
+            ],
+          },
+        },
+      },
+    ],
+  },
+  {
     title: "Почтовые отделения",
     description: "Список филиалов Армянской почты (Haypost.am).",
     updatedAt: "2023-09-11T07:46:00.000Z",
@@ -1220,6 +1625,40 @@ export const defaultLayers: InputSloyLayer[] = [
         openable: true,
         type: "map",
         property: "Zone",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.6,
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: "Уровень лавинной опасности",
+    description: "Этот слой показывает уровень опасности лавин в Армении.",
+    updatedAt: "2023-03-28T19:00:00.000Z",
+    link: {
+      href: "https://data.opendata.am/dataset/sustc-93",
+      label: "Источник",
+    },
+    initialViewState: COUNTRY_VIEW,
+    filters: [
+      {
+        property: "DangerLvl",
+        type: "string",
+        filterVisualizations: ["AvalancheHazardLevelLayer"],
+        source: "AvalancheHazardLevelLayerSource",
+        sortType: "config",
+      },
+    ],
+    visualizations: [
+      {
+        id: "AvalancheHazardLevelLayer",
+        source: "AvalancheHazardLevelLayerSource",
+        openable: true,
+        type: "map",
+        property: "DangerLvl",
         mapLayerProps: {
           type: "fill",
           paint: {
