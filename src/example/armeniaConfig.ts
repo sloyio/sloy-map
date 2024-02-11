@@ -1163,6 +1163,7 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Почтовые отделения",
     description: "Список филиалов Армянской почты (Haypost.am).",
     updatedAt: "2023-09-11T07:46:00.000Z",
+    license: "Public domain",
     link: {
       href: "https://data.opendata.am/dataset/armenian-post-branches",
       label: "Источник",

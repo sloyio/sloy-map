@@ -148,6 +148,7 @@ export interface ILayer {
       center?: number[];
     }
   >;
+  license?: string;
   description?: string;
   link?: {
     label?: string;

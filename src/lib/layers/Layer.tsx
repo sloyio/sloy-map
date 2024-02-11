@@ -32,6 +32,12 @@ const LayerFilterDescriptionFooter = styled.div`
   gap: 4px;
 `;
 
+const LayerFilterDescriptionItem = styled.span`
+  &:not(:first-child):before {
+    content: "· ";
+  }
+`;
+
 interface Props {
   layer: ILayer;
 }
@@ -48,9 +54,21 @@ export function Layer({ layer }: Props) {
           {layer.description}
 
           <LayerFilterDescriptionFooter>
-            {layer.updatedAt && <LayerUpdatedAt updatedAt={layer.updatedAt} />}
-            {layer.updatedAt && layer.link?.href && "·"}
-            {layer.link?.href && <LayerSource link={layer.link} />}
+            {layer.updatedAt && (
+              <LayerFilterDescriptionItem>
+                <LayerUpdatedAt updatedAt={layer.updatedAt} />
+              </LayerFilterDescriptionItem>
+            )}
+            {layer.link?.href && (
+              <LayerFilterDescriptionItem>
+                <LayerSource link={layer.link} />
+              </LayerFilterDescriptionItem>
+            )}
+            {layer.license && (
+              <LayerFilterDescriptionItem>
+                {layer.license}
+              </LayerFilterDescriptionItem>
+            )}
           </LayerFilterDescriptionFooter>
         </LayerFilterDescription>
       )}
