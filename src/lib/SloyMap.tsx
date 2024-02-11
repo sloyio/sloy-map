@@ -24,10 +24,10 @@ import { ISloyState, useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
 import { Init } from "./Init";
 import { Visualizations } from "./layers/visualization/Visualizations";
+import { createCopyrights } from "./helpers/createCopyrights";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { createCopyrights } from "./helpers/createCopyrights";
 
 export interface SloyMapProps {
   overrideCard?: OverrideCardFn;
@@ -63,6 +63,7 @@ export function SloyMap({
   copyrights,
   layout,
 }: SloyMapProps) {
+  console.log(mapProps);
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
 

@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   z-index: 1000;
   padding: 4px 0;
   border-radius: 0 4px 4px 0px;
-  background: black;
-  color: rgba(255, 255, 255, 0.5);
+  background-color: black;
+  color: ${({ theme }) => theme.text.color.secondary};
   font-size: 10px;
   line-height: 1.5;
   opacity: 1;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   writing-mode: vertical-lr;
   & > a {
     text-decoration: none;
-    color: hsla(0, 0%, 100%, 0.5);
+    color: inherit;
   }
 
   & a:not(:first-child):before {
@@ -72,11 +72,16 @@ export function Copyright() {
 
   return (
     <Wrapper>
-      <a href="https://sloy.io/" target="_blank" rel="noreferrer">
+      <a
+        key="first-attribution"
+        href="https://sloy.io/"
+        target="_blank"
+        rel="noreferrer"
+      >
         sloy.io
       </a>
       {attributions.map((c) => (
-        <a href={c.url} target="_blank" rel="noreferrer">
+        <a key={c.url} href={c.url} target="_blank" rel="noreferrer">
           {c.shortName}
         </a>
       ))}

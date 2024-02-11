@@ -1,3 +1,5 @@
+import { StoryObj } from "@storybook/react";
+import { ComponentProps } from "react";
 import { Provider } from "react-redux";
 import { defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
@@ -20,32 +22,30 @@ export default {
   },
 };
 
-function AppMap() {
-  return (
-    <SloyMap
-      locale="ru-RU"
-      theme={defaultTheme}
-      translations={internalTranslations}
-      mapState={defaultMapState}
-      sources={defaultSources}
-      layers={defaultLayers}
-      copyrights={copyrights}
-    />
-  );
-}
-
 const store = configureStore({
   reducer: {
     sloy: sloyReducer,
   },
 });
 
-const Template = () => {
+const Template = (args: Partial<ComponentProps<typeof SloyMap>>) => {
   return (
     <Provider store={store}>
-      <AppMap />
+      <SloyMap
+        locale="ru-RU"
+        theme={defaultTheme}
+        translations={internalTranslations}
+        mapState={defaultMapState}
+        sources={defaultSources}
+        layers={defaultLayers}
+        copyrights={copyrights}
+        {...args}
+      />
     </Provider>
   );
 };
 
-export const Default = Template.bind({});
+// internal stories code, do not copy:
+type Story = StoryObj<typeof SloyMap>;
+export const Default: Story = Template.bind({});
+Default.args = { mapProps: { reuseMaps: false } };

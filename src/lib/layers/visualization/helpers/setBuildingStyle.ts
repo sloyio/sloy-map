@@ -22,7 +22,7 @@ export function setBuildingColor({
 }: SetBuildingStyleProps) {
   map?.setStyle({
     ...map?.getStyle(),
-    layers: map?.getStyle().layers.map((layer: any) => {
+    layers: (map?.getStyle()?.layers || []).map((layer: any) => {
       if (layer.id === buildingLayer) {
         return {
           ...layer,
