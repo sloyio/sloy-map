@@ -6,12 +6,13 @@ Set up a beautiful geoportal using config. No code.
 2. JSON configuration (can be stored on the backend)
 3. Custom geojson & vector tiles filters
 4. Custom geojson & vector tiles visualisation
-5. Low level api via redux actions
-6. Custom files loader
-7. Custom projections 
-8. Built-in responsive version
-9. Pmtiles support
-10. Basemap setup
+5. License, copyright and metadata management
+6. Low level api via redux actions
+7. Custom files loader
+8. Custom projections 
+9. Built-in responsive version
+10. Pmtiles support
+11. Basemap setup
 12. Themes
 13. Localisation
 14. Terrain
