@@ -16,7 +16,7 @@ import { getStringFromStringOrArray } from "@/helpers/getStringFromStringOrArray
 import { getYearStringByValue } from "@/helpers/getYearNameByValue";
 import { OverrideCardFn } from "@/types/uiTypes";
 import { CardActions } from "./components/CardActions";
-import { Copyrights } from "./components/Sources/Copyrights";
+import { Copyrights } from "./components/Copyrights";
 import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
@@ -36,7 +36,7 @@ export function BaseCard({
   source,
   overrideCard = (props) => props.cardProps,
 }: Props) {
-  const copyright = useAppSelector((state) => state.sloy.config.copyright);
+  const copyrights = useAppSelector((state) => state.sloy.config.copyrights);
   const { locale, t } = useMapContext();
 
   const uiCardProps = useMemo(() => {
@@ -189,8 +189,8 @@ export function BaseCard({
         title: t("Sources"),
         value: (
           <Copyrights
-            sources={source.copyright
-              .map((item) => copyright[item])
+            items={source.copyright
+              .map((item) => copyrights[item])
               .filter(Boolean)}
           />
         ),
@@ -216,7 +216,7 @@ export function BaseCard({
     }
 
     return overrided;
-  }, [card, source, overrideCard, values, lng, lat, t, locale, copyright]);
+  }, [card, source, overrideCard, values, lng, lat, t, locale, copyrights]);
 
   if (!values || !card || !uiCardProps) {
     return null;

@@ -56,7 +56,7 @@ export interface ICard {
 
 export interface IBaseSource {
   id: string;
-  copyright: Copyright["id"][];
+  copyright: ICopyright["id"][];
   path?: string;
   dataByIdPath?: string;
   properties?: Record<string, SourceProperty>;
@@ -128,10 +128,12 @@ export interface IFilter {
   property: string;
 }
 
-export interface Copyright {
+export interface ICopyright {
   id: string;
-  name: string;
-  link: string;
+  shortName: string;
+  fullName?: string;
+  url: string;
+  requiredAttribution?: boolean;
 }
 
 export interface ILayer {
@@ -167,7 +169,7 @@ export type IMapState = Pick<
 
 export interface IApp {
   mapState: IMapState;
-  copyright: Record<string, Copyright>;
+  copyrights: Record<string, ICopyright>;
   cards: Record<string, ICard>;
   sources: Record<string, ISource>;
   layers: Record<string, ILayer>;

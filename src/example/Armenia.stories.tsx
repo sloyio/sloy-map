@@ -8,6 +8,7 @@ import {
   internalTranslations,
 } from "@/index";
 import {
+  copyrights,
   defaultLayers,
   defaultMapState,
   defaultSources,
@@ -33,6 +34,7 @@ function AppMap() {
       translations={Object.assign({}, translations, internalTranslations)}
       terrainSource={BESEMAP_TERRAIN_SOURCE.id}
       mapProps={{ hash: true }}
+      copyrights={copyrights}
       layout={{
         hasBaseMap: true,
       }}

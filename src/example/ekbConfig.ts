@@ -1,4 +1,4 @@
-import { InputSloySource, InputSloyLayer } from "@/types";
+import { InputSloySource, InputSloyLayer, ICopyright } from "@/types";
 import { getLayerStateStyle } from "@/helpers/getLayerStyle";
 import facades from "../../public/ekb-facades.json";
 
@@ -1139,52 +1139,68 @@ export const defaultLayers: InputSloyLayer[] = [
   },
 ];
 
-export const state = {
-  copyright: {
-    osm: {
-      id: "osm",
-      name: "OpenStreetMap",
-      link: "https://www.openstreetmap.org/",
-    },
-    okn: {
-      id: "okn",
-      name: "Объекты культурного наследия Свердловской области",
-      link: "https://okn.midural.ru/kategorii/obekty-kulturnogo-naslediya-sverdlovskoy-oblasti",
-    },
-    howoldthishouse: {
-      id: "howoldthishouse",
-      name: "Карта возраста домов",
-      link: "https://how-old-is-this.house/",
-    },
-    domaekb: {
-      id: "domaekb",
-      name: "Жилые дома Екатеринбурга",
-      link: "https://domaekb.ru",
-    },
-    mingkh: {
-      id: "mingkh",
-      name: "МинЖКХ",
-      link: "https://mingkh.ru",
-    },
-    ekbDesignCode: {
-      id: "ekbDesignCode",
-      name: "Дизайн-код Ектеринбурга",
-      link: "https://ekaterinburg.design",
-    },
-    dtp: {
-      id: "dtp",
-      name: "Карта ДТП",
-      link: "https://dtp-stat.ru/",
-    },
-    ekbQuarter: {
-      id: "ekbQuarter",
-      name: "екатеринбург.рф",
-      link: "https://екатеринбург.рф/справка/квартальные",
-    },
-    ekbDesignCodeMap: {
-      id: "ekbDesignCodeMap",
-      name: "Карта объектов «Дизайн-кода»",
-      link: "https://map.ekaterinburg.design",
-    },
+export const copyrights: ICopyright[] = [
+  {
+    id: "osm",
+    shortName: "OpenStreetMap",
+    fullName: "OpenStreetMap",
+    url: "https://www.openstreetmap.org/",
+    requiredAttribution: true,
   },
-};
+  {
+    id: "okn",
+    shortName: "Объекты культурного наследия Свердловской области",
+    fullName: "Объекты культурного наследия Свердловской области",
+    url: "https://okn.midural.ru/kategorii/obekty-kulturnogo-naslediya-sverdlovskoy-oblasti",
+    requiredAttribution: false,
+  },
+  {
+    id: "howoldthishouse",
+    shortName: "Карта возраста домов",
+    fullName: "Карта возраста домов",
+    url: "https://how-old-is-this.house/",
+    requiredAttribution: false,
+  },
+  {
+    id: "domaekb",
+    shortName: "Жилые дома Екатеринбурга",
+    fullName: "Жилые дома Екатеринбурга",
+    url: "https://domaekb.ru",
+    requiredAttribution: false,
+  },
+  {
+    id: "mingkh",
+    shortName: "МинЖКХ",
+    fullName: "МинЖКХ",
+    url: "https://mingkh.ru",
+    requiredAttribution: false,
+  },
+  {
+    id: "ekbDesignCode",
+    shortName: "Дизайн-код Ектеринбурга",
+    fullName: "Дизайн-код Ектеринбурга",
+    url: "https://ekaterinburg.design",
+    requiredAttribution: false,
+  },
+  {
+    id: "dtp",
+    shortName: "Карта ДТП",
+    fullName: "Карта ДТП",
+    url: "https://dtp-stat.ru/",
+    requiredAttribution: false,
+  },
+  {
+    id: "ekbQuarter",
+    shortName: "екатеринбург.рф",
+    fullName: "екатеринбург.рф",
+    url: "https://екатеринбург.рф/справка/квартальные",
+    requiredAttribution: false,
+  },
+  {
+    id: "ekbDesignCodeMap",
+    shortName: "Карта объектов «Дизайн-кода»",
+    fullName: "Карта объектов «Дизайн-кода»",
+    url: "https://map.ekaterinburg.design",
+    requiredAttribution: false,
+  },
+];

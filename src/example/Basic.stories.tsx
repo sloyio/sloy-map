@@ -172,6 +172,20 @@ const App = () => (
           ],
         },
       ]}
+      copyrights={[
+        {
+          id: "osm",
+          shortName: "OpenStreetMap",
+          url: "https://www.openstreetmap.org/",
+          requiredAttribution: true,
+        },
+        {
+          id: "maplibre",
+          shortName: "Maplibre",
+          url: "https://maplibre.org/",
+          requiredAttribution: false,
+        },
+      ]}
       translations={{ ...internalTranslations, ...translations }}
     />
   </Provider>

@@ -4,7 +4,7 @@ import {
   BESEMAP_TERRAIN_LAYER,
   BESEMAP_TERRAIN_SOURCE,
 } from "@/layers/public/basemap";
-import { InputSloySource, InputSloyLayer } from "@/types";
+import { InputSloySource, InputSloyLayer, ICopyright } from "@/types";
 
 const MIN_ZOOM = 7;
 
@@ -1727,6 +1727,16 @@ export const defaultLayers: InputSloyLayer[] = [
   },
   { ...BESEMAP_TERRAIN_LAYER, initialViewState: ARARAT_VIEW },
   ...BASEMAP_LAYERS,
+];
+
+export const copyrights: ICopyright[] = [
+  {
+    id: "osm",
+    shortName: "OpenStreetMap",
+    fullName: "OpenStreetMap",
+    url: "https://www.openstreetmap.org/",
+    requiredAttribution: true,
+  },
 ];
 
 // console.log(extractTranslations(state, translations));

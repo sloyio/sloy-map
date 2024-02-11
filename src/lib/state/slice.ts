@@ -11,7 +11,7 @@ export const initialState: ISloyState = {
     mapLayers: [],
   },
   config: {
-    copyright: {},
+    copyrights: {},
     cards: {},
     sources: {},
     layers: {},

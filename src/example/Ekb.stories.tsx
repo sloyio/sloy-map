@@ -2,7 +2,12 @@ import { Provider } from "react-redux";
 import { defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, internalTranslations, sloyReducer } from "@/index";
-import { defaultLayers, defaultMapState, defaultSources } from "./ekbConfig";
+import {
+  copyrights,
+  defaultLayers,
+  defaultMapState,
+  defaultSources,
+} from "./ekbConfig";
 import "sloy-ui/fonts.css";
 
 // window.SLOY_SHOW_INTERNAL_DATA = true;
@@ -24,6 +29,7 @@ function AppMap() {
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
+      copyrights={copyrights}
     />
   );
 }

@@ -6,13 +6,19 @@ import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
 import { MapContextProvider } from "@/state/MapProvider";
-import { Copyright } from "@/components/Copyright/Copyright";
+import { Copyright } from "@/components/Copyright";
 import { Sidebars } from "@/components/Sidebars";
 import { OverrideCardFn, OverrideLayersFn } from "./types/uiTypes";
 import { init, setAppLoaded } from "@/state/slice";
 import { createLayers } from "@/helpers/createLayer";
 import { createSources } from "@/helpers/createSources";
-import { IMapProps, IMapState, InputSloySource, InputSloyLayer } from "@/types";
+import {
+  IMapProps,
+  IMapState,
+  InputSloySource,
+  InputSloyLayer,
+  ICopyright,
+} from "@/types";
 import { setTranslations } from "@/helpers/extractTranslations";
 import { ISloyState, useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
@@ -21,6 +27,7 @@ import { Visualizations } from "./layers/visualization/Visualizations";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { createCopyrights } from "./helpers/createCopyrights";
 
 export interface SloyMapProps {
   overrideCard?: OverrideCardFn;
@@ -34,6 +41,7 @@ export interface SloyMapProps {
   terrainSource?: string;
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   children?: ReactNode;
+  copyrights?: ICopyright[];
   layout?: {
     hasBaseMap?: boolean;
     buildingLayerName?: string;
@@ -52,6 +60,7 @@ export function SloyMap({
   layers,
   terrainSource,
   mapProps = {},
+  copyrights,
   layout,
 }: SloyMapProps) {
   const dispatch = useDispatch();
@@ -68,12 +77,10 @@ export function SloyMap({
     );
 
     const appState = createAppState([
-      {
-        copyright: {},
-        mapState,
-      },
+      { mapState },
       createSources(sources),
       createLayers(layers),
+      createCopyrights(copyrights),
     ]);
 
     const firstLayer = Object.keys(appState.layers)?.[0];
@@ -89,7 +96,7 @@ export function SloyMap({
         }),
       }),
     );
-  }, [dispatch, layers, locale, mapState, sources, translations]);
+  }, [copyrights, dispatch, layers, locale, mapState, sources, translations]);
 
   const onLoad = useCallback(() => dispatch(setAppLoaded()), [dispatch]);
 
