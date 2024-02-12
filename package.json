@@ -51,7 +51,7 @@
     "react-redux": "^9.1.0",
     "redux": "^5.0.1",
     "redux-logger": "^3.0.6",
-    "sloy-ui": "0.0.1-rc.6",
+    "sloy-ui": "0.0.1-rc.7",
     "styled-components": "^6.1.8",
     "swr": "^2.2.4",
     "typescript": "^5.3.3"
