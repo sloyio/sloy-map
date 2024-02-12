@@ -1627,8 +1627,6 @@ export const defaultLayers: InputSloyLayer[] = [
         type: "string",
         filterVisualizations: ["armenianSeismicZonesLayer"],
         source: "armenianSeismicZonesLayerSource",
-        subTitle: "%",
-        postfix: "км²",
       },
     ],
     visualizations: [
