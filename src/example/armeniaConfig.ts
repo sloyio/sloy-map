@@ -341,12 +341,15 @@ export const defaultSources: InputSloySource[] = [
         values: {
           I: {
             color: "#ffdd33",
+            description: "0.3 g",
           },
           II: {
             color: "#ff9933",
+            description: "0.4 g",
           },
           III: {
             color: "#ff3311",
+            description: "0.5 g",
           },
         },
       },
@@ -1625,7 +1628,7 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["armenianSeismicZonesLayer"],
         source: "armenianSeismicZonesLayerSource",
         subTitle: "%",
-        postfix: "шт.",
+        postfix: "км²",
       },
     ],
     visualizations: [

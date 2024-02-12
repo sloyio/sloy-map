@@ -8,5 +8,5 @@ export function getPercentageValue(
 
   const percentage = Math.round(count / (total / 100));
 
-  return percentage < 1 ? "< 1" : String(percentage);
+  return percentage < 1 ? "<1" : String(percentage);
 }

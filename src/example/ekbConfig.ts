@@ -840,6 +840,7 @@ export const defaultLayers: InputSloyLayer[] = [
         subTitle: "%",
         postfix: "шт.",
         withTotalCount: true,
+        sortType: "count",
       },
     ],
     visualizations: [
@@ -872,6 +873,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "severity",
         subTitle: "%",
         postfix: "шт.",
+        sortType: "count",
       },
       {
         title: "Участник ДТП",
@@ -881,6 +883,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "participant_categories",
         subTitle: "%",
         postfix: "шт.",
+        sortType: "count",
       },
     ],
     visualizations: [
