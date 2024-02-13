@@ -163,8 +163,8 @@ export function setTranslations({
         ...filter,
         title: t(title, { lang, translations }),
         description: t(description, { lang, translations }),
-        subTitle: t(description, { lang, translations }),
-        postfix: t(description, { lang, translations }),
+        subTitle: t(subTitle, { lang, translations }),
+        postfix: t(postfix, { lang, translations }),
       },
     }),
     {}
