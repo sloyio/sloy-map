@@ -22,7 +22,7 @@ export const initialLayoutProps = {
   buildingLayerName: "building",
   loaderImageSrc: undefined,
   canSelectMultipleLayers: true,
-  hasPmtiles: false,
+  hasPmtiles: true,
 };
 
 export const MapContext = createContext<IMapContext>({

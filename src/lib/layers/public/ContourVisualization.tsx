@@ -62,7 +62,7 @@ export const CONTOUR_VISUALISATIONS: InputSloyLayer["visualizations"] = [
         "text-anchor": "center",
         "text-size": 12,
         "text-field": ["concat", ["number-format", ["get", "ele"], {}], "'"],
-        "text-font": ["Iset Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
       },
     },
   },

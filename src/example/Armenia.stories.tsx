@@ -52,6 +52,7 @@ const Example = () => (
       copyrights={copyrights}
       layout={{
         hasBaseMap: true,
+        hasPmtiles: true,
         loaderImageSrc: sloyLoader,
       }}
     />

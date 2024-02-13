@@ -12,7 +12,7 @@ export function Copyrights({ items = [] }: { items: ICopyright[] }) {
   return (
     <List>
       {items.map(({ url, shortName, fullName }) => (
-        <div>
+        <div key={url}>
           <Link key={url} href={url} size={LinkSize.SMALL}>
             {fullName || shortName}
           </Link>
