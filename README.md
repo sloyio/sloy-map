@@ -274,10 +274,3 @@ interface ICopyright {
 }
 ```
 
-### Geotiff
-
-You can use pmtiles
-
-### Own basemap
-
-You can use https://baremaps.com/
