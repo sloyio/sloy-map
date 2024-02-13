@@ -14,7 +14,10 @@ const LazyFilterRange = lazy(
 );
 
 interface Props
-  extends Pick<IFilter, "title" | "subTitle" | "postfix" | "withTotalCount"> {
+  extends Pick<
+    IFilter,
+    "title" | "subTitle" | "postfix" | "totalType" | "withTotalCount"
+  > {
   layerId: string;
   filterId: IFilter["id"];
 }
@@ -25,6 +28,7 @@ export function MapFilter({
   title,
   subTitle,
   postfix,
+  totalType,
   withTotalCount,
 }: Props) {
   const dispatch = useDispatch();
@@ -111,6 +115,7 @@ export function MapFilter({
           totalCount={data.features.length}
           subTitle={subTitle}
           postfix={postfix}
+          totalType={totalType}
           withTotalCount={withTotalCount}
         />
       );
@@ -133,6 +138,7 @@ export function MapFilter({
           totalCount={data.features.length}
           subTitle={subTitle}
           postfix={postfix}
+          totalType={totalType}
           withTotalCount={withTotalCount}
         />
       );

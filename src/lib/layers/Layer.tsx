@@ -83,6 +83,7 @@ export function Layer({ layer }: Props) {
               layerId={layer.id}
               subTitle={filter.subTitle}
               postfix={filter.postfix}
+              totalType={filter.totalType}
               withTotalCount={filter.withTotalCount}
             />
           </MapFilterWrapper>

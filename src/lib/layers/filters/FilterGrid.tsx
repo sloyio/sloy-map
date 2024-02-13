@@ -1,5 +1,4 @@
-import { getPercentageValue } from "@/helpers/getPercentageValue";
-import { useMapContext } from "@/helpers/useSloy";
+import { useTotal } from "@/helpers/useTotal";
 import { IFilter } from "@/types";
 import {
   ComponentProps,
@@ -17,17 +16,21 @@ export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   color?: string;
 };
 
-interface Props {
+interface Props
+  extends Pick<
+    IFilter,
+    | "sortType"
+    | "title"
+    | "subTitle"
+    | "postfix"
+    | "totalType"
+    | "withTotalCount"
+  > {
   selectedByDefault?: string[];
   items?: IFilterGridItem[];
   onChange?: (state: string[]) => void;
-  sortType?: IFilter["sortType"];
   sortByArray?: string[];
-  title: IFilter["title"];
   totalCount: number;
-  subTitle?: IFilter["subTitle"];
-  postfix?: IFilter["postfix"];
-  withTotalCount?: IFilter["withTotalCount"];
 }
 
 export function FilterGrid({
@@ -40,10 +43,9 @@ export function FilterGrid({
   totalCount,
   subTitle,
   postfix,
+  totalType,
   withTotalCount,
 }: Props) {
-  const { t } = useMapContext();
-
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
   const toggle = useCallback(
@@ -109,6 +111,12 @@ export function FilterGrid({
     return null;
   }
 
+  const { headerSubtitle, getItemSubtitle } = useTotal(
+    totalType,
+    totalCount,
+    subTitle
+  );
+
   return (
     <ListGrid>
       {title && (
@@ -123,10 +131,10 @@ export function FilterGrid({
             />
           }
           description={withTotalCount && totalCount}
-          subTitle={t(subTitle)}
-          postfix={t(postfix)}
+          subTitle={headerSubtitle}
+          postfix={postfix}
         >
-          {t(title)}
+          {title}
         </ListGridHeader>
       )}
       {sortedItems.map(({ title, type, count, description, color }) => {
@@ -134,12 +142,10 @@ export function FilterGrid({
           return null;
         }
 
-        const percentage = subTitle && getPercentageValue(count, totalCount);
-
         return (
           <ListGridItem
             key={type}
-            subTitle={percentage}
+            subTitle={getItemSubtitle?.(count)}
             description={description}
             prefix={
               <Checkbox

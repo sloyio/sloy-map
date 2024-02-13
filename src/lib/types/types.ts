@@ -128,6 +128,7 @@ export interface IFilter {
   property: string;
   subTitle?: string;
   postfix?: string;
+  totalType?: "percent";
   withTotalCount?: true;
 }
 
