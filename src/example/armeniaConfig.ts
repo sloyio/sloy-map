@@ -407,15 +407,15 @@ export const defaultSources: InputSloySource[] = [
         title: "Уровень опасности",
         values: {
           Strong: {
-            title: "Сильный",
+            title: "Strong",
             color: "#ff00f7",
           },
           Temperate: {
-            title: "Умеренный",
+            title: "Temperate",
             color: "#0022ff",
           },
           Weak: {
-            title: "Слабый",
+            title: "Weak",
             color: "#009fae",
           },
         },
