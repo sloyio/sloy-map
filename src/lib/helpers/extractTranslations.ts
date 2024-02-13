@@ -94,7 +94,7 @@ export function setTranslations({
 }) {
   const lang = new Intl.Locale(locale).language;
   const layers = Object.values(state.layers).reduce<IApp["layers"]>(
-    (all, { title, link, description, ...layer }) => ({
+    (all, { title, link, license, description, ...layer }) => ({
       ...all,
       [layer.id]: {
         ...layer,
@@ -104,6 +104,7 @@ export function setTranslations({
           label: t(link?.label, { lang, translations }),
         },
         description: t(description, { lang, translations }),
+        license: t(license, { lang, translations }),
       },
     }),
     {},
@@ -167,7 +168,7 @@ export function setTranslations({
         postfix: t(postfix, { lang, translations }),
       },
     }),
-    {}
+    {},
   );
 
   return {
