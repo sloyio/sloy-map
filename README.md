@@ -60,7 +60,7 @@ const store = configureStore({
         longitude: 44.51,
         latitude: 40.18,
       },
-      mapStyle: "/sloy-dark-map-style.json",
+      mapStyle: "https://sloy.io/armenia/style.json",
     }}
     sources=[
       {

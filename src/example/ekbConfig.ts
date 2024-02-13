@@ -576,6 +576,7 @@ export const defaultSources: InputSloySource[] = [
 
 export const defaultLayers: InputSloyLayer[] = [
   {
+    id: "ekb-house-age",
     title: "Возраст домов",
     filters: [
       {
@@ -596,6 +597,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-house-levels",
     title: "Этажность домов",
     filters: [
       {
@@ -616,6 +618,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-house-health",
     title: "Степень износа домов",
     filters: [
       {
@@ -636,6 +639,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-okn",
     title: "Объекты культурного наследния",
     filters: [
       {
@@ -811,6 +815,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-design-code",
     title: "«Дизайн-код Екатеринбурга»",
     filters: [
       {
@@ -833,6 +838,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-house-dtp",
     title: "ДТП",
     filters: [
       {
@@ -935,6 +941,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-lines",
     title: "Туристические маршруты",
     filters: [
       {
@@ -967,7 +974,6 @@ export const defaultLayers: InputSloyLayer[] = [
       },
       {
         id: "ekbPointsLayer",
-
         source: "ekbPointsSource",
         property: "type",
         openable: true,
@@ -991,6 +997,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-quarter",
     title: "Квартальные",
     filters: [],
     visualizations: [
@@ -1024,6 +1031,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-facades",
     title: "Дизайн-код фасадов",
     filters: [],
     visualizations: [
@@ -1047,6 +1055,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "ekb-crimes",
     title: "Происшествия",
     description: "Происшествия в Екатеринбурге в 2017–2018 годах.",
     filters: [

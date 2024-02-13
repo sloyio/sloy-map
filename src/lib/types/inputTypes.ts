@@ -18,10 +18,7 @@ export type InputSloyFilter = Omit<IFilter, "id">;
 
 export type InputSloyVisualisationLayer = IVisualization;
 
-export type InputSloyLayer = Omit<
-  ILayer,
-  "id" | "filters" | "visualizations"
-> & {
+export type InputSloyLayer = Omit<ILayer, "filters" | "visualizations"> & {
   filters: InputSloyFilter[];
   visualizations: InputSloyVisualisationLayer[];
 };

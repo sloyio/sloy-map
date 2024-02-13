@@ -34,7 +34,7 @@ const App = () => (
           longitude: CITY_VIEW.center[0],
           latitude: CITY_VIEW.center[1],
         },
-        mapStyle: "/sloy-dark-map-style.json",
+        mapStyle: "https://sloy.io/armenia/style.json",
         minZoom: 7,
         maxZoom: 20,
       }}
@@ -115,6 +115,7 @@ const App = () => (
       ]}
       layers={[
         {
+          id: "levels",
           title: "Number of floors (osm)",
           subTitle: "20",
           description:
@@ -139,6 +140,7 @@ const App = () => (
           ],
         },
         {
+          id: "geojson-example",
           title: "Geojson example",
           description: "Description",
           updatedAt: "2017-08-16T19:00:00.000Z",
