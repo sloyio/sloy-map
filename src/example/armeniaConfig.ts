@@ -1631,9 +1631,6 @@ export const defaultLayers: InputSloyLayer[] = [
         type: "string",
         filterVisualizations: ["armenianSeismicZonesLayer"],
         source: "armenianSeismicZonesLayerSource",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1670,9 +1667,6 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["AvalancheHazardLevelLayer"],
         source: "AvalancheHazardLevelLayerSource",
         sortType: "config",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1738,9 +1732,6 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["armenianSoilTypesLayer"],
         source: "armenianSoilTypesLayerSource",
         sortType: "count",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1772,15 +1763,12 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
-        title: "Все",
+        title: "Типы",
         property: "Landuse",
         type: "string",
         filterVisualizations: ["armenianLandUseLayer"],
         source: "armenianLandUseLayerSource",
         sortType: "count",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1817,9 +1805,6 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["armenianVegetationTypesLayer"],
         source: "armenianVegetationTypesLayerSource",
         sortType: "count",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1956,9 +1941,6 @@ export const defaultLayers: InputSloyLayer[] = [
         type: "string",
         filterVisualizations: ["armenianClimateZonesLayer"],
         source: "armenianClimateZonesLayerSource",
-        postfix: "шт.",
-        totalHeader: "count",
-        totalType: "percent",
       },
     ],
     visualizations: [
@@ -2134,6 +2116,7 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["armenianGroundwaterZonesLayer"],
         source: "armenianGroundwaterZonesLayerSource",
         postfix: "шт.",
+        sortType: "count",
         totalHeader: "count",
         totalType: "percent",
       },

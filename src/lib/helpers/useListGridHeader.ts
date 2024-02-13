@@ -19,14 +19,16 @@ export function useListGridHeader(
   totalHeader: IFilter["totalHeader"],
   total: number | undefined
 ) {
+  const headerDescription = totalHeader === "count" && total;
+
   if (type === "percent") {
     return {
       headerSubtitle: subTitle ? subTitle : "%",
-      headerDescription: totalHeader === "count" && total,
+      headerDescription,
       getItemSubtitle: (count: number | undefined) =>
         getPercentageValue(count, total),
     };
   }
 
-  return {};
+  return { headerDescription };
 }
