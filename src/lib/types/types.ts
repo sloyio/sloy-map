@@ -129,7 +129,7 @@ export interface IFilter {
   subTitle?: string;
   postfix?: string;
   totalType?: "percent";
-  withTotalCount?: true;
+  totalHeader?: "count";
 }
 
 export interface ICopyright {

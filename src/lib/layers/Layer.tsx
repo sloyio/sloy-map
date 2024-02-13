@@ -84,7 +84,7 @@ export function Layer({ layer }: Props) {
               subTitle={filter.subTitle}
               postfix={filter.postfix}
               totalType={filter.totalType}
-              withTotalCount={filter.withTotalCount}
+              totalHeader={filter.totalHeader}
             />
           </MapFilterWrapper>
         );

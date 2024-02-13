@@ -649,7 +649,7 @@ export const defaultLayers: InputSloyLayer[] = [
         source: "ekbOknSource",
         property: "category",
         postfix: "шт.",
-        withTotalCount: true,
+        totalHeader: "count",
         totalType: "percent",
       },
       {
@@ -667,7 +667,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "?",
         totalType: "percent",
         postfix: "шт.",
-        withTotalCount: true,
+        totalHeader: "count",
       },
       {
         title: "Зоны охраны ОКН",
@@ -684,7 +684,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "?",
         totalType: "percent",
         postfix: "шт.",
-        withTotalCount: true,
+        totalHeader: "count",
       },
       {
         title: "Границы территорий ОКН",
@@ -700,7 +700,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "?",
         totalType: "percent",
         postfix: "шт.",
-        withTotalCount: true,
+        totalHeader: "count",
       },
     ],
     visualizations: [
@@ -839,7 +839,7 @@ export const defaultLayers: InputSloyLayer[] = [
         property: "type",
         totalType: "percent",
         postfix: "шт.",
-        withTotalCount: true,
+        totalHeader: "count",
         sortType: "count",
       },
     ],

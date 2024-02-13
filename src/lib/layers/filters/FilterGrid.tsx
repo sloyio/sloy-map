@@ -1,4 +1,4 @@
-import { useTotal } from "@/helpers/useTotal";
+import { useListGridHeader } from "@/helpers/useListGridHeader";
 import { IFilter } from "@/types";
 import {
   ComponentProps,
@@ -19,12 +19,7 @@ export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
 interface Props
   extends Pick<
     IFilter,
-    | "sortType"
-    | "title"
-    | "subTitle"
-    | "postfix"
-    | "totalType"
-    | "withTotalCount"
+    "sortType" | "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
   > {
   selectedByDefault?: string[];
   items?: IFilterGridItem[];
@@ -44,7 +39,7 @@ export function FilterGrid({
   subTitle,
   postfix,
   totalType,
-  withTotalCount,
+  totalHeader,
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
@@ -111,11 +106,8 @@ export function FilterGrid({
     return null;
   }
 
-  const { headerSubtitle, getItemSubtitle } = useTotal(
-    totalType,
-    totalCount,
-    subTitle
-  );
+  const { headerSubtitle, headerDescription, getItemSubtitle } =
+    useListGridHeader(totalType, subTitle, totalHeader, totalCount);
 
   return (
     <ListGrid>
@@ -130,7 +122,7 @@ export function FilterGrid({
               toggle={allToggle}
             />
           }
-          description={withTotalCount && totalCount}
+          description={headerDescription}
           subTitle={headerSubtitle}
           postfix={postfix}
         >

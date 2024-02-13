@@ -16,7 +16,7 @@ const LazyFilterRange = lazy(
 interface Props
   extends Pick<
     IFilter,
-    "title" | "subTitle" | "postfix" | "totalType" | "withTotalCount"
+    "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
   > {
   layerId: string;
   filterId: IFilter["id"];
@@ -29,7 +29,7 @@ export function MapFilter({
   subTitle,
   postfix,
   totalType,
-  withTotalCount,
+  totalHeader,
 }: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
@@ -116,7 +116,7 @@ export function MapFilter({
           subTitle={subTitle}
           postfix={postfix}
           totalType={totalType}
-          withTotalCount={withTotalCount}
+          totalHeader={totalHeader}
         />
       );
     }
@@ -139,7 +139,7 @@ export function MapFilter({
           subTitle={subTitle}
           postfix={postfix}
           totalType={totalType}
-          withTotalCount={withTotalCount}
+          totalHeader={totalHeader}
         />
       );
     }
