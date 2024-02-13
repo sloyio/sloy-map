@@ -1353,6 +1353,7 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Административные границы регионов",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2022-01-05T19:00:00.000Z",
+    license: "ODbL",
     link: {
       href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
       label: "Источник",
@@ -1393,6 +1394,7 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Административные границы муниципалитетов",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2022-01-05T19:00:00.000Z",
+    license: "ODbL",
     link: {
       href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
       label: "Источник",
@@ -1435,6 +1437,7 @@ export const defaultLayers: InputSloyLayer[] = [
       "Этот слой показывает расположение объектов ЮНЕСКО на Кавказе.",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2020-01-22T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-1060",
       label: "Источник",
@@ -1472,6 +1475,7 @@ export const defaultLayers: InputSloyLayer[] = [
       "В этом слое представлен список действующих медицинских учреждений.",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2024-02-07T19:00:00.000Z",
+    license: "ODbL",
     link: {
       href: "https://data.humdata.org/dataset/armenia-healthsites",
       label: "Источник",
@@ -1581,7 +1585,7 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Почтовые отделения",
     description: "Список филиалов Армянской почты (Haypost.am).",
     updatedAt: "2023-09-11T07:46:00.000Z",
-    license: "Public domain",
+    license: "CC0-1.0 license",
     link: {
       href: "https://data.opendata.am/dataset/armenian-post-branches",
       label: "Источник",
@@ -1619,6 +1623,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
     updatedAt: "2019-05-05T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-991",
       label: "Источник",
@@ -1654,6 +1659,7 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Уровень лавинной опасности",
     description: "Этот слой показывает уровень опасности лавин в Армении.",
     updatedAt: "2023-03-28T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-93",
       label: "Источник",
@@ -1692,6 +1698,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает расположение и форму оползней на территории Армении.",
     updatedAt: "2017-02-16T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-95",
       label: "Источник",
@@ -1720,6 +1727,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает типы почв, встречающиеся в Армении. Эти данные были созданы для проекта «Поддержка устойчивого горного развития на Кавказе (Sustainable Caucasus)», финансируемого SCOPES.",
     updatedAt: "2017-02-14T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-78",
       label: "Источник",
@@ -1757,6 +1765,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает землепользование в Армении. Эта карта была подготовлена в рамках финансируемой ЕС «Программы предупреждения, готовности и реагирования на природные и техногенные катастрофы в Восточном регионе ЕПД (PPRDEast)».",
     updatedAt: "2017-02-14T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-81",
       label: "Источник",
@@ -1793,6 +1802,7 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     description: "В данном слое показаны общие типы растительности в Армении.",
     updatedAt: "2017-05-31T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-399",
       label: "Источник",
@@ -1830,6 +1840,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает распределение лесных территорий в Армении.",
     updatedAt: "2016-12-08T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-64",
       label: "Источник",
@@ -1857,6 +1868,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
     updatedAt: "2017-08-16T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-477",
       label: "Источник",
@@ -1894,6 +1906,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Данный слой показывает среднегодовой уровень солнечной радиации в Армении. Эта цифровая карта была подготовлена в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие географической информационной системы Армении для проектов возобновляемой энергетики».",
     updatedAt: "2017-02-16T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-94",
       label: "Источник",
@@ -1930,6 +1943,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой представляет собой карту климатических зон Армении, подготовленную в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Развитие геоинформационной системы Армении для проектов возобновляемой энергетики».",
     updatedAt: "2017-02-13T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-74",
       label: "Источник",
@@ -1965,6 +1979,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».",
     updatedAt: "2017-02-14T19:00:00.000Z",
+    license: "No license provided",
     initialViewState: COUNTRY_VIEW,
     link: {
       href: "https://data.opendata.am/dataset/sustc-85",
@@ -2001,6 +2016,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.",
     updatedAt: "2017-02-16T19:00:00.000Z",
+    license: "No license provided",
     initialViewState: COUNTRY_VIEW,
     link: {
       href: "https://data.opendata.am/dataset/sustc-92",
@@ -2037,6 +2053,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.",
     updatedAt: "2017-04-01T19:00:00.000Z",
+    license: "No license provided",
     initialViewState: COUNTRY_VIEW,
     link: {
       href: "https://data.opendata.am/dataset/sustc-164",
@@ -2075,6 +2092,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой представляет собой карту озёр и водохранилищ Армении, закодированных с помощью системы кодирования ERICA (European Rivers and Catchment), которая была разработана Европейским агентством по охране окружающей среды.",
     updatedAt: "2017-02-22T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-103",
       label: "Источник",
@@ -2104,6 +2122,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает зоны подземных вод в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
     updatedAt: "2020-07-08T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-1069",
       label: "Источник",
@@ -2143,6 +2162,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
     updatedAt: "2020-07-06T19:00:00.000Z",
+    license: "No license provided",
     initialViewState: COUNTRY_VIEW,
     link: {
       href: "https://data.opendata.am/dataset/sustc-1068",
@@ -2190,6 +2210,7 @@ export const defaultLayers: InputSloyLayer[] = [
     description:
       "В этом слое представлены все реки Армении длиной 5 км и более. Это полностью связанная и топологически корректная система рек Армении, закодированная с помощью системы кодирования ERICA (European Rivers and Catchment), разработанной для Европейского агентства по окружающей среде.",
     updatedAt: "2016-11-21T19:00:00.000Z",
+    license: "No license provided",
     link: {
       href: "https://data.opendata.am/dataset/sustc-27",
       label: "Источник",
