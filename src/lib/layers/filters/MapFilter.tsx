@@ -40,7 +40,10 @@ export function MapFilter({
   const { data, loading } = useLoadGeoJSON(source);
 
   useEffect(() => {
-    if (data.features.length && filter.type === "range") {
+    if (
+      data.features.length &&
+      !(totalHeader === "count" || totalType === "percent")
+    ) {
       dispatch(
         updateLayer({
           layerId,
