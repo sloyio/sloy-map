@@ -156,9 +156,24 @@ export function setTranslations({
     {},
   );
 
+  const filters = Object.values(state.filters).reduce<IApp["filters"]>(
+    (all, { title, description, subTitle, postfix, ...filter }) => ({
+      ...all,
+      [filter.id]: {
+        ...filter,
+        title: t(title, { lang, translations }),
+        description: t(description, { lang, translations }),
+        subTitle: t(description, { lang, translations }),
+        postfix: t(description, { lang, translations }),
+      },
+    }),
+    {}
+  );
+
   return {
     ...state,
     layers,
     sources,
+    filters,
   };
 }
