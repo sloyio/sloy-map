@@ -48,4 +48,4 @@ const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
 // internal stories code, do not copy:
 type Story = StoryObj<typeof SloyMap>;
 export const Default: Story = Example.bind({});
-Default.args = { mapProps: { reuseMaps: false } };
+// Default.args = { mapProps: { reuseMaps: false } };

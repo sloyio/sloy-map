@@ -37,7 +37,7 @@ export const defaultMapState = {
     longitude: YEREVAN_VIEW.center[0],
     latitude: YEREVAN_VIEW.center[1],
   },
-  mapStyle: "/sloy-dark-map-style.json",
+  mapStyle: "https://sloy.io/armenia/style.json",
   minZoom: MIN_ZOOM,
   maxZoom: MAX_ZOOM,
   maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
@@ -61,7 +61,7 @@ export const defaultSources: InputSloySource[] = [
         { type: "value", id: "building:health" },
         { type: "value", id: "building:series" },
         { type: "value", id: "building:levels" },
-        { type: "value", id: "building:height" },
+        { type: "value", id: "extrusion:height" },
         { type: "value", id: "start_date" },
         { type: "age", id: "building:age", deps: "start_date" },
         { type: "divider" },
@@ -105,7 +105,7 @@ export const defaultSources: InputSloySource[] = [
       },
       {
         title: "Высота, м",
-        id: "building:height",
+        id: "extrusion:height",
       },
       {
         title: "Почтовый индекс",

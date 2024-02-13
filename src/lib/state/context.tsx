@@ -13,14 +13,16 @@ export interface IMapContext {
     buildingLayerName: string;
     loaderImageSrc?: string;
     canSelectMultipleLayers?: boolean;
+    hasPmtiles: boolean;
   };
 }
 
-const initialLayoutProps = {
+export const initialLayoutProps = {
   hasBaseMap: false,
   buildingLayerName: "building",
   loaderImageSrc: undefined,
   canSelectMultipleLayers: true,
+  hasPmtiles: false,
 };
 
 export const MapContext = createContext<IMapContext>({
@@ -32,19 +34,12 @@ export const MapContext = createContext<IMapContext>({
   layout: initialLayoutProps,
 });
 
-export interface MapContextProps {
+export interface MapContextProps
+  extends Omit<IMapContext, "t" | "locale" | "layout"> {
   children?: ReactNode;
   locale?: string;
   translations?: Record<string, Record<string, string>>;
-  overrideCard?: OverrideCardFn;
-  overrideLayers?: OverrideLayersFn;
-  terrainSource?: string;
-  layout?: {
-    hasBaseMap?: boolean;
-    buildingLayerName?: string;
-    loaderImageSrc?: string;
-    canSelectMultipleLayers?: boolean;
-  };
+  layout?: Partial<IMapContext["layout"]>;
 }
 
 export function MapContextProvider({
@@ -54,7 +49,7 @@ export function MapContextProvider({
   locale: propsLocale = "en-EN",
   translations = {},
   terrainSource,
-  layout = initialLayoutProps,
+  layout,
 }: MapContextProps) {
   const locale = useMemo(() => new Intl.Locale(propsLocale), [propsLocale]);
 

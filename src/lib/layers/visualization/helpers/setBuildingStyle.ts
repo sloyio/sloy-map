@@ -27,6 +27,7 @@ export function setBuildingColor({
         return {
           ...layer,
           ...layerProps,
+          type: "fill-extrusion",
           paint: {
             ...layer.paint,
             "fill-extrusion-color": [
@@ -77,8 +78,8 @@ export function setBuildingStyleByPropertyValues({
       if (layer.id === buildingLayer) {
         return {
           ...layer,
+          type: "fill-extrusion",
           paint: {
-            // @ts-ignore
             ...layer.paint,
             "fill-extrusion-color": [
               "match",

@@ -151,6 +151,7 @@ export interface SloyMapProps extends MapContextProps {
   terrainSource?: string;
   layout?: {
     hasBaseMap?: boolean;
+    hasPmtiles?: boolean;
     buildingLayerName?: string;
     loaderImageSrc?: string;
     canSelectMultipleLayers?: boolean;

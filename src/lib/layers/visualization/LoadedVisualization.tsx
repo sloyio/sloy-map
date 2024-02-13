@@ -27,8 +27,8 @@ export default function LoadedVisualization({
         id={source.id}
         type="geojson"
         data={data}
-        generateId
         {...source.mapSourceProps}
+        generateId
       />
       {visualization.openable && (
         <ClickableVisualization visualization={visualization} />

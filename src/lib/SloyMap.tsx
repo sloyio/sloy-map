@@ -5,7 +5,11 @@ import qs from "qs";
 import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
-import { MapContextProps, MapContextProvider } from "@/state/context";
+import {
+  MapContextProps,
+  MapContextProvider,
+  initialLayoutProps,
+} from "@/state/context";
 import { Copyright } from "@/components/Copyright";
 import { Sidebars } from "@/components/Sidebars";
 import { init, setAppLoaded } from "@/state/slice";
@@ -21,10 +25,10 @@ import {
 import { setTranslations } from "@/helpers/extractTranslations";
 import { ISloyState, useAppSelector } from "@/state";
 import { createAppState } from "@/helpers/createAppState";
-import { Init } from "./Init";
 import { Visualizations } from "./layers/visualization/Visualizations";
 import { createCopyrights } from "./helpers/createCopyrights";
 import { PageLoader } from "./components/PageLoader";
+import { BeforeInit, Init } from "./Init";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -51,7 +55,7 @@ export function SloyMap({
   terrainSource,
   mapProps = {},
   copyrights,
-  layout,
+  layout = initialLayoutProps,
 }: SloyMapProps) {
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
@@ -103,6 +107,7 @@ export function SloyMap({
 
     return (
       <>
+        <Init />
         <Visualizations />
         {children}
       </>
@@ -112,6 +117,7 @@ export function SloyMap({
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <BeforeInit hasPmtiles={layout?.hasPmtiles} />
       <MapProvider>
         <MapContextProvider
           locale={locale}
@@ -140,7 +146,6 @@ export function SloyMap({
               ...mapProps.style,
             }}
           >
-            {isAppLoaded && <Init />}
             {children}
             {content}
           </MapGl>
