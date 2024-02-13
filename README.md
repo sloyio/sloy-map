@@ -231,6 +231,10 @@ interface IFilter {
   description?: string;
   color?: string;
   property: string;
+  subTitle?: string;
+  postfix?: string;
+  totalType?: "percent";
+  withTotalCount?: true;
 }
 ```
 
