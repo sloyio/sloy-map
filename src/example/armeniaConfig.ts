@@ -341,12 +341,15 @@ export const defaultSources: InputSloySource[] = [
         values: {
           I: {
             color: "#ffdd33",
+            description: "0.3 g",
           },
           II: {
             color: "#ff9933",
+            description: "0.4 g",
           },
           III: {
             color: "#ff3311",
+            description: "0.5 g",
           },
         },
       },
@@ -1475,6 +1478,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Типы",
         property: "amenity",
         type: "string",
         filterVisualizations: [
@@ -1484,6 +1488,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "HealthsitesLayerSource",
         sortType: "count",
+        postfix: "шт.",
+        totalHeader: "count",
+        totalType: "percent",
       },
     ],
     visualizations: [
@@ -1619,6 +1626,7 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     filters: [
       {
+        title: "Зоны",
         property: "Zone",
         type: "string",
         filterVisualizations: ["armenianSeismicZonesLayer"],
@@ -1653,6 +1661,7 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     filters: [
       {
+        title: "Уровни",
         property: "DangerLvl",
         type: "string",
         filterVisualizations: ["AvalancheHazardLevelLayer"],
@@ -1717,6 +1726,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Типы",
         property: "Descriptio",
         type: "string",
         filterVisualizations: ["armenianSoilTypesLayer"],
@@ -1753,6 +1763,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Типы",
         property: "Landuse",
         type: "string",
         filterVisualizations: ["armenianLandUseLayer"],
@@ -1788,6 +1799,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Типы",
         property: "Veget_zone",
         type: "string",
         filterVisualizations: ["armenianVegetationTypesLayer"],
@@ -1852,6 +1864,7 @@ export const defaultLayers: InputSloyLayer[] = [
     initialViewState: COUNTRY_VIEW,
     filters: [
       {
+        title: "ккал/см²",
         property: "VALUE",
         type: "string",
         filterVisualizations: ["armenianRadiationBalanceLayer"],
@@ -1887,6 +1900,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "ккал/см²",
         property: "Sun_radiat",
         type: "string",
         filterVisualizations: ["armenianSolarRadiationLevelLayer"],
@@ -1922,6 +1936,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Зоны",
         property: "Descriptio",
         type: "string",
         filterVisualizations: ["armenianClimateZonesLayer"],
@@ -1957,6 +1972,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "°C",
         property: "Temperatur",
         type: "string",
         filterVisualizations: ["armenianTemperatureLayer"],
@@ -1992,6 +2008,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "мм/год",
         property: "Precipitat",
         type: "string",
         filterVisualizations: ["armenianPrecipitationsLevelLayer"],
@@ -2027,6 +2044,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "м/сек",
         property: "Wind_Speed",
         type: "string",
         filterVisualizations: ["armenianWindResourcesLayer"],
@@ -2092,10 +2110,15 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "Зоны",
         property: "Descript",
         type: "string",
         filterVisualizations: ["armenianGroundwaterZonesLayer"],
         source: "armenianGroundwaterZonesLayerSource",
+        postfix: "шт.",
+        sortType: "count",
+        totalHeader: "count",
+        totalType: "percent",
       },
     ],
     visualizations: [
@@ -2127,6 +2150,7 @@ export const defaultLayers: InputSloyLayer[] = [
     },
     filters: [
       {
+        title: "л/сек",
         property: "Flow_l_sec",
         type: "string",
         filterVisualizations: ["armenianMineralAndFreshwaterResourcesLayer"],

@@ -1,19 +1,11 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { useAppSelector } from "@/state";
-import { Divider } from "sloy-ui";
 import { MapFilter } from "@/layers/filters/MapFilter";
 import { ILayer } from "@/types";
 import { MapContext } from "@/state/context";
 import { LayerSource } from "./components/LayerSource";
 import { LayerUpdatedAt } from "./components/LayerUpdatedAt";
-
-const LayerFilterTitle = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  margin: 12px 0;
-  font-weight: bold;
-`;
 
 const LayerFilterDescription = styled.div`
   font-size: 14px;
@@ -36,6 +28,10 @@ const LayerFilterDescriptionItem = styled.span`
   &:not(:first-child):before {
     content: "· ";
   }
+`;
+
+const MapFilterWrapper = styled.div<{ $withMargin: boolean }>`
+  ${({ $withMargin }) => $withMargin && "margin-bottom: 16px"};
 `;
 
 interface Props {
@@ -76,17 +72,20 @@ export function Layer({ layer }: Props) {
         const filter = filters[filterId];
 
         return (
-          <div key={filterId}>
-            {filter.type !== "boolean" && filter.title && (
-              <LayerFilterTitle key="title">{filter.title}</LayerFilterTitle>
-            )}
+          <MapFilterWrapper
+            $withMargin={layer.filters.length - 1 !== i}
+            key={filterId}
+          >
             <MapFilter
               key={filter.id}
+              title={filter.title}
               filterId={filter.id}
-              layerId={layer.id}
+              subTitle={filter.subTitle}
+              postfix={filter.postfix}
+              totalType={filter.totalType}
+              totalHeader={filter.totalHeader}
             />
-            {layer.filters.length - 1 !== i && <Divider />}
-          </div>
+          </MapFilterWrapper>
         );
       })}
     </>

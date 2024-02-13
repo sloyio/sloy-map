@@ -643,10 +643,14 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "Объекты культурного наследния",
     filters: [
       {
+        title: "Объекты ОКН",
         type: "string",
         filterVisualizations: ["ekbOknObjectsLayer"],
         source: "ekbOknSource",
         property: "category",
+        postfix: "шт.",
+        totalHeader: "count",
+        totalType: "percent",
       },
       {
         title: "Защитные зоны",
@@ -661,6 +665,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknProtectZoneSource",
         property: "?",
+        totalType: "percent",
+        postfix: "шт.",
+        totalHeader: "count",
       },
       {
         title: "Зоны охраны ОКН",
@@ -675,6 +682,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknSecurityZoneSource",
         property: "?",
+        totalType: "percent",
+        postfix: "шт.",
+        totalHeader: "count",
       },
       {
         title: "Границы территорий ОКН",
@@ -688,6 +698,9 @@ export const defaultLayers: InputSloyLayer[] = [
         ],
         source: "ekbOknObjectZoneSource",
         property: "?",
+        totalType: "percent",
+        postfix: "шт.",
+        totalHeader: "count",
       },
     ],
     visualizations: [
@@ -819,10 +832,15 @@ export const defaultLayers: InputSloyLayer[] = [
     title: "«Дизайн-код Екатеринбурга»",
     filters: [
       {
+        title: "Объекты",
         type: "string",
         filterVisualizations: ["ekbDesignCodeLayer"],
         source: "ekbDesigncodeSource",
         property: "type",
+        totalType: "percent",
+        postfix: "шт.",
+        totalHeader: "count",
+        sortType: "count",
       },
     ],
     visualizations: [
@@ -853,6 +871,9 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "severity",
+        totalType: "percent",
+        postfix: "шт.",
+        sortType: "count",
       },
       {
         title: "Участник ДТП",
@@ -860,6 +881,9 @@ export const defaultLayers: InputSloyLayer[] = [
         filterVisualizations: ["ekbDtpPointsLayer", "ekbDtpHeatmapLayer"],
         source: "ekbDtpSource",
         property: "participant_categories",
+        totalType: "percent",
+        postfix: "шт.",
+        sortType: "count",
       },
     ],
     visualizations: [

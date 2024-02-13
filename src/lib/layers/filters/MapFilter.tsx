@@ -3,22 +3,32 @@ import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { FilterGrid } from "@/layers/filters/FilterGrid";
-import { updateFilterParams, updateLayer } from "@/state/slice";
+import { updateFilterParams } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";
 import { useAppSelector } from "@/state";
+import { IFilter } from "@/types";
 
 const LazyFilterRange = lazy(
-  () => import("@/layers/filters/FilterBuildingRange"),
+  () => import("@/layers/filters/FilterBuildingRange")
 );
 
+interface Props
+  extends Pick<
+    IFilter,
+    "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
+  > {
+  filterId: IFilter["id"];
+}
+
 export function MapFilter({
-  layerId,
   filterId,
-}: {
-  layerId: string;
-  filterId: string;
-}) {
+  title,
+  subTitle,
+  postfix,
+  totalType,
+  totalHeader,
+}: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
   const sources = useAppSelector((state) => state.sloy.config.sources);
@@ -27,24 +37,11 @@ export function MapFilter({
   const source = sources[filter?.source];
   const { data, loading } = useLoadGeoJSON(source);
 
-  useEffect(() => {
-    if (data.features.length) {
-      dispatch(
-        updateLayer({
-          layerId,
-          layer: {
-            subTitle: String(data.features.length),
-          },
-        }),
-      );
-    }
-  }, [data.features.length, dispatch, layerId]);
-
   const onChange = useCallback(
     (params: unknown) => {
       dispatch(updateFilterParams({ [filterId]: params }));
     },
-    [dispatch, filterId],
+    [dispatch, filterId]
   );
 
   if (!filter || !source) {
@@ -66,7 +63,7 @@ export function MapFilter({
     case "string": {
       const values = getProperty(
         source,
-        `properties.${filter.property}.values`,
+        `properties.${filter.property}.values`
       );
 
       const items = groupByProperty({
@@ -77,16 +74,16 @@ export function MapFilter({
         type: item.type,
         title: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.title`,
+          `${item.type?.replaceAll(".", "\\.")}.title`
         ),
         count: item.count,
         color: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.color`,
+          `${item.type?.replaceAll(".", "\\.")}.color`
         ),
         description: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.description`,
+          `${item.type?.replaceAll(".", "\\.")}.description`
         ),
       }));
 
@@ -94,11 +91,17 @@ export function MapFilter({
 
       return (
         <FilterGrid
+          title={title}
           items={items}
           selectedByDefault={selectedByDefault}
           onChange={onChange}
           sortType={filter.sortType}
           sortByArray={values ? Object.keys(values) : undefined}
+          totalCount={data.features.length}
+          subTitle={subTitle}
+          postfix={postfix}
+          totalType={totalType}
+          totalHeader={totalHeader}
         />
       );
     }
@@ -106,6 +109,7 @@ export function MapFilter({
     case "boolean": {
       return (
         <FilterGrid
+          title={title}
           sortType={filter.sortType}
           onChange={onChange}
           items={[
@@ -116,6 +120,11 @@ export function MapFilter({
               color: filter.color,
             },
           ]}
+          totalCount={data.features.length}
+          subTitle={subTitle}
+          postfix={postfix}
+          totalType={totalType}
+          totalHeader={totalHeader}
         />
       );
     }

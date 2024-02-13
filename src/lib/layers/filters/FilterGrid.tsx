@@ -1,3 +1,4 @@
+import { useListGridHeader } from "@/helpers/useListGridHeader";
 import { IFilter } from "@/types";
 import {
   ComponentProps,
@@ -6,7 +7,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { Checkbox, ListGrid, ListGridItem } from "sloy-ui";
+import { Checkbox, ListGrid, ListGridItem, ListGridHeader } from "sloy-ui";
 
 export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   type?: string;
@@ -15,12 +16,16 @@ export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   color?: string;
 };
 
-interface Props {
+interface Props
+  extends Pick<
+    IFilter,
+    "sortType" | "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
+  > {
   selectedByDefault?: string[];
   items?: IFilterGridItem[];
   onChange?: (state: string[]) => void;
-  sortType?: IFilter["sortType"];
   sortByArray?: string[];
+  totalCount: number;
 }
 
 export function FilterGrid({
@@ -29,6 +34,12 @@ export function FilterGrid({
   selectedByDefault = [],
   sortType,
   sortByArray = [],
+  title,
+  totalCount,
+  subTitle,
+  postfix,
+  totalType,
+  totalHeader,
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
@@ -40,8 +51,24 @@ export function FilterGrid({
         setSelected(selected.concat(type));
       }
     },
-    [selected],
+    [selected]
   );
+
+  const allToggle = useCallback(() => {
+    if (selected.length === sortedItems.length) {
+      setSelected([]);
+    } else {
+      setSelected(
+        sortedItems.reduce<string[]>((acc, { type }) => {
+          if (type) {
+            return acc.concat(type);
+          } else {
+            return acc;
+          }
+        }, [])
+      );
+    }
+  }, [selected]);
 
   useEffect(() => {
     onChange?.(selected);
@@ -69,7 +96,7 @@ export function FilterGrid({
           }
 
           return String(a.title || a.type).localeCompare(
-            String(b.title || b.type),
+            String(b.title || b.type)
           );
         });
     }
@@ -79,8 +106,29 @@ export function FilterGrid({
     return null;
   }
 
+  const { headerSubtitle, headerDescription, getItemSubtitle } =
+    useListGridHeader(totalType, subTitle, totalHeader, totalCount);
+
   return (
     <ListGrid>
+      {title && (
+        <ListGridHeader
+          prefix={
+            <Checkbox
+              isSelected={selected.length === sortedItems.length}
+              isIndeterminate={
+                selected.length !== sortedItems.length && selected.length > 0
+              }
+              toggle={allToggle}
+            />
+          }
+          description={headerDescription}
+          subTitle={headerSubtitle}
+          postfix={postfix}
+        >
+          {title}
+        </ListGridHeader>
+      )}
       {sortedItems.map(({ title, type, count, description, color }) => {
         if (!type) {
           return null;
@@ -89,7 +137,7 @@ export function FilterGrid({
         return (
           <ListGridItem
             key={type}
-            subTitle={count}
+            subTitle={getItemSubtitle?.(count)}
             description={description}
             prefix={
               <Checkbox
@@ -98,6 +146,7 @@ export function FilterGrid({
                 toggle={() => toggle(type)}
               />
             }
+            postfix={postfix && String(count)}
           >
             {title || type}
           </ListGridItem>
