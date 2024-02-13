@@ -48,11 +48,10 @@ export function Copyright() {
   const attributions = useMemo(() => {
     const ids = Array.from(
       new Set(
-        activeCopyrightsIds.concat(
-          Object.values(copyrights || {})
-            .filter((c) => c.requiredAttribution)
-            .map((c) => c.id),
-        ),
+        Object.values(copyrights || {})
+          .filter((c) => c.requiredAttribution)
+          .map((c) => c.id)
+          .concat(activeCopyrightsIds),
       ),
     );
 
