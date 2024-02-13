@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useAppSelector } from "@/state";
 import styled from "styled-components";
+import { useActiveItems } from "@/state/selectors";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -42,29 +43,29 @@ const Wrapper = styled.div`
 export function Copyright() {
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
   const copyrights = useAppSelector((state) => state.sloy.config.copyrights);
+  const { activeCopyrightsIds } = useActiveItems();
 
   const attributions = useMemo(() => {
-    // const ids = Array.from(
-    //   new Set(
-    //     activeCopyrightsIds.concat(
-    //       Object.values(copyrights || {})
-    //         .filter((c) => c.requiredAttribution)
-    //         .map((c) => c.id),
-    //     ),
-    //   ),
-    // );
-
-    // only requiredAttribution
     const ids = Array.from(
       new Set(
         Object.values(copyrights || {})
           .filter((c) => c.requiredAttribution)
-          .map((c) => c.id),
+          .map((c) => c.id)
+          .concat(activeCopyrightsIds),
       ),
     );
 
+    // only requiredAttribution
+    // const ids = Array.from(
+    //   new Set(
+    //     Object.values(copyrights || {})
+    //       .filter((c) => c.requiredAttribution)
+    //       .map((c) => c.id),
+    //   ),
+    // );
+
     return ids.map((id) => copyrights[id]);
-  }, [copyrights]);
+  }, [copyrights, activeCopyrightsIds]);
 
   if (!isAppLoaded) {
     return null;

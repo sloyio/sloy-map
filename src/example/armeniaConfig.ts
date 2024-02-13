@@ -48,7 +48,7 @@ export const defaultSources: InputSloySource[] = [
   ...BASEMAP_SOURCES,
   {
     id: "osmBuilding",
-    copyright: [],
+    copyright: ["osm"],
     type: "vector-tiles",
     card: {
       title: ["addr:street", "addr:housenumber"],
@@ -156,7 +156,7 @@ export const defaultSources: InputSloySource[] = [
       blocks: [],
     },
     properties: [],
-    copyright: [],
+    copyright: ["HDX"],
   },
   {
     id: "Adm2BoundariesLayerSource",
@@ -168,7 +168,7 @@ export const defaultSources: InputSloySource[] = [
       blocks: [],
     },
     properties: [],
-    copyright: [],
+    copyright: ["HDX"],
   },
   {
     id: "UnescoLayerSource",
@@ -180,7 +180,7 @@ export const defaultSources: InputSloySource[] = [
       blocks: [],
     },
     properties: [],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "HealthsitesLayerSource",
@@ -246,7 +246,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Время работы",
       },
     ],
-    copyright: [],
+    copyright: ["HDX"],
   },
   {
     id: "armenianPostBranchesLayerSource",
@@ -267,7 +267,7 @@ export const defaultSources: InputSloySource[] = [
         { type: "value", id: "sunday_outside" },
       ],
     },
-    copyright: [],
+    copyright: ["DCA"],
     properties: [
       {
         id: "postal_code",
@@ -362,7 +362,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Гравитация, g",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "AvalancheHazardLevelLayerSource",
@@ -445,7 +445,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Объём",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianLandslidesLayerSource",
@@ -457,7 +457,7 @@ export const defaultSources: InputSloySource[] = [
       blocks: [],
     },
     properties: [],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianSoilTypesLayerSource",
@@ -596,7 +596,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianLandUseLayerSource",
@@ -655,7 +655,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianVegetationTypesLayerSource",
@@ -750,7 +750,7 @@ export const defaultSources: InputSloySource[] = [
         },
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianForestAreasLayerSource",
@@ -779,7 +779,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianRadiationBalanceLayerSource",
@@ -813,7 +813,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Единицы измерения",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianSolarRadiationLevelLayerSource",
@@ -869,7 +869,7 @@ export const defaultSources: InputSloySource[] = [
         },
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianClimateZonesLayerSource",
@@ -941,7 +941,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianTemperatureLayerSource",
@@ -1005,7 +1005,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianPrecipitationsLevelLayerSource",
@@ -1063,7 +1063,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianWindResourcesLayerSource",
@@ -1140,7 +1140,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Сила ветра, км/ч",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianLakesAndReservoirsSource",
@@ -1194,7 +1194,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Площадь, м²",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianGroundwaterZonesLayerSource",
@@ -1241,7 +1241,7 @@ export const defaultSources: InputSloySource[] = [
         },
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
   {
     id: "armenianMineralAndFreshwaterResourcesLayerSource",
@@ -1256,7 +1256,7 @@ export const defaultSources: InputSloySource[] = [
       ],
     },
     projection: "EPSG:28408",
-    copyright: [],
+    copyright: ["DCA"],
     properties: [
       {
         id: "Composit",
@@ -1318,7 +1318,7 @@ export const defaultSources: InputSloySource[] = [
         title: "Длина, м",
       },
     ],
-    copyright: [],
+    copyright: ["DCA"],
   },
 ];
 
@@ -2228,6 +2228,18 @@ export const copyrights: ICopyright[] = [
     shortName: "OpenStreetMap",
     url: "https://www.openstreetmap.org/",
     requiredAttribution: true,
+  },
+  {
+    id: "DCA",
+    shortName: "Data Catalog Armenia",
+    url: "https://data.opendata.am/",
+    requiredAttribution: false,
+  },
+  {
+    id: "HDX",
+    shortName: "Humanitarian Data Exchange",
+    url: "https://data.humdata.org/",
+    requiredAttribution: false,
   },
 ];
 
