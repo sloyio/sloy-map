@@ -1,8 +1,8 @@
 import {
   BASEMAP_LAYERS,
   BASEMAP_SOURCES,
-  BESEMAP_TERRAIN_LAYER,
-  BESEMAP_TERRAIN_SOURCE,
+  // BESEMAP_TERRAIN_LAYER,
+  // BESEMAP_TERRAIN_SOURCE,
 } from "@/layers/public/basemap";
 import { InputSloySource, InputSloyLayer, ICopyright } from "@/types";
 
@@ -17,12 +17,12 @@ const YEREVAN_VIEW = {
   bearing: 0,
 };
 
-const ARARAT_VIEW = {
-  center: [44.516, 40.17043],
-  zoom: 13.81,
-  pitch: 81,
-  bearing: -166.7,
-};
+// const ARARAT_VIEW = {
+//   center: [44.516, 40.17043],
+//   zoom: 13.81,
+//   pitch: 81,
+//   bearing: -166.7,
+// };
 
 const COUNTRY_VIEW = {
   center: [44.5106, 40.3],
@@ -44,7 +44,7 @@ export const defaultMapState = {
 };
 
 export const defaultSources: InputSloySource[] = [
-  BESEMAP_TERRAIN_SOURCE,
+  // BESEMAP_TERRAIN_SOURCE,
   ...BASEMAP_SOURCES,
   {
     id: "osmBuilding",
@@ -1321,6 +1321,7 @@ export const defaultSources: InputSloySource[] = [
 
 export const defaultLayers: InputSloyLayer[] = [
   {
+    id: "am-levels",
     title: "Этажность домов",
     subTitle: "20",
     description:
@@ -1345,6 +1346,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-adm1",
     title: "Административные границы регионов",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2022-01-05T19:00:00.000Z",
@@ -1384,6 +1386,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-adm2",
     title: "Административные границы муниципалитетов",
     initialViewState: COUNTRY_VIEW,
     updatedAt: "2022-01-05T19:00:00.000Z",
@@ -1423,6 +1426,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-unesco",
     title: "Объекты культурного наследия ЮНЕСКО",
     description:
       "Этот слой показывает расположение объектов ЮНЕСКО на Кавказе.",
@@ -1459,6 +1463,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-medical",
     title: "Медицинские учреждения",
     description:
       "В этом слое представлен список действующих медицинских учреждений.",
@@ -1565,6 +1570,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-post",
     title: "Почтовые отделения",
     description: "Список филиалов Армянской почты (Haypost.am).",
     updatedAt: "2023-09-11T07:46:00.000Z",
@@ -1601,6 +1607,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-seismic",
     title: "Сейсмическое зонирование",
     description:
       "Этот слой показывает сейсмические зоны в Армении. Карта сейсмического районирования территории Республики Армения подготовлена консорциумом AIR Worldwide Corporation (США), GEM Foundation (Италия) и АОЗТ «ГЕОРИСК» (Армения) в рамках проекта № 7179350 «Вероятностная оценка сейсмической опасности для Республики Армения» при поддержке Всемирного банка. Территория РА разделена на три зоны в порядке возрастания интенсивности (I, II и III) с ожидаемыми значениями PGA, выраженными в долях g (силы тяжести) 0.3g, 0.4g и 0.5g, соответственно.",
@@ -1635,6 +1642,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-avalanche",
     title: "Уровень лавинной опасности",
     description: "Этот слой показывает уровень опасности лавин в Армении.",
     updatedAt: "2023-03-28T19:00:00.000Z",
@@ -1669,6 +1677,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-landslides",
     title: "Оползни",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -1696,6 +1705,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-soil",
     title: "Типы почвы",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -1731,6 +1741,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-landuse",
     title: "Землепользование",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -1766,6 +1777,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-vegetation",
     title: "Типы растительности",
     initialViewState: COUNTRY_VIEW,
     description: "В данном слое показаны общие типы растительности в Армении.",
@@ -1800,6 +1812,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-forest",
     title: "Лесные массивы",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -1827,6 +1840,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-radiation",
     title: "Радиационный баланс, ккал/см²",
     description:
       "Этот слой показывает радиационный баланс в Армении. Радиационный баланс подстилающей местности рассчитывается по уравнению: R=(Q+q)(1−Ao)−E, где R — значение радиационного баланса; Q и q — прямая и рассеянная радиация; Ao — альбедо подстилающей местности; E — эффективная земная радиация.",
@@ -1861,6 +1875,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-radiaton",
     initialViewState: COUNTRY_VIEW,
     title: "Среднегодовой уровень солнечной радиации, ккал/см²",
     description:
@@ -1895,6 +1910,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-climate",
     title: "Климатические зоны",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -1929,6 +1945,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-temp-avg",
     title: "Среднегодовая температура, °C",
     description:
       "На этой карте показана среднегодовая температура (в градусах Цельсия) в Армении. Она основана на наблюдениях более чем 90 метеорологических станций, действовавших в Армении с 1885 года. Данные метеорологических станций с короткими рядами наблюдений были приведены к 80-летнему периоду методом разностей. Данный ГИС-слой был подготовлен в рамках проекта Глобального экологического фонда (ГЭФ) и Армянского фонда возобновляемых ресурсов и энергоэффективности «Разработка географической информационной системы Армении для проектов возобновляемых источников энергии».",
@@ -1963,6 +1980,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-precipitations",
     title: "Среднегодовой уровень осадков, мм/год",
     description:
       "В этом слое показан среднегодовой уровень осадков в Армении. Эти данные были получены на основе анализа прямых наблюдений более чем 180 пунктов мониторинга. Данные метеорологических станций и пунктов наблюдений с короткими сериями измерений были сокращены с помощью картографического метода (для ультракоротких серий) и обычного метода соотношений.",
@@ -1997,6 +2015,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-wind",
     title: "Ветровые ресурсы, м/сек",
     description:
       "Этот слой показывает среднегодовой потенциал ветровых ресурсов для Армении на высоте 50 метров.",
@@ -2032,6 +2051,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-lakes",
     title: "Озёра и водохранилища",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -2060,6 +2080,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-groundwater",
     title: "Зоны подземных вод",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -2094,6 +2115,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-mineral",
     title: "Минеральные и пресноводные источники, л/сек",
     description:
       "Этот слой показывает основные группы минеральных и пресноводных источников в Армении. Он был оцифрован с гидрогеологической карты, первоначально загруженной из Агентства по управлению водными ресурсами Министерства охраны природы Республики Армения.",
@@ -2138,6 +2160,7 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
   },
   {
+    id: "am-rivers",
     title: "Реки (5 км и более)",
     initialViewState: COUNTRY_VIEW,
     description:
@@ -2165,7 +2188,7 @@ export const defaultLayers: InputSloyLayer[] = [
       },
     ],
   },
-  { ...BESEMAP_TERRAIN_LAYER, initialViewState: ARARAT_VIEW },
+  // { ...BESEMAP_TERRAIN_LAYER, initialViewState: ARARAT_VIEW },
   ...BASEMAP_LAYERS,
 ];
 

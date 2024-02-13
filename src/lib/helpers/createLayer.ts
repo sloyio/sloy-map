@@ -9,7 +9,7 @@ interface LayerOutput {
 }
 
 export function createLayer(layer: InputSloyLayer): LayerOutput {
-  const layerId = encodeURIComponent(layer.title);
+  const layerId = encodeURIComponent(layer.id);
 
   const filters = layer.filters.reduce<Record<string, IFilter>>((all, item) => {
     const id = nanoid(5);
