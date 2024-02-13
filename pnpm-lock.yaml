@@ -72,8 +72,8 @@ dependencies:
     specifier: ^3.0.6
     version: 3.0.6
   sloy-ui:
-    specifier: 0.0.1-rc.8
-    version: 0.0.1-rc.8(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+    specifier: 0.0.1-rc.9
+    version: 0.0.1-rc.9(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
   styled-components:
     specifier: ^6.1.8
     version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
@@ -10883,8 +10883,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /sloy-ui@0.0.1-rc.8(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-0NwHiQj5GtGCqo+oLgQrrQmxMBaStvBXnRyap6AksgxYCE0FmGlMKJuf+ggdUuIXaeDFjg6gTQnlPfLL4XtRUg==}
+  /sloy-ui@0.0.1-rc.9(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-FzBGVfpTvlRGBFsTo5jDEV68wSEpu74SjZGqZpcqhTGko0YGCK7Y3j/3Nbn3Q3LXGDX8WthbWR7I3XvctU4zfA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
