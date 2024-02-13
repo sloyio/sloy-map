@@ -80,7 +80,6 @@ export function Layer({ layer }: Props) {
               key={filter.id}
               title={filter.title}
               filterId={filter.id}
-              layerId={layer.id}
               subTitle={filter.subTitle}
               postfix={filter.postfix}
               totalType={filter.totalType}

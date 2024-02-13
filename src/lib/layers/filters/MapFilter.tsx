@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
 import { FilterGrid } from "@/layers/filters/FilterGrid";
-import { updateFilterParams, updateLayer } from "@/state/slice";
+import { updateFilterParams } from "@/state/slice";
 import { MapLoader } from "@/components/MapLoader";
 import { getProperty } from "dot-prop";
 import { useAppSelector } from "@/state";
@@ -18,12 +18,10 @@ interface Props
     IFilter,
     "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
   > {
-  layerId: string;
   filterId: IFilter["id"];
 }
 
 export function MapFilter({
-  layerId,
   filterId,
   title,
   subTitle,
@@ -38,22 +36,6 @@ export function MapFilter({
   const filter = filters[filterId];
   const source = sources[filter?.source];
   const { data, loading } = useLoadGeoJSON(source);
-
-  useEffect(() => {
-    if (
-      data.features.length &&
-      !(totalHeader === "count" || totalType === "percent")
-    ) {
-      dispatch(
-        updateLayer({
-          layerId,
-          layer: {
-            subTitle: String(data.features.length),
-          },
-        })
-      );
-    }
-  }, [data.features.length, dispatch, layerId]);
 
   const onChange = useCallback(
     (params: unknown) => {
