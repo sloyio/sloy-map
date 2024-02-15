@@ -1326,7 +1326,6 @@ export const defaultLayers: InputSloyLayer[] = [
   {
     id: "am-levels",
     title: "Этажность домов",
-    subTitle: "20",
     description:
       "Этажность зданий Армении, данные о которых есть в OpenStreetMaps.",
     initialViewState: YEREVAN_VIEW,

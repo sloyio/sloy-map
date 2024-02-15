@@ -17,7 +17,7 @@ import translations from "./armenia.locales.json";
 import sloyLoader from "./sloy-loader.svg";
 
 // @ts-ignore
-window.SLOY_SHOW_INTERNAL_DATA = true;
+// window.SLOY_SHOW_INTERNAL_DATA = true;
 
 export default {
   title: "Map/Advanced/Armenia",
