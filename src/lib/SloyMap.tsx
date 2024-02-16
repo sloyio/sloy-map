@@ -1,4 +1,10 @@
-import { ComponentProps, useCallback, useEffect, useMemo } from "react";
+import {
+  ComponentProps,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+} from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import qs from "qs";
@@ -6,6 +12,7 @@ import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
 import {
+  IMapContext,
   MapContextProps,
   MapContextProvider,
   initialLayoutProps,
@@ -32,6 +39,7 @@ import { BeforeInit, Init } from "./Init";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { Footer } from "./components/Footer";
 
 export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
@@ -40,6 +48,7 @@ export interface SloyMapProps extends MapContextProps {
   layers: InputSloyLayer[];
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   copyrights?: ICopyright[];
+  renderFooter?: (context: IMapContext) => ReactNode;
 }
 
 export function SloyMap({
@@ -49,6 +58,7 @@ export function SloyMap({
   translations,
   overrideCard,
   overrideLayers,
+  availableLocales = [],
   mapState,
   sources,
   layers,
@@ -56,9 +66,11 @@ export function SloyMap({
   mapProps = {},
   copyrights,
   layout = initialLayoutProps,
+  renderFooter,
 }: SloyMapProps) {
   const dispatch = useDispatch();
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
+  const reduxLocale = useAppSelector((state) => state.sloy.locale) || locale;
 
   useEffect(() => {
     const queryParams = qs.parse(
@@ -85,12 +97,21 @@ export function SloyMap({
         activeLayers: activeLayers || (firstLayer ? [firstLayer] : []),
         config: setTranslations({
           state: appState,
-          locale,
+          locale: reduxLocale,
           translations,
         }),
       }),
     );
-  }, [copyrights, dispatch, layers, locale, mapState, sources, translations]);
+  }, [
+    copyrights,
+    dispatch,
+    layers,
+    locale,
+    mapState,
+    reduxLocale,
+    sources,
+    translations,
+  ]);
 
   const onLoad = useCallback(() => dispatch(setAppLoaded()), [dispatch]);
 
@@ -120,7 +141,8 @@ export function SloyMap({
       <BeforeInit hasPmtiles={layout?.hasPmtiles} />
       <MapProvider>
         <MapContextProvider
-          locale={locale}
+          locale={reduxLocale}
+          availableLocales={availableLocales}
           translations={translations}
           overrideCard={overrideCard}
           overrideLayers={overrideLayers}
@@ -149,8 +171,13 @@ export function SloyMap({
             {children}
             {content}
           </MapGl>
-          {isAppLoaded && <Sidebars />}
-          <Copyright />
+          {isAppLoaded && (
+            <>
+              <Sidebars />
+              <Copyright />
+              <Footer renderFooter={renderFooter} />
+            </>
+          )}
         </MapContextProvider>
       </MapProvider>
     </ThemeProvider>

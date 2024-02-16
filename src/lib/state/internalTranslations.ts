@@ -14,4 +14,9 @@ export const internalTranslations = {
     ru: "Базовая карта",
     en: "Basemap",
   },
+  About: {
+    am: "Մասին",
+    ru: "О проекте",
+    en: "About",
+  },
 };

@@ -4,6 +4,7 @@ import { t as translate } from "@/helpers/extractTranslations";
 
 export interface IMapContext {
   locale: Intl.Locale;
+  availableLocales: string[];
   overrideCard?: OverrideCardFn;
   overrideLayers?: OverrideLayersFn;
   t: (key?: string) => string;
@@ -27,6 +28,7 @@ export const initialLayoutProps = {
 
 export const MapContext = createContext<IMapContext>({
   locale: new Intl.Locale("en-EN"),
+  availableLocales: [],
   overrideCard: (props) => props?.cardProps,
   overrideLayers: () => null,
   t: () => "",
@@ -35,11 +37,12 @@ export const MapContext = createContext<IMapContext>({
 });
 
 export interface MapContextProps
-  extends Omit<IMapContext, "t" | "locale" | "layout"> {
+  extends Omit<IMapContext, "t" | "locale" | "layout" | "availableLocales"> {
   children?: ReactNode;
   locale?: string;
   translations?: Record<string, Record<string, string>>;
   layout?: Partial<IMapContext["layout"]>;
+  availableLocales?: string[];
 }
 
 export function MapContextProvider({
@@ -47,6 +50,7 @@ export function MapContextProvider({
   overrideCard,
   overrideLayers,
   locale: propsLocale = "en-EN",
+  availableLocales = [],
   translations = {},
   terrainSource,
   layout,
@@ -65,6 +69,7 @@ export function MapContextProvider({
       overrideLayers,
       translations,
       terrainSource,
+      availableLocales,
       layout: {
         ...initialLayoutProps,
         ...layout,
@@ -75,6 +80,7 @@ export function MapContextProvider({
       locale,
       overrideCard,
       overrideLayers,
+      availableLocales,
       translations,
       terrainSource,
       layout,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
-import { useIsDesktop } from "@/helpers/isDesktop";
+import { useIsDesktop } from "@/helpers/mediaQueries";
 import { useCard } from "@/state/useCard";
 import { Layers } from "@/layers/Layers";
 import { Card as RenderCard } from "@/sources/cards";

@@ -51,7 +51,7 @@ export function FilterGrid({
         setSelected(selected.concat(type));
       }
     },
-    [selected]
+    [selected],
   );
 
   const allToggle = useCallback(() => {
@@ -65,7 +65,7 @@ export function FilterGrid({
           } else {
             return acc;
           }
-        }, [])
+        }, []),
       );
     }
   }, [selected]);
@@ -96,7 +96,7 @@ export function FilterGrid({
           }
 
           return String(a.title || a.type).localeCompare(
-            String(b.title || b.type)
+            String(b.title || b.type),
           );
         });
     }

@@ -7,6 +7,7 @@ export const initialState: ISloyState = {
   activeLayers: [],
   activeFilterParams: null,
   activeCard: null,
+  locale: "en-EN",
   basemap: {
     mapLayers: [],
   },
@@ -47,6 +48,9 @@ const sloySlice = createSlice({
     },
     setCard(state, action: PayloadAction<ISloyState["activeCard"]>) {
       state.activeCard = action.payload;
+    },
+    setLocale(state, action: PayloadAction<ISloyState["locale"]>) {
+      state.locale = action.payload;
     },
     init(state, action: PayloadAction<Partial<ISloyState>>) {
       return {
@@ -95,6 +99,7 @@ export const {
   updateFilterParams,
   updateLayer,
   updateBasemapLayer,
+  setLocale,
 } = sloySlice.actions;
 
 export const sloyReducer: Reducer<ISloyState> = sloySlice.reducer;

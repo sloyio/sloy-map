@@ -10,7 +10,7 @@ import { useAppSelector } from "@/state";
 import { IFilter } from "@/types";
 
 const LazyFilterRange = lazy(
-  () => import("@/layers/filters/FilterBuildingRange")
+  () => import("@/layers/filters/FilterBuildingRange"),
 );
 
 interface Props
@@ -41,7 +41,7 @@ export function MapFilter({
     (params: unknown) => {
       dispatch(updateFilterParams({ [filterId]: params }));
     },
-    [dispatch, filterId]
+    [dispatch, filterId],
   );
 
   if (!filter || !source) {
@@ -63,7 +63,7 @@ export function MapFilter({
     case "string": {
       const values = getProperty(
         source,
-        `properties.${filter.property}.values`
+        `properties.${filter.property}.values`,
       );
 
       const items = groupByProperty({
@@ -74,16 +74,16 @@ export function MapFilter({
         type: item.type,
         title: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.title`
+          `${item.type?.replaceAll(".", "\\.")}.title`,
         ),
         count: item.count,
         color: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.color`
+          `${item.type?.replaceAll(".", "\\.")}.color`,
         ),
         description: getProperty(
           values,
-          `${item.type?.replaceAll(".", "\\.")}.description`
+          `${item.type?.replaceAll(".", "\\.")}.description`,
         ),
       }));
 

@@ -1,16 +1,15 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import qs from "qs";
 import maplibregl from "maplibre-gl";
 import { Protocol } from "pmtiles";
 import { IBasemapMapLayer, ISloyState, useAppSelector } from "./state";
-import { MapContext } from "./state/context";
-import { useSloyMap } from "./helpers/useSloy";
+import { useMapContext, useSloyMap } from "./helpers/useSloy";
 import { init } from "./state/slice";
 
 function useInitTerrain() {
   const map = useSloyMap();
-  const { terrainSource } = useContext(MapContext);
+  const { terrainSource } = useMapContext();
   const activeVisualizations = useAppSelector((state) =>
     (state.sloy.activeLayers || [])
       .map((id) => state.sloy.config.layers[id]?.visualizations)

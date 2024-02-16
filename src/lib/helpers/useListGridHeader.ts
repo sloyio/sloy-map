@@ -2,7 +2,7 @@ import { IFilter } from "..";
 
 function getPercentageValue(
   count: number | undefined,
-  total: number | undefined
+  total: number | undefined,
 ): string | null {
   if (typeof count !== "number" || typeof total !== "number") {
     return null;
@@ -17,7 +17,7 @@ export function useListGridHeader(
   type: IFilter["totalType"],
   subTitle: IFilter["subTitle"],
   totalHeader: IFilter["totalHeader"],
-  total: number | undefined
+  total: number | undefined,
 ) {
   const headerDescription = totalHeader === "count" && total;
 

@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
 import { Provider } from "react-redux";
-import { defaultTheme } from "sloy-ui";
+import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, internalTranslations, sloyReducer } from "@/index";
 import {
@@ -41,6 +41,26 @@ const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
       copyrights={copyrights}
       {...args}
       layout={{ loaderImageSrc: ekbLoader, ...args.layout }}
+      renderFooter={({ t }) => (
+        <>
+          <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            Github
+          </Button>
+          <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            {t("About")}
+          </Button>
+        </>
+      )}
     />
   </Provider>
 );

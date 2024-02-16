@@ -13,6 +13,7 @@ export interface ISloyState {
   } | null;
   activeFilterParams: any;
   config: IApp;
+  locale: string;
   appLoaded: boolean;
   basemap: {
     mapLayers: { id: string; active: boolean }[];

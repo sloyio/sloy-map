@@ -13,6 +13,7 @@ import {
   defaultMapState,
   defaultSources,
 } from "./armeniaConfig";
+import { Button, ButtonSize, ButtonType } from "sloy-ui";
 import translations from "./armenia.locales.json";
 import sloyLoader from "./sloy-loader.svg";
 
@@ -43,6 +44,7 @@ const Example = () => (
   <Provider store={store}>
     <SloyMap
       locale="en-EN"
+      availableLocales={["en-EN", "am-AM", "ru-RU"]}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
@@ -55,6 +57,26 @@ const Example = () => (
         hasPmtiles: true,
         loaderImageSrc: sloyLoader,
       }}
+      renderFooter={({ t }) => (
+        <>
+          <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            Github
+          </Button>
+          <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            {t("About")}
+          </Button>
+        </>
+      )}
     />
   </Provider>
 );
