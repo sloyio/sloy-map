@@ -64,7 +64,7 @@ const Example = () => (
           <Button
             type={ButtonType.DEFAULT}
             size={ButtonSize.MEDIUM}
-            href="https://github.com/gcor/sloy-map"
+            href="https://github.com/sloyio/sloy-map"
             rounded
           >
             Github
