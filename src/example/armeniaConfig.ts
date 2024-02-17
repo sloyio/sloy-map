@@ -1347,88 +1347,47 @@ export const defaultLayers: InputSloyLayer[] = [
       },
     ],
   },
-  {
-    id: "am-adm1",
-    title: "Административные границы регионов",
-    initialViewState: COUNTRY_VIEW,
-    updatedAt: "2022-01-05T19:00:00.000Z",
-    license: "ODbL",
-    link: {
-      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
-      label: "Источник",
-    },
-    filters: [],
-    visualizations: [
-      {
-        id: "Adm1BoundariesLineLayer",
-        source: "Adm1BoundariesLayerSource",
-        openable: true,
-        type: "map",
-        mapLayerProps: {
-          type: "line",
-          paint: {
-            "line-width": 1,
-            "line-opacity": 1,
-            "line-color": "#88ddff",
-          },
-        },
-      },
-      {
-        id: "Adm1BoundariesFillLayer",
-        source: "Adm1BoundariesLayerSource",
-        openable: true,
-        type: "map",
-        mapLayerProps: {
-          type: "fill",
-          paint: {
-            "fill-opacity": 0.3,
-            "fill-color": "#88ddff",
-          },
-        },
-      },
-    ],
-  },
-  {
-    id: "am-adm2",
-    title: "Административные границы муниципалитетов",
-    initialViewState: COUNTRY_VIEW,
-    updatedAt: "2022-01-05T19:00:00.000Z",
-    license: "ODbL",
-    link: {
-      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
-      label: "Источник",
-    },
-    filters: [],
-    visualizations: [
-      {
-        id: "Adm2BoundariesLineLayer",
-        source: "Adm2BoundariesLayerSource",
-        openable: true,
-        type: "map",
-        mapLayerProps: {
-          type: "line",
-          paint: {
-            "line-width": 1,
-            "line-opacity": 1,
-            "line-color": "#0088ff",
-          },
-        },
-      },
-      {
-        id: "Adm2BoundariesFillLayer",
-        source: "Adm2BoundariesLayerSource",
-        openable: true,
-        type: "map",
-        mapLayerProps: {
-          type: "fill",
-          paint: {
-            "fill-opacity": 0.3,
-            "fill-color": "#0088ff",
-          },
-        },
-      },
-    ],
-  },
+  // {
+  //   id: "am-adm1",
+  //   title: "Административные границы регионов",
+  //   initialViewState: COUNTRY_VIEW,
+  //   updatedAt: "2022-01-05T19:00:00.000Z",
+  //   license: "ODbL",
+  //   link: {
+  //     href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+  //     label: "Источник",
+  //   },
+  //   filters: [],
+  //   visualizations: [
+  //     {
+  //       id: "Adm1BoundariesLineLayer",
+  //       source: "Adm1BoundariesLayerSource",
+  //       openable: true,
+  //       type: "map",
+  //       mapLayerProps: {
+  //         type: "line",
+  //         paint: {
+  //           "line-width": 1,
+  //           "line-opacity": 1,
+  //           "line-color": "#88ddff",
+  //         },
+  //       },
+  //     },
+  //     {
+  //       id: "Adm1BoundariesFillLayer",
+  //       source: "Adm1BoundariesLayerSource",
+  //       openable: true,
+  //       type: "map",
+  //       mapLayerProps: {
+  //         type: "fill",
+  //         paint: {
+  //           "fill-opacity": 0.3,
+  //           "fill-color": "#88ddff",
+  //         },
+  //       },
+  //     },
+  //   ],
+  // },
   {
     id: "am-unesco",
     title: "Объекты культурного наследия ЮНЕСКО",
@@ -2227,6 +2186,47 @@ export const defaultLayers: InputSloyLayer[] = [
             "line-width": 2,
             "line-opacity": 1,
             "line-color": "#00ccff",
+          },
+        },
+      },
+    ],
+  },
+  {
+    id: "am-adm2",
+    title: "Административные границы муниципалитетов",
+    initialViewState: COUNTRY_VIEW,
+    updatedAt: "2022-01-05T19:00:00.000Z",
+    license: "ODbL",
+    link: {
+      href: "https://data.humdata.org/dataset/geoboundaries-admin-boundaries-for-armenia",
+      label: "Источник",
+    },
+    filters: [],
+    visualizations: [
+      {
+        id: "Adm2BoundariesLineLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "line",
+          paint: {
+            "line-width": 1,
+            "line-opacity": 1,
+            "line-color": "#0088ff",
+          },
+        },
+      },
+      {
+        id: "Adm2BoundariesFillLayer",
+        source: "Adm2BoundariesLayerSource",
+        openable: true,
+        type: "map",
+        mapLayerProps: {
+          type: "fill",
+          paint: {
+            "fill-opacity": 0.3,
+            "fill-color": "#0088ff",
           },
         },
       },
