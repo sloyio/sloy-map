@@ -72,7 +72,7 @@ const Example = () => (
           <Button
             type={ButtonType.DEFAULT}
             size={ButtonSize.MEDIUM}
-            href="https://github.com/gcor/sloy-map"
+            href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
             rounded
           >
             {t("About")}
