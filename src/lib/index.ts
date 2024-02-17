@@ -9,3 +9,5 @@ export * from "@/helpers/getYearNameByValue";
 export * from "@/helpers/getLayerStyle";
 
 export * from "@/layers/public/basemap";
+
+export { LanguageSwitcher } from "@/components/LanguageSwitcher";

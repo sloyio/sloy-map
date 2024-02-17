@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { useIsDesktop } from "@/helpers/mediaQueries";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ReactNode, useMemo } from "react";
 import { useMapContext } from "..";
 import { IMapContext } from "@/state/context";
@@ -21,22 +20,13 @@ const Wrapper = styled.footer<{ $isDesktop?: boolean }>`
         `};
 `;
 
-export function Footer({
-  renderFooter,
-}: {
-  renderFooter?: (context: IMapContext) => ReactNode;
-}) {
-  const isDesktop = useIsDesktop();
-  const context = useMapContext();
-  const footer = useMemo(
-    () => renderFooter?.(context),
-    [context, renderFooter],
-  );
+export type RenderFooter = (props: { t: IMapContext["t"] }) => ReactNode;
 
-  return (
-    <Wrapper $isDesktop={isDesktop}>
-      <LanguageSwitcher />
-      {footer}
-    </Wrapper>
-  );
+export function Footer({ renderFooter }: { renderFooter?: RenderFooter }) {
+  const isDesktop = useIsDesktop();
+  const { t } = useMapContext();
+
+  const footer = useMemo(() => renderFooter?.({ t }), [renderFooter, t]);
+
+  return <Wrapper $isDesktop={isDesktop}>{footer}</Wrapper>;
 }

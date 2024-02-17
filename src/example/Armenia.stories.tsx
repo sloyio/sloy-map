@@ -6,6 +6,7 @@ import {
   sloyReducer,
   BESEMAP_TERRAIN_SOURCE,
   internalTranslations,
+  LanguageSwitcher,
 } from "@/index";
 import {
   copyrights,
@@ -59,6 +60,7 @@ const Example = () => (
       }}
       renderFooter={({ t }) => (
         <>
+          <LanguageSwitcher />
           <Button
             type={ButtonType.DEFAULT}
             size={ButtonSize.MEDIUM}

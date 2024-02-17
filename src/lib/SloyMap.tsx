@@ -12,7 +12,6 @@ import { GlobalStyles, sloyTheme } from "sloy-ui";
 import maplibregl from "maplibre-gl";
 import MapGl, { MapProvider } from "react-map-gl";
 import {
-  IMapContext,
   MapContextProps,
   MapContextProvider,
   initialLayoutProps,
@@ -35,11 +34,11 @@ import { createAppState } from "@/helpers/createAppState";
 import { Visualizations } from "./layers/visualization/Visualizations";
 import { createCopyrights } from "./helpers/createCopyrights";
 import { PageLoader } from "./components/PageLoader";
+import { Footer, RenderFooter } from "./components/Footer";
 import { BeforeInit, Init } from "./Init";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { Footer } from "./components/Footer";
 
 export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
@@ -48,7 +47,7 @@ export interface SloyMapProps extends MapContextProps {
   layers: InputSloyLayer[];
   theme?: ComponentProps<typeof ThemeProvider>["theme"];
   copyrights?: ICopyright[];
-  renderFooter?: (context: IMapContext) => ReactNode;
+  renderFooter?: RenderFooter;
 }
 
 export function SloyMap({

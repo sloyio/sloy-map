@@ -2,7 +2,7 @@
   "name": "sloy-map",
   "license": "Apache-2.0",
   "type": "module",
-  "version": "0.0.1-rc.4",
+  "version": "0.0.2",
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "tsc && vite build",
@@ -51,7 +51,7 @@
     "react-redux": "^9.1.0",
     "redux": "^5.0.1",
     "redux-logger": "^3.0.6",
-    "sloy-ui": "0.0.1-rc.16",
+    "sloy-ui": "0.0.1-rc.17",
     "styled-components": "^6.1.8",
     "swr": "^2.2.4",
     "typescript": "^5.3.3"
