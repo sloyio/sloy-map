@@ -129,7 +129,7 @@ const store = configureStore({
 </Provider>
 ```
 
-You can find more examples in the examples/ folder
+You can find more examples in the src/examples/ folder
 
 # API
 
