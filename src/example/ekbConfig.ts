@@ -333,12 +333,12 @@ export const defaultSources: InputSloySource[] = [
   {
     id: "ekbOknSource",
     type: "geojson",
-    path: "https://map.ekaterinburg.city/ekb-okn.json",
+    path: "https://map.ekaterinburg.city/okn-static/placemarks.json",
     copyright: ["okn"],
     card: {
       title: "name",
       additionalInfo: ["address"],
-      cover: "img",
+      cover: "img.url",
       blocks: [
         { type: "value", id: "date" },
         { type: "age", id: "age", deps: "date" },
@@ -385,10 +385,10 @@ export const defaultSources: InputSloySource[] = [
     copyright: ["okn"],
   },
   {
+    id: "ekbOknObjectZoneSource",
     type: "geojson",
     card: { blocks: [] },
     properties: [],
-    id: "ekbOknObjectZoneSource",
     path: "https://map.ekaterinburg.city/ekb-okn-objects.json",
     copyright: ["okn"],
   },
