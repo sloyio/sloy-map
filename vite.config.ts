@@ -29,6 +29,7 @@ export default defineConfig({
       },
     }),
   ],
+  publicDir: false,
   build: {
     sourcemap: true,
     lib: {
