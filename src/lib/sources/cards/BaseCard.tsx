@@ -18,6 +18,11 @@ import { OverrideCardFn } from "@/types/uiTypes";
 import { CardActions } from "./components/CardActions";
 import { Copyrights } from "./components/Copyrights";
 import { useMapContext } from "@/helpers/useSloy";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  width: 100%;
+`;
 
 interface Props {
   lat?: string;
@@ -223,8 +228,8 @@ export function BaseCard({
   }
 
   return (
-    <div>
+    <Wrapper>
       <Card {...uiCardProps} blocks={uiCardProps.blocks as CardBlock[]} />
-    </div>
+    </Wrapper>
   );
 }
