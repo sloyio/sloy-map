@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { FeatureCollection } from "geojson";
 import { ICard, ISource } from "@/types";
 import { BaseCard } from "./BaseCard";
+import { useMapContext } from "@/helpers/useSloy";
 
 interface Props {
   data: FeatureCollection<any>;
@@ -11,6 +12,8 @@ interface Props {
 }
 
 export function FeatureCard({ data, featureId, card, source }: Props) {
+  const { overrideCard } = useMapContext();
+
   const feature = useMemo(
     () =>
       data?.features?.find((f, i) => {
@@ -51,6 +54,7 @@ export function FeatureCard({ data, featureId, card, source }: Props) {
       card={card}
       lng={lng}
       lat={lat}
+      overrideCard={overrideCard}
     />
   );
 }

@@ -333,7 +333,7 @@ export const defaultSources: InputSloySource[] = [
   {
     id: "ekbOknSource",
     type: "geojson",
-    path: "https://map.ekaterinburg.city/okn-static/placemarks.json",
+    path: "https://ekbdev-map-refactor3.vercel.app/ekb-okn.json",
     copyright: ["okn"],
     card: {
       title: "name",
@@ -705,26 +705,13 @@ export const defaultLayers: InputSloyLayer[] = [
     ],
     visualizations: [
       {
+        type: "marker-image",
         id: "ekbOknObjectsLayer",
         source: "ekbOknSource",
         property: "category",
+        rootSrc: "https://ekbdev-map-refactor3.vercel.app/",
+        previewPath: "preview.s.src",
         openable: true,
-        type: "map",
-        mapLayerProps: {
-          type: "circle",
-          paint: {
-            "circle-stroke-width": 1,
-            "circle-radius": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              MIN_ZOOM,
-              1,
-              MAX_ZOOM,
-              12,
-            ],
-          },
-        },
       },
       {
         id: "ekbOknProtectZoneLayer",

@@ -222,5 +222,9 @@ export function BaseCard({
     return null;
   }
 
-  return <Card {...uiCardProps} blocks={uiCardProps.blocks as CardBlock[]} />;
+  return (
+    <div>
+      <Card {...uiCardProps} blocks={uiCardProps.blocks as CardBlock[]} />
+    </div>
+  );
 }

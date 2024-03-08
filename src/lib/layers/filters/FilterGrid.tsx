@@ -102,12 +102,12 @@ export function FilterGrid({
     }
   }, [items, sortByArray, sortType]);
 
+  const { headerSubtitle, headerDescription, getItemSubtitle } =
+    useListGridHeader(totalType, subTitle, totalHeader, totalCount);
+
   if (sortedItems.length === 0) {
     return null;
   }
-
-  const { headerSubtitle, headerDescription, getItemSubtitle } =
-    useListGridHeader(totalType, subTitle, totalHeader, totalCount);
 
   return (
     <ListGrid>

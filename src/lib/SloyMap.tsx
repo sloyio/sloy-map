@@ -39,6 +39,7 @@ import { BeforeInit, Init } from "./Init";
 
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
@@ -135,50 +136,52 @@ export function SloyMap({
   }, [children, isAppLoaded]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <BeforeInit hasPmtiles={layout?.hasPmtiles} />
-      <MapProvider>
-        <MapContextProvider
-          locale={reduxLocale}
-          availableLocales={availableLocales}
-          translations={translations}
-          overrideCard={overrideCard}
-          overrideLayers={overrideLayers}
-          terrainSource={terrainSource}
-          layout={layout}
-        >
-          <MapGl
-            id="sloyMapGl"
-            {...mapState}
-            attributionControl={false}
-            initialViewState={initialViewState}
-            minZoom={mapState.minZoom || 11}
-            maxZoom={mapState.maxZoom || 20}
-            maxPitch={mapState.maxPitch || 85}
-            mapLib={maplibregl}
-            antialias
-            reuseMaps
-            onLoad={onLoad}
-            {...mapProps}
-            style={{
-              width: "100vw",
-              height: "100vh",
-              ...mapProps.style,
-            }}
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <BeforeInit hasPmtiles={layout?.hasPmtiles} />
+        <MapProvider>
+          <MapContextProvider
+            locale={reduxLocale}
+            availableLocales={availableLocales}
+            translations={translations}
+            overrideCard={overrideCard}
+            overrideLayers={overrideLayers}
+            terrainSource={terrainSource}
+            layout={layout}
           >
-            {children}
-            {content}
-          </MapGl>
-          {isAppLoaded && (
-            <>
-              <Sidebars />
-              <Copyright />
-              <Footer renderFooter={renderFooter} />
-            </>
-          )}
-        </MapContextProvider>
-      </MapProvider>
-    </ThemeProvider>
+            <MapGl
+              id="sloyMapGl"
+              {...mapState}
+              attributionControl={false}
+              initialViewState={initialViewState}
+              minZoom={mapState.minZoom || 11}
+              maxZoom={mapState.maxZoom || 20}
+              maxPitch={mapState.maxPitch || 85}
+              mapLib={maplibregl}
+              antialias
+              reuseMaps
+              onLoad={onLoad}
+              {...mapProps}
+              style={{
+                width: "100vw",
+                height: "100vh",
+                ...mapProps.style,
+              }}
+            >
+              {children}
+              {content}
+            </MapGl>
+            {isAppLoaded && (
+              <>
+                <Sidebars />
+                <Copyright />
+                <Footer renderFooter={renderFooter} />
+              </>
+            )}
+          </MapContextProvider>
+        </MapProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }

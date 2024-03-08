@@ -1,4 +1,4 @@
-import { Suspense, lazy, useCallback, useEffect } from "react";
+import { Suspense, lazy, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { groupByProperty } from "@/helpers/groupByProperty";
 import { useLoadGeoJSON } from "@/helpers/useLoadGeoJSON";
