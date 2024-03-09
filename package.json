@@ -2,7 +2,7 @@
   "name": "sloy-map",
   "license": "Apache-2.0",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "tsc && vite build",
