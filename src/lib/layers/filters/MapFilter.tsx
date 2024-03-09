@@ -13,22 +13,11 @@ const LazyFilterRange = lazy(
   () => import("@/layers/filters/FilterBuildingRange"),
 );
 
-interface Props
-  extends Pick<
-    IFilter,
-    "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
-  > {
+interface Props {
   filterId: IFilter["id"];
 }
 
-export function MapFilter({
-  filterId,
-  title,
-  subTitle,
-  postfix,
-  totalType,
-  totalHeader,
-}: Props) {
+export function MapFilter({ filterId }: Props) {
   const dispatch = useDispatch();
   const filters = useAppSelector((state) => state.sloy.config.filters);
   const sources = useAppSelector((state) => state.sloy.config.sources);
@@ -61,6 +50,10 @@ export function MapFilter({
       );
     case "string[]":
     case "string": {
+      if (!filter.property) {
+        return null;
+      }
+
       const values = getProperty(
         source,
         `properties.${filter.property}.values`,
@@ -91,17 +84,12 @@ export function MapFilter({
 
       return (
         <FilterGrid
-          title={title}
+          {...filter}
           items={items}
           selectedByDefault={selectedByDefault}
           onChange={onChange}
-          sortType={filter.sortType}
           sortByArray={values ? Object.keys(values) : undefined}
           totalCount={data.features.length}
-          subTitle={subTitle}
-          postfix={postfix}
-          totalType={totalType}
-          totalHeader={totalHeader}
         />
       );
     }
@@ -109,8 +97,7 @@ export function MapFilter({
     case "boolean": {
       return (
         <FilterGrid
-          title={title}
-          sortType={filter.sortType}
+          {...filter}
           onChange={onChange}
           items={[
             {
@@ -121,10 +108,6 @@ export function MapFilter({
             },
           ]}
           totalCount={data.features.length}
-          subTitle={subTitle}
-          postfix={postfix}
-          totalType={totalType}
-          totalHeader={totalHeader}
         />
       );
     }

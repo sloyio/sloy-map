@@ -230,7 +230,7 @@ interface IFilter {
   title?: string;
   description?: string;
   color?: string;
-  property: string;
+  property?: string;
   subTitle?: string;
   postfix?: string;
   totalType?: "percent";
@@ -273,4 +273,3 @@ interface ICopyright {
   requiredAttribution?: boolean;
 }
 ```
-

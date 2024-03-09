@@ -16,11 +16,7 @@ export type IFilterGridItem = Partial<ComponentProps<typeof ListGridItem>> & {
   color?: string;
 };
 
-interface Props
-  extends Pick<
-    IFilter,
-    "sortType" | "title" | "subTitle" | "postfix" | "totalType" | "totalHeader"
-  > {
+interface Props extends IFilter {
   selectedByDefault?: string[];
   items?: IFilterGridItem[];
   onChange?: (state: string[]) => void;
@@ -42,33 +38,6 @@ export function FilterGrid({
   totalHeader,
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
-
-  const toggle = useCallback(
-    (type: string) => {
-      if (selected.includes(type)) {
-        setSelected(selected.filter((s) => s !== type));
-      } else {
-        setSelected(selected.concat(type));
-      }
-    },
-    [selected],
-  );
-
-  const allToggle = useCallback(() => {
-    if (selected.length === sortedItems.length) {
-      setSelected([]);
-    } else {
-      setSelected(
-        sortedItems.reduce<string[]>((acc, { type }) => {
-          if (type) {
-            return acc.concat(type);
-          } else {
-            return acc;
-          }
-        }, []),
-      );
-    }
-  }, [selected]);
 
   useEffect(() => {
     onChange?.(selected);
@@ -102,6 +71,33 @@ export function FilterGrid({
     }
   }, [items, sortByArray, sortType]);
 
+  const toggle = useCallback(
+    (type: string) => {
+      if (selected.includes(type)) {
+        setSelected(selected.filter((s) => s !== type));
+      } else {
+        setSelected(selected.concat(type));
+      }
+    },
+    [selected],
+  );
+
+  const allToggle = useCallback(() => {
+    if (selected.length === sortedItems.length) {
+      setSelected([]);
+    } else {
+      setSelected(
+        sortedItems.reduce<string[]>((acc, { type }) => {
+          if (type) {
+            return acc.concat(type);
+          } else {
+            return acc;
+          }
+        }, []),
+      );
+    }
+  }, [selected.length, sortedItems]);
+
   const { headerSubtitle, headerDescription, getItemSubtitle } =
     useListGridHeader(totalType, subTitle, totalHeader, totalCount);
 
@@ -111,8 +107,11 @@ export function FilterGrid({
 
   return (
     <ListGrid>
-      {title && (
+      {postfix && (
         <ListGridHeader
+          description={headerDescription}
+          subTitle={headerSubtitle}
+          postfix={postfix}
           prefix={
             <Checkbox
               isSelected={selected.length === sortedItems.length}
@@ -122,9 +121,6 @@ export function FilterGrid({
               toggle={allToggle}
             />
           }
-          description={headerDescription}
-          subTitle={headerSubtitle}
-          postfix={postfix}
         >
           {title}
         </ListGridHeader>
@@ -139,6 +135,7 @@ export function FilterGrid({
             key={type}
             subTitle={getItemSubtitle?.(count)}
             description={description}
+            postfix={postfix && String(count)}
             prefix={
               <Checkbox
                 isSelected={selected.includes(type)}
@@ -146,7 +143,6 @@ export function FilterGrid({
                 toggle={() => toggle(type)}
               />
             }
-            postfix={postfix && String(count)}
           >
             {title || type}
           </ListGridItem>

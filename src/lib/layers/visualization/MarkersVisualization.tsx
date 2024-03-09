@@ -65,8 +65,10 @@ export default function MarkersVisualization({
 
   const markers = useMemo(() => {
     return data?.features.filter((feature) => {
-      return activeFilters.find(({ filter, values }) =>
-        values?.includes(feature.properties?.[filter?.property]),
+      return activeFilters.find(
+        ({ filter, values }) =>
+          filter?.property &&
+          values?.includes(feature.properties?.[filter?.property]),
       )?.values;
     });
   }, [activeFilters, data?.features]);

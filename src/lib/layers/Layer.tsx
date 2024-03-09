@@ -76,15 +76,7 @@ export function Layer({ layer }: Props) {
             $withMargin={layer.filters.length - 1 !== i}
             key={filterId}
           >
-            <MapFilter
-              key={filter.id}
-              title={filter.title}
-              filterId={filter.id}
-              subTitle={filter.subTitle}
-              postfix={filter.postfix}
-              totalType={filter.totalType}
-              totalHeader={filter.totalHeader}
-            />
+            <MapFilter key={filter.id} filterId={filter.id} />
           </MapFilterWrapper>
         );
       })}

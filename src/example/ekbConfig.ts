@@ -664,10 +664,6 @@ export const defaultLayers: InputSloyLayer[] = [
           "ekbOknProtectZoneLayerStroke",
         ],
         source: "ekbOknProtectZoneSource",
-        property: "?",
-        totalType: "percent",
-        postfix: "шт.",
-        totalHeader: "count",
       },
       {
         title: "Зоны охраны ОКН",
@@ -681,10 +677,6 @@ export const defaultLayers: InputSloyLayer[] = [
           "ekbOknSecurityZoneLayerStroke",
         ],
         source: "ekbOknSecurityZoneSource",
-        property: "?",
-        totalType: "percent",
-        postfix: "шт.",
-        totalHeader: "count",
       },
       {
         title: "Границы территорий ОКН",
@@ -697,10 +689,6 @@ export const defaultLayers: InputSloyLayer[] = [
           "ekbOknObjectZoneLayerStroke",
         ],
         source: "ekbOknObjectZoneSource",
-        property: "?",
-        totalType: "percent",
-        postfix: "шт.",
-        totalHeader: "count",
       },
     ],
     visualizations: [
