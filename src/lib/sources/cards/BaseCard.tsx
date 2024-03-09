@@ -85,10 +85,6 @@ export function BaseCard({
           values,
           String(block?.deps),
         );
-        const content: string | undefined = getProperty(
-          values,
-          String(block?.content),
-        );
 
         if (block.type === "tag" && block.id && value) {
           return {
@@ -151,7 +147,7 @@ export function BaseCard({
           };
         }
 
-        if (block.type === "action-link" && content) {
+        if (block.type === "action-link" && block.content) {
           return {
             ...block,
             type: "value",
@@ -160,10 +156,10 @@ export function BaseCard({
               <Button
                 fullWidth
                 type={ButtonType.ACCENT}
-                size={ButtonSize.MEDIUM}
+                size={ButtonSize.LARGE}
                 href={value}
               >
-                {content}
+                {block.content}
               </Button>
             ) : undefined,
           };

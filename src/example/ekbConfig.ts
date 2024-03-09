@@ -474,7 +474,7 @@ export const defaultSources: InputSloySource[] = [
   {
     id: "ekbQuarterSource",
     type: "geojson",
-    path: "https://map.ekaterinburg.city/quarter_inspectors.json",
+    path: "https://map.ekaterinburg.city/ekb-quarters.json",
     copyright: ["ekbQuarter"],
     card: {
       title: "quarterTitle",
