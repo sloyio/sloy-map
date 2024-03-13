@@ -36,6 +36,7 @@ export function FilterGrid({
   postfix,
   totalType,
   totalHeader,
+  type,
 }: Props) {
   const [selected, setSelected] = useState<string[]>(selectedByDefault);
 
@@ -107,7 +108,7 @@ export function FilterGrid({
 
   return (
     <ListGrid>
-      {postfix && (
+      {title && (postfix || type !== "boolean") && (
         <ListGridHeader
           description={headerDescription}
           subTitle={headerSubtitle}
