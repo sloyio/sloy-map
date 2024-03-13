@@ -273,3 +273,10 @@ interface ICopyright {
   requiredAttribution?: boolean;
 }
 ```
+
+## Contribution
+
+```typescript
+pnpm i
+pnpm start
+```
