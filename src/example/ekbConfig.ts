@@ -1056,13 +1056,18 @@ export const defaultLayers: InputSloyLayer[] = [
   {
     id: "ekb-crimes",
     title: "Происшествия",
-    description: "Происшествия в Екатеринбурге в 2017–2018 годах.",
+    description:
+      "Слой содержит данные о правонарушениях, конфликтах и происшествиях, которые произошли в городе. Подготовлен в 2019 г. на основе сообщений в социальных сетях и новостных ресурсах. Автор датасета: Александр Бурцев, кандидат архитектуры.",
     filters: [
       {
+        title: "Тип происшествия",
         property: "exident",
         type: "string",
         filterVisualizations: ["ekbCrimePointsLayer", "ekbCrimeHeatmapLayer"],
         source: "ekbCrimeLayerSource",
+        postfix: "шт.",
+        totalHeader: "count",
+        totalType: "percent",
         sortType: "count",
       },
     ],
