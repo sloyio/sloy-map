@@ -1,21 +1,22 @@
+import { SloyLogo } from "@/components/SloyLogo";
+import {
+  BESEMAP_TERRAIN_SOURCE,
+  LanguageSwitcher,
+  SloyMap,
+  internalTranslations,
+  sloyReducer,
+} from "@/index";
+import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
-import { configureStore } from "@reduxjs/toolkit";
-import {
-  SloyMap,
-  sloyReducer,
-  BESEMAP_TERRAIN_SOURCE,
-  internalTranslations,
-  LanguageSwitcher,
-} from "@/index";
+import { Button, ButtonSize, ButtonType } from "sloy-ui";
+import translations from "./armenia.locales.json";
 import {
   copyrights,
   defaultLayers,
   defaultMapState,
   defaultSources,
 } from "./armeniaConfig";
-import { Button, ButtonSize, ButtonType } from "sloy-ui";
-import translations from "./armenia.locales.json";
 import sloyLoader from "./sloy-loader.svg";
 
 // @ts-ignore
@@ -60,6 +61,7 @@ const Example = () => (
       }}
       renderFooter={({ t }) => (
         <>
+          <SloyLogo />
           <LanguageSwitcher />
           <Button
             type={ButtonType.DEFAULT}
