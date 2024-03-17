@@ -161,8 +161,6 @@ export interface SloyMapProps extends MapContextProps {
 
 ## Source
 
-![source illustration](./readme/source.svg)
-
 ```typescript
 interface ISource {
   id: string;
@@ -182,9 +180,9 @@ interface ISource {
 }
 ```
 
-## Layer
+![source illustration](./readme/source.svg)
 
-![layer illustration](./readme/layer.svg)
+## Layer
 
 ```typescript
 interface ILayer {
@@ -206,9 +204,9 @@ interface ILayer {
 }
 ```
 
-### Visualization
+![layer illustration](./readme/layer.svg)
 
-![visualisation illustration](./readme/visualisation.svg)
+### Visualization
 
 ```typescript
 interface IVisualization {
@@ -224,9 +222,9 @@ interface IVisualization {
 }
 ```
 
-### Filter
+![visualisation illustration](./readme/visualisation.svg)
 
-![filter illustration](./readme/filter.svg)
+### Filter
 
 ```typescript
 interface IFilter {
@@ -246,9 +244,9 @@ interface IFilter {
 }
 ```
 
-### Card
+![filter illustration](./readme/filter.svg)
 
-![card illustration](./readme/card.svg)
+### Card
 
 ```typescript
 interface ICard {
@@ -272,9 +270,9 @@ interface ICardBlock {
 }
 ```
 
-### Copyright
+![card illustration](./readme/card.svg)
 
-![copyright illustration](./readme/copyright.svg)
+### Copyright
 
 ```typescript
 interface ICopyright {
@@ -285,6 +283,8 @@ interface ICopyright {
   requiredAttribution?: boolean;
 }
 ```
+
+![copyright illustration](./readme/copyright.svg)
 
 ## Contribution
 
