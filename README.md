@@ -188,18 +188,17 @@ interface ISource {
 interface ILayer {
   id: string;
   title: string;
-  filters: IFilter["id"][];
-  visualizations: IVisualization["id"][];
-  updatedAt?: string;
-  subTitle?: string;
-  initialViewState?: {
-    center?: number[];
-  };
   description?: string;
-  license?: string;
+  updatedAt?: string;
   link?: {
     label?: string;
     href?: string;
+  };
+  license?: string;
+  filters: IFilter["id"][];
+  visualizations: IVisualization["id"][];
+  initialViewState?: {
+    center?: number[];
   };
 }
 ```
@@ -233,14 +232,14 @@ interface IFilter {
   type: "boolean" | "range" | "string" | "string[]";
   filterVisualizations: IVisualization["id"][];
   sortType?: "config" | "count" | "alphabetical";
+  totalHeader?: "count";
   title?: string;
   description?: string;
-  color?: string;
   property?: string;
+  color?: string;
   subTitle?: string;
-  postfix?: string;
   totalType?: "percent";
-  totalHeader?: "count";
+  postfix?: string;
 }
 ```
 
@@ -251,11 +250,11 @@ interface IFilter {
 ```typescript
 interface ICard {
   id: string;
+  cover?: string;
   title?: string | string[];
   description?: string | string[];
   additionalInfo?: string[];
   blocks: ICardBlock[];
-  cover?: string;
   rootSrc?: string;
 }
 
