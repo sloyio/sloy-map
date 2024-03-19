@@ -10,6 +10,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
 import { Button, ButtonSize, ButtonType } from "sloy-ui";
+import styled from "styled-components";
 import translations from "./armenia.locales.json";
 import {
   copyrights,
@@ -21,6 +22,10 @@ import sloyLoader from "./sloy-loader.svg";
 
 // @ts-ignore
 // window.SLOY_SHOW_INTERNAL_DATA = true;
+
+const LogoWrapper = styled.div`
+  transform: scale(1.1);
+`;
 
 export default {
   title: "Map/Advanced/Armenia",
@@ -61,24 +66,28 @@ const Example = () => (
       }}
       renderFooter={({ t }) => (
         <>
-          <SloyLogo />
-          <LanguageSwitcher />
-          <Button
-            type={ButtonType.DEFAULT}
-            size={ButtonSize.MEDIUM}
-            href="https://github.com/sloyio/sloy-map"
-            rounded
-          >
-            Github
-          </Button>
-          <Button
-            type={ButtonType.DEFAULT}
-            size={ButtonSize.MEDIUM}
-            href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
-            rounded
-          >
-            {t("About")}
-          </Button>
+          <LogoWrapper>
+            <SloyLogo />
+          </LogoWrapper>
+          <>
+            <LanguageSwitcher />
+            <Button
+              type={ButtonType.DEFAULT}
+              size={ButtonSize.MEDIUM}
+              href="https://github.com/sloyio/sloy-map"
+              rounded
+            >
+              Github
+            </Button>
+            <Button
+              type={ButtonType.DEFAULT}
+              size={ButtonSize.MEDIUM}
+              href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
+              rounded
+            >
+              {t("About")}
+            </Button>
+          </>
         </>
       )}
     />
