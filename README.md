@@ -180,27 +180,30 @@ interface ISource {
 }
 ```
 
+![source illustration](./readme/source.svg)
+
 ## Layer
 
 ```typescript
 interface ILayer {
   id: string;
   title: string;
-  filters: IFilter["id"][];
-  visualizations: IVisualization["id"][];
-  updatedAt?: string;
-  subTitle?: string;
-  initialViewState?: {
-    center?: number[];
-  };
   description?: string;
-  license?: string;
+  updatedAt?: string;
   link?: {
     label?: string;
     href?: string;
   };
+  license?: string;
+  filters: IFilter["id"][];
+  visualizations: IVisualization["id"][];
+  initialViewState?: {
+    center?: number[];
+  };
 }
 ```
+
+![layer illustration](./readme/layer.svg)
 
 ### Visualization
 
@@ -218,6 +221,8 @@ interface IVisualization {
 }
 ```
 
+![visualisation illustration](./readme/visualisation.svg)
+
 ### Filter
 
 ```typescript
@@ -227,27 +232,29 @@ interface IFilter {
   type: "boolean" | "range" | "string" | "string[]";
   filterVisualizations: IVisualization["id"][];
   sortType?: "config" | "count" | "alphabetical";
+  totalHeader?: "count";
   title?: string;
   description?: string;
-  color?: string;
   property?: string;
+  color?: string;
   subTitle?: string;
-  postfix?: string;
   totalType?: "percent";
-  totalHeader?: "count";
+  postfix?: string;
 }
 ```
+
+![filter illustration](./readme/filter.svg)
 
 ### Card
 
 ```typescript
 interface ICard {
   id: string;
+  cover?: string;
   title?: string | string[];
   description?: string | string[];
   additionalInfo?: string[];
   blocks: ICardBlock[];
-  cover?: string;
   rootSrc?: string;
 }
 
@@ -262,6 +269,8 @@ interface ICardBlock {
 }
 ```
 
+![card illustration](./readme/card.svg)
+
 ### Copyright
 
 ```typescript
@@ -273,6 +282,8 @@ interface ICopyright {
   requiredAttribution?: boolean;
 }
 ```
+
+![copyright illustration](./readme/copyright.svg)
 
 ## Contribution
 
