@@ -7,16 +7,16 @@ import { IMapContext } from "@/state/context";
 const Wrapper = styled.footer<{ $isDesktop?: boolean }>`
   position: fixed;
   display: flex;
-  gap: 8px;
+  gap: 4px;
   ${({ $isDesktop }) =>
     $isDesktop
       ? css`
-          bottom: 12px;
-          left: 12px;
+          bottom: 8px;
+          left: 8px;
         `
       : css`
-          top: 12px;
-          left: 12px;
+          top: 8px;
+          left: 8px;
         `};
 `;
 
