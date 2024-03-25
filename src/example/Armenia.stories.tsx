@@ -25,6 +25,7 @@ import sloyLoader from "./sloy-loader.svg";
 
 const LogoWrapper = styled.div`
   transform: scale(1.1);
+  margin: 0 4px; // half of gap of parent container
 `;
 
 export default {
