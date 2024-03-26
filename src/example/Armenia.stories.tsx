@@ -24,8 +24,10 @@ import sloyLoader from "./sloy-loader.svg";
 // window.SLOY_SHOW_INTERNAL_DATA = true;
 
 const LogoWrapper = styled.div`
-  transform: scale(1.1);
-  margin: 0 4px; // half of gap of parent container
+  display: flex;
+  align-items: center;
+  transform: scale(1.4);
+  margin: 0 8px;
 `;
 
 export default {
