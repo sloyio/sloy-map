@@ -24,7 +24,7 @@ import { amSoil, amSoilSource } from "./configs/am/amSoil";
 import { amTempAvg, amTempAvgSource } from "./configs/am/amTempAvg";
 import { amUnesco, amUnescoSource } from "./configs/am/amUnesco";
 import { amVegetation, amVegetationSource } from "./configs/am/amVegetation";
-import { amWind, amWindSource } from "./configs/am/amWind";
+import { amWindSource } from "./configs/am/amWind";
 import { MAX_ZOOM, MIN_ZOOM, YEREVAN_VIEW } from "./constants";
 
 // const ARARAT_VIEW = {
@@ -92,7 +92,7 @@ export const defaultLayers: InputSloyLayer[] = [
   amClimate,
   amTempAvg,
   amPrecipitations,
-  amWind,
+  //   amWind,
   amLakes,
   amGroundwater,
   amMineral,
