@@ -1,0 +1,5331 @@
+{
+  "type": "FeatureCollection",
+  "name": "dtp",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:EPSG::32638" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1992613,
+        "FeatureC_1": 56.6477,
+        "FeatureC_2": 43.4773,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "10.10.2017",
+        "year": 2017,
+        "месяц": 10,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406631.246019088895991, 6279207.096433003433049]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997486,
+        "FeatureC_1": 56.678056,
+        "FeatureC_2": 43.459722,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "16.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405629.397673896513879, 6282609.586894271895289]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2896737,
+        "FeatureC_1": 56.644247,
+        "FeatureC_2": 43.46848,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "09.08.2023",
+        "year": 2023,
+        "месяц": 8,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406081.890607306617312, 6278834.843127116560936]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2809689,
+        "FeatureC_1": 56.64551,
+        "FeatureC_2": 43.470572,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.02.2023",
+        "year": 2023,
+        "месяц": 2,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406213.302074736333452, 6278972.543811654672027]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2624143,
+        "FeatureC_1": 56.646371,
+        "FeatureC_2": 43.469371,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.09.2021",
+        "year": 2021,
+        "месяц": 9,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406141.800714547920506, 6279070.010300456546247]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795298,
+        "FeatureC_1": 56.637244,
+        "FeatureC_2": 43.484176,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.12.2022",
+        "year": 2022,
+        "месяц": 12,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407027.10820274107391, 6278034.071411962620914]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2695422,
+        "FeatureC_1": 56.646937,
+        "FeatureC_2": 43.491483,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "23.05.2022",
+        "year": 2022,
+        "месяц": 5,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407498.969957897730637, 6279102.96046551130712]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2945322,
+        "FeatureC_1": 56.646026,
+        "FeatureC_2": 43.501687,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "18.02.2024",
+        "year": 2024,
+        "месяц": 2,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408122.399187524220906, 6278987.855740987695754]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2945340,
+        "FeatureC_1": 56.644696,
+        "FeatureC_2": 43.470422,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "18.02.2024",
+        "year": 2024,
+        "месяц": 2,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406202.084134028234985, 6278882.156199752353132]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2875827,
+        "FeatureC_1": 56.647102,
+        "FeatureC_2": 43.490807,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "15.08.2023",
+        "year": 2023,
+        "месяц": 8,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407457.926105126913171, 6279122.235881881788373]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2693888,
+        "FeatureC_1": 56.664287,
+        "FeatureC_2": 43.45656,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "15.01.2022",
+        "year": 2022,
+        "месяц": 1,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405401.186019796587061, 6281081.544403552077711]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2584360,
+        "FeatureC_1": 56.671297,
+        "FeatureC_2": 43.449082,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "18.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404960.545296483905986, 6281872.05165302567184]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2954027,
+        "FeatureC_1": 56.646448,
+        "FeatureC_2": 43.472192,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "29.03.2024",
+        "year": 2024,
+        "месяц": 3,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406314.959195465024095, 6279074.722851586528122]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008260,
+        "FeatureC_1": 56.665833,
+        "FeatureC_2": 43.4675,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "10.11.2015",
+        "year": 2015,
+        "месяц": 11,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406075.490749573335052, 6281238.564872262999415]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2861425,
+        "FeatureC_1": 56.640368,
+        "FeatureC_2": 43.501981,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "01.07.2023",
+        "year": 2023,
+        "месяц": 7,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408126.671147103188559, 6278357.761029748246074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2837116,
+        "FeatureC_1": 56.642773,
+        "FeatureC_2": 43.475786,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "22.05.2023",
+        "year": 2023,
+        "месяц": 5,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406526.231974651105702, 6278660.816008699126542]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989517,
+        "FeatureC_1": 56.661917,
+        "FeatureC_2": 43.479756,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.08.2019",
+        "year": 2019,
+        "месяц": 8,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406816.908184477535542, 6280786.017310982570052]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2662086,
+        "FeatureC_1": 56.657488,
+        "FeatureC_2": 43.483822,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.12.2021",
+        "year": 2021,
+        "месяц": 12,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407055.210290820745286, 6280287.579053494147956]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2861375,
+        "FeatureC_1": 56.657583,
+        "FeatureC_2": 43.477986,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "09.07.2023",
+        "year": 2023,
+        "месяц": 7,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406697.719536690565292, 6280306.077123580500484]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2579149,
+        "FeatureC_1": 56.657642,
+        "FeatureC_2": 43.480732,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406866.184304531489033, 6280308.910650974139571]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2766985,
+        "FeatureC_1": 56.64046,
+        "FeatureC_2": 43.501278,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.10.2022",
+        "year": 2022,
+        "месяц": 10,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408083.783872984698974, 6278368.941937763243914]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2018629,
+        "FeatureC_1": 56.661667,
+        "FeatureC_2": 43.479167,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "25.06.2015",
+        "year": 2015,
+        "месяц": 6,
+        "день": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406780.191739139263518, 6280758.994429731741548]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2637250,
+        "FeatureC_1": 56.645173,
+        "FeatureC_2": 43.472375,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.10.2021",
+        "year": 2021,
+        "месяц": 10,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406323.01877318933839, 6278932.573873054236174]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2484452,
+        "FeatureC_1": 56.645439,
+        "FeatureC_2": 43.475229,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "23.08.2020",
+        "year": 2020,
+        "месяц": 8,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406498.673570874670986, 6278958.283398942090571]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2861404,
+        "FeatureC_1": 56.661008,
+        "FeatureC_2": 43.498779,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.07.2023",
+        "year": 2023,
+        "месяц": 7,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407980.598467082483694, 6280659.162034654058516]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2600787,
+        "FeatureC_1": 56.677203,
+        "FeatureC_2": 43.455863,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "26.07.2021",
+        "year": 2021,
+        "месяц": 7,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405390.846608481020667, 6282519.972053166478872]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2599817,
+        "FeatureC_1": 56.640141,
+        "FeatureC_2": 43.481537,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "21.07.2021",
+        "year": 2021,
+        "месяц": 7,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406872.398803784279153, 6278360.068620743229985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2694207,
+        "FeatureC_1": 56.657565,
+        "FeatureC_2": 43.476881,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "01.03.2022",
+        "year": 2022,
+        "месяц": 3,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406629.94279540493153, 6280305.577832998707891]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2754646,
+        "FeatureC_1": 56.64374,
+        "FeatureC_2": 43.473941,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "06.09.2022",
+        "year": 2022,
+        "месяц": 9,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406415.4910895654466, 6278770.952657137066126]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2727800,
+        "FeatureC_1": 56.67336,
+        "FeatureC_2": 43.44655,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "22.07.2022",
+        "year": 2022,
+        "месяц": 7,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404810.603247792285401, 6282105.162224757485092]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903227,
+        "FeatureC_1": 56.6464,
+        "FeatureC_2": 43.4723,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406321.462119342468213, 6279069.233248218894005]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2581745,
+        "FeatureC_1": 56.662324,
+        "FeatureC_2": 43.4935,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407660.262384949252009, 6280812.721484251320362]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2766935,
+        "FeatureC_1": 56.618985,
+        "FeatureC_2": 43.488919,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "29.10.2022",
+        "year": 2022,
+        "месяц": 10,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407273.225678878370672, 6275995.546556913293898]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1992291,
+        "FeatureC_1": 56.6497,
+        "FeatureC_2": 43.4653,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "27.10.2017",
+        "year": 2017,
+        "месяц": 10,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405900.482001035183202, 6279446.084146054461598]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795336,
+        "FeatureC_1": 56.640277,
+        "FeatureC_2": 43.502061,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "06.12.2022",
+        "year": 2022,
+        "месяц": 12,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408131.35589283076115, 6278347.526133437640965]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2915879,
+        "FeatureC_1": 56.645642,
+        "FeatureC_2": 43.488602,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "14.11.2023",
+        "year": 2023,
+        "месяц": 11,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407319.149158297281247, 6278962.72456031665206]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2649656,
+        "FeatureC_1": 56.6575,
+        "FeatureC_2": 43.4806,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "08.11.2021",
+        "year": 2021,
+        "месяц": 11,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406857.743029806064442, 6280293.286225100047886]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903176,
+        "FeatureC_1": 56.666722,
+        "FeatureC_2": 43.490539,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407489.562773366458714, 6281306.183886682614684]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903194,
+        "FeatureC_1": 56.673328,
+        "FeatureC_2": 43.451448,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "21.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405110.624285073252395, 6282094.811343451961875]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017772,
+        "FeatureC_1": 56.625914,
+        "FeatureC_2": 43.481312,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "03.10.2019",
+        "year": 2019,
+        "месяц": 10,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406823.541545551270247, 6276777.004156897775829]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2754656,
+        "FeatureC_1": 56.674297,
+        "FeatureC_2": 43.445477,
+        "FeatureC_3": "Съезд с дороги",
+        "FeatureC_4": "03.09.2022",
+        "year": 2022,
+        "месяц": 9,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404747.224993386655115, 6282210.934238715097308]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2741950,
+        "FeatureC_1": 56.673784,
+        "FeatureC_2": 43.446057,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "27.08.2022",
+        "year": 2022,
+        "месяц": 8,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404781.466667430941015, 6282153.035142492502928]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903299,
+        "FeatureC_1": 56.639829,
+        "FeatureC_2": 43.489659,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407369.712116924638394, 6278314.34673032630235]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2741990,
+        "FeatureC_1": 56.640324,
+        "FeatureC_2": 43.501986,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.08.2022",
+        "year": 2022,
+        "месяц": 8,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408126.870808015577495, 6278352.857402764260769]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005162,
+        "FeatureC_1": 56.637345,
+        "FeatureC_2": 43.483522,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "20.06.2020",
+        "year": 2020,
+        "месяц": 6,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406987.247426031390205, 6278046.198714428581297]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2695415,
+        "FeatureC_1": 56.637268,
+        "FeatureC_2": 43.483618,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "07.05.2022",
+        "year": 2022,
+        "месяц": 5,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406992.9455459304736, 6278037.498943532817066]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2694200,
+        "FeatureC_1": 56.646914,
+        "FeatureC_2": 43.491343,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "26.03.2022",
+        "year": 2022,
+        "месяц": 3,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407490.329742999223527, 6279100.589540884830058]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2822340,
+        "FeatureC_1": 56.660042,
+        "FeatureC_2": 43.461721,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "14.04.2023",
+        "year": 2023,
+        "месяц": 4,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405706.878780524071772, 6280601.995679328218102]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2693892,
+        "FeatureC_1": 56.646495,
+        "FeatureC_2": 43.470089,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.01.2022",
+        "year": 2022,
+        "месяц": 1,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406186.132230328279547, 6279082.828303908929229]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996948,
+        "FeatureC_1": 56.633846,
+        "FeatureC_2": 43.47687,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "05.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406570.638745840871707, 6277665.823797389864922]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001832,
+        "FeatureC_1": 56.655908,
+        "FeatureC_2": 43.487599,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "16.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407282.848268298315816, 6280106.621929086744785]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2584587,
+        "FeatureC_1": 56.634766,
+        "FeatureC_2": 43.476484,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "19.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406549.237939931277651, 6277768.739401383325458]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2915858,
+        "FeatureC_1": 56.66434,
+        "FeatureC_2": 43.468158,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.11.2023",
+        "year": 2023,
+        "месяц": 11,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406112.102308930130675, 6281071.502423916012049]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2662069,
+        "FeatureC_1": 56.673761,
+        "FeatureC_2": 43.452559,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "23.12.2021",
+        "year": 2021,
+        "месяц": 12,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405179.783332779828925, 6282141.46432685572654]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2779506,
+        "FeatureC_1": 56.678841,
+        "FeatureC_2": 43.466313,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "13.11.2022",
+        "year": 2022,
+        "месяц": 11,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406035.135014880914241, 6282687.899443380534649]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2661899,
+        "FeatureC_1": 56.646689,
+        "FeatureC_2": 43.471506,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "22.11.2021",
+        "year": 2021,
+        "месяц": 11,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406273.495502120815217, 6279102.481830326840281]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1995437,
+        "FeatureC_1": 56.6543,
+        "FeatureC_2": 43.4727,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "05.08.2017",
+        "year": 2017,
+        "месяц": 8,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406365.569957305036951, 6279947.905046246014535]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2694541,
+        "FeatureC_1": 56.676242,
+        "FeatureC_2": 43.45347,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "07.06.2022",
+        "year": 2022,
+        "месяц": 6,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405241.828957234858535, 6282416.323832254856825]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2847949,
+        "FeatureC_1": 56.662088,
+        "FeatureC_2": 43.469392,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "30.06.2023",
+        "year": 2023,
+        "месяц": 6,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406182.133017348882277, 6280819.180334482342005]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795284,
+        "FeatureC_1": 56.6469,
+        "FeatureC_2": 43.4911,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "21.12.2022",
+        "year": 2022,
+        "месяц": 12,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407475.396250309422612, 6279099.359227945096791]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2822408,
+        "FeatureC_1": 56.656987,
+        "FeatureC_2": 43.484938,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "28.03.2023",
+        "year": 2023,
+        "месяц": 3,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407122.385048950265627, 6280230.308825433254242]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007830,
+        "FeatureC_1": 56.661663,
+        "FeatureC_2": 43.469532,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406189.657644691702444, 6280771.689036700874567]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2889719,
+        "FeatureC_1": 56.647155,
+        "FeatureC_2": 43.490721,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "04.09.2023",
+        "year": 2023,
+        "месяц": 9,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407452.782979053969029, 6279128.250496378168464]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2695153,
+        "FeatureC_1": 56.656173,
+        "FeatureC_2": 43.473008,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "18.02.2022",
+        "year": 2022,
+        "месяц": 2,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406389.092825944186188, 6280155.937308195978403]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2847989,
+        "FeatureC_1": 56.639858,
+        "FeatureC_2": 43.485689,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.06.2023",
+        "year": 2023,
+        "месяц": 6,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407126.322810987825505, 6278322.942813758738339]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2848075,
+        "FeatureC_1": 56.645197,
+        "FeatureC_2": 43.474242,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "08.06.2023",
+        "year": 2023,
+        "месяц": 6,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406437.555629803217016, 6278932.696415199898183]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2662076,
+        "FeatureC_1": 56.674857,
+        "FeatureC_2": 43.465476,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.12.2021",
+        "year": 2021,
+        "месяц": 12,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405973.934013261925429, 6282245.652743783779442]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2889632,
+        "FeatureC_1": 56.655006,
+        "FeatureC_2": 43.489723,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "22.09.2023",
+        "year": 2023,
+        "месяц": 9,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407410.836286071978975, 6280003.365179869346321]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2741982,
+        "FeatureC_1": 56.610331,
+        "FeatureC_2": 43.5085,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "09.08.2022",
+        "year": 2022,
+        "месяц": 8,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408453.757343056262471, 6275006.118108781985939]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2553669,
+        "FeatureC_1": 56.6731,
+        "FeatureC_2": 43.4661,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "21.03.2021",
+        "year": 2021,
+        "месяц": 3,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406007.790033005061559, 6282049.254143440164626]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010990,
+        "FeatureC_1": 56.6639,
+        "FeatureC_2": 43.4628,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "18.09.2016",
+        "year": 2016,
+        "месяц": 9,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405782.639156599936541, 6281029.882501850835979]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795259,
+        "FeatureC_1": 56.671432,
+        "FeatureC_2": 43.4776,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "30.12.2022",
+        "year": 2022,
+        "месяц": 12,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406708.282938196556643, 6281847.909738645888865]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903266,
+        "FeatureC_1": 56.644833,
+        "FeatureC_2": 43.472471,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "16.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406328.062282203114592, 6278894.603021035902202]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2741943,
+        "FeatureC_1": 56.666958,
+        "FeatureC_2": 43.467343,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "30.08.2022",
+        "year": 2022,
+        "месяц": 8,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406068.668276284413878, 6281363.985226292163134]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2847978,
+        "FeatureC_1": 56.662082,
+        "FeatureC_2": 43.469316,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "24.06.2023",
+        "year": 2023,
+        "месяц": 6,
+        "день": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406177.460165452444926, 6280818.616557323373854]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795271,
+        "FeatureC_1": 56.664269,
+        "FeatureC_2": 43.456528,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.12.2022",
+        "year": 2022,
+        "месяц": 12,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405399.179801580146886, 6281079.585271482355893]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2822394,
+        "FeatureC_1": 56.646501,
+        "FeatureC_2": 43.470304,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "29.03.2023",
+        "year": 2023,
+        "месяц": 3,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406199.329649367718957, 6279083.201991233974695]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2822447,
+        "FeatureC_1": 56.678783,
+        "FeatureC_2": 43.466334,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.03.2023",
+        "year": 2023,
+        "месяц": 3,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406036.277091749478132, 6282681.415622375905514]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2822459,
+        "FeatureC_1": 56.682366,
+        "FeatureC_2": 43.432324,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "01.03.2023",
+        "year": 2023,
+        "месяц": 3,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [403961.896066236658953, 6283127.308775756508112]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2484691,
+        "FeatureC_1": 56.669947,
+        "FeatureC_2": 43.466914,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "14.09.2020",
+        "year": 2020,
+        "месяц": 9,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406049.817438032361679, 6281697.229608335532248]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014733,
+        "FeatureC_1": 56.6575,
+        "FeatureC_2": 43.4842,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "16.08.2016",
+        "year": 2016,
+        "месяц": 8,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407078.409843959205318, 6280288.402312441729009]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931232,
+        "FeatureC_1": 56.6537,
+        "FeatureC_2": 43.4902,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "31.01.2024",
+        "year": 2024,
+        "месяц": 1,
+        "день": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407436.87631134246476, 6279857.371491642668843]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931253,
+        "FeatureC_1": 56.6789,
+        "FeatureC_2": 43.4696,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "27.01.2024",
+        "year": 2024,
+        "месяц": 1,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406236.648239414673299, 6282689.965490247122943]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931274,
+        "FeatureC_1": 56.6576,
+        "FeatureC_2": 43.4829,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "17.01.2024",
+        "year": 2024,
+        "месяц": 1,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406998.970828838064335, 6280301.293986606411636]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931283,
+        "FeatureC_1": 56.6852,
+        "FeatureC_2": 43.4279,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "17.01.2024",
+        "year": 2024,
+        "месяц": 1,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [403698.136016558622941, 6283448.919590064324439]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931301,
+        "FeatureC_1": 56.6741,
+        "FeatureC_2": 43.4659,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "16.01.2024",
+        "year": 2024,
+        "месяц": 1,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405998.02633165626321, 6282160.822018162347376]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931367,
+        "FeatureC_1": 56.646288,
+        "FeatureC_2": 43.464489,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "27.12.2023",
+        "year": 2023,
+        "месяц": 12,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405842.257816490891855, 6279067.464737651869655]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931378,
+        "FeatureC_1": 56.671533,
+        "FeatureC_2": 43.466656,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "22.12.2023",
+        "year": 2023,
+        "месяц": 12,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406037.956039261771366, 6281874.094879937358201]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931403,
+        "FeatureC_1": 56.645796,
+        "FeatureC_2": 43.472219,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "13.12.2023",
+        "year": 2023,
+        "месяц": 12,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406314.998102093522903, 6279002.122707056812942]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2931427,
+        "FeatureC_1": 56.657465,
+        "FeatureC_2": 43.483844,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "05.12.2023",
+        "year": 2023,
+        "месяц": 12,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407056.5022111000726, 6280284.989478711038828]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903236,
+        "FeatureC_1": 56.658137,
+        "FeatureC_2": 43.462965,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "18.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405778.373399190255441, 6280388.271893421187997]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2903219,
+        "FeatureC_1": 56.670141,
+        "FeatureC_2": 43.470583,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.10.2023",
+        "year": 2023,
+        "месяц": 10,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406275.120646831695922, 6281713.799222523346543]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2694580,
+        "FeatureC_1": 56.645988,
+        "FeatureC_2": 43.502469,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.06.2022",
+        "year": 2022,
+        "месяц": 6,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408170.255308216321282, 6278982.579254720360041]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2694892,
+        "FeatureC_1": 56.657553,
+        "FeatureC_2": 43.475668,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.04.2022",
+        "year": 2022,
+        "месяц": 4,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406555.56086005049292, 6280305.894558760337532]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2574091,
+        "FeatureC_1": 56.665472,
+        "FeatureC_2": 43.464178,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "23.05.2021",
+        "year": 2021,
+        "месяц": 5,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405871.009895612718537, 6281202.943301888182759]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2809681,
+        "FeatureC_1": 56.644625,
+        "FeatureC_2": 43.468405,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "07.02.2023",
+        "year": 2023,
+        "месяц": 2,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406078.231319254962727, 6278877.01467705052346]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2795169,
+        "FeatureC_1": 56.657624,
+        "FeatureC_2": 43.47937,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "28.01.2023",
+        "year": 2023,
+        "месяц": 1,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406782.654616626154166, 6280308.757968187332153]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2545137,
+        "FeatureC_1": 56.644725,
+        "FeatureC_2": 43.471849,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "04.02.2021",
+        "year": 2021,
+        "месяц": 2,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406289.65540529624559, 6278883.433030457235873]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2614789,
+        "FeatureC_1": 56.671816,
+        "FeatureC_2": 43.455541,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "14.08.2021",
+        "year": 2021,
+        "месяц": 8,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405357.612705354986247, 6281920.878476500511169]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2662073,
+        "FeatureC_1": 56.685135,
+        "FeatureC_2": 43.427839,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "23.12.2021",
+        "year": 2021,
+        "месяц": 12,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [403694.233802011294756, 6283441.771233776584268]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997702,
+        "FeatureC_1": 56.645556,
+        "FeatureC_2": 43.483056,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "28.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406978.88098870171234, 6278960.661584141664207]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999591,
+        "FeatureC_1": 56.644,
+        "FeatureC_2": 43.477793,
+        "FeatureC_3": "Иной вид ДТП",
+        "FeatureC_4": "16.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406652.332615184946917, 6278794.639577746391296]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013422,
+        "FeatureC_1": 56.64663,
+        "FeatureC_2": 43.470969,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "22.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406240.423606437281705, 6279096.649519251659513]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2484709,
+        "FeatureC_1": 56.646819,
+        "FeatureC_2": 43.49071,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "01.09.2020",
+        "year": 2020,
+        "месяц": 9,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407451.285528171283659, 6279090.870643722824752]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014331,
+        "FeatureC_1": 56.64,
+        "FeatureC_2": 43.4794,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "10.01.2016",
+        "year": 2016,
+        "месяц": 1,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406741.000432290195022, 6278347.279843025840819]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005986,
+        "FeatureC_1": 56.6581,
+        "FeatureC_2": 43.4706,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "12.01.2017",
+        "year": 2017,
+        "месяц": 1,
+        "день": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406246.269846915325616, 6280373.689554894343019]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014697,
+        "FeatureC_1": 56.6459,
+        "FeatureC_2": 43.5017,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "14.08.2016",
+        "year": 2016,
+        "месяц": 8,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408122.889909161895048, 6278973.815289069898427]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014714,
+        "FeatureC_1": 56.64,
+        "FeatureC_2": 43.5025,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "23.08.2016",
+        "year": 2016,
+        "месяц": 8,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408157.604220331879333, 6278316.109819421544671]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012953,
+        "FeatureC_1": 56.6392,
+        "FeatureC_2": 43.4858,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "26.05.2016",
+        "year": 2016,
+        "месяц": 5,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407131.51306449220283, 6278249.561386155895889]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012986,
+        "FeatureC_1": 56.6422,
+        "FeatureC_2": 43.4744,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "01.05.2016",
+        "year": 2016,
+        "месяц": 5,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406439.823617589077912, 6278598.934708178043365]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013439,
+        "FeatureC_1": 56.657612,
+        "FeatureC_2": 43.479198,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "27.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406772.082066302071325, 6280307.656265250407159]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004722,
+        "FeatureC_1": 56.6569,
+        "FeatureC_2": 43.4636,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "18.11.2017",
+        "year": 2017,
+        "месяц": 11,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405814.211033586761914, 6280249.729691275395453]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004724,
+        "FeatureC_1": 56.6803,
+        "FeatureC_2": 43.4292,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "17.11.2017",
+        "year": 2017,
+        "месяц": 11,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [403765.26539044722449, 6282901.758103272877634]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004734,
+        "FeatureC_1": 56.6608,
+        "FeatureC_2": 43.4986,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "13.11.2017",
+        "year": 2017,
+        "месяц": 11,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407969.1205118506914, 6280636.253074624575675]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004741,
+        "FeatureC_1": 56.6597,
+        "FeatureC_2": 43.5004,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "02.11.2017",
+        "year": 2017,
+        "месяц": 11,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408076.76714436308248, 6280511.415186205878854]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2011417,
+        "FeatureC_1": 56.65605,
+        "FeatureC_2": 43.487245,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "26.09.2019",
+        "year": 2019,
+        "месяц": 9,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407261.497083035181277, 6280122.904324730858207]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2015195,
+        "FeatureC_1": 56.6653,
+        "FeatureC_2": 43.4692,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "29.11.2016",
+        "year": 2016,
+        "месяц": 11,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406178.346817963814829, 6281176.918020500801504]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007819,
+        "FeatureC_1": 56.651591,
+        "FeatureC_2": 43.464918,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "04.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405881.773261616006494, 6279657.063931507989764]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009620,
+        "FeatureC_1": 56.645575,
+        "FeatureC_2": 43.470883,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "17.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406232.532549458032008, 6278979.35263889003545]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009624,
+        "FeatureC_1": 56.646807,
+        "FeatureC_2": 43.472096,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "14.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406309.963221200625412, 6279114.808305409736931]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009635,
+        "FeatureC_1": 56.616128,
+        "FeatureC_2": 43.508306,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "01.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408455.879150503780693, 6275651.545538290403783]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005540,
+        "FeatureC_1": 56.6242,
+        "FeatureC_2": 43.4814,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "22.06.2018",
+        "year": 2018,
+        "месяц": 6,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406824.71700268110726, 6276586.128118520602584]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005573,
+        "FeatureC_1": 56.6506,
+        "FeatureC_2": 43.465,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "08.06.2018",
+        "year": 2018,
+        "месяц": 6,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405884.331480402324814, 6279546.659754552878439]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996897,
+        "FeatureC_1": 56.670471,
+        "FeatureC_2": 43.450177,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "13.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405025.561706022941507, 6281778.606088199652731]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008621,
+        "FeatureC_1": 56.661675,
+        "FeatureC_2": 43.46951,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "28.01.2020",
+        "year": 2020,
+        "месяц": 1,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406188.339088234468363, 6280773.054656920954585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008630,
+        "FeatureC_1": 56.645693,
+        "FeatureC_2": 43.479949,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "14.01.2020",
+        "year": 2020,
+        "месяц": 1,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406788.711017932801042, 6278980.127129849977791]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2570015,
+        "FeatureC_1": 56.645244,
+        "FeatureC_2": 43.474435,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.05.2021",
+        "year": 2021,
+        "месяц": 5,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406449.506021915003657, 6278937.663932318799198]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2601309,
+        "FeatureC_1": 56.657659,
+        "FeatureC_2": 43.480507,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406852.434611911245156, 6280311.108246132731438]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2512078,
+        "FeatureC_1": 56.672971,
+        "FeatureC_2": 43.480239,
+        "FeatureC_3": "Съезд с дороги",
+        "FeatureC_4": "28.11.2020",
+        "year": 2020,
+        "месяц": 11,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406873.781107269925997, 6282015.603483842685819]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2512081,
+        "FeatureC_1": 56.671839,
+        "FeatureC_2": 43.44846,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "27.11.2020",
+        "year": 2020,
+        "месяц": 11,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404923.798291968589183, 6281933.234967560507357]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2484687,
+        "FeatureC_1": 56.678122,
+        "FeatureC_2": 43.466184,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.09.2020",
+        "year": 2020,
+        "месяц": 9,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406025.441867266199552, 6282608.056039321236312]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010093,
+        "FeatureC_1": 56.679124,
+        "FeatureC_2": 43.466313,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "17.08.2020",
+        "year": 2020,
+        "месяц": 8,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406035.839670397574082, 6282719.395582052879035]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010120,
+        "FeatureC_1": 56.649497,
+        "FeatureC_2": 43.489305,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "15.08.2020",
+        "year": 2020,
+        "месяц": 8,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407371.705440367979463, 6279390.812082282267511]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2484683,
+        "FeatureC_1": 56.664942,
+        "FeatureC_2": 43.466678,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "16.09.2020",
+        "year": 2020,
+        "месяц": 9,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406022.898756876122206, 6281140.528585569933057]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2524528,
+        "FeatureC_1": 56.640242,
+        "FeatureC_2": 43.481119,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "25.12.2020",
+        "year": 2020,
+        "месяц": 12,
+        "день": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406847.014105678885244, 6278371.876882064156234]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2498952,
+        "FeatureC_1": 56.657323,
+        "FeatureC_2": 43.484241,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "23.10.2020",
+        "year": 2020,
+        "месяц": 10,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407080.487535712891258, 6280268.647757375612855]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2578559,
+        "FeatureC_1": 56.63974,
+        "FeatureC_2": 43.483672,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.05.2021",
+        "year": 2021,
+        "месяц": 5,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407002.339930581918452, 6278312.543141229078174]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996422,
+        "FeatureC_1": 56.646277,
+        "FeatureC_2": 43.47216,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "28.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406312.57314545114059, 6279055.735400903038681]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996430,
+        "FeatureC_1": 56.642094,
+        "FeatureC_2": 43.476688,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406579.864249274600297, 6278584.018872106447816]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996435,
+        "FeatureC_1": 56.642531,
+        "FeatureC_2": 43.471248,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "25.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406247.360789564670995, 6278640.07689040992409]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1993675,
+        "FeatureC_1": 56.65,
+        "FeatureC_2": 43.4892,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "28.03.2016",
+        "year": 2016,
+        "месяц": 3,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407366.5012840279378, 6279446.934661960229278]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013433,
+        "FeatureC_1": 56.673018,
+        "FeatureC_2": 43.480089,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "31.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406864.706396287772804, 6282021.038048811256886]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013442,
+        "FeatureC_1": 56.671774,
+        "FeatureC_2": 43.453513,
+        "FeatureC_3": "Иной вид ДТП",
+        "FeatureC_4": "26.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405233.246067331230734, 6281919.005363915115595]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010515,
+        "FeatureC_1": 56.6806,
+        "FeatureC_2": 43.4658,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "16.04.2016",
+        "year": 2016,
+        "месяц": 4,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406008.089186451747082, 6282884.368427447974682]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004226,
+        "FeatureC_1": 56.64,
+        "FeatureC_2": 43.4814,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "16.12.2015",
+        "year": 2015,
+        "месяц": 12,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406863.649875465605874, 6278344.562269036658108]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004223,
+        "FeatureC_1": 56.6783,
+        "FeatureC_2": 43.4592,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.12.2015",
+        "year": 2015,
+        "месяц": 12,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405598.028902903955895, 6282637.461188282817602]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004259,
+        "FeatureC_1": 56.6808,
+        "FeatureC_2": 43.467,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "03.12.2015",
+        "year": 2015,
+        "месяц": 12,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406082.097344274632633, 6282904.98262404743582]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005182,
+        "FeatureC_1": 56.680551,
+        "FeatureC_2": 43.466882,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "09.06.2020",
+        "year": 2020,
+        "месяц": 6,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406074.24908166367095, 6282877.432122034020722]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994055,
+        "FeatureC_1": 56.6462,
+        "FeatureC_2": 43.4984,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "12.05.2018",
+        "year": 2018,
+        "месяц": 5,
+        "день": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407921.280281292973086, 6279011.629064804874361]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014353,
+        "FeatureC_1": 56.6617,
+        "FeatureC_2": 43.4697,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.01.2016",
+        "year": 2016,
+        "месяц": 1,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406200.046175880474038, 6280775.577076436020434]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014360,
+        "FeatureC_1": 56.645,
+        "FeatureC_2": 43.4744,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.01.2016",
+        "year": 2016,
+        "месяц": 1,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406446.755851546768099, 6278910.556089638732374]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2006001,
+        "FeatureC_1": 56.675,
+        "FeatureC_2": 43.458,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.01.2017",
+        "year": 2017,
+        "месяц": 1,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405516.252992991241626, 6282271.845412395894527]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005995,
+        "FeatureC_1": 56.6639,
+        "FeatureC_2": 43.4547,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "23.01.2017",
+        "year": 2017,
+        "месяц": 1,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405286.225150158395991, 6281041.041514576412737]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014759,
+        "FeatureC_1": 56.6706,
+        "FeatureC_2": 43.4839,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "08.08.2016",
+        "year": 2016,
+        "месяц": 8,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407092.259558255900629, 6281746.758775845170021]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010986,
+        "FeatureC_1": 56.6792,
+        "FeatureC_2": 43.4664,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "19.09.2016",
+        "year": 2016,
+        "месяц": 9,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406041.358607283094898, 6282727.734672258608043]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003694,
+        "FeatureC_1": 56.6697,
+        "FeatureC_2": 43.4667,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "28.10.2016",
+        "year": 2016,
+        "месяц": 10,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406036.089587319234852, 6281670.033331693150103]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012424,
+        "FeatureC_1": 56.64,
+        "FeatureC_2": 43.501667,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "24.08.2015",
+        "year": 2015,
+        "месяц": 8,
+        "день": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408106.520526164851617, 6278317.225535059347749]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999621,
+        "FeatureC_1": 56.642253,
+        "FeatureC_2": 43.474499,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "11.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406446.025611567369197, 6278604.698212321847677]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2015229,
+        "FeatureC_1": 56.635,
+        "FeatureC_2": 43.4675,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "03.11.2016",
+        "year": 2016,
+        "месяц": 11,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405998.803070409281645, 6277807.05783930234611]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000122,
+        "FeatureC_1": 56.640867,
+        "FeatureC_2": 43.478211,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "10.11.2018",
+        "year": 2018,
+        "месяц": 11,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406670.226434295997024, 6278445.388492702506483]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000127,
+        "FeatureC_1": 56.646011,
+        "FeatureC_2": 43.464553,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "09.11.2018",
+        "year": 2018,
+        "месяц": 11,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405845.491690185503103, 6279036.548660696484149]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009611,
+        "FeatureC_1": 56.642826,
+        "FeatureC_2": 43.475658,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "22.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406518.514100966625847, 6278666.889009938575327]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009594,
+        "FeatureC_1": 56.640342,
+        "FeatureC_2": 43.501986,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "10.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408126.914564745035022, 6278354.860692142508924]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005564,
+        "FeatureC_1": 56.637427,
+        "FeatureC_2": 43.470057,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "11.06.2018",
+        "year": 2018,
+        "месяц": 6,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406161.656151564151514, 6278073.665028402581811]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005580,
+        "FeatureC_1": 56.647049,
+        "FeatureC_2": 43.490796,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "06.06.2018",
+        "year": 2018,
+        "месяц": 6,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407457.121846670750529, 6279116.352156304754317]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001857,
+        "FeatureC_1": 56.646218,
+        "FeatureC_2": 43.472149,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406311.752394457173068, 6279049.184119686484337]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999156,
+        "FeatureC_1": 56.65,
+        "FeatureC_2": 43.4833,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "15.03.2018",
+        "year": 2018,
+        "месяц": 3,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407004.780807404662482, 6279454.919440442696214]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009140,
+        "FeatureC_1": 56.645278,
+        "FeatureC_2": 43.479444,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "01.05.2015",
+        "year": 2015,
+        "месяц": 5,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406756.722623055393342, 6278934.626780197024345]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003283,
+        "FeatureC_1": 56.6597,
+        "FeatureC_2": 43.4703,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "04.03.2017",
+        "year": 2017,
+        "месяц": 3,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406231.853909907571506, 6280552.169385315850377]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003297,
+        "FeatureC_1": 56.67,
+        "FeatureC_2": 43.4508,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "13.03.2017",
+        "year": 2017,
+        "месяц": 3,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405062.551469041325618, 6281725.324143642559648]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001393,
+        "FeatureC_1": 56.669167,
+        "FeatureC_2": 43.466389,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.01.2015",
+        "year": 2015,
+        "месяц": 1,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406015.705712367780507, 6281611.14007983263582]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001399,
+        "FeatureC_1": 56.641111,
+        "FeatureC_2": 43.498056,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.01.2015",
+        "year": 2015,
+        "месяц": 1,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407887.78402989229653, 6278445.716653162613511]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996943,
+        "FeatureC_1": 56.661227,
+        "FeatureC_2": 43.498521,
+        "FeatureC_3": "Наезд на стоящее ТС",
+        "FeatureC_4": "06.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407965.319168897054624, 6280683.881696821190417]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2011409,
+        "FeatureC_1": 56.644766,
+        "FeatureC_2": 43.471956,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.09.2019",
+        "year": 2019,
+        "месяц": 9,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406296.317991382849868, 6278887.849863534793258]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2011455,
+        "FeatureC_1": 56.646176,
+        "FeatureC_2": 43.499551,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "09.09.2019",
+        "year": 2019,
+        "месяц": 9,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407991.795250023016706, 6279007.413312169723213]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2011416,
+        "FeatureC_1": 56.660118,
+        "FeatureC_2": 43.489348,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "27.09.2019",
+        "year": 2019,
+        "месяц": 9,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407400.382894993352238, 6280572.805904953740537]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010111,
+        "FeatureC_1": 56.679726,
+        "FeatureC_2": 43.437259,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "18.08.2020",
+        "year": 2020,
+        "месяц": 8,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404257.493391602183692, 6282826.592188029550016]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2002369,
+        "FeatureC_1": 56.642507,
+        "FeatureC_2": 43.476183,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "28.07.2020",
+        "year": 2020,
+        "месяц": 7,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406549.918297538126353, 6278630.670988332480192]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007798,
+        "FeatureC_1": 56.645221,
+        "FeatureC_2": 43.474381,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "13.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406446.138005074753892, 6278935.177842730656266]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007790,
+        "FeatureC_1": 56.644271,
+        "FeatureC_2": 43.468276,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "20.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406069.441456137574278, 6278837.793532935902476]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007805,
+        "FeatureC_1": 56.656663,
+        "FeatureC_2": 43.485732,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407170.258706531720236, 6280193.17453462164849]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007803,
+        "FeatureC_1": 56.677822,
+        "FeatureC_2": 43.457279,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "12.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405479.146843159454875, 6282586.909640969708562]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008661,
+        "FeatureC_1": 56.63954,
+        "FeatureC_2": 43.472718,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.01.2020",
+        "year": 2020,
+        "месяц": 1,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406330.088896395347547, 6278305.190303700976074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2589077,
+        "FeatureC_1": 56.679124,
+        "FeatureC_2": 43.466324,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406036.513541913300287, 6282719.380505717359483]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2593928,
+        "FeatureC_1": 56.681234,
+        "FeatureC_2": 43.43448,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "09.07.2021",
+        "year": 2021,
+        "месяц": 7,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404091.085488348733634, 6282998.306670161895454]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2601307,
+        "FeatureC_1": 56.669935,
+        "FeatureC_2": 43.466924,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "03.06.2021",
+        "year": 2021,
+        "месяц": 6,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406050.400333238765597, 6281695.880382402800024]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989030,
+        "FeatureC_1": 56.65493,
+        "FeatureC_2": 43.47273,
+        "FeatureC_3": "Съезд с дороги",
+        "FeatureC_4": "05.06.2017",
+        "year": 2017,
+        "месяц": 6,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406368.970660523045808, 6280017.978990627452731]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989498,
+        "FeatureC_1": 56.66184,
+        "FeatureC_2": 43.497748,
+        "FeatureC_3": "Съезд с дороги",
+        "FeatureC_4": "04.08.2019",
+        "year": 2019,
+        "месяц": 8,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407919.436386646470055, 6280753.142747000791132]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989501,
+        "FeatureC_1": 56.667595,
+        "FeatureC_2": 43.489208,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "03.08.2019",
+        "year": 2019,
+        "месяц": 8,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407410.138139973802026, 6281405.140137632377446]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1993302,
+        "FeatureC_1": 56.6344,
+        "FeatureC_2": 43.4839,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "21.04.2018",
+        "year": 2018,
+        "месяц": 4,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407003.184652426687535, 6277717.927085819654167]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994557,
+        "FeatureC_1": 56.67158,
+        "FeatureC_2": 43.448771,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "15.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404942.201874355552718, 6281903.978787674568594]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003289,
+        "FeatureC_1": 56.6347,
+        "FeatureC_2": 43.4742,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "17.03.2017",
+        "year": 2017,
+        "месяц": 3,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406408.989595901861321, 6277764.508095747791231]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016667,
+        "FeatureC_1": 56.670407,
+        "FeatureC_2": 43.450252,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "09.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405029.996314675256144, 6281771.37943066470325]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996912,
+        "FeatureC_1": 56.646011,
+        "FeatureC_2": 43.501697,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408122.975865910935681, 6278986.17293559294194]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003731,
+        "FeatureC_1": 56.6469,
+        "FeatureC_2": 43.4906,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "06.10.2016",
+        "year": 2016,
+        "месяц": 10,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407444.739430951129179, 6279100.033878752961755]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991302,
+        "FeatureC_1": 56.675,
+        "FeatureC_2": 43.4689,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.07.2018",
+        "year": 2018,
+        "месяц": 7,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406184.07104057923425, 6282256.877259956672788]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2015552,
+        "FeatureC_1": 56.6447,
+        "FeatureC_2": 43.4719,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.02.2017",
+        "year": 2017,
+        "месяц": 2,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406292.720572879130486, 6278880.581015439704061]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017792,
+        "FeatureC_1": 56.674515,
+        "FeatureC_2": 43.445241,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.10.2019",
+        "year": 2019,
+        "месяц": 10,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404733.315831967745908, 6282235.524070979095995]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2015545,
+        "FeatureC_1": 56.6456,
+        "FeatureC_2": 43.4803,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "11.02.2017",
+        "year": 2017,
+        "месяц": 2,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406810.003386672819033, 6278969.299853834323585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989931,
+        "FeatureC_1": 56.655985,
+        "FeatureC_2": 43.470739,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "30.04.2017",
+        "year": 2017,
+        "месяц": 4,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406249.540182420110796, 6280138.11377199459821]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989457,
+        "FeatureC_1": 56.664411,
+        "FeatureC_2": 43.468148,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.08.2019",
+        "year": 2019,
+        "месяц": 8,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406111.666003027698025, 6281079.417959778569639]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2015965,
+        "FeatureC_1": 56.645556,
+        "FeatureC_2": 43.469444,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "28.10.2015",
+        "year": 2015,
+        "месяц": 10,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406144.252268232463393, 6278979.206370656378567]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2018665,
+        "FeatureC_1": 56.64,
+        "FeatureC_2": 43.481667,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "03.06.2015",
+        "year": 2015,
+        "месяц": 6,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406880.023579522094224, 6278344.199743578210473]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2011424,
+        "FeatureC_1": 56.634931,
+        "FeatureC_2": 43.475947,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "21.09.2019",
+        "year": 2019,
+        "месяц": 9,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406516.710078635369428, 6277787.834520888514817]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009121,
+        "FeatureC_1": 56.645278,
+        "FeatureC_2": 43.471944,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "08.05.2015",
+        "year": 2015,
+        "месяц": 5,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406296.851859269547276, 6278944.848440422676504]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000541,
+        "FeatureC_1": 56.623294,
+        "FeatureC_2": 43.488371,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.03.2019",
+        "year": 2019,
+        "месяц": 3,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407250.168725093244575, 6276475.850014258176088]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013503,
+        "FeatureC_1": 56.640377,
+        "FeatureC_2": 43.480486,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "08.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406808.528689053317066, 6278387.761374891735613]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2006334,
+        "FeatureC_1": 56.672252,
+        "FeatureC_2": 43.466495,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "08.06.2019",
+        "year": 2019,
+        "месяц": 6,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406029.880938946502283, 6281954.335673463530838]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989026,
+        "FeatureC_1": 56.6619,
+        "FeatureC_2": 43.4592,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "16.06.2017",
+        "year": 2017,
+        "месяц": 6,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405557.008554359024856, 6280812.248099901713431]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2553660,
+        "FeatureC_1": 56.657418,
+        "FeatureC_2": 43.484026,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "28.03.2021",
+        "year": 2021,
+        "месяц": 3,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407067.542511177016422, 6280279.512011865153909]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2010484,
+        "FeatureC_1": 56.6592,
+        "FeatureC_2": 43.4622,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "22.04.2016",
+        "year": 2016,
+        "месяц": 4,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405734.135951640782878, 6280507.628103104420006]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016706,
+        "FeatureC_1": 56.672971,
+        "FeatureC_2": 43.480196,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406871.146445894264616, 6282015.661889807321131]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2007792,
+        "FeatureC_1": 56.664411,
+        "FeatureC_2": 43.468298,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "19.11.2019",
+        "year": 2019,
+        "месяц": 11,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406120.858746689278632, 6281079.212583343498409]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989036,
+        "FeatureC_1": 56.6475,
+        "FeatureC_2": 43.4642,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "25.06.2017",
+        "year": 2017,
+        "месяц": 6,
+        "день": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405827.558822749415413, 6279202.748893608339131]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016690,
+        "FeatureC_1": 56.661693,
+        "FeatureC_2": 43.469532,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "11.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406189.732171346782707, 6280775.027843296527863]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016400,
+        "FeatureC_1": 56.641026,
+        "FeatureC_2": 43.470122,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.05.2020",
+        "year": 2020,
+        "месяц": 5,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406174.577454802696593, 6278474.120294618420303]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016663,
+        "FeatureC_1": 56.646477,
+        "FeatureC_2": 43.470047,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406183.512346639065072, 6279080.882475893944502]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016683,
+        "FeatureC_1": 56.639014,
+        "FeatureC_2": 43.482857,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "21.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406950.572536807390861, 6278232.849422766827047]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989930,
+        "FeatureC_1": 56.6697,
+        "FeatureC_2": 43.4667,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.04.2017",
+        "year": 2017,
+        "месяц": 4,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406036.089587319234852, 6281670.033331693150103]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1990416,
+        "FeatureC_1": 56.645209,
+        "FeatureC_2": 43.464274,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "04.12.2019",
+        "year": 2019,
+        "месяц": 12,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405826.386046925676055, 6278947.674589223228395]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017402,
+        "FeatureC_1": 56.679148,
+        "FeatureC_2": 43.466163,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "28.04.2019",
+        "year": 2019,
+        "месяц": 4,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406026.710278225131333, 6282722.272229854017496]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017778,
+        "FeatureC_1": 56.678299,
+        "FeatureC_2": 43.458449,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.10.2019",
+        "year": 2019,
+        "месяц": 10,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405552.018413116107695, 6282638.384240472689271]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2018262,
+        "FeatureC_1": 56.652145,
+        "FeatureC_2": 43.469167,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.02.2019",
+        "year": 2019,
+        "месяц": 2,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406143.637851871317253, 6279712.897230879403651]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2018267,
+        "FeatureC_1": 56.640572,
+        "FeatureC_2": 43.500817,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "28.02.2019",
+        "year": 2019,
+        "месяц": 2,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408055.785891697683837, 6278382.024730917066336]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017406,
+        "FeatureC_1": 56.670071,
+        "FeatureC_2": 43.466978,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "17.04.2019",
+        "year": 2019,
+        "месяц": 4,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406054.047686713107396, 6281710.942326636053622]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1993310,
+        "FeatureC_1": 56.678205,
+        "FeatureC_2": 43.439802,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "06.04.2018",
+        "year": 2018,
+        "месяц": 4,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404409.424249757023063, 6282653.766687932424247]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2562611,
+        "FeatureC_1": 56.640366,
+        "FeatureC_2": 43.501868,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.04.2021",
+        "year": 2021,
+        "месяц": 4,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408119.73663173452951, 6278357.689808858558536]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994041,
+        "FeatureC_1": 56.6517,
+        "FeatureC_2": 43.465,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "18.05.2018",
+        "year": 2018,
+        "месяц": 5,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405887.071882201358676, 6279669.082366993650794]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994526,
+        "FeatureC_1": 56.652535,
+        "FeatureC_2": 43.464843,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "25.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405879.527360271778889, 6279762.227735127322376]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994574,
+        "FeatureC_1": 56.671715,
+        "FeatureC_2": 43.448664,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "11.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404935.98563615832245, 6281919.151733368635178]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991350,
+        "FeatureC_1": 56.6578,
+        "FeatureC_2": 43.4772,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "06.07.2018",
+        "year": 2018,
+        "месяц": 7,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406650.077113771229051, 6280331.297542043961585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2016671,
+        "FeatureC_1": 56.6699,
+        "FeatureC_2": 43.466957,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.02.2020",
+        "year": 2020,
+        "месяц": 2,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406052.335337968543172, 6281691.93988816998899]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017804,
+        "FeatureC_1": 56.656769,
+        "FeatureC_2": 43.485528,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "04.10.2019",
+        "year": 2019,
+        "месяц": 10,
+        "день": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407158.014528885250911, 6280205.247846451587975]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1995926,
+        "FeatureC_1": 56.632495,
+        "FeatureC_2": 43.4761,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "19.12.2017",
+        "year": 2017,
+        "месяц": 12,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406520.070383889076766, 6277516.515728443861008]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1995930,
+        "FeatureC_1": 56.6456,
+        "FeatureC_2": 43.4831,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "17.12.2017",
+        "year": 2017,
+        "месяц": 12,
+        "день": 17
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406981.68719723331742, 6278965.498824547044933]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996415,
+        "FeatureC_1": 56.667135,
+        "FeatureC_2": 43.45449,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "30.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405281.470988218788989, 6281401.365450327284634]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996934,
+        "FeatureC_1": 56.672936,
+        "FeatureC_2": 43.48026,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406874.981452870299108, 6282011.679671948775649]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996938,
+        "FeatureC_1": 56.639899,
+        "FeatureC_2": 43.486065,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "07.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407149.481743068259675, 6278326.996785090304911]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001824,
+        "FeatureC_1": 56.6558,
+        "FeatureC_2": 43.4872,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407258.124796073534526, 6280095.141726561821997]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999610,
+        "FeatureC_1": 56.645988,
+        "FeatureC_2": 43.501697,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "16.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408122.919940056977794, 6278983.613174889236689]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000076,
+        "FeatureC_1": 56.6647,
+        "FeatureC_2": 43.467911,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.11.2018",
+        "year": 2018,
+        "месяц": 11,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406097.860193283064291, 6281111.906336695887148]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000113,
+        "FeatureC_1": 56.650659,
+        "FeatureC_2": 43.466077,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "11.11.2018",
+        "year": 2018,
+        "месяц": 11,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405950.506375721422955, 6279551.748565407469869]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000142,
+        "FeatureC_1": 56.666292,
+        "FeatureC_2": 43.467536,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.11.2018",
+        "year": 2018,
+        "месяц": 11,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406078.838728085334878, 6281289.599316012114286]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000521,
+        "FeatureC_1": 56.670849,
+        "FeatureC_2": 43.484187,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "28.03.2019",
+        "year": 2019,
+        "месяц": 3,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407110.458219784835819, 6281774.082124706357718]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003682,
+        "FeatureC_1": 56.6408,
+        "FeatureC_2": 43.4781,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "02.10.2016",
+        "year": 2016,
+        "месяц": 10,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406663.254078447760548, 6278438.082882472313941]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2002753,
+        "FeatureC_1": 56.671662,
+        "FeatureC_2": 43.453664,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "22.03.2020",
+        "year": 2020,
+        "месяц": 3,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405242.217114676837809, 6281906.331805708818138]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2004203,
+        "FeatureC_1": 56.6664,
+        "FeatureC_2": 43.4678,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "24.12.2015",
+        "year": 2015,
+        "месяц": 12,
+        "день": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406095.285763260268141, 6281301.257441034540534]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2003127,
+        "FeatureC_1": 56.679584,
+        "FeatureC_2": 43.455681,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "07.04.2020",
+        "year": 2020,
+        "месяц": 4,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405385.666186129848938, 6282785.213155313394964]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2006350,
+        "FeatureC_1": 56.660991,
+        "FeatureC_2": 43.498735,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "22.06.2019",
+        "year": 2019,
+        "месяц": 6,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407977.860245335148647, 6280657.329080008901656]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008265,
+        "FeatureC_1": 56.664444,
+        "FeatureC_2": 43.466667,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "05.11.2015",
+        "year": 2015,
+        "месяц": 11,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406020.985129724896979, 6281085.119476373307407]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008643,
+        "FeatureC_1": 56.660991,
+        "FeatureC_2": 43.498821,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.01.2020",
+        "year": 2020,
+        "месяц": 1,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407983.131258646724746, 6280657.21367416344583]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009596,
+        "FeatureC_1": 56.672877,
+        "FeatureC_2": 43.480368,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "28.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406881.45319800474681, 6282004.966643326915801]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2013453,
+        "FeatureC_1": 56.657878,
+        "FeatureC_2": 43.470626,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "21.08.2018",
+        "year": 2018,
+        "месяц": 8,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406247.312443606206216, 6280348.946848404593766]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014703,
+        "FeatureC_1": 56.63925,
+        "FeatureC_2": 43.492763,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "30.08.2016",
+        "year": 2016,
+        "месяц": 8,
+        "день": 30
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407558.649126703036018, 6278245.720030076801777]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009603,
+        "FeatureC_1": 56.644536,
+        "FeatureC_2": 43.46686,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "27.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405983.275007022777572, 6278869.226402108557522]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1990374,
+        "FeatureC_1": 56.67817,
+        "FeatureC_2": 43.466249,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "12.12.2019",
+        "year": 2019,
+        "месяц": 12,
+        "день": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406029.543462367262691, 6282613.309045142494142]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1990388,
+        "FeatureC_1": 56.67913,
+        "FeatureC_2": 43.464822,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.12.2019",
+        "year": 2019,
+        "месяц": 12,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405944.514416433114093, 6282722.10787412058562]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005537,
+        "FeatureC_1": 56.6416,
+        "FeatureC_2": 43.4717,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.06.2018",
+        "year": 2018,
+        "месяц": 6,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406272.768654834129848, 6278535.84509979467839]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1990866,
+        "FeatureC_1": 56.6667,
+        "FeatureC_2": 43.4833,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "29.01.2018",
+        "year": 2018,
+        "месяц": 1,
+        "день": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407045.892438621376641, 6281313.525547478348017]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2017811,
+        "FeatureC_1": 56.665667,
+        "FeatureC_2": 43.467665,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.10.2019",
+        "year": 2019,
+        "месяц": 10,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406085.189481932669878, 6281219.864133764989674]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991307,
+        "FeatureC_1": 56.640525,
+        "FeatureC_2": 43.501139,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "26.07.2018",
+        "year": 2018,
+        "месяц": 7,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408075.417908317642286, 6278376.362320693209767]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991334,
+        "FeatureC_1": 56.649013,
+        "FeatureC_2": 43.489197,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.07.2018",
+        "year": 2018,
+        "месяц": 7,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407363.897284883365501, 6279337.091782447881997]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991783,
+        "FeatureC_1": 56.657,
+        "FeatureC_2": 43.465,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "18.12.2016",
+        "year": 2016,
+        "месяц": 12,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405900.276127948542126, 6280258.937055872753263]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991791,
+        "FeatureC_1": 56.6353,
+        "FeatureC_2": 43.4689,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "22.12.2016",
+        "year": 2016,
+        "месяц": 12,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406085.414193845354021, 6277838.528047463856637]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991804,
+        "FeatureC_1": 56.645,
+        "FeatureC_2": 43.4678,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "10.12.2016",
+        "year": 2016,
+        "месяц": 12,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406042.066942824458238, 6278919.578303068876266]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2018280,
+        "FeatureC_1": 56.657512,
+        "FeatureC_2": 43.474134,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.02.2019",
+        "year": 2019,
+        "месяц": 2,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406461.430998052586801, 6280303.422895221970975]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1990373,
+        "FeatureC_1": 56.678069,
+        "FeatureC_2": 43.466195,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "31.12.2019",
+        "year": 2019,
+        "месяц": 12,
+        "день": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406025.983780581271276, 6282602.142392264679074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999639,
+        "FeatureC_1": 56.645923,
+        "FeatureC_2": 43.470894,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "03.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406234.070600315753836, 6279018.067673443816602]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009113,
+        "FeatureC_1": 56.661667,
+        "FeatureC_2": 43.469167,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "13.05.2015",
+        "year": 2015,
+        "месяц": 5,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406167.296941297594458, 6280772.633613209240139]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994029,
+        "FeatureC_1": 56.6794,
+        "FeatureC_2": 43.4664,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "26.05.2018",
+        "year": 2018,
+        "месяц": 5,
+        "день": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406041.856570630799979, 6282749.993428924120963]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996410,
+        "FeatureC_1": 56.670448,
+        "FeatureC_2": 43.484831,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "31.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407148.932803187519312, 6281728.580935795791447]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999603,
+        "FeatureC_1": 56.676012,
+        "FeatureC_2": 43.465197,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "18.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405959.718116448784713, 6282374.579620404168963]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994520,
+        "FeatureC_1": 56.657577,
+        "FeatureC_2": 43.483436,
+        "FeatureC_3": "Иной вид ДТП",
+        "FeatureC_4": "27.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407031.768967982032336, 6280298.007438742555678]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994533,
+        "FeatureC_1": 56.662312,
+        "FeatureC_2": 43.497105,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "22.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407881.178693683119491, 6280806.537197970785201]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994568,
+        "FeatureC_1": 56.651119,
+        "FeatureC_2": 43.489466,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "13.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407385.552644520648755, 6279571.113136125728488]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994577,
+        "FeatureC_1": 56.671291,
+        "FeatureC_2": 43.466635,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "09.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406036.066910293942783, 6281847.190594340674579]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994585,
+        "FeatureC_1": 56.647073,
+        "FeatureC_2": 43.490871,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.07.2019",
+        "year": 2019,
+        "месяц": 7,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407461.779131301736925, 6279118.922007641755044]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1994973,
+        "FeatureC_1": 56.6378,
+        "FeatureC_2": 43.4744,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "13.02.2016",
+        "year": 2016,
+        "месяц": 2,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406428.930563572444953, 6278109.24423093535006]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989483,
+        "FeatureC_1": 56.646784,
+        "FeatureC_2": 43.464543,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "06.08.2019",
+        "year": 2019,
+        "месяц": 8,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405846.804764319967944, 6279122.592028989456594]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1995408,
+        "FeatureC_1": 56.6717,
+        "FeatureC_2": 43.4664,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "24.08.2017",
+        "year": 2017,
+        "месяц": 8,
+        "день": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406022.685817474033684, 6281893.031779835931957]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001828,
+        "FeatureC_1": 56.657323,
+        "FeatureC_2": 43.484219,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "18.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407079.139009520527907, 6280268.67756759095937]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996900,
+        "FeatureC_1": 56.67824,
+        "FeatureC_2": 43.470497,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.01.2019",
+        "year": 2019,
+        "месяц": 1,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406289.960888362373225, 6282615.28512548841536]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997714,
+        "FeatureC_1": 56.630556,
+        "FeatureC_2": 43.479444,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "31.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406720.396861892077141, 6277296.165959541685879]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997762,
+        "FeatureC_1": 56.676389,
+        "FeatureC_2": 43.465278,
+        "FeatureC_3": "Наезд на препятствие",
+        "FeatureC_4": "11.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405965.619983502256218, 6282416.426248365081847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997770,
+        "FeatureC_1": 56.645556,
+        "FeatureC_2": 43.501667,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "09.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408120.030031192873139, 6278935.574382157064974]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1997798,
+        "FeatureC_1": 56.650278,
+        "FeatureC_2": 43.489167,
+        "FeatureC_3": "Падение пассажира",
+        "FeatureC_4": "01.07.2015",
+        "year": 2015,
+        "месяц": 7,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407365.159760917478707, 6279477.918901413679123]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998242,
+        "FeatureC_1": 56.668333,
+        "FeatureC_2": 43.4525,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "20.09.2015",
+        "year": 2015,
+        "месяц": 9,
+        "день": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405162.532492790312972, 6281537.44557780213654]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1996445,
+        "FeatureC_1": 56.669434,
+        "FeatureC_2": 43.486419,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "22.12.2018",
+        "year": 2018,
+        "месяц": 12,
+        "день": 22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407243.746621401631273, 6281613.579431573860347]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001842,
+        "FeatureC_1": 56.658526,
+        "FeatureC_2": 43.480421,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "12.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406849.301555127894972, 6280407.716717685572803]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998265,
+        "FeatureC_1": 56.66,
+        "FeatureC_2": 43.489444,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "05.09.2015",
+        "year": 2015,
+        "месяц": 9,
+        "день": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407405.97762471268652, 6280559.543588870204985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998722,
+        "FeatureC_1": 56.65743,
+        "FeatureC_2": 43.48395,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "23.07.2016",
+        "year": 2016,
+        "месяц": 7,
+        "день": 23
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407062.913506386510562, 6280280.950534225441515]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998797,
+        "FeatureC_1": 56.6419,
+        "FeatureC_2": 43.4631,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.07.2016",
+        "year": 2016,
+        "месяц": 7,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405746.147867938852869, 6278581.018299994058907]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000933,
+        "FeatureC_1": 56.6792,
+        "FeatureC_2": 43.4663,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "14.07.2017",
+        "year": 2017,
+        "месяц": 7,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406035.232514899398666, 6282727.871726880781353]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998774,
+        "FeatureC_1": 56.647207,
+        "FeatureC_2": 43.49096,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "11.07.2016",
+        "year": 2016,
+        "месяц": 7,
+        "день": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407467.564188829390332, 6279133.715287343598902]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1999617,
+        "FeatureC_1": 56.636949,
+        "FeatureC_2": 43.483994,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "14.10.2018",
+        "year": 2018,
+        "месяц": 10,
+        "день": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407015.22057025169488, 6278001.486557639203966]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2000524,
+        "FeatureC_1": 56.646625,
+        "FeatureC_2": 43.471076,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "27.03.2019",
+        "year": 2019,
+        "месяц": 3,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406246.971782482403796, 6279095.946779525838792]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1991296,
+        "FeatureC_1": 56.627703,
+        "FeatureC_2": 43.477128,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "24.07.2018",
+        "year": 2018,
+        "месяц": 7,
+        "день": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406571.283732595271431, 6276981.798337609507143]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1995954,
+        "FeatureC_1": 56.6558,
+        "FeatureC_2": 43.4875,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "13.12.2017",
+        "year": 2017,
+        "месяц": 12,
+        "день": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407276.514541799610015, 6280094.736051248386502]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2009597,
+        "FeatureC_1": 56.673183,
+        "FeatureC_2": 43.458878,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "07.05.2019",
+        "year": 2019,
+        "месяц": 5,
+        "день": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405565.500077623524703, 6282068.415424084290862]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2001837,
+        "FeatureC_1": 56.675841,
+        "FeatureC_2": 43.474821,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "15.09.2018",
+        "year": 2018,
+        "месяц": 9,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406548.920062402088661, 6282342.38907144125551]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2005166,
+        "FeatureC_1": 56.64597,
+        "FeatureC_2": 43.501707,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "19.06.2020",
+        "year": 2020,
+        "месяц": 6,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [408123.489324695314281, 6278981.596487750299275]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2006910,
+        "FeatureC_1": 56.6469,
+        "FeatureC_2": 43.4917,
+        "FeatureC_3": "Съезд с дороги",
+        "FeatureC_4": "06.06.2016",
+        "year": 2016,
+        "месяц": 6,
+        "день": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407512.184437214978971, 6279098.549942078068852]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008262,
+        "FeatureC_1": 56.676389,
+        "FeatureC_2": 43.454167,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "10.11.2015",
+        "year": 2015,
+        "месяц": 11,
+        "день": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405284.8999798449222, 6282431.720853264443576]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2008653,
+        "FeatureC_1": 56.644997,
+        "FeatureC_2": 43.473265,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "02.01.2020",
+        "year": 2020,
+        "месяц": 1,
+        "день": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406377.154154523159377, 6278911.770983380265534]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012417,
+        "FeatureC_1": 56.656667,
+        "FeatureC_2": 43.485,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "03.08.2015",
+        "year": 2015,
+        "месяц": 8,
+        "день": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [407125.39860457519535, 6280194.610843234695494]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012430,
+        "FeatureC_1": 56.649167,
+        "FeatureC_2": 43.480833,
+        "FeatureC_3": "Наезд на велосипедиста",
+        "FeatureC_4": "21.08.2015",
+        "year": 2015,
+        "месяц": 8,
+        "день": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406851.47893213503994, 6279365.559835690073669]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012445,
+        "FeatureC_1": 56.666944,
+        "FeatureC_2": 43.454444,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "08.08.2015",
+        "year": 2015,
+        "месяц": 8,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405278.172895937925205, 6281380.171969258226454]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2012437,
+        "FeatureC_1": 56.644167,
+        "FeatureC_2": 43.471944,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "15.08.2015",
+        "year": 2015,
+        "месяц": 8,
+        "день": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406294.096782917680684, 6278821.201562938280404]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 2014335,
+        "FeatureC_1": 56.6678,
+        "FeatureC_2": 43.4578,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "08.01.2016",
+        "year": 2016,
+        "месяц": 1,
+        "день": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [405485.973890953289811, 6281470.808038693852723]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998733,
+        "FeatureC_1": 56.6772,
+        "FeatureC_2": 43.4478,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "01.07.2016",
+        "year": 2016,
+        "месяц": 7,
+        "день": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [404896.867407408601139, 6282530.793855822645128]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1998250,
+        "FeatureC_1": 56.6575,
+        "FeatureC_2": 43.471667,
+        "FeatureC_3": "Наезд на пешехода",
+        "FeatureC_4": "16.09.2015",
+        "year": 2015,
+        "месяц": 9,
+        "день": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406310.183477956859861, 6280305.455162853933871]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1989172,
+        "FeatureC_1": 56.6549,
+        "FeatureC_2": 43.47,
+        "FeatureC_3": "Опрокидывание",
+        "FeatureC_4": "19.06.2017",
+        "year": 2017,
+        "месяц": 6,
+        "день": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406201.546110826369841, 6280018.370900335721672]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FeatureCol": 1992405,
+        "FeatureC_1": 56.6333,
+        "FeatureC_2": 43.4833,
+        "FeatureC_3": "Столкновение",
+        "FeatureC_4": "27.10.2017",
+        "year": 2017,
+        "месяц": 10,
+        "день": 27
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [406963.677164894819725, 6277596.318003660067916]
+      }
+    }
+  ]
+}

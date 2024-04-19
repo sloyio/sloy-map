@@ -1,5 +1,23 @@
 import { ICopyright, InputSloyLayer, InputSloySource } from "@/types";
 import { gorodetsOKN, gorodetsOKNSource } from "./configs/gorodets/gorodetsOKN";
+import {
+  gorodetsAdminBoundary,
+  gorodetsAdminBoundarySource,
+} from "./configs/gorodets/gorodetsAdminBoundary";
+import {
+  gorodetsBoundary,
+  gorodetsBoundarySource,
+} from "./configs/gorodets/gorodetsBoundary";
+import {
+  gorodetsBuildings,
+  gorodetsBuildingsSource,
+} from "./configs/gorodets/gorodetsBuildings";
+import { gorodetsDTP, gorodetsDTPSource } from "./configs/gorodets/gorodetsDTP";
+import { gorodetsKSR, gorodetsKSRSource } from "./configs/gorodets/gorodetsKSR";
+import {
+  gorodetsRailway,
+  gorodetsRailwaySource,
+} from "./configs/gorodets/gorodetsRailwayLine";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 
 const CITY_VIEW = {
@@ -21,9 +39,25 @@ export const defaultMapState = {
   // maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
 };
 
-export const defaultSources: InputSloySource[] = [gorodetsOKNSource];
+export const defaultLayers: InputSloyLayer[] = [
+  gorodetsOKN,
+  gorodetsAdminBoundary,
+  gorodetsBoundary,
+  gorodetsBuildings,
+  gorodetsDTP,
+  gorodetsKSR,
+  gorodetsRailway,
+];
 
-export const defaultLayers: InputSloyLayer[] = [gorodetsOKN];
+export const defaultSources: InputSloySource[] = [
+  gorodetsOKNSource,
+  gorodetsAdminBoundarySource,
+  gorodetsBoundarySource,
+  gorodetsBuildingsSource,
+  gorodetsDTPSource,
+  gorodetsKSRSource,
+  ...gorodetsRailwaySource,
+];
 
 export const copyrights: ICopyright[] = [
   {
