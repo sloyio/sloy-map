@@ -78,11 +78,13 @@ export function useVectorPointCard() {
   const firstFeature = displayFeatures?.[0];
   const firstProperties = firstFeature?.properties;
   const activeSource = activeSources.find(
-    (s) => s.vectorSource === firstFeature?.source || "baremaps",
+    (s) => s.vectorSource === (firstFeature?.source || "baremaps"),
   );
 
   const activeCardId = activeSource?.card;
   const activeCard = activeCardId ? cards[activeCardId] : undefined;
+
+  console.log(firstFeature, "->", activeSources, "->", activeSource, "");
 
   return {
     firstFeature,
