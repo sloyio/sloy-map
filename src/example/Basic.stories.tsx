@@ -46,9 +46,10 @@ const App = () => (
       }
       sources={[
         {
-          id: "osmBuilding",
+          id: "osmSource",
           copyright: [],
           type: "vector-tiles",
+          vectorLayer: "building",
           card: {
             title: ["addr:street", "addr:housenumber"],
             blocks: [
@@ -125,7 +126,7 @@ const App = () => (
             {
               type: "range",
               filterVisualizations: ["houseLevelsLayer"],
-              source: "osmBuilding",
+              source: "osmSource",
               property: "building:levels",
             },
           ],
@@ -133,7 +134,7 @@ const App = () => (
             {
               id: "houseLevelsLayer",
               type: "building-range",
-              source: "osmBuilding",
+              source: "osmSource",
               property: "building:levels",
               openable: true,
             },

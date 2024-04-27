@@ -5,6 +5,9 @@ import {
   useVisualisationFilters,
 } from "./helpers/useVisualisationFilters";
 import { lazy } from "react";
+import { Layer, Source } from "react-map-gl";
+import { getLayerProps } from "./helpers/getLayerProps";
+import { ClickableVisualization } from "./helpers/ClickableVisualization";
 
 const LazyBuldingsIdsVisualization = lazy(
   () => import("@/layers/visualization/BuldingsIdsVisualization"),
@@ -61,6 +64,16 @@ export function Visualization({ id: vId }: { id: IVisualization["id"] }) {
     }
     case "map":
       return <LazyLoadedVisualisationLayer vId={vId} />;
+    case "native":
+      return (
+        <>
+          <Source id={source.id} type="vector" {...source.mapSourceProps} />
+          {visualization.openable && (
+            <ClickableVisualization visualization={visualization} />
+          )}
+          <Layer {...getLayerProps(visualization, source)} />
+        </>
+      );
     default:
       return null;
   }

@@ -1,10 +1,4 @@
-import {
-  ComponentProps,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-} from "react";
+import { ComponentProps, useCallback, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import qs from "qs";
@@ -40,6 +34,7 @@ import { BeforeInit, Init } from "./Init";
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { VectorPointControl } from "./layers/visualization/helpers/VectorPointControl";
 
 export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
@@ -89,7 +84,7 @@ export function SloyMap({
       createCopyrights(copyrights),
     ]);
 
-    const firstLayer = Object.keys(appState.layers)?.[0];
+    const firstLayer = Object.keys(appState?.layers || {})?.[0];
 
     dispatch(
       init({
@@ -130,6 +125,7 @@ export function SloyMap({
       <>
         <Init />
         <Visualizations />
+        <VectorPointControl />
         {children}
       </>
     );
@@ -169,7 +165,6 @@ export function SloyMap({
                 ...mapProps.style,
               }}
             >
-              {children}
               {content}
             </MapGl>
             {isAppLoaded && (

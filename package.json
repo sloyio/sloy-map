@@ -2,7 +2,7 @@
   "name": "sloy-map",
   "license": "Apache-2.0",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "tsc && vite build",
@@ -40,6 +40,7 @@
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "maplibre-contour": "^0.0.6",
     "maplibre-gl": "^4.0.0",
+    "maplibre-gl-inspect": "^0.0.6",
     "nanoid": "^5.0.5",
     "pmtiles": "^3.0.2",
     "polished": "^4.2.2",

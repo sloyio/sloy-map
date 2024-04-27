@@ -16,13 +16,6 @@ const CITY_VIEW = {
   bearing: 0,
 };
 
-const COUNTRY_VIEW = {
-  center: [43.4735, 56.644],
-  zoom: 8,
-  pitch: 0,
-  bearing: 0,
-};
-
 const App = () => (
   <Provider store={store}>
     <SloyMap
@@ -46,9 +39,10 @@ const App = () => (
       }
       sources={[
         {
-          id: "osmBuilding",
+          id: "osmSource",
           copyright: [],
           type: "vector-tiles",
+          vectorLayer: "building",
           card: {
             title: ["addr:street", "addr:housenumber"],
             blocks: [
@@ -126,7 +120,7 @@ const App = () => (
             {
               type: "range",
               filterVisualizations: ["houseLevelsLayer"],
-              source: "osmBuilding",
+              source: "osmSource",
               property: "building:levels",
             },
           ],
@@ -134,7 +128,7 @@ const App = () => (
             {
               id: "houseLevelsLayer",
               type: "building-range",
-              source: "osmBuilding",
+              source: "osmSource",
               property: "building:levels",
               openable: true,
             },

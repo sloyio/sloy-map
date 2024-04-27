@@ -3,7 +3,8 @@ import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/mediaQueries";
 import { useCard } from "@/state/useCard";
 import { Layers } from "@/layers/Layers";
-import { Card as RenderCard } from "@/sources/cards";
+import { useRenderCard } from "@/sources/cards";
+import { useAppSelector } from "@/state";
 
 const Right = styled(RightSidebar)`
   & > div {
@@ -15,7 +16,9 @@ function SidebarCard() {
   const isDesktop = useIsDesktop();
   const { closeCard, isCardActive } = useCard();
 
-  const card = <RenderCard />;
+  const card = useRenderCard();
+
+  if (!card) return null;
 
   if (isDesktop && isCardActive) {
     return (
@@ -34,15 +37,23 @@ function SidebarCard() {
 
 function SidebarFilter() {
   const isDesktop = useIsDesktop();
-  const layers = <Layers />;
+  const layers = useAppSelector((state) => state.sloy.config.layers);
+
+  const hasLayers = layers && Object.keys(layers).length;
+
+  if (!hasLayers) {
+    return null;
+  }
+
+  const content = <Layers />;
 
   if (isDesktop) {
-    return <LeftSidebar>{layers}</LeftSidebar>;
+    return <LeftSidebar>{content}</LeftSidebar>;
   }
 
   return (
     <SheetModal snapPoints={[0.6, 0.1]} isOpen>
-      {layers}
+      {content}
     </SheetModal>
   );
 }
