@@ -3,7 +3,7 @@ import { SheetModal, LeftSidebar, RightSidebar, SidebarContent } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/mediaQueries";
 import { useCard } from "@/state/useCard";
 import { Layers } from "@/layers/Layers";
-import { Card as RenderCard } from "@/sources/cards";
+import { useRenderCard } from "@/sources/cards";
 import { useAppSelector } from "@/state";
 
 const Right = styled(RightSidebar)`
@@ -16,7 +16,9 @@ function SidebarCard() {
   const isDesktop = useIsDesktop();
   const { closeCard, isCardActive } = useCard();
 
-  const card = <RenderCard />;
+  const card = useRenderCard();
+
+  if (!card) return null;
 
   if (isDesktop && isCardActive) {
     return (

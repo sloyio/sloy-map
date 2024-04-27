@@ -1,3 +1,4 @@
+import { VECTOR_TILES_BUILDING_SOURCE_ID } from "@/index";
 import { InputSloyLayer, InputSloySource } from "@/types";
 
 export const ekbHouseAge: InputSloyLayer = {
@@ -7,7 +8,7 @@ export const ekbHouseAge: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseAgeLayer"],
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:year",
     },
   ],
@@ -15,7 +16,7 @@ export const ekbHouseAge: InputSloyLayer = {
     {
       id: "ekbHouseAgeLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:year",
       openable: true,
     },
@@ -29,7 +30,7 @@ export const ekbHouseLevels: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseLevelsLayer"],
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:levels",
     },
   ],
@@ -37,7 +38,7 @@ export const ekbHouseLevels: InputSloyLayer = {
     {
       id: "ekbHouseLevelsLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:levels",
       openable: true,
     },
@@ -51,7 +52,7 @@ export const ekbHouseHealth: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseHealthLayer"],
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:health",
     },
   ],
@@ -59,7 +60,7 @@ export const ekbHouseHealth: InputSloyLayer = {
     {
       id: "ekbHouseHealthLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:health",
       openable: true,
     },
@@ -67,7 +68,7 @@ export const ekbHouseHealth: InputSloyLayer = {
 };
 
 export const ekbHouseSource: InputSloySource = {
-  id: "osmBuilding",
+  id: VECTOR_TILES_BUILDING_SOURCE_ID,
   copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
   type: "vector-tiles",
   card: {

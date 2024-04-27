@@ -34,6 +34,7 @@ import { BeforeInit, Init } from "./Init";
 import "sloy-ui/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { VectorPointControl } from "./layers/visualization/helpers/VectorPointControl";
 
 export interface SloyMapProps extends MapContextProps {
   mapState: IMapState;
@@ -124,6 +125,7 @@ export function SloyMap({
       <>
         <Init />
         <Visualizations />
+        <VectorPointControl />
         {children}
       </>
     );
@@ -163,7 +165,6 @@ export function SloyMap({
                 ...mapProps.style,
               }}
             >
-              {children}
               {content}
             </MapGl>
             {isAppLoaded && (

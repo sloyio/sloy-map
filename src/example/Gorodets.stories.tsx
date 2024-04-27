@@ -1,6 +1,11 @@
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { SloyMap, internalTranslations, sloyReducer } from "@/index";
+import {
+  SloyMap,
+  VECTOR_TILES_BUILDING_SOURCE_ID,
+  internalTranslations,
+  sloyReducer,
+} from "@/index";
 
 /** Example: */
 const store = configureStore({
@@ -46,7 +51,7 @@ const App = () => (
       }
       sources={[
         {
-          id: "osmBuilding",
+          id: VECTOR_TILES_BUILDING_SOURCE_ID,
           copyright: [],
           type: "vector-tiles",
           card: {
@@ -126,7 +131,7 @@ const App = () => (
             {
               type: "range",
               filterVisualizations: ["houseLevelsLayer"],
-              source: "osmBuilding",
+              source: VECTOR_TILES_BUILDING_SOURCE_ID,
               property: "building:levels",
             },
           ],
@@ -134,7 +139,7 @@ const App = () => (
             {
               id: "houseLevelsLayer",
               type: "building-range",
-              source: "osmBuilding",
+              source: VECTOR_TILES_BUILDING_SOURCE_ID,
               property: "building:levels",
               openable: true,
             },

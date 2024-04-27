@@ -20,9 +20,6 @@ import {
 } from "./armeniaConfig";
 import sloyLoader from "./sloy-loader.svg";
 
-// @ts-ignore
-// window.SLOY_SHOW_INTERNAL_DATA = true;
-
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;

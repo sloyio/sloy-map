@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { MapContext } from "@/state/context";
 import { BaseCard } from "./BaseCard";
 import { useCard } from "@/state/useCard";
+import { useSloyMap } from "@/helpers/useSloy";
 
 export function BuildingCard() {
   const { card, cardLng, cardLat, cardSource } = useCard();
-  const { sloyMapGl } = useMap();
+  const map = useSloyMap();
   const { overrideCard, layout } = useContext(MapContext);
   const isAppLoaded = useAppSelector((state) => state.sloy.appLoaded);
   const [buildingValues, setBuildingValues] = useState<Record<
@@ -16,8 +16,6 @@ export function BuildingCard() {
   > | null>(null);
 
   useEffect(() => {
-    const map = sloyMapGl?.getMap?.();
-
     if (map && cardLat && cardLng) {
       const house = map.queryRenderedFeatures(
         map.project({ lat: cardLat, lng: cardLng }),
@@ -28,11 +26,9 @@ export function BuildingCard() {
 
       setBuildingValues(house);
     }
-  }, [sloyMapGl, cardLat, cardLng, layout.buildingLayerName]);
+  }, [cardLat, cardLng, layout.buildingLayerName, map]);
 
   useEffect(() => {
-    const map = sloyMapGl?.getMap?.();
-
     // center map only on loading step
     if (map && cardLat && cardLng && !isAppLoaded) {
       try {
@@ -41,7 +37,7 @@ export function BuildingCard() {
         console.error(error);
       }
     }
-  }, [sloyMapGl, isAppLoaded, cardLat, cardLng]);
+  }, [isAppLoaded, cardLat, cardLng, map]);
 
   if (!cardSource || !card || !buildingValues) return null;
 

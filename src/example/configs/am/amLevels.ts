@@ -1,5 +1,6 @@
 import { InputSloyLayer, InputSloySource } from "@/types";
 import { YEREVAN_VIEW } from "../../constants";
+import { VECTOR_TILES_BUILDING_SOURCE_ID } from "@/index";
 
 export const amLevels: InputSloyLayer = {
   id: "am-levels",
@@ -17,7 +18,7 @@ export const amLevels: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["houseLevelsLayer"],
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:levels",
     },
   ],
@@ -25,7 +26,7 @@ export const amLevels: InputSloyLayer = {
     {
       id: "houseLevelsLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: VECTOR_TILES_BUILDING_SOURCE_ID,
       property: "building:levels",
       openable: true,
     },
@@ -33,7 +34,7 @@ export const amLevels: InputSloyLayer = {
 };
 
 export const amLevelsSource: InputSloySource = {
-  id: "osmBuilding",
+  id: VECTOR_TILES_BUILDING_SOURCE_ID,
   copyright: ["osm"],
   type: "vector-tiles",
   card: {

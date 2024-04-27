@@ -5,12 +5,16 @@ import { useEffect, useRef } from "react";
 
 function setObjectState(
   map: Map,
-  mapObject: FeatureIdentifier,
+  featureIdentifier: FeatureIdentifier,
   settings: { [key: string]: boolean },
   cursorPointer = true,
 ) {
   map.getCanvas().style.cursor = cursorPointer ? "pointer" : "default";
-  map.setFeatureState(mapObject, settings);
+  // @ts-expect-error
+  const id = featureIdentifier?.properties?.id || featureIdentifier.id;
+  if (id) {
+    map.setFeatureState({ ...featureIdentifier, id }, settings);
+  }
 }
 
 function useMapObjectState(

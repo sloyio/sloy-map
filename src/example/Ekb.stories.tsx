@@ -13,8 +13,6 @@ import {
 import ekbLoader from "./ekb-loader.svg";
 import "sloy-ui/fonts.css";
 
-// window.SLOY_SHOW_INTERNAL_DATA = true;
-
 export default {
   title: "Map/Advanced/Ekb",
   component: SloyMap,
