@@ -83,7 +83,7 @@ export function SloyMap({
       createCopyrights(copyrights),
     ]);
 
-    const firstLayer = Object.keys(appState.layers)?.[0];
+    const firstLayer = Object.keys(appState?.layers || {})?.[0];
 
     dispatch(
       init({
