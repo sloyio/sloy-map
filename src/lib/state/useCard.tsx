@@ -24,7 +24,7 @@ export function useCard() {
   }, [dispatch]);
 
   const cardSourceId = activeCard?.visualizationId
-    ? visualizations[activeCard?.visualizationId]?.source
+    ? visualizations?.[activeCard?.visualizationId]?.source
     : null;
 
   const cardSource = cardSourceId ? sources[cardSourceId] : null;

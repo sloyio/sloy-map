@@ -28,6 +28,10 @@ export function useActiveItems() {
       .map((id) => sources[id])
       .filter(Boolean);
 
+    const activeVectorLayers = activeSources
+      .map(({ vectorLayer }) => vectorLayer)
+      .filter(Boolean);
+
     const activeCopyrightsIds = activeSources
       .map(({ copyright }) => copyright)
       .flat();
@@ -39,6 +43,7 @@ export function useActiveItems() {
     return {
       activeSources,
       activeSourcesIds,
+      activeVectorLayers,
       activeCopyrights,
       activeCopyrightsIds,
       activeVisualizations,

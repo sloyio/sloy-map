@@ -210,7 +210,7 @@ interface ILayer {
 ```typescript
 interface IVisualization {
   id: string;
-  type: "map" | "building-ids" | "marker-image" | "building-range";
+  type: "map" | "building-ids" | "marker-image" | "building-range" | "native";
   source: ISource["id"];
   property?: string;
   previewPath?: string;

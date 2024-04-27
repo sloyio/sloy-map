@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMap } from "react-map-gl";
 import { useAppSelector } from "@/state";
 import { ActiveFilters, IVisualization } from "@/types";
-import { VECTOR_TILES_BUILDING_SOURCE_ID } from "@/constants";
+import { VECTOR_TILES_SOURCE_ID } from "@/constants";
 
 export function useActiveFilters({
   vId,
@@ -43,7 +43,7 @@ export function useVisualisationFilters({
 
     const filters: any = ["all"];
     activeFilters.forEach(({ filter, values }) => {
-      if (filter.source !== VECTOR_TILES_BUILDING_SOURCE_ID) {
+      if (filter.source !== VECTOR_TILES_SOURCE_ID) {
         if (filter.type === "boolean" && map.getLayer(vId)) {
           map.setLayoutProperty(
             vId,

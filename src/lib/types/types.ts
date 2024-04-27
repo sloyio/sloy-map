@@ -56,6 +56,8 @@ export interface ICard {
 
 export interface IBaseSource {
   id: string;
+  vectorSource?: string;
+  vectorLayer?: string;
   copyright: ICopyright["id"][];
   path?: string;
   dataByIdPath?: string;
@@ -90,6 +92,11 @@ interface IBaseVisualization {
   openable?: boolean;
 }
 
+export type INativeMapVisualization = IBaseVisualization & {
+  type: "native";
+  mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
+};
+
 export type IMapVisualization = IBaseVisualization & {
   type: "map";
   mapLayerProps?: Partial<ComponentProps<typeof Layer>>;
@@ -111,6 +118,7 @@ export type IBuildingRangeVisualization = IBaseVisualization & {
 };
 
 export type IVisualization =
+  | INativeMapVisualization
   | IMapVisualization
   | IBuildingRangeVisualization
   | IMarkerImageVisualization

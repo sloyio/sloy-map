@@ -1,7 +1,6 @@
 import { getLayerStateStyle } from "@/helpers/getLayerStyle";
 import { InputSloyLayer } from "@/types";
 import facades from "../../../../public/ekb-facades.json";
-import { VECTOR_TILES_BUILDING_SOURCE_ID } from "@/index";
 
 export const ekbFacades: InputSloyLayer = {
   id: "ekb-facades",
@@ -11,7 +10,7 @@ export const ekbFacades: InputSloyLayer = {
     {
       id: "ekbFacadesLayer",
       type: "building-ids",
-      source: VECTOR_TILES_BUILDING_SOURCE_ID,
+      source: "osmSource",
       ids: Object.keys(facades),
       openable: true,
       mapLayerProps: {
