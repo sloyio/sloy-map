@@ -11,7 +11,6 @@ export const gorodetsBoundary: InputSloyLayer = {
       source: "gorodetsBoundaryLayerSource",
       openable: true,
       type: "map",
-      property: "ru",
       mapLayerProps: {
         type: "line",
         paint: {
@@ -26,7 +25,6 @@ export const gorodetsBoundary: InputSloyLayer = {
       source: "gorodetsBoundaryLayerSource",
       openable: true,
       type: "map",
-      property: "ru",
       mapLayerProps: {
         type: "fill",
         paint: {

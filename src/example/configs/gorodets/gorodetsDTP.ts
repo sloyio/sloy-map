@@ -87,9 +87,9 @@ export const gorodetsDTP: InputSloyLayer = {
             ["linear"],
             ["zoom"],
             MIN_ZOOM,
-            2,
+            0,
             MAX_ZOOM,
-            50,
+            45,
           ],
           "heatmap-opacity": [
             "interpolate",

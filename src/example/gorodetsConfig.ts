@@ -9,15 +9,60 @@ import {
   gorodetsBoundarySource,
 } from "./configs/gorodets/gorodetsBoundary";
 import {
-  gorodetsBuildings,
-  gorodetsBuildingsSource,
-} from "./configs/gorodets/gorodetsBuildings";
+  gorodetsEmergencyHousing,
+  gorodetsEmergencyHousingSource,
+} from "./configs/gorodets/gorodetsEmergencyHousing";
 import { gorodetsDTP, gorodetsDTPSource } from "./configs/gorodets/gorodetsDTP";
 import { gorodetsKSR, gorodetsKSRSource } from "./configs/gorodets/gorodetsKSR";
 import {
   gorodetsRailway,
   gorodetsRailwaySource,
 } from "./configs/gorodets/gorodetsRailwayLine";
+import {
+  gorodetsWetland,
+  gorodetsWetlandSource,
+} from "./configs/gorodets/gorodetsWetland";
+import {
+  gorodetsWater,
+  gorodetsWaterSource,
+} from "./configs/gorodets/gorodetsWater";
+import {
+  gorodetsLanduse,
+  gorodetsLanduseSource,
+} from "./configs/gorodets/gorodetsLanduse";
+import {
+  gorodetsPhotos,
+  gorodetsPhotosSource,
+} from "./configs/gorodets/gorodetsPhotos";
+import {
+  gorodetsPopulationPPL,
+  gorodetsPopulationPPLSource,
+} from "./configs/gorodets/gorodetsPopulationPPL";
+import {
+  gorodetsBuildings,
+  gorodetsBuildingsSource,
+} from "./configs/gorodets/gorodetsBuildings";
+import {
+  gorodetsBuildingsAge,
+  gorodetsBuildingsAgeSource,
+} from "./configs/gorodets/gorodetsBuildingsAge";
+import {
+  gorodetsCommerce,
+  gorodetsCommerceSource,
+} from "./configs/gorodets/gorodetsCommerce";
+import {
+  gorodetsTouristRoutes,
+  gorodetsTouristRoutesSource,
+} from "./configs/gorodets/gorodetsTouristRoutes";
+import { gorodetsCad, gorodetsCadSource } from "./configs/gorodets/gorodetsCad";
+// import {
+//  gorodetsPopulation,
+//  gorodetsPopulationSource,
+// } from "./configs/gorodets/gorodetsPopulation";
+// import {
+//   gorodetsRoads,
+//   gorodetsRoadsSource,
+// } from "./configs/gorodets/gorodetsRoads";
 import { MAX_ZOOM, MIN_ZOOM } from "./constants";
 
 const CITY_VIEW = {
@@ -43,20 +88,44 @@ export const defaultLayers: InputSloyLayer[] = [
   gorodetsOKN,
   gorodetsAdminBoundary,
   gorodetsBoundary,
-  gorodetsBuildings,
+  gorodetsEmergencyHousing,
   gorodetsDTP,
   gorodetsKSR,
   gorodetsRailway,
+  gorodetsWetland,
+  gorodetsWater,
+  gorodetsLanduse,
+  gorodetsPhotos,
+  gorodetsPopulationPPL,
+  gorodetsBuildings,
+  gorodetsBuildingsAge,
+  gorodetsCommerce,
+  gorodetsTouristRoutes,
+  gorodetsCad,
+  // gorodetsPopulation,
+  // gorodetsRoads,
 ];
 
 export const defaultSources: InputSloySource[] = [
   gorodetsOKNSource,
   gorodetsAdminBoundarySource,
   gorodetsBoundarySource,
-  gorodetsBuildingsSource,
+  gorodetsEmergencyHousingSource,
   gorodetsDTPSource,
   gorodetsKSRSource,
   ...gorodetsRailwaySource,
+  gorodetsWetlandSource,
+  gorodetsWaterSource,
+  gorodetsLanduseSource,
+  gorodetsPhotosSource,
+  gorodetsPopulationPPLSource,
+  gorodetsBuildingsSource,
+  gorodetsBuildingsAgeSource,
+  gorodetsCommerceSource,
+  gorodetsTouristRoutesSource,
+  gorodetsCadSource,
+  // gorodetsPopulationSource,
+  // gorodetsRoadsSource,
 ];
 
 export const copyrights: ICopyright[] = [
