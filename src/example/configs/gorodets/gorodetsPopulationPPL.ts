@@ -3,7 +3,7 @@ import { MAX_ZOOM, MIN_ZOOM } from "src/example/constants";
 
 export const gorodetsPopulationPPL: InputSloyLayer = {
   id: "gorodets-population-ppl",
-  title: "Плотность населения",
+  title: "Количество жителей",
   filters: [
     {
       type: "range",
