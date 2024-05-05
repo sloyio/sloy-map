@@ -33,6 +33,11 @@ export const gorodetsBuildingsSource: InputSloySource = {
     blocks: [
       { type: "value", id: "name" },
       { type: "tag", id: "amenity" },
+      { type: "value", id: "period" },
+      { type: "value", id: "floors_max" },
+      { type: "value", id: "age_min" },
+      { type: "value", id: "area" },
+      { type: "value", id: "total_area" },
     ],
   },
   copyright: [],
@@ -44,6 +49,26 @@ export const gorodetsBuildingsSource: InputSloySource = {
     {
       id: "amenity",
       title: "Тип",
+    },
+    {
+      id: "period",
+      title: "Период строительства",
+    },
+    {
+      id: "floors_max",
+      title: "Кол-во этажей",
+    },
+    {
+      id: "age_min",
+      title: "Год постройки",
+    },
+    {
+      id: "area",
+      title: "Площадь этажа, м²",
+    },
+    {
+      id: "total_area",
+      title: "Общая площадь, м²",
     },
   ],
 };

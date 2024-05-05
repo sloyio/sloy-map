@@ -21,10 +21,11 @@ export const gorodetsBuildingsAge: InputSloyLayer = {
       source: "gorodetsBuildingsAgeLayerSource",
       openable: true,
       type: "map",
+      property: "age_min",
       mapLayerProps: {
         type: "line",
         paint: {
-          "line-width": 2,
+          "line-width": 1,
           "line-opacity": 1,
         },
       },
@@ -38,7 +39,7 @@ export const gorodetsBuildingsAge: InputSloyLayer = {
       mapLayerProps: {
         type: "fill",
         paint: {
-          "fill-opacity": 0.85,
+          "fill-opacity": 0.75,
         },
       },
     },
@@ -54,8 +55,8 @@ export const gorodetsBuildingsAgeSource: InputSloySource = {
   card: {
     title: ["addr_stree", "addr_house"],
     blocks: [
-      { type: "value", id: "name" },
-      { type: "tag", id: "amenity" },
+      // { type: "value", id: "name" },
+      // { type: "tag", id: "amenity" },
       { type: "value", id: "age_min" },
     ],
   },
