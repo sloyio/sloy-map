@@ -1,4 +1,7 @@
+import { SloyLogo } from "@/components/SloyLogo";
 import { Provider } from "react-redux";
+import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
+import styled from "styled-components";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, sloyReducer } from "@/index";
 import {
@@ -8,6 +11,13 @@ import {
   defaultSources,
 } from "./gorodetsConfig";
 import sloyLoader from "./sloy-loader.svg";
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  transform: scale(1.4);
+  margin: 0 8px;
+`;
 
 export default {
   title: "Map/Gorodets",
@@ -26,8 +36,8 @@ const store = configureStore({
 const Example = () => (
   <Provider store={store}>
     <SloyMap
-      locale="en-EN"
-      availableLocales={["en-EN", "am-AM", "ru-RU"]}
+      locale="ru-RU"
+      theme={defaultTheme}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
@@ -38,6 +48,31 @@ const Example = () => (
         hasPmtiles: true,
         loaderImageSrc: sloyLoader,
       }}
+      renderFooter={({ t }) => (
+        <>
+          <LogoWrapper>
+            <SloyLogo />
+          </LogoWrapper>
+          <>
+            <Button
+              type={ButtonType.DEFAULT}
+              size={ButtonSize.MEDIUM}
+              href="https://github.com/sloyio/sloy-map"
+              rounded
+            >
+              Github
+            </Button>
+            <Button
+              type={ButtonType.DEFAULT}
+              size={ButtonSize.MEDIUM}
+              href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
+              rounded
+            >
+              {t("About")}
+            </Button>
+          </>
+        </>
+      )}
     />
   </Provider>
 );

@@ -78,7 +78,7 @@ export const defaultMapState = {
     longitude: CITY_VIEW.center[0],
     latitude: CITY_VIEW.center[1],
   },
-  mapStyle: "https://sloy.io/gorodets/style.json",
+  mapStyle: "/gorodets-style.json",
   minZoom: MIN_ZOOM,
   maxZoom: MAX_ZOOM,
   // maxBounds: [40.721512, 37.51153, 49.609451, 42.222066],
