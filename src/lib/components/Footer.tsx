@@ -18,6 +18,7 @@ const Wrapper = styled.footer<{ $isDesktop?: boolean }>`
           top: 8px;
           left: 8px;
         `};
+  z-index: 500;
 `;
 
 export type RenderFooter = (props: { t: IMapContext["t"] }) => ReactNode;

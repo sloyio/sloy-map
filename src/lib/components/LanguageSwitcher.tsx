@@ -1,6 +1,6 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import {
-  Popover,
+  Dropdown,
   Menu,
   MenuItem,
   Button,
@@ -44,7 +44,7 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <Popover placement="top-start">
+    <Dropdown placement="top-start">
       <Button prefix={<Icon type={IconType.Earth} />} rounded>
         {items[activeElem]}
       </Button>
@@ -53,6 +53,6 @@ export function LanguageSwitcher() {
           <MenuItem onClick={() => setActiveElem(i)}>{item}</MenuItem>
         ))}
       </Menu>
-    </Popover>
+    </Dropdown>
   );
 }
