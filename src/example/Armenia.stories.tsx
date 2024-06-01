@@ -72,12 +72,6 @@ const sections = [
   },
 ];
 
-const DropdownWrapper = styled.div`
-  * {
-    z-index: 999 !important;
-  }
-`;
-
 const Example = () => {
   const [city, setCity] = useState<string>("ekaterinburg");
 
@@ -115,7 +109,7 @@ const Example = () => {
               <SloyLogo />
             </LogoWrapper>
             <>
-              <DropdownWrapper>
+              <>
                 <Dropdown placement="top-start">
                   <Dropdown.Trigger>
                     <Button
@@ -142,7 +136,7 @@ const Example = () => {
                     ))}
                   </Dropdown.Menu>
                 </Dropdown>
-              </DropdownWrapper>
+              </>
               <LanguageSwitcher />
               <Button
                 type={ButtonType.DEFAULT}
