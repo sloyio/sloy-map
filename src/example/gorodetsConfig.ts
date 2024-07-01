@@ -30,6 +30,7 @@ import {
   gorodetsLanduse,
   gorodetsLanduseSource,
 } from "./configs/gorodets/gorodetsLanduse";
+import { gorodetsPZZ, gorodetsPZZSource } from "./configs/gorodets/gorodetsPZZ";
 import {
   gorodetsPhotos,
   gorodetsPhotosSource,
@@ -95,6 +96,7 @@ export const defaultLayers: InputSloyLayer[] = [
   gorodetsWetland,
   gorodetsWater,
   gorodetsLanduse,
+  gorodetsPZZ,
   gorodetsPhotos,
   gorodetsPopulationPPL,
   gorodetsBuildings,
@@ -117,6 +119,7 @@ export const defaultSources: InputSloySource[] = [
   gorodetsWetlandSource,
   gorodetsWaterSource,
   gorodetsLanduseSource,
+  gorodetsPZZSource,
   gorodetsPhotosSource,
   gorodetsPopulationPPLSource,
   gorodetsBuildingsSource,
