@@ -5,8 +5,63 @@ export const gorodetsOKN: InputSloyLayer = {
   id: "gorodets-okn",
   title: "ОКН",
   description: "Объекты культурного наследия Городца.",
-  filters: [],
+  filters: [
+    {
+      title: "Тип зоны",
+      type: "string[]",
+      filterVisualizations: [
+        "gorodetsOKNZonesLineLayer",
+        "gorodetsOKNZonesFillLayer",
+      ],
+      source: "gorodetsOKNZonesLayerSource",
+      property: "type",
+      totalType: "percent",
+      postfix: "шт.",
+      sortType: "count",
+    },
+    {
+      title: "Категория",
+      type: "string[]",
+      filterVisualizations: [
+        "gorodetsOKNZonesLineLayer",
+        "gorodetsOKNZonesFillLayer",
+      ],
+      source: "gorodetsOKNZonesLayerSource",
+      property: "category",
+      totalType: "percent",
+      postfix: "шт.",
+      sortType: "count",
+    },
+  ],
   visualizations: [
+    {
+      id: "gorodetsOKNZonesLineLayer",
+      source: "gorodetsOKNZonesLayerSource",
+      openable: true,
+      type: "map",
+      property: "type",
+      mapLayerProps: {
+        type: "line",
+        paint: {
+          "line-width": 1,
+          "line-opacity": 1,
+          "line-dasharray": [2, 2],
+        },
+      },
+    },
+    {
+      id: "gorodetsOKNZonesFillLayer",
+      source: "gorodetsOKNZonesLayerSource",
+      openable: true,
+      type: "map",
+      property: "type",
+      mapLayerProps: {
+        type: "fill",
+        paint: {
+          "fill-opacity": 0.2,
+        },
+      },
+    },
     {
       id: "gorodetsOKNFillLayer",
       source: "gorodetsOKNLayerSource",
@@ -75,28 +130,99 @@ export const gorodetsOKN: InputSloyLayer = {
   ],
 };
 
-export const gorodetsOKNSource: InputSloySource = {
-  id: "gorodetsOKNLayerSource",
-  path: "/gorodets-okn.geojson",
-  type: "geojson",
-  coordsProperty: "coords",
-  projection: "EPSG:32638",
-  card: {
-    title: "name",
-    blocks: [
-      { type: "value", id: "street" },
-      { type: "value", id: "housenumbe" },
+export const gorodetsOKNSource: InputSloySource[] = [
+  {
+    id: "gorodetsOKNLayerSource",
+    path: "/gorodets-okn.geojson",
+    type: "geojson",
+    coordsProperty: "coords",
+    projection: "EPSG:32638",
+    card: {
+      title: "name",
+      blocks: [
+        { type: "value", id: "street" },
+        { type: "value", id: "housenumbe" },
+      ],
+    },
+    copyright: [],
+    properties: [
+      {
+        id: "street",
+        title: "Улица",
+      },
+      {
+        id: "housenumbe",
+        title: "Номер дома",
+      },
     ],
   },
-  copyright: [],
-  properties: [
-    {
-      id: "street",
-      title: "Улица",
+  {
+    id: "gorodetsOKNZonesLayerSource",
+    path: "/gorodets-okn-zones.geojson",
+    type: "geojson",
+    coordsProperty: "coords",
+    projection: "EPSG:32638",
+    card: {
+      title: "name_full",
+      blocks: [
+        { type: "tag", id: "type" },
+        { type: "tag", id: "category" },
+        { type: "value", id: "act" },
+      ],
     },
-    {
-      id: "housenumbe",
-      title: "Номер дома",
-    },
-  ],
-};
+    copyright: [],
+    properties: [
+      {
+        id: "type",
+        title: "Тип зоны",
+        values: {
+          "Граница территории объекта культурного наследия": {
+            title: "Граница территории объекта культурного наследия",
+            color: "#ff5500",
+          },
+          "Охранная зона объекта культурного наследия": {
+            title: "Охранная зона объекта культурного наследия",
+            color: "#2bff00",
+          },
+          "Граница территории выявленного объекта культурного наследия": {
+            title:
+              "Граница территории выявленного объекта культурного наследия",
+            color: "#ff00fb",
+          },
+          ЗРЗ: {
+            title: "ЗРЗ",
+            color: "#00eaff",
+          },
+          "ЗРЗ-1": {
+            title: "ЗРЗ-1",
+            color: "#0099ff",
+          },
+          "ЗРЗ-2": {
+            title: "ЗРЗ-2",
+            color: "#002aff",
+          },
+          "ЗРЗ-3": {
+            title: "ЗРЗ-3",
+            color: "#ff5f97",
+          },
+          ЗОПЛ: {
+            title: "ЗОПЛ",
+            color: "#fffc5f",
+          },
+          неизвестно: {
+            title: "неизвестно",
+            color: "#70757f",
+          },
+        },
+      },
+      {
+        id: "category",
+        title: "Категория",
+      },
+      {
+        id: "Постановление",
+        title: "Акт",
+      },
+    ],
+  },
+];

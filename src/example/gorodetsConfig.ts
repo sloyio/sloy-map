@@ -107,7 +107,7 @@ export const defaultLayers: InputSloyLayer[] = [
 ];
 
 export const defaultSources: InputSloySource[] = [
-  gorodetsOKNSource,
+  ...gorodetsOKNSource,
   gorodetsAdminBoundarySource,
   gorodetsBoundarySource,
   gorodetsEmergencyHousingSource,
