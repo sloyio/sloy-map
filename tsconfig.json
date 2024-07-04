@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/lib/*"],
+      "@/*": ["src/lib/*"]
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "preserveSymlinks": true,
+    "preserveSymlinks": true
   },
-  "include": ["./src"],
+  "include": ["./src"]
 }
