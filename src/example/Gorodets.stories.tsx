@@ -1,6 +1,6 @@
 import { SloyLogo } from "@/components/SloyLogo";
 import { Provider } from "react-redux";
-import { Button, ButtonSize, ButtonType } from "sloy-ui";
+// import { Button, ButtonSize, ButtonType } from "sloy-ui";
 import styled from "styled-components";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, sloyReducer } from "@/index";
@@ -47,12 +47,12 @@ const Example = () => (
         hasPmtiles: true,
         loaderImageSrc: sloyLoader,
       }}
-      renderFooter={({ t }) => (
+      renderFooter={() => (
         <>
           <LogoWrapper>
             <SloyLogo />
           </LogoWrapper>
-          <>
+          {/* <>
             <Button
               type={ButtonType.DEFAULT}
               size={ButtonSize.MEDIUM}
@@ -69,7 +69,7 @@ const Example = () => (
             >
               {t("About")}
             </Button>
-          </>
+          </> */}
         </>
       )}
     />
