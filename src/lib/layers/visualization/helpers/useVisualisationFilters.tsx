@@ -84,8 +84,6 @@ export function useVisualisationFilters({
       }
     });
 
-    console.log(filters);
-
     if (map.getLayer(vId)) {
       map.setFilter(vId, filters);
     }
