@@ -15,15 +15,17 @@ export interface IMapContext {
     loaderImageSrc?: string;
     canSelectMultipleLayers?: boolean;
     hasPmtiles: boolean;
+    inspect: boolean;
   };
 }
 
-export const initialLayoutProps = {
+export const initialLayoutProps: IMapContext["layout"] = {
   hasBaseMap: false,
   buildingLayerName: "building",
   loaderImageSrc: undefined,
   canSelectMultipleLayers: true,
   hasPmtiles: true,
+  inspect: false,
 };
 
 export const MapContext = createContext<IMapContext>({

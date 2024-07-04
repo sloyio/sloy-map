@@ -7,7 +7,7 @@ export const ekbHouseAge: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseAgeLayer"],
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:year",
     },
   ],
@@ -15,7 +15,7 @@ export const ekbHouseAge: InputSloyLayer = {
     {
       id: "ekbHouseAgeLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:year",
       openable: true,
     },
@@ -29,7 +29,7 @@ export const ekbHouseLevels: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseLevelsLayer"],
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:levels",
     },
   ],
@@ -37,7 +37,7 @@ export const ekbHouseLevels: InputSloyLayer = {
     {
       id: "ekbHouseLevelsLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:levels",
       openable: true,
     },
@@ -51,7 +51,7 @@ export const ekbHouseHealth: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["ekbHouseHealthLayer"],
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:health",
     },
   ],
@@ -59,7 +59,7 @@ export const ekbHouseHealth: InputSloyLayer = {
     {
       id: "ekbHouseHealthLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:health",
       openable: true,
     },
@@ -67,7 +67,8 @@ export const ekbHouseHealth: InputSloyLayer = {
 };
 
 export const ekbHouseSource: InputSloySource = {
-  id: "osmBuilding",
+  id: "osmSource",
+  vectorLayer: "building",
   copyright: ["osm", "howoldthishouse", "domaekb", "mingkh"],
   type: "vector-tiles",
   card: {

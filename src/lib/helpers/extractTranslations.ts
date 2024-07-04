@@ -93,83 +93,86 @@ export function setTranslations({
   translations?: Record<string, Record<string, string>>;
 }) {
   const lang = new Intl.Locale(locale).language;
-  const layers = Object.values(state.layers).reduce<IApp["layers"]>(
-    (all, { title, link, license, description, ...layer }) => ({
-      ...all,
-      [layer.id]: {
-        ...layer,
-        title: t(title, { lang, translations }) as string,
-        link: {
-          ...link,
-          label: t(link?.label, { lang, translations }),
-        },
-        description: t(description, { lang, translations }),
-        license: t(license, { lang, translations }),
-      },
-    }),
-    {},
-  );
-
-  const sources = Object.values(state.sources).reduce<IApp["sources"]>(
-    (all, source) => {
-      let properties = source.properties;
-
-      if (source.properties) {
-        properties = Object.values(source.properties).reduce<
-          Record<string, SourceProperty>
-        >((all, p) => {
-          let values = p.values;
-
-          if (isPlainObject(values) && values) {
-            values = Object.keys(values).reduce((all, key) => {
-              const item = values?.[key];
-
-              return {
-                ...all,
-                [key]: {
-                  ...item,
-                  title: t(item?.title, { lang, translations }),
-                  description: t(item?.description, { lang, translations }),
-                },
-              };
-            }, {});
-          }
-
-          return {
-            ...all,
-            [p.id]: {
-              ...p,
-              title: t(p.title, { lang, translations }),
-              values,
+  const layers = !state?.layers
+    ? {}
+    : (Object.values(state?.layers) || []).reduce<IApp["layers"]>(
+        (all, { title, link, license, description, ...layer }) => ({
+          ...all,
+          [layer.id]: {
+            ...layer,
+            title: t(title, { lang, translations }) as string,
+            link: {
+              ...link,
+              label: t(link?.label, { lang, translations }),
             },
-          };
-        }, {});
-      }
+            description: t(description, { lang, translations }),
+            license: t(license, { lang, translations }),
+          },
+        }),
+        {},
+      );
 
-      return {
-        ...all,
-        [source.id]: {
-          ...source,
-          properties,
-        },
-      };
-    },
-    {},
-  );
+  const sources = !state?.sources
+    ? {}
+    : Object.values(state?.sources).reduce<IApp["sources"]>((all, source) => {
+        let properties = source.properties;
 
-  const filters = Object.values(state.filters).reduce<IApp["filters"]>(
-    (all, { title, description, subTitle, postfix, ...filter }) => ({
-      ...all,
-      [filter.id]: {
-        ...filter,
-        title: t(title, { lang, translations }),
-        description: t(description, { lang, translations }),
-        subTitle: t(subTitle, { lang, translations }),
-        postfix: t(postfix, { lang, translations }),
-      },
-    }),
-    {},
-  );
+        if (source.properties) {
+          properties = Object.values(source.properties).reduce<
+            Record<string, SourceProperty>
+          >((all, p) => {
+            let values = p.values;
+
+            if (isPlainObject(values) && values) {
+              values = Object.keys(values).reduce((all, key) => {
+                const item = values?.[key];
+
+                return {
+                  ...all,
+                  [key]: {
+                    ...item,
+                    title: t(item?.title, { lang, translations }),
+                    description: t(item?.description, { lang, translations }),
+                  },
+                };
+              }, {});
+            }
+
+            return {
+              ...all,
+              [p.id]: {
+                ...p,
+                title: t(p.title, { lang, translations }),
+                values,
+              },
+            };
+          }, {});
+        }
+
+        return {
+          ...all,
+          [source.id]: {
+            ...source,
+            properties,
+          },
+        };
+      }, {});
+
+  const filters = !state.filters
+    ? {}
+    : Object.values(state.filters).reduce<IApp["filters"]>(
+        (all, { title, description, subTitle, postfix, ...filter }) => ({
+          ...all,
+          [filter.id]: {
+            ...filter,
+            title: t(title, { lang, translations }),
+            description: t(description, { lang, translations }),
+            subTitle: t(subTitle, { lang, translations }),
+            postfix: t(postfix, { lang, translations }),
+          },
+        }),
+        {},
+      );
 
   return {
     ...state,

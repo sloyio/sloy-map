@@ -17,7 +17,7 @@ export const amLevels: InputSloyLayer = {
     {
       type: "range",
       filterVisualizations: ["houseLevelsLayer"],
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:levels",
     },
   ],
@@ -25,7 +25,7 @@ export const amLevels: InputSloyLayer = {
     {
       id: "houseLevelsLayer",
       type: "building-range",
-      source: "osmBuilding",
+      source: "osmSource",
       property: "building:levels",
       openable: true,
     },
@@ -33,7 +33,8 @@ export const amLevels: InputSloyLayer = {
 };
 
 export const amLevelsSource: InputSloySource = {
-  id: "osmBuilding",
+  id: "osmSource",
+  vectorLayer: "building",
   copyright: ["osm"],
   type: "vector-tiles",
   card: {

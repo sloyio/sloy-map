@@ -17,7 +17,12 @@ export function RenderJsonCard({ source }: { source: ISource }) {
     return <MapLoader />;
   }
 
-  if (!cardId || !card) {
+  // cardId can be 0
+  if (typeof cardId !== "string" && typeof cardId !== "number") {
+    return null;
+  }
+
+  if (!card) {
     return null;
   }
 

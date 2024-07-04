@@ -38,6 +38,9 @@ dependencies:
   maplibre-gl:
     specifier: ^4.0.0
     version: 4.0.0
+  maplibre-gl-inspect:
+    specifier: ^0.0.6
+    version: 0.0.6(maplibre-gl@4.0.0)
   nanoid:
     specifier: ^5.0.5
     version: 5.0.5
@@ -9253,6 +9256,16 @@ packages:
     resolution: {integrity: sha512-D45+eXYTfD8D6s1W+92P3lFLgcmXZtoIGePmYNUOeNB0oFa/77Bc1jyfdmqF8LOT7g35dIjZoM9KPK3QOzuo5Q==}
     dev: false
 
+  /maplibre-gl-inspect@0.0.6(maplibre-gl@4.0.0):
+    resolution: {integrity: sha512-UP5vVb1nTztvx7GFBrijyV6QvfYpaBXMt/acaapRWZnT247poRT78/F2EzCAcVPs2PIvLjJw+5FsDmANEwkI8g==}
+    engines: {node: '>=18.15.0', npm: '>=9.6.2'}
+    peerDependencies:
+      maplibre-gl: ^2.4.0
+    dependencies:
+      maplibre-gl: 4.0.0
+      randomcolor: 0.6.2
+    dev: false
+
   /maplibre-gl@4.0.0:
     resolution: {integrity: sha512-bzVQ2pdOWITwbE+JHKSiAB/viVBBx4Aa1puydc1xizOWGbvRHD9pXpy3dsaW2ZlbmZKbv9r9sHpcvM9fTLGsKA==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
@@ -10122,6 +10135,10 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
     dev: true
+
+  /randomcolor@0.6.2:
+    resolution: {integrity: sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==}
+    dev: false
 
   /range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}

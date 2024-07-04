@@ -42,7 +42,7 @@ export function BaseCard({
   overrideCard = (props) => props.cardProps,
 }: Props) {
   const copyrights = useAppSelector((state) => state.sloy.config.copyrights);
-  const { locale, t } = useMapContext();
+  const { locale, layout, t } = useMapContext();
 
   const uiCardProps = useMemo(() => {
     if (!card || !source) return null;
@@ -198,14 +198,15 @@ export function BaseCard({
       });
     }
 
-    if (
-      // @ts-expect-error
-      typeof window.SLOY_SHOW_INTERNAL_DATA === "boolean" &&
-      // @ts-expect-error
-      window.SLOY_SHOW_INTERNAL_DATA
-    ) {
-      overrided.blocks.push({ type: "divider" });
-      overrided.blocks.push({
+    return overrided;
+  }, [card, source, overrideCard, t, values, lat, lng, locale, copyrights]);
+
+  const blocks = useMemo(() => {
+    const finalBlocks = uiCardProps?.blocks || [];
+
+    if (layout.inspect) {
+      finalBlocks.push({ type: "divider" });
+      finalBlocks.push({
         type: "section",
         title: "Raw data",
         value: (
@@ -216,16 +217,16 @@ export function BaseCard({
       });
     }
 
-    return overrided;
-  }, [card, source, overrideCard, values, lng, lat, t, locale, copyrights]);
+    return finalBlocks;
+  }, [layout.inspect, uiCardProps?.blocks, values]);
 
-  if (!values || !card || !uiCardProps) {
+  if (!values || blocks.length === 0) {
     return null;
   }
 
   return (
     <Wrapper>
-      <Card {...uiCardProps} blocks={uiCardProps.blocks as CardBlock[]} />
+      <Card {...uiCardProps} blocks={blocks as CardBlock[]} />
     </Wrapper>
   );
 }

@@ -109,7 +109,7 @@ export default function MarkersVisualization({
       {visualization.openable && (
         <ClickableVisualization visualization={visualization} />
       )}
-      <Layer {...fakeClickableMarkersLayerStyle} />
+      <Layer {...fakeClickableMarkersLayerStyle} generateId />
 
       {markers.map((feature) => {
         if (!feature.properties) {

@@ -10,7 +10,7 @@ export const ekbFacades: InputSloyLayer = {
     {
       id: "ekbFacadesLayer",
       type: "building-ids",
-      source: "osmBuilding",
+      source: "osmSource",
       ids: Object.keys(facades),
       openable: true,
       mapLayerProps: {
