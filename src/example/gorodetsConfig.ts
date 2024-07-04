@@ -36,6 +36,10 @@ import {
   gorodetsPhotosSource,
 } from "./configs/gorodets/gorodetsPhotos";
 import {
+  gorodetsPopulation,
+  gorodetsPopulationSource,
+} from "./configs/gorodets/gorodetsPopulation";
+import {
   gorodetsPopulationPPL,
   gorodetsPopulationPPLSource,
 } from "./configs/gorodets/gorodetsPopulationPPL";
@@ -57,9 +61,9 @@ import {
 } from "./configs/gorodets/gorodetsTouristRoutes";
 import { gorodetsCad, gorodetsCadSource } from "./configs/gorodets/gorodetsCad";
 import {
-  gorodetsPopulation,
-  gorodetsPopulationSource,
-} from "./configs/gorodets/gorodetsPopulation";
+  gorodetsCUCapacity,
+  gorodetsCUCapacitySource,
+} from "./configs/gorodets/gorodetsCUCapacity";
 // import {
 //   gorodetsRoads,
 //   gorodetsRoadsSource,
@@ -105,6 +109,7 @@ export const defaultLayers: InputSloyLayer[] = [
   gorodetsCommerce,
   gorodetsTouristRoutes,
   gorodetsCad,
+  gorodetsCUCapacity,
   // gorodetsRoads,
 ];
 
@@ -128,6 +133,7 @@ export const defaultSources: InputSloySource[] = [
   gorodetsCommerceSource,
   gorodetsTouristRoutesSource,
   gorodetsCadSource,
+  gorodetsCUCapacitySource,
   // gorodetsRoadsSource,
 ];
 
