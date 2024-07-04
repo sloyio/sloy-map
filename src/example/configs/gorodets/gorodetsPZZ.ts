@@ -40,7 +40,7 @@ export const gorodetsPZZ: InputSloyLayer = {
       mapLayerProps: {
         type: "fill",
         paint: {
-          "fill-opacity": 0.5,
+          "fill-opacity": 0.7,
         },
       },
     },
