@@ -55,13 +55,13 @@ export function useVisualisationFilters({
             "all",
             [
               ">=",
-              ["to-string", ["get", filter.property]],
-              String(values?.min),
+              ["to-number", ["get", filter.property]],
+              Number(values?.min),
             ],
             [
               "<=",
-              ["to-string", ["get", filter.property]],
-              String(values?.max),
+              ["to-number", ["get", filter.property]],
+              Number(values?.max),
             ],
           ]);
         } else if (filter.type === "string[]") {
@@ -83,6 +83,8 @@ export function useVisualisationFilters({
         }
       }
     });
+
+    console.log(filters);
 
     if (map.getLayer(vId)) {
       map.setFilter(vId, filters);

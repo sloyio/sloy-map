@@ -1,0 +1,637 @@
+{
+  "type": "FeatureCollection",
+  "name": "KSR",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:EPSG::32638" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "919665668",
+        "name": null,
+        "amenity": "restaurant",
+        "housenumbe": null,
+        "street": "Садовая улица",
+        "building": "hotel",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": "hotel",
+        "historic": null,
+        "feature_id": 8948
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [407632.951180234493222, 6280614.899895246140659],
+              [407654.000196788925678, 6280652.74098523426801],
+              [407673.350383448065259, 6280642.01620018389076],
+              [407652.313753825728782, 6280604.174745636992157],
+              [407632.951180234493222, 6280614.899895246140659]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "163621045",
+        "name": null,
+        "amenity": null,
+        "housenumbe": "1",
+        "street": "проспект Дзержинского",
+        "building": "yes",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": 6514
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [401794.835347995744087, 6278629.500652650371194],
+              [401791.245445918291807, 6278594.263493964448571],
+              [401773.170122038456611, 6278596.099774598143995],
+              [401776.754043062450364, 6278631.337062654085457],
+              [401794.835347995744087, 6278629.500652650371194]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "137926266",
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": "Загородная улица",
+        "building": "residential",
+        "levels": "2",
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": 16
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406314.916744163725525, 6277392.905820296145976],
+              [406331.315264691365883, 6277398.174947609193623],
+              [406337.067727154470049, 6277380.353650160133839],
+              [406320.669146370957606, 6277375.08449995983392],
+              [406314.916744163725525, 6277392.905820296145976]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "bungalow",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406310.410480339662172, 6277421.489052433520555],
+              [406316.035809516732115, 6277425.249851511791348],
+              [406321.144133527821396, 6277417.64237361587584],
+              [406315.524933176697232, 6277413.881431118585169],
+              [406310.410480339662172, 6277421.489052433520555]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "bungalow",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406295.476527828199323, 6277444.503266850486398],
+              [406300.919252442137804, 6277448.056550306268036],
+              [406304.676040187070612, 6277442.316395784728229],
+              [406299.233311743708327, 6277438.76310745626688],
+              [406295.476527828199323, 6277444.503266850486398]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "bungalow",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406294.348043910576962, 6277401.547951209358871],
+              [406299.081574520037975, 6277393.369782294146717],
+              [406293.057797192712314, 6277389.907383656129241],
+              [406288.330407667264808, 6277398.085422768257558],
+              [406294.348043910576962, 6277401.547951209358871]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": "toilets",
+        "housenumbe": null,
+        "street": null,
+        "building": "service",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406281.562071068095975, 6277416.575242331251502],
+              [406284.435099610185716, 6277411.934833667241037],
+              [406281.703424115432426, 6277410.247509256005287],
+              [406278.824263434333261, 6277414.888056422583759],
+              [406281.562071068095975, 6277416.575242331251502]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "bungalow",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406274.032598647405393, 6277436.707715770229697],
+              [406277.360242441121954, 6277430.988230552524328],
+              [406271.963947516633198, 6277427.868200516328216],
+              [406268.636308218585327, 6277433.587690022774041],
+              [406274.032598647405393, 6277436.707715770229697]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "yes",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406088.133497870352585, 6278545.976499138399959],
+              [406103.086722508363891, 6278542.201967997476459],
+              [406100.099159991834313, 6278530.398897412233055],
+              [406085.139762992504984, 6278534.173575663939118],
+              [406088.133497870352585, 6278545.976499138399959]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [405944.87239538441645, 6278857.961268267594278],
+              [405941.460405111603905, 6278851.759385055862367],
+              [405933.79927283298457, 6278855.899676183238626],
+              [405937.38044959079707, 6278862.155108312144876],
+              [405944.87239538441645, 6278857.961268267594278]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [405789.376937149325386, 6278989.707690187729895],
+              [405802.89026906224899, 6278987.734739316627383],
+              [405799.821404349349905, 6278965.756378193385899],
+              [405786.062739165790845, 6278967.734832949005067],
+              [405789.376937149325386, 6278989.707690187729895]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [405813.260779954551253, 6278991.105588929727674],
+              [405819.28815297485562, 6279021.925617046654224],
+              [405830.042210566462018, 6279020.014545226469636],
+              [405824.196368855249602, 6278989.079089875333011],
+              [405813.260779954551253, 6278991.105588929727674]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [405980.312404210329987, 6279433.608800183981657],
+              [405980.464210241450928, 6279440.397690980695188],
+              [405985.798082687950227, 6279440.278423882089555],
+              [405985.646285271563102, 6279433.489532976411283],
+              [405980.312404210329987, 6279433.608800183981657]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [407465.258642144035548, 6279444.826867623254657],
+              [407475.03005018789554, 6279443.164310819469392],
+              [407470.711459030106198, 6279417.782994815148413],
+              [407460.939747973578051, 6279419.434431679546833],
+              [407465.258642144035548, 6279444.826867623254657]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "yes",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406009.436481650336646, 6281761.156508484855294],
+              [406016.319970988843124, 6281693.41347919870168],
+              [405990.570613417716231, 6281690.649081119336188],
+              [405983.623764890478924, 6281758.282233844511211],
+              [406009.436481650336646, 6281761.156508484855294]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "yes",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406010.219337928690948, 6282008.234352107159793],
+              [406012.63711140176747, 6281973.272230145521462],
+              [406001.346292892529164, 6281972.500436262227595],
+              [405998.928612276096828, 6282007.462565580382943],
+              [406010.219337928690948, 6282008.234352107159793]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "residential",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [405332.348956263216678, 6281293.400958390906453],
+              [405334.839572058641352, 6281285.294255129061639],
+              [405330.079370395396836, 6281283.831466226838529],
+              [405327.588762660860084, 6281291.938172374852002],
+              [405332.348956263216678, 6281293.400958390906453]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": "public",
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [406122.966159402218182, 6279243.867567841894925],
+              [406136.265921290847473, 6279207.627281163819134],
+              [406119.480667881434783, 6279201.499228590168059],
+              [406106.181026557052974, 6279237.739569252356887],
+              [406122.966159402218182, 6279243.867567841894925]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": null,
+        "name": null,
+        "amenity": null,
+        "housenumbe": null,
+        "street": null,
+        "building": null,
+        "levels": null,
+        "shop": null,
+        "leisure": null,
+        "country": null,
+        "place": null,
+        "tourism": null,
+        "historic": null,
+        "feature_id": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [407853.995546117366757, 6279001.220406701788306],
+              [407851.173893710772973, 6278984.033978407271206],
+              [407880.41647319769254, 6278979.673242869786918],
+              [407881.955556328583043, 6278996.859671164304018],
+              [407853.995546117366757, 6279001.220406701788306]
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
