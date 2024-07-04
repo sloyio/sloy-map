@@ -1,6 +1,6 @@
 import { SloyLogo } from "@/components/SloyLogo";
 import { Provider } from "react-redux";
-import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
+import { Button, ButtonSize, ButtonType } from "sloy-ui";
 import styled from "styled-components";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, sloyReducer } from "@/index";
@@ -37,7 +37,6 @@ const Example = () => (
   <Provider store={store}>
     <SloyMap
       locale="ru-RU"
-      theme={defaultTheme}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
