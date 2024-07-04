@@ -4,18 +4,41 @@ import { InputSloyLayer, InputSloySource } from "@/types";
 export const gorodetsPopulation: InputSloyLayer = {
   id: "gorodets-population",
   title: "Плотность населения",
-  filters: [],
+  filters: [
+    {
+      type: "range",
+      filterVisualizations: [
+        "gorodetsPopulationLineLayer",
+        "gorodetsPopulationFillLayer",
+      ],
+      source: "gorodetsPopulationLayerSource",
+      property: "total_ppl_",
+    },
+    // {
+    //   title: "Плотность населения",
+    //   type: "string[]",
+    //   filterVisualizations: [
+    //     "gorodetsPopulationLineLayer",
+    //     "gorodetsPopulationFillLayer",
+    //   ],
+    //   source: "gorodetsPopulationLayerSource",
+    //   property: "total_ppl_",
+    //   totalType: "percent",
+    //   postfix: "шт.",
+    //   sortType: "config",
+    // },
+  ],
   visualizations: [
     {
       id: "gorodetsPopulationLineLayer",
       source: "gorodetsPopulationLayerSource",
       type: "map",
+      property: "total_ppl_",
       mapLayerProps: {
         type: "line",
         paint: {
           "line-width": 2,
           "line-opacity": 1,
-          "line-color": "#00eeff",
         },
       },
     },
@@ -23,11 +46,11 @@ export const gorodetsPopulation: InputSloyLayer = {
       id: "gorodetsPopulationFillLayer",
       source: "gorodetsPopulationLayerSource",
       type: "map",
+      property: "total_ppl_",
       mapLayerProps: {
         type: "fill",
         paint: {
-          "fill-opacity": 0.3,
-          "fill-color": "#00eeff",
+          "fill-opacity": 0.5,
         },
       },
     },
@@ -41,9 +64,21 @@ export const gorodetsPopulationSource: InputSloySource = {
   coordsProperty: "coords",
   projection: "EPSG:32638",
   card: {
-    title: "NAME",
     blocks: [],
   },
   copyright: [],
-  properties: [],
+  properties: [
+    {
+      id: "total_ppl_",
+      title: "Плотность населения",
+      range: [
+        { from: 0, to: 0, value: 0, color: "#3a4265" },
+        { from: 2, to: 104, value: 22, color: "#144d8a" },
+        { from: 104, to: 310, value: 40, color: "#3650e3" },
+        { from: 310, to: 712, value: 10, color: "#8f10f7" },
+        { from: 712, to: 1095, value: 7, color: "#d400ff" },
+        { from: 1095, to: 1759, value: 7, color: "#ff0000" },
+      ],
+    },
+  ],
 };
