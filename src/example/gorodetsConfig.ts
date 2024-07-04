@@ -64,6 +64,10 @@ import {
   gorodetsCUCapacity,
   gorodetsCUCapacitySource,
 } from "./configs/gorodets/gorodetsCUCapacity";
+import {
+  gorodetsAnthropogenicLoad,
+  gorodetsAnthropogenicLoadSource,
+} from "./configs/gorodets/gorodetsAnthropogenicLoad";
 // import {
 //   gorodetsRoads,
 //   gorodetsRoadsSource,
@@ -110,6 +114,7 @@ export const defaultLayers: InputSloyLayer[] = [
   gorodetsTouristRoutes,
   gorodetsCad,
   gorodetsCUCapacity,
+  gorodetsAnthropogenicLoad,
   // gorodetsRoads,
 ];
 
@@ -134,6 +139,7 @@ export const defaultSources: InputSloySource[] = [
   gorodetsTouristRoutesSource,
   gorodetsCadSource,
   gorodetsCUCapacitySource,
+  gorodetsAnthropogenicLoadSource,
   // gorodetsRoadsSource,
 ];
 
