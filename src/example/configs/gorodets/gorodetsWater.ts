@@ -9,7 +9,6 @@ export const gorodetsWater: InputSloyLayer = {
     {
       id: "gorodetsWaterLineLayer",
       source: "gorodetsWaterLayerSource",
-      openable: true,
       type: "map",
       mapLayerProps: {
         type: "line",
@@ -23,7 +22,6 @@ export const gorodetsWater: InputSloyLayer = {
     {
       id: "gorodetsWaterFillLayer",
       source: "gorodetsWaterLayerSource",
-      openable: true,
       type: "map",
       mapLayerProps: {
         type: "fill",
@@ -43,7 +41,6 @@ export const gorodetsWaterSource: InputSloySource = {
   coordsProperty: "coords",
   projection: "EPSG:32638",
   card: {
-    title: "name",
     blocks: [],
   },
   copyright: [],
