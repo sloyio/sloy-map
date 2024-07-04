@@ -72,7 +72,7 @@ export const gorodetsPopulationSource: InputSloySource = {
       id: "total_ppl_",
       title: "Плотность населения",
       range: [
-        { from: 0, to: 0, value: 0, color: "#3a4265" },
+        { from: 0, to: 0, value: 53, color: "#3a4265" },
         { from: 2, to: 104, value: 22, color: "#144d8a" },
         { from: 104, to: 310, value: 40, color: "#3650e3" },
         { from: 310, to: 712, value: 10, color: "#8f10f7" },
