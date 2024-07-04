@@ -58,7 +58,7 @@ export const gorodetsOKN: InputSloyLayer = {
       mapLayerProps: {
         type: "fill",
         paint: {
-          "fill-opacity": 0.2,
+          "fill-opacity": 0.3,
         },
       },
     },
