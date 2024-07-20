@@ -1,13 +1,5 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import {
-  Popover,
-  Menu,
-  MenuItem,
-  Button,
-  Icon,
-  IconType,
-  SegmentedControl,
-} from "sloy-ui";
+import { Button, Icon, IconType, SegmentedControl, Dropdown } from "sloy-ui";
 import { useIsDesktop } from "@/helpers/mediaQueries";
 import { MapContext } from "@/state/context";
 import { useDispatch } from "react-redux";
@@ -44,15 +36,19 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <Popover placement="top-start">
-      <Button prefix={<Icon type={IconType.Earth} />} rounded>
-        {items[activeElem]}
-      </Button>
-      <Menu>
+    <Dropdown placement="top-start">
+      <Dropdown.Trigger>
+        <Button prefix={<Icon type={IconType.Earth} />} rounded>
+          {items[activeElem]}
+        </Button>
+      </Dropdown.Trigger>
+      <Dropdown.Menu>
         {items.map((item, i) => (
-          <MenuItem onClick={() => setActiveElem(i)}>{item}</MenuItem>
+          <Dropdown.MenuItem onClick={() => setActiveElem(i)}>
+            {item}
+          </Dropdown.MenuItem>
         ))}
-      </Menu>
-    </Popover>
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
