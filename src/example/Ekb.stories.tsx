@@ -1,7 +1,9 @@
+import { SloyLogo } from "@/components/SloyLogo";
 import { StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
 import { Provider } from "react-redux";
-import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
+import styled from "styled-components";
+// import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, internalTranslations, sloyReducer } from "@/index";
 import {
@@ -10,8 +12,15 @@ import {
   defaultMapState,
   defaultSources,
 } from "./ekbConfig";
-import ekbLoader from "./ekb-loader.svg";
+import sloyLoader from "./sloy-loader.svg";
 import "sloy-ui/fonts.css";
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  transform: scale(1.4);
+  margin: 8px;
+`;
 
 export default {
   title: "Map/Advanced/Ekb",
@@ -31,17 +40,20 @@ const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
   <Provider store={store}>
     <SloyMap
       locale="ru-RU"
-      theme={defaultTheme}
+      // theme={defaultTheme}
       translations={internalTranslations}
       mapState={defaultMapState}
       sources={defaultSources}
       layers={defaultLayers}
       copyrights={copyrights}
       {...args}
-      layout={{ loaderImageSrc: ekbLoader, ...args.layout }}
-      renderFooter={({ t }) => (
+      layout={{ loaderImageSrc: sloyLoader, ...args.layout }}
+      renderFooter={() => (
         <>
-          <Button
+          <LogoWrapper>
+            <SloyLogo />
+          </LogoWrapper>
+          {/* <Button
             type={ButtonType.DEFAULT}
             size={ButtonSize.MEDIUM}
             href="https://github.com/gcor/sloy-map"
@@ -56,7 +68,7 @@ const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => (
             rounded
           >
             {t("About")}
-          </Button>
+          </Button> */}
         </>
       )}
     />
