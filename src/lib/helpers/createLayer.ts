@@ -1,6 +1,6 @@
 import { IApp, IFilter, IVisualization, InputSloyLayer } from "@/types";
-import { nanoid } from "@reduxjs/toolkit";
 import deepmerge from "deepmerge";
+import { nanoid } from "nanoid";
 
 interface LayerOutput {
   layers: IApp["layers"];
