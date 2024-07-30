@@ -16,7 +16,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   transform: scale(1.4);
-  margin: 0 8px;
+  margin: 8px;
 `;
 
 export default {
