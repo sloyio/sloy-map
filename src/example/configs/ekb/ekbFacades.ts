@@ -5,6 +5,10 @@ import facades from "../../../../public/ekb-facades.json";
 export const ekbFacades: InputSloyLayer = {
   id: "ekb-facades",
   title: "Дизайн-код фасадов",
+  link: {
+    label: "Стандарт дизайн-кода фасадов в туристском центре",
+    href: "https://guides.ekaterinburg.city/city-centre-design-code/general-provisions",
+  },
   filters: [],
   visualizations: [
     {
