@@ -7,9 +7,17 @@ import {
   sloyReducer,
 } from "@/index";
 import { configureStore } from "@reduxjs/toolkit";
+import { useMemo, useState } from "react";
 import { Provider } from "react-redux";
 import { createLogger } from "redux-logger";
-import { Button, ButtonSize, ButtonType } from "sloy-ui";
+import {
+  Button,
+  ButtonSize,
+  ButtonType,
+  Dropdown,
+  Icon,
+  IconType,
+} from "sloy-ui";
 import styled from "styled-components";
 import translations from "./armenia.locales.json";
 import {
@@ -47,51 +55,111 @@ const store = configureStore({
     ),
 });
 
-const Example = () => (
-  <Provider store={store}>
-    <SloyMap
-      locale="en-EN"
-      availableLocales={["en-EN", "am-AM", "ru-RU"]}
-      mapState={defaultMapState}
-      sources={defaultSources}
-      layers={defaultLayers}
-      translations={Object.assign({}, translations, internalTranslations)}
-      terrainSource={BESEMAP_TERRAIN_SOURCE.id}
-      mapProps={{ hash: true }}
-      copyrights={copyrights}
-      layout={{
-        hasBaseMap: true,
-        hasPmtiles: true,
-        loaderImageSrc: sloyLoader,
-      }}
-      renderFooter={({ t }) => (
-        <>
-          <LogoWrapper>
-            <SloyLogo />
-          </LogoWrapper>
+const sections = [
+  {
+    label: "Армения",
+    items: [
+      { label: "Вся страна", id: "whole_country" },
+      { label: "Ереван", id: "erevan" },
+    ],
+  },
+  {
+    label: "Россия",
+    items: [
+      { label: "Екатеринбург", id: "ekaterinburg" },
+      { label: "Челябинск", id: "chelyabinsk" },
+    ],
+  },
+];
+
+const Example = () => {
+  const [city, setCity] = useState<string>("ekaterinburg");
+
+  const cityName = useMemo(() => {
+    return sections
+      .map((elem) => elem.items)
+      .flat()
+      .find((elem) => elem.id === city)?.label;
+  }, [city]);
+
+  function onClick(city: string) {
+    setCity(city);
+  }
+
+  return (
+    <Provider store={store}>
+      <SloyMap
+        locale="en-EN"
+        availableLocales={["en-EN", "am-AM", "ru-RU"]}
+        mapState={defaultMapState}
+        sources={defaultSources}
+        layers={defaultLayers}
+        translations={Object.assign({}, translations, internalTranslations)}
+        terrainSource={BESEMAP_TERRAIN_SOURCE.id}
+        mapProps={{ hash: true }}
+        copyrights={copyrights}
+        layout={{
+          hasBaseMap: true,
+          hasPmtiles: true,
+          loaderImageSrc: sloyLoader,
+        }}
+        renderFooter={({ t }) => (
           <>
-            <LanguageSwitcher />
-            <Button
-              type={ButtonType.DEFAULT}
-              size={ButtonSize.MEDIUM}
-              href="https://github.com/sloyio/sloy-map"
-              rounded
-            >
-              Github
-            </Button>
-            <Button
-              type={ButtonType.DEFAULT}
-              size={ButtonSize.MEDIUM}
-              href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
-              rounded
-            >
-              {t("About")}
-            </Button>
+            <LogoWrapper>
+              <SloyLogo />
+            </LogoWrapper>
+            <>
+              <>
+                <Dropdown placement="top-start">
+                  <Dropdown.Trigger>
+                    <Button
+                      type={ButtonType.DEFAULT}
+                      size={ButtonSize.MEDIUM}
+                      prefix={<Icon type={IconType.Earth} />}
+                      rounded
+                    >
+                      {cityName}
+                    </Button>
+                  </Dropdown.Trigger>
+                  <Dropdown.Menu>
+                    {sections.map((group) => (
+                      <Dropdown.MenuGroup title={group.label}>
+                        {group.items.map((item) => (
+                          <Dropdown.MenuItem
+                            onClick={() => onClick(item.id)}
+                            isActive={item.id === city}
+                          >
+                            {item.label}
+                          </Dropdown.MenuItem>
+                        ))}
+                      </Dropdown.MenuGroup>
+                    ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
+              <LanguageSwitcher />
+              <Button
+                type={ButtonType.DEFAULT}
+                size={ButtonSize.MEDIUM}
+                href="https://github.com/sloyio/sloy-map"
+                rounded
+              >
+                Github
+              </Button>
+              <Button
+                type={ButtonType.DEFAULT}
+                size={ButtonSize.MEDIUM}
+                href="https://sloyio.notion.site/Sloy-98aa2acd3d7249299f7d2422aa3dd0d9"
+                rounded
+              >
+                {t("About")}
+              </Button>
+            </>
           </>
-        </>
-      )}
-    />
-  </Provider>
-);
+        )}
+      />
+    </Provider>
+  );
+};
 
 export const Default = Example.bind({});
