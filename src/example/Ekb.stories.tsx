@@ -132,11 +132,12 @@ function FacadeFilter() {
 const QuarterWRapper = styled.div`
   font-size: 14px;
   line-height: 21px;
+  padding: 8px;
+  &:first-child {
+    padding-top: 0;
+  }
   p {
-    margin: 8px;
-    &:first-child {
-      margin-top: 0;
-    }
+    margin: 0;
   }
   ul {
     list-style-type: "— ";
