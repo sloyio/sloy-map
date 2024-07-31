@@ -1,7 +1,9 @@
+import { SloyLogo } from "@/components/SloyLogo";
 import { StoryObj } from "@storybook/react";
 import { ComponentProps, useCallback } from "react";
 import { Provider } from "react-redux";
-import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
+import styled from "styled-components";
+// import { Button, ButtonSize, ButtonType, defaultTheme } from "sloy-ui";
 import { configureStore } from "@reduxjs/toolkit";
 import {
   ILayer,
@@ -16,9 +18,16 @@ import {
   defaultMapState,
   defaultSources,
 } from "./ekbConfig";
-import ekbLoader from "./ekb-loader.svg";
+import sloyLoader from "./sloy-loader.svg";
 import "sloy-ui/fonts.css";
 import styled from "styled-components";
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  transform: scale(1.4);
+  margin: 8px;
+`;
 
 export default {
   title: "Map/Advanced/Ekb",
@@ -61,23 +70,26 @@ const Example = (args: Partial<ComponentProps<typeof SloyMap>>) => {
         layout={{ loaderImageSrc: ekbLoader, ...args.layout }}
         renderFooter={({ t }) => (
           <>
-            <Button
-              type={ButtonType.DEFAULT}
-              size={ButtonSize.MEDIUM}
-              href="https://github.com/gcor/sloy-map"
-              rounded
-            >
-              Github
-            </Button>
-            <Button
-              type={ButtonType.DEFAULT}
-              size={ButtonSize.MEDIUM}
-              href="https://github.com/gcor/sloy-map"
-              rounded
-            >
-              {t("About")}
-            </Button>
-          </>
+          <LogoWrapper>
+            <SloyLogo />
+          </LogoWrapper>
+          {/* <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            Github
+          </Button>
+          <Button
+            type={ButtonType.DEFAULT}
+            size={ButtonSize.MEDIUM}
+            href="https://github.com/gcor/sloy-map"
+            rounded
+          >
+            {t("About")}
+          </Button> */}
+        </>
         )}
       />
     </Provider>

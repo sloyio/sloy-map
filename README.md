@@ -43,6 +43,7 @@ npm i react-redux @reduxjs/toolkit
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { SloyMap, sloyReducer } from "sloy-map";
+import 'sloy-map/style.css';
 
 const store = configureStore({
   reducer: {
@@ -50,83 +51,92 @@ const store = configureStore({
   },
 });
 
-
-// full basic example in the example/ folder
-<Provider store={store}>
-  <SloyMap
-    mapState={{
-      initialViewState: {
-        zoom: 14.5,
-        longitude: 44.51,
-        latitude: 40.18,
-      },
-      mapStyle: "https://sloy.io/armenia/style.json",
-    }}
-    sources=[
-      {
-          id: "sourceId",
-          path: "/file.geojson",
-          type: "geojson",
-          // also you can use { type: "json" }
-          // with latProperty, lngProperty, coordsProperty, isCoordsReverse for custom lat\lng keys
-
-          // you can use custom projection here
-          // supports proj4 format
-          projection: "EPSG:28408",
-          properties: [
-            {
-              id: "VALUE",
-              title: "kcal/cm²",
-              // you can describe data colors here, this colors can be used in the visualisations and filters
-              values: {
-                40: { color: "#fddede" },
-                45: { color: "#feb7b9" },
-                50: { color: "#fd9793" },
-              },
-            },
-            {
-              id: "UNIT",
-              title: "Units",
-            },
-          ],
-          // you can describe popup content using the keys from the data
-          card: {
-            title: "name",
-            blocks: [{ type: "value", id: "VALUE" }],
+export function App() {
+  return (
+    <Provider store={store}>
+      <SloyMap
+        mapState={{
+          initialViewState: {
+            zoom: 14.5,
+            longitude: 44.51,
+            latitude: 40.18,
           },
-          mapSourceProps: {
-            /* any mapbox\maplibre source props */
-          }
-        }
-    ],
-    layers={[
-      {
-          title: "Geojson example",
-          description: "Description",
-          visualizations: [
-            {
-              id: "visualizationId",
-              source: "sourceId",
-              openable: true,
-              property: "VALUE",
-              type: "map",
-              // any mapbox\maplibre props:
-              mapLayerProps: {
-                type: "fill",
-                paint: {
-                  "fill-opacity": 0.6,
+          mapStyle: "https://sloy.io/armenia/style.json",
+        }}
+        sources={[
+          {
+            id: "sourceId",
+            path: "/file.geojson",
+            type: "geojson",
+            // also you can use { type: "json" }
+            // with latProperty, lngProperty, coordsProperty, isCoordsReverse for custom lat\lng keys
+
+            // you can use custom projection here
+            // supports proj4 format
+            projection: "EPSG:28408",
+            properties: [
+              {
+                id: "VALUE",
+                title: "kcal/cm²",
+                // you can describe data colors here, this colors can be used in the visualisations and filters
+                values: {
+                  40: { color: "#fddede" },
+                  45: { color: "#feb7b9" },
+                  50: { color: "#fd9793" },
                 },
               },
+              {
+                id: "UNIT",
+                title: "Units",
+              },
+            ],
+            // you can describe popup content using the keys from the data
+            card: {
+              title: "name",
+              blocks: [{ type: "value", id: "VALUE" }],
             },
-          ],
-        }
-    ]}
-    mapProps={{
-      /* you can use mapbox\maplibre map props here
+            copyright: [],
+            mapSourceProps: {
+              /* any mapbox\maplibre source props */
+            },
+          },
+        ]}
+        layers={[
+          {
+            id: "layerId",
+            title: "Geojson example",
+            description: "Description",
+            filters: [],
+            visualizations: [
+              {
+                id: "visualizationId",
+                source: "sourceId",
+                openable: true,
+                property: "VALUE",
+                type: "map",
+                // any mapbox\maplibre props:
+                mapLayerProps: {
+                  type: "fill",
+                  paint: {
+                    "fill-opacity": 0.6,
+                  },
+                },
+              },
+            ],
+          },
+        ]}
+        mapProps={
+          {
+            /* you can use mapbox\maplibre map props here
          for example mapboxAccessToken: xxxx */
-    }}
-  />
-</Provider>
+          }
+        }
+      />
+    </Provider>
+  );
+}
+
+
 ```
 
 You can find more examples in the src/examples/ folder
