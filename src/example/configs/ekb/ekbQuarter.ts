@@ -3,6 +3,10 @@ import { InputSloyLayer, InputSloySource } from "@/types";
 export const ekbQuarter: InputSloyLayer = {
   id: "ekb-quarter",
   title: "Квартальные",
+  link: {
+    label: "Подробнее о квартальных",
+    href: "https://екатеринбург.рф/справка/квартальные/",
+  },
   filters: [],
   visualizations: [
     {
